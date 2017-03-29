@@ -1,0 +1,8 @@
+Resources[
+    Version[1],
+    ExecutionBuildCommand["<<GoProController`"],
+    Paclet[
+        PacletFolder["GoProController"],
+        FunctionPaclet[False]
+    ]
+]

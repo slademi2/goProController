@@ -1,0 +1,262 @@
+(* Wolfram Language Package *)
+
+(* Created by the Wolfram Workbench 25.2.2017 *)
+
+BeginPackage["GoProController`"]
+(* Exported symbols added here with SymbolName::usage *) 
+
+
+(*get status*)
+GoProGetStatus::usage=
+	"GoProGetstatus[unit_String, param_String] Returns value of parameter param"
+
+GoProInit::usage = 
+	"GoProTurnOn[password_ ] user provides password for usage of GoProController package"
+
+GoProTurnOn::usage = 
+	"GoProTurnOn[ ] Turns on the gopro camera"
+
+GoProTurnOff::usage =
+	"GoProTurnOn[ ] Turns off the gopro camera"
+	
+GoProShutter::usage=
+	"GoProShutter[ ] Start of recording or taking photo on camera"
+
+GoProStop::usage=
+	"GoProStop[ ] Stop the camera recording"
+	
+GoProVideoMode::usage=
+	"GoProVideoMode[ ] Switch camera to video mode"
+
+GoProPhotoMode::usage=
+	"GoProPhotoMode[ ] Switch camera to photo mode"
+
+GoProBurstMode::usage=
+	"GoProBurstMode[ ] Switch camera to burst mode"
+	
+GoProTimeLapseMode::usage=
+	"GoProTimeLapseMode[ ] Switch camera to time-lapse mode"
+	
+(*resolutions settings for photo*)
+GoProPhotoRes12W::usage=
+	"GoProPhotoRes12W[ ] Sets resolution of photo to 12mp and Wide picture"
+
+GoProPhotoRes7W::usage=
+	"GoProPhotoRes7W[ ] Sets resolution of photo to 7mp and Wide picture"
+
+GoProPhotoRes7M::usage=
+	"GoProPhotoRes7M[ ] Sets resolution of photo to 7mp and Medium picture"
+
+GoProPhotoRes5M::usage=
+	"GoProPhotoRes5M[ ] Sets resolution of photo to 5mp and Medium picture"
+	
+(*video resolutions*)	
+GoProVideoRes4K::usage=
+	"GoProVideoRes4K[ ]Sets resolution of video to 4K and 15FPS"
+GoProVideoRes4K17to9::usage=
+	"GoProVideoRes4K17to9[ ] Sets resolution of video to 4K in 17:9 and 12FPS"
+GoProVideoRes2point7K17to9::usage=
+	"GoProVideoRes2point7K17to9[ ]Sets resolution of video to 2.7K in 17:9 and 24FPS"
+GoProVideoRes2point7K::usage=
+	"GoProVideoRes2point7K[ ] Sets resolution of video to 2.7K and 30FPS "
+
+GoProVideoRes1440::usage=
+	"GoProVideoRes1440[ ] Sets resolution of video to 1440p and 24FPS "
+GoProVideoRes1080::usage=
+	"GoProVideoRes1080[ ] Sets resolution of video to 1080p and 24FPS "
+GoProVideoRes1080SV::usage=
+	"GoProVideoRes1080SV[ ] Sets resolution of video to 1080p Super View and 24FPS "
+GoProVideoRes960::usage=
+	"GoProVideoRes960[ ] Sets resolution of video to 960p and 48FPS"
+GoProVideoRes720::usage=
+	"GoProVideoRes720[ ] Sets resolution of video to 720p and 60FPS"
+GoProVideoRes720SV::usage=
+	"GoProVideoRes720SV[ ] Sets resolution of video to 720p Super View 60FPS"
+GoProVideoResWVGA::usage=
+	"GoProVideoResWVGA[ ] Sets resolution of video to WVGA 240FPS"
+	
+
+(*FPS*)
+GoProGetPossibleFPS::usage=
+	"GoProGetPossibleFPS[ ] Returns list of possible FPS for actual video resolution"
+GoProSetFPS::usage=
+	"GoProSetFPS[_String] Sets FPS to given parameter, but only if this amount of FPS is supported by actual video resolution.
+	 To see which parameter you can use for actual video resolution use GoProGetPossibleFPS functuon"
+	
+	
+(*Orientation*)
+GoProSetOrientationUp::usage=
+	"GoProSetOrientationUp[ ] Switch orientation of display up"
+GoProSetOrientationDown::usage=
+	"GoProSetOrientationDown[ ] Switch orientation of display up"
+	
+(*Field of view*)
+GoProSetFOV::usage=
+	"GoProSetFOV[_String ] Sets FOV to given parameter, accepts only possible parameters. 
+	To see which parameter you can use for actual video resolution use GoProGetPossibleFOV function" 
+
+GoProGetPossibleFOV::usage=
+	"GoProGetPossibleFOV[ ] Returns list of possible settings for FOV for actual video resolution"
+
+(*TimeLapseInterval*)
+GoProGetPossibleTimeLapse::usage=
+	"GoProGetPossibleTimeLapse[ ] Returns possible values of TimeLapse interval in seconds"
+GoProSetTimeLapse::usage=
+	"GoProGetTimeLapse[_String] Sets TimeLapse interval to parameter given.
+	 To see which parameters you can for Time Lapse interval use function GoProGetPossibleTimeLapse[ ]"
+
+
+Begin["`Private`"]
+(* Implementation of the package *)
+(*adresa kamery na siti, kterou kamera vysila*)
+GoProUrl = "http://10.5.5.9/";
+
+
+(*Funkce pro slozeni url pro ovladani kamery, unit (bacpac||camera), command (prikat), parram (parametr prikazu)*)
+GoProMakeCommand[unit_String, command_String, parram_String] := 
+ GoProUrl <> unit <> "/" <> command <> "?t=" <> GoProPassword <> 
+  "&p=%" <> parram
+
+(*spusteni prikazu exec pomoci HTTPRequest a URLRead*)
+execute[exec_String] := (request = HTTPRequest[exec];
+  URLRead[request])
+ 
+
+GoProGetStatus[unit_String, param_String]:=
+	URLExecute[HTTPRequest[GoProUrl <> unit <> "/" <> param <> "?t=" <> GoProPassword]]
+
+(*Funkce pro inicializaci hesla*)
+GoProInit[password_String]:=(GoProPassword=password)
+
+(*funkce pro zapnuti a vypnuti kamery*)
+GoProTurnOn[]:=execute[GoProMakeCommand["bacpac", "PW", "01"]]
+GoProTurnOff[]:=execute[GoProMakeCommand["bacpac", "PW", "00"]]
+
+(*funkce pro zapnuti a vypnuti spouste (mackani spouste na kamere)*)
+GoProShutter[] := execute[GoProMakeCommand["bacpac", "SH", "01"]]
+GoProStop[] := execute[GoProMakeCommand["bacpac", "SH", "00"]]
+
+
+(*Camera Mods*)
+GoProVideoMode[] := execute[GoProMakeCommand["camera", "CM", "00"]]
+GoProPhotoMode[] := execute[GoProMakeCommand["camera", "CM", "01"]]
+GoProBurstMode[] := execute[GoProMakeCommand["camera", "CM", "02"]]
+GoProTimeLapseMode[] := execute[GoProMakeCommand["camera", "CM", "03"]]
+
+
+GoProPlayHDMIMode[] := 
+ execute[GoProMakeCommand["camera", "CM", "05"]](*NEUZITECNE*)
+
+GoProSettingsMode[] := 
+ execute[GoProMakeCommand["camera", "CM", "07"]](*Neuzitecne*)
+ 
+ 
+ (*Photo resolutions*)
+GoProPhotoRes12W[]:=execute[GoProMakeCommand["camera","PR","05"]]
+GoProPhotoRes7W[]:=execute[GoProMakeCommand["camera","PR","04"]]
+GoProPhotoRes7M[]:=execute[GoProMakeCommand["camera","PR","06"]]
+GoProPhotoRes5M[]:=execute[GoProMakeCommand["camera","PR","03"]]
+
+
+(*video settings*)
+GoProVideoRes4K[]:=execute[GoProMakeCommand["camera","VV","06"]]
+GoProVideoRes4K17to9[]:=execute[GoProMakeCommand["camera","VV","08"]]
+GoProVideoRes2point7K17to9[]:=execute[GoProMakeCommand["camera","VV","07"]]
+GoProVideoRes2point7K[]:=execute[GoProMakeCommand["camera","VV","05"]]
+
+GoProVideoRes1440[]:=execute[GoProMakeCommand["camera","VV","04"]]
+GoProVideoRes1080[]:=execute[GoProMakeCommand["camera","VV","03"]]
+GoProVideoRes1080SV[]:=execute[GoProMakeCommand["camera","VV","09"]]
+GoProVideoRes960[]:=execute[GoProMakeCommand["camera","VV","02"]]
+GoProVideoRes720[]:=execute[GoProMakeCommand["camera","VV","01"]]
+GoProVideoRes720SV[]:=execute[GoProMakeCommand["camera","VV","0a"]]
+GoProVideoResWVGA[]:=execute[GoProMakeCommand["camera","VV","00"]]
+
+(*FPS*)
+fpsToCode = <|"12" -> "00",
+   "15" -> "01",
+   "12p5" -> "0b" ,
+   "24" -> "02" ,
+   "25" -> "03",
+   "30" -> "04",
+   "48" -> "05",
+   "50" -> "06",
+   "60" -> "07",
+   "100" -> "08"
+   |>;
+   
+fpsPossible = <|
+   "00" -> {"240"},
+   "01" -> {"60", "120"},
+   "0a" -> {"100", "60", "48"},
+   "02" -> {"100", "60", "48"},
+   "03" -> {"60", "48", "30", "24"},
+   "09" -> {"60", "48", "30", "24"},
+   "04" -> {"48", "30", "24"},
+   "05" -> {"30"},
+   "07" -> {"24"},
+   "06" -> {"15"},
+   "08" -> {"12"}
+   |>;
+(*to change FPS use this function GoProSetFPS[], but you must give fps
+ which is possible for actual video resolution, to see which fps is supported use function GoProGetPossibleFPS*)
+GoProSetFPS[f_String] := execute[GoProMakeCommand["camera","FS",fpsToCode[[f]]]]
+
+
+GoProGetPossibleFPS[]:=fpsPossible[[
+ "0" <> StringTake[
+   ToString[BaseForm[GoProGetStatus["camera", "vv"][[2]], 16]], 1]]]
+
+
+(*orientatione up/down*)
+GoProSetOrientationUp[]:=execute[GoProMakeCommand["camera","UP","00"]]
+GoProSetOrientationDown[]:=execute[GoProMakeCommand["camera","UP","01"]]
+
+
+
+(*Field of view*)
+fovPossible = <|
+   "00" -> {"wide"},
+   "01" -> {"wide", "narrow"},
+   "0a" -> {"wide"},
+   "02" -> {"wide"},
+   "03" -> {"wide", "medium", "narrow"},
+   "09" -> {"wide"},
+   "04" -> {"wide"},
+   "05" -> {"wide", "medium"},
+   "07" -> {"wide", "medium"},
+   "06" -> {"wide"},
+   "08" -> {"wide"}
+   |>;
+
+fovToCode = <|
+   "wide" -> "00",
+   "medium" -> "01",
+   "narrow" -> "02"
+   |>;
+   
+GoProSetFOV[f_String] := execute[GoProMakeCommand["camera","FV",fovToCode[[f]]]]
+
+GoProGetPossibleFOV[]:=fovPossible[[
+ "0" <> StringTake[
+   ToString[BaseForm[GoProGetStatus["camera", "vv"][[2]], 16]], 1]]]
+   
+(*TimeLapse*)
+tiToCode = <|
+   "0.5" -> "00",
+   "1" -> "01",
+   "5" -> "05",
+   "10"->"0a",
+   "30"->"1e",
+   "60"->"3c"
+   |>;
+tiPossible={"0.5","1","5","10","30","60"}
+
+GoProGetPossibleTimeLapse[]:=tiPossible
+GoProSetTimeLapse[f_String]:=execute[GoProMakeCommand["camera","TI",tiToCode[[f]]]]
+
+
+End[]
+
+EndPackage[]
+
