@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     51828,       1585]
-NotebookOptionsPosition[     44956,       1340]
-NotebookOutlinePosition[     45295,       1355]
-CellTagsIndexPosition[     45252,       1352]
+NotebookDataLength[    101332,       3106]
+NotebookOptionsPosition[     86788,       2596]
+NotebookOutlinePosition[     87127,       2611]
+CellTagsIndexPosition[     87084,       2608]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1257,8 +1257,9 @@ Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/setting/8/1\"\>"], "Output",
 
 Cell[CellGroupData[{
 
-Cell["Spot Meter", "Section",
- CellChangeTimes->{{3.700389880107654*^9, 3.700389885700242*^9}}],
+Cell["Video Spot Meter", "Section",
+ CellChangeTimes->{{3.700389880107654*^9, 3.700389885700242*^9}, {
+  3.7003914030113783`*^9, 3.700391403650263*^9}}],
 
 Cell[CellGroupData[{
 
@@ -1268,19 +1269,24 @@ Cell[BoxData[{
  RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
 
 Cell[BoxData["\<\"Black\"\>"], "Output",
- CellChangeTimes->{3.70038988879642*^9}]
+ CellChangeTimes->{
+  3.70038988879642*^9, {3.700391329442525*^9, 3.700391346152441*^9}, 
+   3.700391392161434*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"goProGetPossibleSpotMeter", "[", "]"}]], "Input",
- CellChangeTimes->{{3.7003898905936937`*^9, 3.700389896912035*^9}}],
+ RowBox[{"goProGetPossibleVideoSpotMeter", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.7003898905936937`*^9, 3.700389896912035*^9}, {
+  3.700391231095584*^9, 3.700391231662553*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"\<\"on\"\>", ",", "\<\"off\"\>"}], "}"}]], "Output",
- CellChangeTimes->{3.70038990054348*^9}]
+ CellChangeTimes->{
+  3.70038990054348*^9, {3.700391331607853*^9, 3.70039134774303*^9}, 
+   3.700391392635014*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1289,10 +1295,11 @@ Cell[BoxData[
  RowBox[{
   RowBox[{
    RowBox[{
-    RowBox[{"goProSetSpotMeter", "[", "#", "]"}], "&"}], "/@", 
-   RowBox[{"goProGetPossibleSpotMeter", "[", "]"}]}], "//", 
+    RowBox[{"goProSetVideoSpotMeter", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossibleVideoSpotMeter", "[", "]"}]}], "//", 
   "TableForm"}]], "Input",
- CellChangeTimes->{{3.700389901517089*^9, 3.700389914406583*^9}}],
+ CellChangeTimes->{{3.700389901517089*^9, 3.700389914406583*^9}, {
+  3.700391217247571*^9, 3.700391227332774*^9}}],
 
 Cell[BoxData[
  TagBox[
@@ -1313,27 +1320,1276 @@ Cell[BoxData[
    Column],
   Function[BoxForm`e$, 
    TableForm[BoxForm`e$]]]], "Output",
- CellChangeTimes->{3.700389914871763*^9}]
+ CellChangeTimes->{
+  3.700389914871763*^9, {3.700391332610305*^9, 3.70039134913151*^9}, 
+   3.700391393525485*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"goProSwitchSpotMeterOff", "[", "]"}]], "Input",
- CellChangeTimes->{{3.700389926919668*^9, 3.700389935588149*^9}}],
+ RowBox[{"goProSwitchVideoSpotMeterOff", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.700389926919668*^9, 3.700389935588149*^9}, {
+  3.70039121299084*^9, 3.700391214278376*^9}}],
 
 Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/setting/9/0\"\>"], "Output",
- CellChangeTimes->{3.700389936210923*^9}]
+ CellChangeTimes->{
+  3.700389936210923*^9, {3.700391335121118*^9, 3.700391350648787*^9}, 
+   3.700391394409984*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"goProSwitchSpotMeterOn", "[", "]"}]], "Input",
- CellChangeTimes->{{3.700389937361857*^9, 3.7003899429394197`*^9}}],
+ RowBox[{"goProSwitchVideoSpotMeterOn", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.700389937361857*^9, 3.7003899429394197`*^9}, {
+  3.700391234959477*^9, 3.700391235551643*^9}}],
 
 Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/setting/9/1\"\>"], "Output",
- CellChangeTimes->{3.700389943597247*^9}]
+ CellChangeTimes->{
+  3.700389943597247*^9, {3.7003913366623993`*^9, 3.700391351841539*^9}, 
+   3.70039139544973*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Video Loop", "Section",
+ CellChangeTimes->{{3.7003904725253143`*^9, 3.700390479081665*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.700390481021543*^9, 3.700390808357753*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGetPossibleVideoLoop", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.700390861032447*^9, 3.700390861158655*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"max\"\>", ",", "\<\"5\"\>", ",", "\<\"20\"\>", 
+   ",", "\<\"60\"\>", ",", "\<\"120\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.700390861717349*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetVideoLoop", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossibleVideoLoop", "[", "]"}]}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.700390809584559*^9, 3.700390854418138*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/6/0\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/6/1\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/6/2\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/6/3\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/6/4\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.700390842245818*^9, 3.700390864232975*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Photo In Video", "Section",
+ CellChangeTimes->{{3.7003910887715387`*^9, 3.700391091348028*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.700391098401824*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGetPossiblePhotoInVideo", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.700391099306767*^9, 3.7003911062654467`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"5\"\>", ",", "\<\"10\"\>", ",", "\<\"30\"\>", 
+   ",", "\<\"60\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.7003911086349382`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetPhotoInVideo", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossiblePhotoInVideo", "[", "]"}]}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.700391110030097*^9, 3.7003911503089647`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/7/1\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/7/2\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/7/3\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/7/4\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.7003911511203403`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Photo Resolution", "Section",
+ CellChangeTimes->{{3.7004068849707623`*^9, 3.700406887538835*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.700406890318684*^9, 3.700407029874349*^9, 
+  3.7004071024800453`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossiblePhotoRes", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetPhotoRes", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossiblePhotoRes", "[", "]"}]}], "//", 
+  "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.700406899025786*^9, 3.7004069526682463`*^9}, {
+  3.7004070343494987`*^9, 3.7004070587395353`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"12W\"\>", ",", "\<\"7W\"\>", ",", "\<\"7M\"\>", 
+   ",", "\<\"5M\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.700407036751766*^9, 3.700407059830896*^9}, 
+   3.700407103535336*^9}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/17/0\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/17/1\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/17/2\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/17/3\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.700407036751766*^9, 3.700407059830896*^9}, 
+   3.700407103537805*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["NightPhoto Time Exposure", "Section",
+ CellChangeTimes->{{3.7004074177661858`*^9, 3.700407434190289*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.700407685705956*^9, 3.700407853754475*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossibleNightPhotoExposureTime", "[", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetNightPhotoExposureTime", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossibleNightPhotoExposureTime", "[", "]"}]}], "//", 
+  "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.700407671731326*^9, 3.7004076977956*^9}, {
+  3.7004078554231157`*^9, 3.700407880562656*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"auto\"\>", ",", "\<\"2\"\>", ",", "\<\"5\"\>", 
+   ",", "\<\"10\"\>", ",", "\<\"15\"\>", ",", "\<\"20\"\>", 
+   ",", "\<\"30\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.700407881337989*^9}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/19/0\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/19/1\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/19/2\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/19/3\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/19/4\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/19/5\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/19/6\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.700407881339952*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Photo SpotMeter", "Section",
+ CellChangeTimes->{{3.700407904311624*^9, 3.700407910967857*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.700408430231678*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossiblePhotoSpotMeter", "[", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetPhotoSpotMeter", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossiblePhotoSpotMeter", "[", "]"}]}], "//", 
+  "TableForm"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSwitchPhotoSpotMeterOff", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSwitchPhotoSpotMeterOn", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.700408431705988*^9, 3.7004084889971046`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"on\"\>", ",", "\<\"off\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.700408489833312*^9}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/20/1\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/20/0\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.700408489836863*^9}],
+
+Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/setting/20/0\"\>"], "Output",
+ CellChangeTimes->{3.7004084898397427`*^9}],
+
+Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/setting/20/1\"\>"], "Output",
+ CellChangeTimes->{3.7004084898424673`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["ContinuousShot", "Section",
+ CellChangeTimes->{{3.700408417086351*^9, 3.7004084275063953`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.700408507502987*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossibleContinuousShot", "[", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetContinuousShot", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossibleContinuousShot", "[", "]"}]}], "//", 
+  "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.700408508594634*^9, 3.700408548607514*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"3\"\>", ",", "\<\"5\"\>", ",", "\<\"10\"\>"}], "}"}]], "Output",\
+
+ CellChangeTimes->{3.700408549338092*^9}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/18/0\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/18/1\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/18/2\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.700408549339861*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["NightLapse Exposure Time", "Section",
+ CellChangeTimes->{{3.700409078063365*^9, 3.700409084422236*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.700409090470193*^9, 3.700409170380772*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossibleNightLapseExposureTime", "[", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetNightLapseExposureTime", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossibleNightLapseExposureTime", "[", "]"}]}], "//", 
+  "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.700409091277794*^9, 3.700409127661868*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"auto\"\>", ",", "\<\"2\"\>", ",", "\<\"5\"\>", 
+   ",", "\<\"10\"\>", ",", "\<\"15\"\>", ",", "\<\"20\"\>", 
+   ",", "\<\"30\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.7004091284545507`*^9, 3.700409171316794*^9}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/31/0\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/31/1\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/31/2\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/31/3\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/31/4\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/31/5\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/31/6\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.7004091284545507`*^9, 3.700409171318758*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["NightLapse Interval", "Section",
+ CellChangeTimes->{{3.7004093848777733`*^9, 3.7004093901255903`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.700409977995903*^9, 3.700410049607312*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossibleNightLapseInterval", "[", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetNightLapseInterval", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossibleNightLapseInterval", "[", "]"}]}], "//", 
+  "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.700409978986271*^9, 3.700410010459247*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"continuous\"\>", ",", "\<\"4s\"\>", ",", "\<\"5s\"\>", 
+   ",", "\<\"10s\"\>", ",", "\<\"15s\"\>", ",", "\<\"20s\"\>", 
+   ",", "\<\"30s\"\>", ",", "\<\"1m\"\>", ",", "\<\"2m\"\>", 
+   ",", "\<\"5m\"\>", ",", "\<\"30m\"\>", ",", "\<\"60m\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.700410011499497*^9, 3.700410050547346*^9}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/32/0\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/32/4\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/32/5\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/32/10\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/32/15\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/32/20\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/32/30\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/32/60\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/32/120\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/32/300\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/32/1800\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/32/3600\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.700410011499497*^9, 3.700410050550293*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["MultiShot resolution", "Section",
+ CellChangeTimes->{{3.700413801703013*^9, 3.7004138051030083`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.7004138080423*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossibleMultiShotResolution", "[", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetMultiShotResolution", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossibleMultiShotResolution", "[", "]"}]}], "//", 
+  "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.700413809142239*^9, 3.700413837589683*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"12W\"\>", ",", "\<\"7W\"\>", ",", "\<\"7M\"\>", 
+   ",", "\<\"5M\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.700413838190493*^9}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/28/0\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/28/1\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/28/2\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/28/3\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.700413838193178*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["TimeLapse Interval", "Section",
+ CellChangeTimes->{{3.7004142155673447`*^9, 3.700414221047264*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.700414225620555*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossibleTimeLapseInterval", "[", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetTimeLapseInterval", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossibleTimeLapseInterval", "[", "]"}]}], "//", 
+  "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.700414229036014*^9, 3.700414246199404*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"0.5\"\>", ",", "\<\"1\"\>", ",", "\<\"2\"\>", ",", "\<\"5\"\>",
+    ",", "\<\"10\"\>", ",", "\<\"30\"\>", ",", "\<\"60\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.700414246833927*^9}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/30/0\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/30/1\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/30/2\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/30/5\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/30/10\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/30/30\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/30/60\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.700414246835924*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["MultiShotSpotMeter", "Section",
+ CellChangeTimes->{{3.7004142850006247`*^9, 3.700414288224847*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.7004145721265173`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossibleMultiShotSpotMeter", "[", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetMultiShotSpotMeter", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossibleMultiShotSpotMeter", "[", "]"}]}], "//", 
+  "TableForm"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSwitchMultiShotSpotMeterOff", "[", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSwitchMultiShotSpotMeterOn", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.700414573335487*^9, 3.700414625306086*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"on\"\>", ",", "\<\"off\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.700414626452571*^9}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/33/1\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/33/0\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.700414626455217*^9}],
+
+Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/setting/33/0\"\>"], "Output",
+ CellChangeTimes->{3.700414626459111*^9}],
+
+Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/setting/33/1\"\>"], "Output",
+ CellChangeTimes->{3.700414626461931*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["BurstRate", "Section",
+ CellChangeTimes->{{3.7004146698486958`*^9, 3.70041467147248*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.7004150913931303`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossibleBurstRate", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetBurstRate", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossibleBurstRate", "[", "]"}]}], "//", 
+  "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.700415086627584*^9, 3.700415111116166*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"3/1\"\>", ",", "\<\"5/1\"\>", ",", "\<\"10/1\"\>", 
+   ",", "\<\"10/2\"\>", ",", "\<\"10/3\"\>", ",", "\<\"30/1\"\>", 
+   ",", "\<\"30/2\"\>", ",", "\<\"30/3\"\>", ",", "\<\"30/6\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.700415111749207*^9}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/29/0\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/29/1\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/29/2\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/29/3\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/29/4\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/29/5\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/29/6\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/29/7\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/29/8\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.700415111751659*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Orientation", "Section",
+ CellChangeTimes->{{3.7004159380340433`*^9, 3.7004159394737988`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{
+  3.7004159445417643`*^9, 3.7004160710796833`*^9, 3.70041617143937*^9, {
+   3.700416219454427*^9, 3.700416239485403*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossibleOrientation", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetOrientation", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossibleOrientation", "[", "]"}]}], " ", "//", 
+  "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.700415945469761*^9, 3.700415958107267*^9}, {
+   3.700416068668857*^9, 3.700416093519693*^9}, 3.700416182496542*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"up\"\>", ",", "\<\"down\"\>", ",", "\<\"gyro\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.7004162408724422`*^9}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/52/1\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/52/2\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/52/0\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.70041624087554*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Quick Capture", "Section",
+ CellChangeTimes->{{3.7004162542164593`*^9, 3.700416258216748*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.7004166014644213`*^9, 3.700416648848442*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossibleQuickCapture", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetQuickCapture", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossibleQuickCapture", "[", "]"}]}], "//", 
+  "TableForm"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSwitchQuickCaptureOn", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSwitchQuickCaptureOff", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.700416602521306*^9, 3.7004166405853252`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"on\"\>", ",", "\<\"off\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.700416641231607*^9, 3.700416649920405*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/54/1\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/54/0\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.700416641231607*^9, 3.700416649922658*^9}}],
+
+Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/setting/54/1\"\>"], "Output",
+ CellChangeTimes->{{3.700416641231607*^9, 3.700416649924325*^9}}],
+
+Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/setting/54/0\"\>"], "Output",
+ CellChangeTimes->{{3.700416641231607*^9, 3.7004166499326143`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["LED", "Section",
+ CellChangeTimes->{{3.700416870676838*^9, 3.7004168741573143`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.700417208900764*^9, 3.7004172093967247`*^9}}],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.700417209803249*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossibleLed", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetLed", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossibleLed", "[", "]"}]}], "//", "TableForm"}]}], "Input",\
+
+ CellChangeTimes->{{3.7004172107197933`*^9, 3.7004172420135307`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"off\"\>", ",", "\<\"2\"\>", ",", "\<\"4\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.700417242627776*^9}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/55/0\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/55/1\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/55/2\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.700417242629974*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Volume", "Section",
+ CellChangeTimes->{{3.700416870676838*^9, 3.7004168741573143`*^9}, {
+  3.700417266109056*^9, 3.7004172678126507`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.700417208900764*^9, 3.7004172093967247`*^9}}],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.700417209803249*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossibleVolume", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetVolume", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossibleVolume", "[", "]"}]}], "//", 
+  "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.7004172107197933`*^9, 3.700417284627721*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"off\"\>", ",", "\<\"70\"\>", ",", "\<\"100\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.700417242627776*^9, 3.700417285826713*^9}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/56/2\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/56/1\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/56/0\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.700417242627776*^9, 3.700417285830785*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["VideoMode", "Section",
+ CellChangeTimes->{{3.70041750430577*^9, 3.700417506017455*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.700417524567079*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossibleVideoMode", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetVideoMode", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossibleVideoMode", "[", "]"}]}], "//", 
+  "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.7004175253288193`*^9, 3.700417548716136*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"ntsc\"\>", ",", "\<\"pal\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.700417549021762*^9}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/57/0\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/57/1\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.700417549023918*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["LCD Display", "Section",
+ CellChangeTimes->{{3.700418587719689*^9, 3.700418589863783*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.700418671678626*^9, 3.700418673699547*^9}}],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.7004186740907803`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProSwitchLCDDisplayOn", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSwitchLCDDisplayOff", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.700418675007012*^9, 3.700418722653482*^9}}],
+
+Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/setting/72/1\"\>"], "Output",
+ CellChangeTimes->{3.70041868092931*^9, 3.700418723125154*^9}],
+
+Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/setting/72/0\"\>"], "Output",
+ CellChangeTimes->{3.70041868092931*^9, 3.700418723128221*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Auto Power off", "Section",
+ CellChangeTimes->{{3.7004187413628407`*^9, 3.700418747010726*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.700418752958221*^9, 3.7004187964401617`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossibleAutoPowerOff", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"goProSetAutoPowerOff", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"goProGetPossibleAutoPowerOff", "[", "]"}]}], "//", 
+  "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.7004187540203257`*^9, 3.700418779501436*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"never\"\>", ",", "\<\"1\"\>", ",", "\<\"2\"\>", 
+   ",", "\<\"3\"\>", ",", "\<\"5\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.70041878001726*^9, 3.7004187975850573`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/59/0\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/59/1\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/59/2\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/59/3\"\>"},
+     {"\<\"http://10.5.5.9/gp/gpControl/setting/59/4\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.70041878001726*^9, 3.70041879758916*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Locate", "Section",
+ CellChangeTimes->{{3.7004188756615868`*^9, 3.700418876541045*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.700419026787272*^9, 3.7004190317876863`*^9}}],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.700419032570887*^9, 3.700419066173534*^9, 
+  3.700419114341317*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProLocate", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProLocateStop", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.70041903346809*^9, 3.700419043568288*^9}}],
+
+Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/command/system/locate?p=1\"\>"]\
+, "Output",
+ CellChangeTimes->{{3.700419044235333*^9, 3.700419067300758*^9}, 
+   3.700419116532093*^9}],
+
+Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/command/system/locate?p=0\"\>"]\
+, "Output",
+ CellChangeTimes->{{3.700419044235333*^9, 3.700419067300758*^9}, 
+   3.700419116535536*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Delete", "Section",
+ CellChangeTimes->{{3.700419194003839*^9, 3.700419194716214*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.700419556864105*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProDeleteFile", "[", "\"\<file\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProDeleteLast", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProDeleteAll", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.700419558067335*^9, 3.700419602280381*^9}}],
+
+Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/command/storage/delete?p=file\"\
+\>"], "Output",
+ CellChangeTimes->{{3.7004195662666817`*^9, 3.7004196029560833`*^9}}],
+
+Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/command/storage/delete/last\"\>\
+"], "Output",
+ CellChangeTimes->{{3.7004195662666817`*^9, 3.700419602959612*^9}}],
+
+Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/command/storage/delete/all\"\>\
+"], "Output",
+ CellChangeTimes->{{3.7004195662666817`*^9, 3.700419602962885*^9}}]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -1564,26 +2820,291 @@ Cell[42399, 1252, 117, 1, 32, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[42565, 1259, 95, 1, 65, "Section"],
+Cell[42565, 1259, 152, 2, 65, "Section"],
 Cell[CellGroupData[{
-Cell[42685, 1264, 246, 3, 77, "Input"],
-Cell[42934, 1269, 81, 1, 32, "Output"]
+Cell[42742, 1265, 246, 3, 77, "Input"],
+Cell[42991, 1270, 156, 3, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[43052, 1275, 141, 2, 32, "Input"],
-Cell[43196, 1279, 133, 3, 34, "Output"]
+Cell[43184, 1278, 195, 3, 32, "Input"],
+Cell[43382, 1283, 207, 5, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[43366, 1287, 264, 7, 32, "Input"],
-Cell[43633, 1296, 694, 19, 62, "Output"]
+Cell[43626, 1293, 323, 8, 32, "Input"],
+Cell[43952, 1303, 768, 21, 48, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[44364, 1320, 137, 2, 32, "Input"],
-Cell[44504, 1324, 117, 1, 32, "Output"]
+Cell[44757, 1329, 190, 3, 32, "Input"],
+Cell[44950, 1334, 192, 3, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[44658, 1330, 138, 2, 32, "Input"],
-Cell[44799, 1334, 117, 1, 32, "Output"]
+Cell[45179, 1342, 192, 3, 32, "Input"],
+Cell[45374, 1347, 193, 3, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45616, 1356, 97, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[45738, 1361, 246, 3, 77, "Input"],
+Cell[45987, 1366, 104, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46128, 1372, 139, 2, 32, "Input"],
+Cell[46270, 1376, 195, 4, 34, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46502, 1385, 264, 7, 32, "Input"],
+Cell[46769, 1394, 895, 22, 102, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47713, 1422, 101, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[47839, 1427, 246, 3, 77, "Input"],
+Cell[48088, 1432, 82, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48207, 1438, 144, 2, 32, "Input"],
+Cell[48354, 1442, 176, 4, 34, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48567, 1451, 272, 7, 32, "Input"],
+Cell[48842, 1460, 814, 21, 84, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49705, 1487, 103, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[49833, 1492, 246, 3, 77, "Input"],
+Cell[50082, 1497, 131, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50250, 1504, 392, 9, 55, "Input"],
+Cell[50645, 1515, 226, 5, 34, "Output"],
+Cell[50874, 1522, 866, 22, 98, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51789, 1550, 111, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[51925, 1555, 246, 3, 77, "Input"],
+Cell[52174, 1560, 104, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52315, 1566, 431, 10, 55, "Input"],
+Cell[52749, 1578, 236, 5, 34, "Output"],
+Cell[52988, 1585, 996, 24, 152, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54033, 1615, 100, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[54158, 1620, 246, 3, 77, "Input"],
+Cell[54407, 1625, 82, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54526, 1631, 513, 11, 99, "Input"],
+Cell[55042, 1644, 134, 3, 34, "Output"],
+Cell[55179, 1649, 696, 19, 62, "Output"],
+Cell[55878, 1670, 120, 1, 32, "Output"],
+Cell[56001, 1673, 120, 1, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56170, 1680, 101, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[56296, 1685, 246, 3, 77, "Input"],
+Cell[56545, 1690, 82, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56664, 1696, 358, 9, 55, "Input"],
+Cell[57025, 1707, 152, 4, 34, "Output"],
+Cell[57180, 1713, 756, 20, 80, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[57985, 1739, 109, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[58119, 1744, 246, 3, 77, "Input"],
+Cell[58368, 1749, 104, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[58509, 1755, 382, 9, 55, "Input"],
+Cell[58894, 1766, 260, 5, 34, "Output"],
+Cell[59157, 1773, 1020, 24, 152, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[60226, 1803, 108, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[60359, 1808, 246, 3, 77, "Input"],
+Cell[60608, 1813, 104, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[60749, 1819, 370, 9, 55, "Input"],
+Cell[61122, 1830, 374, 7, 34, "Output"],
+Cell[61499, 1839, 1333, 29, 242, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62881, 1874, 107, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[63013, 1879, 246, 3, 77, "Input"],
+Cell[63262, 1884, 80, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[63379, 1890, 373, 9, 55, "Input"],
+Cell[63755, 1901, 176, 4, 34, "Output"],
+Cell[63934, 1907, 816, 21, 98, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[64799, 1934, 105, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[64929, 1939, 246, 3, 77, "Input"],
+Cell[65178, 1944, 82, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[65297, 1950, 367, 9, 55, "Input"],
+Cell[65667, 1961, 233, 5, 34, "Output"],
+Cell[65903, 1968, 999, 24, 152, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66951, 1998, 105, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[67081, 2003, 246, 3, 77, "Input"],
+Cell[67330, 2008, 84, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[67451, 2014, 534, 12, 99, "Input"],
+Cell[67988, 2028, 134, 3, 34, "Output"],
+Cell[68125, 2033, 696, 19, 62, "Output"],
+Cell[68824, 2054, 118, 1, 32, "Output"],
+Cell[68945, 2057, 118, 1, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[69112, 2064, 95, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[69232, 2069, 246, 3, 77, "Input"],
+Cell[69481, 2074, 84, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[69602, 2080, 340, 8, 55, "Input"],
+Cell[69945, 2090, 293, 6, 34, "Output"],
+Cell[70241, 2098, 1116, 26, 188, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[71406, 2130, 100, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[71531, 2135, 246, 3, 77, "Input"],
+Cell[71780, 2140, 182, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[71999, 2148, 423, 9, 55, "Input"],
+Cell[72425, 2159, 161, 4, 34, "Output"],
+Cell[72589, 2165, 755, 20, 80, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[73393, 2191, 100, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[73518, 2196, 246, 3, 77, "Input"],
+Cell[73767, 2201, 106, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[73910, 2207, 500, 10, 99, "Input"],
+Cell[74413, 2219, 158, 3, 34, "Output"],
+Cell[74574, 2224, 720, 19, 62, "Output"],
+Cell[75297, 2245, 142, 1, 32, "Output"],
+Cell[75442, 2248, 144, 1, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[75635, 2255, 90, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[75750, 2260, 314, 4, 77, "Input"],
+Cell[76067, 2266, 82, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[76186, 2272, 325, 8, 55, "Input"],
+Cell[76514, 2282, 154, 4, 34, "Output"],
+Cell[76671, 2288, 756, 20, 80, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[77476, 2314, 144, 2, 65, "Section"],
+Cell[CellGroupData[{
+Cell[77645, 2320, 314, 4, 77, "Input"],
+Cell[77962, 2326, 82, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[78081, 2332, 333, 8, 55, "Input"],
+Cell[78417, 2342, 179, 4, 34, "Output"],
+Cell[78599, 2348, 778, 20, 80, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[79426, 2374, 93, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[79544, 2379, 246, 3, 77, "Input"],
+Cell[79793, 2384, 82, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[79912, 2390, 342, 8, 55, "Input"],
+Cell[80257, 2400, 136, 3, 34, "Output"],
+Cell[80396, 2405, 696, 19, 62, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[81141, 2430, 96, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[81262, 2435, 312, 4, 77, "Input"],
+Cell[81577, 2441, 84, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[81698, 2447, 212, 3, 55, "Input"],
+Cell[81913, 2452, 139, 1, 32, "Output"],
+Cell[82055, 2455, 139, 1, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[82243, 2462, 101, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[82369, 2467, 246, 3, 77, "Input"],
+Cell[82618, 2472, 106, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[82761, 2478, 351, 8, 55, "Input"],
+Cell[83115, 2488, 218, 4, 34, "Output"],
+Cell[83336, 2494, 898, 22, 116, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[84283, 2522, 93, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[84401, 2527, 314, 4, 77, "Input"],
+Cell[84718, 2533, 129, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[84884, 2540, 190, 3, 55, "Input"],
+Cell[85077, 2545, 183, 3, 32, "Output"],
+Cell[85263, 2550, 183, 3, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[85495, 2559, 91, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[85611, 2564, 246, 3, 77, "Input"],
+Cell[85860, 2569, 82, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[85979, 2575, 274, 4, 77, "Input"],
+Cell[86256, 2581, 165, 2, 32, "Output"],
+Cell[86424, 2585, 161, 2, 32, "Output"],
+Cell[86588, 2589, 160, 2, 32, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
