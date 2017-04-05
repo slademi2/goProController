@@ -1,0 +1,173 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5766,        164]
+NotebookOptionsPosition[      3712,        112]
+NotebookOutlinePosition[      5509,        154]
+CellTagsIndexPosition[      5466,        151]
+WindowTitle->GoProController
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["GO PRO CONTROLLER GUIDE", "PacletNameCell"], Cell[TextData[Cell[
+    BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"GoProController/guide/GoProController\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["GoProController/guide/GoProController"]}, Visible -> 
+           False]]; SelectionMove[
+        DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/GoProController/guide/\
+GoProController.html"], StandardForm]], "Input", TextClipboardType -> 
+             "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$1818], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "GoProController/guide/GoProController", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["GoProController", "GuideTitle",
+ CellID->942062912],
+
+Cell["\<\
+GoProController is a library of functions used to control GoPro cameras. It \
+contains many functions to set every possible parameter of camera such as \
+resolution, FPS,  FOV, etc. It also contains functions for saving settings of \
+camera for later use.\
+\>", "GuideAbstract",
+ CellID->2001916300]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Reference"
+}], "GuideReferenceSection",
+ WholeCellGroupOpener->True],
+
+Cell["", "SectionHeaderSpacer"]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"GoProController",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "GuideColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2017, 4, 4, 18, 6, 39.735072}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Go Pro Controller Guide", "language" -> "en", "paclet" -> 
+    "GoProController", "status" -> "None", "summary" -> 
+    "GoProController is a library of functions used to control GoPro cameras. \
+It contains many functions to set every possible parameter of camera such as \
+resolution, FPS, FOV, etc. It also contains functions for saving settings of \
+camera for later use.", "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$1750, "title" -> 
+    "GoProController", "titlemodifier" -> "", "windowtitle" -> 
+    "GoProController", "type" -> "Guide", "uri" -> 
+    "GoProController/guide/GoProController"}, "SearchTextTranslated" -> ""},
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[587, 21, 2361, 55, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[2973, 80, 57, 1, 70, "GuideTitle",
+ CellID->942062912],
+Cell[3033, 83, 309, 6, 70, "GuideAbstract",
+ CellID->2001916300]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3379, 94, 257, 11, 70, "GuideReferenceSection"],
+Cell[3639, 107, 31, 0, 70, "SectionHeaderSpacer"]
+}, Open  ]],
+Cell[3685, 110, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

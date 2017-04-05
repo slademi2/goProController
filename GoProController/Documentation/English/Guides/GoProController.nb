@@ -1,0 +1,277 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6215,        269]
+NotebookOptionsPosition[      3642,        177]
+NotebookOutlinePosition[      4055,        193]
+CellTagsIndexPosition[      4012,        190]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.0", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Guide", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["GoProController", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["GoProController`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["GoProController/guide/GoProController", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1427428552],
+
+Cell["XXXX", "Keywords",
+ CellID->1251852827]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->795394057],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->802101],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->509823116],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->199884516],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->463951815],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->8237523],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->813936640],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["GoProController", "GuideTitle",
+ CellID->942062912],
+
+Cell["\<\
+GoProController is a library of functions used to control GoPro cameras. It \
+contains many functions to set every possible parameter of camera such as \
+resolution, FPS,  FOV, etc. It also contains functions for saving settings of \
+camera for later use.\
+\>", "GuideAbstract",
+ CellChangeTimes->{{3.7003106039868383`*^9, 3.700310749865992*^9}},
+ CellID->2001916300]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "GuideFunctionsSection",
+ CellID->1866139230],
+
+Cell[TextData[{
+ Cell[BoxData["XXXX"], "InlineGuideFunction"],
+ " \[LongDash] XXXX"
+}], "GuideText",
+ CellID->203374175],
+
+Cell[TextData[{
+ Cell[BoxData["XXXX"], "InlineGuideFunction"],
+ " \[LongDash] XXXX"
+}], "GuideText",
+ CellID->1463276848],
+
+Cell[CellGroupData[{
+
+Cell["\t", "GuideDelimiter",
+ CellID->311258892],
+
+Cell["XXXX . XXXX . ", "InlineGuideFunctionListing",
+ CellID->58033752]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "GuideTutorialsSection",
+ CellID->415694126],
+
+Cell["XXXX", "GuideTutorial",
+ CellID->806871991],
+
+Cell["XXXX", "GuideTutorial",
+ CellID->1885805579]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "GuideMoreAboutSection",
+ CellID->23220180],
+
+Cell["XXXX", "GuideMoreAbout",
+ CellID->1567025153],
+
+Cell["XXXX", "GuideMoreAbout",
+ CellID->252299663]
+}, Open  ]],
+
+Cell["Related Links", "GuideRelatedLinksSection",
+ CellID->415694148]
+},
+WindowSize->{700, 770},
+WindowMargins->{{415, Automatic}, {10, Automatic}},
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "GuidePageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 325, 14, 24, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[908, 38, 68, 1, 30, "CategorizationSection",
+ CellID->1122911449],
+Cell[979, 41, 78, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1060, 45, 88, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1151, 49, 85, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1239, 53, 82, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1358, 59, 56, 1, 20, "KeywordsSection",
+ CellID->1427428552],
+Cell[1417, 62, 45, 1, 70, "Keywords",
+ CellID->1251852827]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1499, 68, 53, 1, 20, "DetailsSection",
+ CellID->307771771],
+Cell[1555, 71, 63, 2, 70, "Details",
+ CellID->795394057],
+Cell[1621, 75, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[1693, 79, 63, 2, 70, "Details",
+ CellID->802101],
+Cell[1759, 83, 71, 2, 70, "Details",
+ CellID->509823116],
+Cell[1833, 87, 61, 2, 70, "Details",
+ CellID->199884516],
+Cell[1897, 91, 61, 2, 70, "Details",
+ CellID->463951815],
+Cell[1961, 95, 61, 2, 70, "Details",
+ CellID->8237523],
+Cell[2025, 99, 78, 2, 70, "Details",
+ CellID->813936640],
+Cell[2106, 103, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2210, 110, 57, 1, 78, "GuideTitle",
+ CellID->942062912],
+Cell[2270, 113, 377, 7, 59, "GuideAbstract",
+ CellID->2001916300]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2684, 125, 54, 1, 72, "GuideFunctionsSection",
+ CellID->1866139230],
+Cell[2741, 128, 120, 4, 23, "GuideText",
+ CellID->203374175],
+Cell[2864, 134, 121, 4, 23, "GuideText",
+ CellID->1463276848],
+Cell[CellGroupData[{
+Cell[3010, 142, 48, 1, 26, "GuideDelimiter",
+ CellID->311258892],
+Cell[3061, 145, 71, 1, 22, "InlineGuideFunctionListing",
+ CellID->58033752]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3181, 152, 62, 1, 74, "GuideTutorialsSection",
+ CellID->415694126],
+Cell[3246, 155, 49, 1, 23, "GuideTutorial",
+ CellID->806871991],
+Cell[3298, 158, 50, 1, 23, "GuideTutorial",
+ CellID->1885805579]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3385, 164, 62, 1, 74, "GuideMoreAboutSection",
+ CellID->23220180],
+Cell[3450, 167, 51, 1, 23, "GuideMoreAbout",
+ CellID->1567025153],
+Cell[3504, 170, 50, 1, 23, "GuideMoreAbout",
+ CellID->252299663]
+}, Open  ]],
+Cell[3569, 174, 69, 1, 74, "GuideRelatedLinksSection",
+ CellID->415694148]
+}
+]
+*)
+
