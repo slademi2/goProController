@@ -172,10 +172,10 @@ goProGetPossibleProtune::usage =
     "goProGetPossibleProtune[ ] returns possible values for protune mode."
 goProSetProtune::usage =
     "goProSetProtune[ _String] switch protune mode on/off."
-goProSetProtuneOn::usage =
-    "goProSetProtuneOn[ ] Switch protune mode on."
-goProSetProtuneOff::usage =
-    "goProSetProtuneOff[ ] Switch protune mode off."
+goProSwitchProtuneOn::usage =
+    "goProSwitchProtuneOn[ ] Switch protune mode on."
+goProSwitchProtuneOff::usage =
+    "goProSwitchProtuneOff[ ] Switch protune mode off."
     
     
 
@@ -645,9 +645,9 @@ goProGetPossibleProtune[] :=
     ptPossible
 goProSetProtune[param_String] :=
     execute[goProMakeCommand["camera","PT",ptToCode[[ToLowerCase[param] ]]]]
-goProSetProtuneOn[] :=
+goProSwitchProtuneOn[] :=
     goProSetProtune["on"] 
-goProSetProtuneOff[] :=
+goProSwitchProtuneOff[] :=
     goProSetProtune["off"] 
 
 

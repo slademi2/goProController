@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    101332,       3106]
-NotebookOptionsPosition[     86788,       2596]
-NotebookOutlinePosition[     87127,       2611]
-CellTagsIndexPosition[     87084,       2608]
+NotebookDataLength[    248093,       6491]
+NotebookOptionsPosition[    230258,       5884]
+NotebookOutlinePosition[    230597,       5899]
+CellTagsIndexPosition[    230554,       5896]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -36,33 +36,659 @@ Cell[BoxData[{
 
 Cell[CellGroupData[{
 
-Cell["Shutter", "Section",
- CellChangeTimes->{{3.70031399338439*^9, 3.700313994392972*^9}}],
+Cell["Shutter (tested)", "Section",
+ CellChangeTimes->{{3.70031399338439*^9, 3.700313994392972*^9}, {
+  3.70055119029309*^9, 3.700551195596799*^9}}],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[{
- RowBox[{"goProShutter", "[", "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProStop", "[", "]"}]}], "Input",
+Cell[BoxData[
+ RowBox[{"goProShutter", "[", "]"}]], "Input",
  CellChangeTimes->{{3.700313668970173*^9, 3.700313677123748*^9}, {
-  3.700313987355892*^9, 3.7003139875663958`*^9}}],
+  3.700313987355892*^9, 3.7003139875663958`*^9}, {3.700550436562448*^9, 
+  3.700550437455558*^9}}],
 
-Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/command/shutter?p=1\"\>"], \
-"Output",
- CellChangeTimes->{{3.7003136936386747`*^9, 3.700313710719597*^9}, 
-   3.700313849966147*^9, {3.700313982814271*^9, 3.700313988011145*^9}}],
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["HTTPResponse",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False}, 
+    PanelBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->GrayLevel[1],
+               FrontFaceColor->GrayLevel[1],
+               BackFaceColor->GrayLevel[1],
+               GraphicsColor->GrayLevel[1],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FrontFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               BackFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               GraphicsColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{CloudObject`Private`file$ = 
+             FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:44:49 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:44:49 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{123, 125, 10}], 
+                Association[
+                "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                   "Date", "Fri, 07 Apr 2017 11:44:49 GMT"}, {
+                   "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                   "Content-type", "application/json\n"}}, "StatusCode" -> 
+                 200, "Cookies" -> {}, "ContentType" -> "application/json\n"],
+                 CharacterEncoding -> None], "BodyBytes"]]; 
+            Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/json\\n\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+      GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->GrayLevel[1],
+               FrontFaceColor->GrayLevel[1],
+               BackFaceColor->GrayLevel[1],
+               GraphicsColor->GrayLevel[1],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FrontFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               BackFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               GraphicsColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{
+            CloudObject`Private`file$ = FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:44:49 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:44:49 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{123, 125, 10}], 
+                Association[
+                "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                   "Date", "Fri, 07 Apr 2017 11:44:49 GMT"}, {
+                   "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                   "Content-type", "application/json\n"}}, "StatusCode" -> 
+                 200, "Cookies" -> {}, "ContentType" -> "application/json\n"],
+                 CharacterEncoding -> None], "BodyBytes"]]; 
+            Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/json\\n\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open$$],
+      ImageSize->Automatic],
+     BaselinePosition->Baseline],
+    DynamicModuleValues:>{}], "]"}],
+  HTTPResponse[
+   ByteArray[{123, 125, 10}], 
+   Association[
+   "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+      "Date", "Fri, 07 Apr 2017 11:44:49 GMT"}, {
+      "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+      "Content-type", "application/json\n"}}, "StatusCode" -> 200, 
+    "Cookies" -> {}, "ContentType" -> "application/json\n"], 
+   CharacterEncoding -> None],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.700550439634317*^9, 3.70055047194866*^9}]
+}, Open  ]],
 
-Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/command/shutter?p=0\"\>"], \
-"Output",
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProStop", "[", "]"}]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["HTTPResponse",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False}, 
+    PanelBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->GrayLevel[1],
+               FrontFaceColor->GrayLevel[1],
+               BackFaceColor->GrayLevel[1],
+               GraphicsColor->GrayLevel[1],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FrontFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               BackFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               GraphicsColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{CloudObject`Private`file$ = 
+             FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:44:54 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:44:54 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{123, 125, 10}], 
+                Association[
+                "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                   "Date", "Fri, 07 Apr 2017 11:44:54 GMT"}, {
+                   "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                   "Content-type", "application/json\n"}}, "StatusCode" -> 
+                 200, "Cookies" -> {}, "ContentType" -> "application/json\n"],
+                 CharacterEncoding -> None], "BodyBytes"]]; 
+            Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/json\\n\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+      GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->GrayLevel[1],
+               FrontFaceColor->GrayLevel[1],
+               BackFaceColor->GrayLevel[1],
+               GraphicsColor->GrayLevel[1],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FrontFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               BackFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               GraphicsColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{
+            CloudObject`Private`file$ = FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:44:54 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:44:54 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{123, 125, 10}], 
+                Association[
+                "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                   "Date", "Fri, 07 Apr 2017 11:44:54 GMT"}, {
+                   "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                   "Content-type", "application/json\n"}}, "StatusCode" -> 
+                 200, "Cookies" -> {}, "ContentType" -> "application/json\n"],
+                 CharacterEncoding -> None], "BodyBytes"]]; 
+            Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/json\\n\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open$$],
+      ImageSize->Automatic],
+     BaselinePosition->Baseline],
+    DynamicModuleValues:>{}], "]"}],
+  HTTPResponse[
+   ByteArray[{123, 125, 10}], 
+   Association[
+   "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+      "Date", "Fri, 07 Apr 2017 11:44:54 GMT"}, {
+      "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+      "Content-type", "application/json\n"}}, "StatusCode" -> 200, 
+    "Cookies" -> {}, "ContentType" -> "application/json\n"], 
+   CharacterEncoding -> None],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
  CellChangeTimes->{{3.7003136936386747`*^9, 3.700313710719597*^9}, 
-   3.700313849966147*^9, {3.700313982814271*^9, 3.700313988013928*^9}}]
+   3.700313849966147*^9, {3.700313982814271*^9, 3.700313988011145*^9}, 
+   3.700550477113428*^9}]
 }, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["White Balance", "Section",
- CellChangeTimes->{{3.700314661722403*^9, 3.700314664660573*^9}}],
+Cell["White Balance (tested)", "Section",
+ CellChangeTimes->{{3.700314661722403*^9, 3.700314664660573*^9}, {
+  3.700551201573101*^9, 3.7005512039892817`*^9}}],
 
 Cell[BoxData[{
  RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
@@ -82,8 +708,11 @@ Cell[BoxData[
    ",", "\<\"4800k\"\>", ",", "\<\"5500k\"\>", ",", "\<\"6000k\"\>", 
    ",", "\<\"6500k\"\>", ",", "\<\"native\"\>"}], "}"}]], "Output",
  CellChangeTimes->{3.7003146729278*^9, 3.700314713812029*^9, 
-  3.700321387588513*^9, 3.70032148318678*^9}]
+  3.700321387588513*^9, 3.70032148318678*^9, 3.7005512089977217`*^9}]
 }, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.700551212833338*^9, 3.700551215701563*^9}}],
 
 Cell[CellGroupData[{
 
@@ -237,6 +866,350 @@ Cell[BoxData[
    TableForm[BoxForm`e$]]]], "Output",
  CellChangeTimes->{{3.700320686893107*^9, 3.700320692596792*^9}, 
    3.700321513604298*^9, 3.700321631675137*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Test on camera", "Subsection",
+ CellChangeTimes->{{3.7005512399898643`*^9, 3.700551252277689*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGetPossibleWhiteBalance", "[", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"auto\"\>", ",", "\<\"3000k\"\>", ",", "\<\"4000k\"\>", 
+   ",", "\<\"4800k\"\>", ",", "\<\"5500k\"\>", ",", "\<\"6000k\"\>", 
+   ",", "\<\"6500k\"\>", ",", "\<\"native\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.7005512751668367`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProSetPhotoWhiteBalance", "[", 
+  RowBox[{
+   RowBox[{"goProGetPossibleWhiteBalance", "[", "]"}], "\[LeftDoubleBracket]",
+    "1", "\[RightDoubleBracket]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.700551256606505*^9, 3.70055127991908*^9}, {
+  3.700551317440712*^9, 3.700551343200371*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["HTTPResponse",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False}, 
+    PanelBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->GrayLevel[1],
+               FrontFaceColor->GrayLevel[1],
+               BackFaceColor->GrayLevel[1],
+               GraphicsColor->GrayLevel[1],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FrontFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               BackFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               GraphicsColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{CloudObject`Private`file$ = 
+             FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:59:51 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:59:51 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{123, 125, 10}], 
+                Association[
+                "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                   "Date", "Fri, 07 Apr 2017 11:59:51 GMT"}, {
+                   "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                   "Content-type", "application/json\n"}}, "StatusCode" -> 
+                 200, "Cookies" -> {}, "ContentType" -> "application/json\n"],
+                 CharacterEncoding -> None], "BodyBytes"]]; 
+            Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/json\\n\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+      GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->GrayLevel[1],
+               FrontFaceColor->GrayLevel[1],
+               BackFaceColor->GrayLevel[1],
+               GraphicsColor->GrayLevel[1],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FrontFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               BackFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               GraphicsColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{
+            CloudObject`Private`file$ = FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:59:51 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:59:51 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{123, 125, 10}], 
+                Association[
+                "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                   "Date", "Fri, 07 Apr 2017 11:59:51 GMT"}, {
+                   "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                   "Content-type", "application/json\n"}}, "StatusCode" -> 
+                 200, "Cookies" -> {}, "ContentType" -> "application/json\n"],
+                 CharacterEncoding -> None], "BodyBytes"]]; 
+            Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/json\\n\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open$$],
+      ImageSize->Automatic],
+     BaselinePosition->Baseline],
+    DynamicModuleValues:>{}], "]"}],
+  HTTPResponse[
+   ByteArray[{123, 125, 10}], 
+   Association[
+   "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+      "Date", "Fri, 07 Apr 2017 11:59:51 GMT"}, {
+      "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+      "Content-type", "application/json\n"}}, "StatusCode" -> 200, 
+    "Cookies" -> {}, "ContentType" -> "application/json\n"], 
+   CharacterEncoding -> None],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{
+  3.7005512812523737`*^9, {3.7005513191738243`*^9, 3.700551374118477*^9}}]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]],
 
@@ -2568,28 +3541,2343 @@ Cell[BoxData[{
  RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]}], "Input"],
 
 Cell[BoxData["\<\"Black\"\>"], "Output",
- CellChangeTimes->{3.700419556864105*^9}]
+ CellChangeTimes->{3.700419556864105*^9, 3.700551165956307*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProDeleteLast", "[", "]"}]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["HTTPResponse",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False}, 
+    PanelBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->GrayLevel[1],
+               FrontFaceColor->GrayLevel[1],
+               BackFaceColor->GrayLevel[1],
+               GraphicsColor->GrayLevel[1],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FrontFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               BackFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               GraphicsColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{CloudObject`Private`file$ = 
+             FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:45:45 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:45:45 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{123, 125, 10}], 
+                Association[
+                "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                   "Date", "Fri, 07 Apr 2017 11:45:45 GMT"}, {
+                   "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                   "Content-type", "application/json\n"}}, "StatusCode" -> 
+                 200, "Cookies" -> {}, "ContentType" -> "application/json\n"],
+                 CharacterEncoding -> None], "BodyBytes"]]; 
+            Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/json\\n\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+      GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->GrayLevel[1],
+               FrontFaceColor->GrayLevel[1],
+               BackFaceColor->GrayLevel[1],
+               GraphicsColor->GrayLevel[1],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FrontFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               BackFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               GraphicsColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{
+            CloudObject`Private`file$ = FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:45:45 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:45:45 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{123, 125, 10}], 
+                Association[
+                "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                   "Date", "Fri, 07 Apr 2017 11:45:45 GMT"}, {
+                   "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                   "Content-type", "application/json\n"}}, "StatusCode" -> 
+                 200, "Cookies" -> {}, "ContentType" -> "application/json\n"],
+                 CharacterEncoding -> None], "BodyBytes"]]; 
+            Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/json\\n\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open$$],
+      ImageSize->Automatic],
+     BaselinePosition->Baseline],
+    DynamicModuleValues:>{}], "]"}],
+  HTTPResponse[
+   ByteArray[{123, 125, 10}], 
+   Association[
+   "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+      "Date", "Fri, 07 Apr 2017 11:45:45 GMT"}, {
+      "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+      "Content-type", "application/json\n"}}, "StatusCode" -> 200, 
+    "Cookies" -> {}, "ContentType" -> "application/json\n"], 
+   CharacterEncoding -> None],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{{3.700550512860409*^9, 3.700550528619582*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProDeleteAll", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.700550652966238*^9, 3.700550660666644*^9}, {
+  3.7005508025022717`*^9, 3.700550804168745*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["HTTPResponse",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False}, 
+    PanelBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->GrayLevel[1],
+               FrontFaceColor->GrayLevel[1],
+               BackFaceColor->GrayLevel[1],
+               GraphicsColor->GrayLevel[1],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FrontFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               BackFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               GraphicsColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{CloudObject`Private`file$ = 
+             FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:50:23 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:50:23 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{123, 125, 10}], 
+                Association[
+                "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                   "Date", "Fri, 07 Apr 2017 11:50:23 GMT"}, {
+                   "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                   "Content-type", "application/json\n"}}, "StatusCode" -> 
+                 200, "Cookies" -> {}, "ContentType" -> "application/json\n"],
+                 CharacterEncoding -> None], "BodyBytes"]]; 
+            Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/json\\n\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+      GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->GrayLevel[1],
+               FrontFaceColor->GrayLevel[1],
+               BackFaceColor->GrayLevel[1],
+               GraphicsColor->GrayLevel[1],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FrontFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               BackFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               GraphicsColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{
+            CloudObject`Private`file$ = FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:50:23 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 11:50:23 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{123, 125, 10}], 
+                Association[
+                "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                   "Date", "Fri, 07 Apr 2017 11:50:23 GMT"}, {
+                   "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                   "Content-type", "application/json\n"}}, "StatusCode" -> 
+                 200, "Cookies" -> {}, "ContentType" -> "application/json\n"],
+                 CharacterEncoding -> None], "BodyBytes"]]; 
+            Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/json\\n\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open$$],
+      ImageSize->Automatic],
+     BaselinePosition->Baseline],
+    DynamicModuleValues:>{}], "]"}],
+  HTTPResponse[
+   ByteArray[{123, 125, 10}], 
+   Association[
+   "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+      "Date", "Fri, 07 Apr 2017 11:50:23 GMT"}, {
+      "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+      "Content-type", "application/json\n"}}, "StatusCode" -> 200, 
+    "Cookies" -> {}, "ContentType" -> "application/json\n"], 
+   CharacterEncoding -> None],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.7005508064826727`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Camera Status", "Title",
+ CellChangeTimes->{{3.700551414860507*^9, 3.700551422368813*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"URLExecute", "[", 
+  RowBox[{
+  "HTTPRequest", "[", "\"\<http://10.5.5.9/gp/gpControl/status\>\"", "]"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"status", "=", 
+  RowBox[{
+   RowBox[{"Association", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"URLExecute", "[", 
+       RowBox[{
+       "HTTPRequest", "[", "\"\<http://10.5.5.9/gp/gpControl/status\>\"", 
+        "]"}], "]"}], "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+     "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], "]"}], 
+   "\[LeftDoubleBracket]", "\"\<68\>\"", 
+   "\[RightDoubleBracket]"}]}]}], "Input",
+ CellChangeTimes->{{3.7005516085025997`*^9, 3.7005516608706503`*^9}, {
+   3.700551733697291*^9, 3.7005517497204437`*^9}, 3.700551841204311*^9, {
+   3.700552057839951*^9, 3.700552058149494*^9}, {3.700552090128687*^9, 
+   3.700552126231368*^9}, {3.700553808044635*^9, 3.700553808484066*^9}, {
+   3.700554888506468*^9, 3.700554898650775*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"status\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\<\"42\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"14\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"6\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"29\"\>", "\[Rule]", "\<\"\"\>"}], ",", 
+      RowBox[{"\<\"57\"\>", "\[Rule]", "4792803"}], ",", 
+      RowBox[{"\<\"20\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"1\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"56\"\>", "\[Rule]", "4"}], ",", 
+      RowBox[{"\<\"28\"\>", "\[Rule]", "2"}], ",", 
+      RowBox[{"\<\"9\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"19\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"47\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"10\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"54\"\>", "\[Rule]", "62176000"}], ",", 
+      RowBox[{"\<\"26\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"58\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"21\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"2\"\>", "\[Rule]", "3"}], ",", 
+      RowBox[{"\<\"48\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"11\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"8\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"55\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"27\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"59\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"22\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"3\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"23\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"4\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"32\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"60\"\>", "\[Rule]", "500"}], ",", 
+      RowBox[{"\<\"44\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"16\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"41\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"13\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"43\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"15\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"33\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"61\"\>", "\[Rule]", "2"}], ",", 
+      RowBox[{"\<\"45\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"17\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"24\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"30\"\>", "\[Rule]", "\<\"RadkovoGoPro\"\>"}], ",", 
+      RowBox[{"\<\"31\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"62\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"34\"\>", "\[Rule]", "16607"}], ",", 
+      RowBox[{"\<\"63\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"35\"\>", "\[Rule]", "10111"}], ",", 
+      RowBox[{"\<\"64\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"36\"\>", "\[Rule]", "4"}], ",", 
+      RowBox[{"\<\"65\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"37\"\>", "\[Rule]", "4"}], ",", 
+      RowBox[{"\<\"66\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"38\"\>", "\[Rule]", "6"}], ",", 
+      RowBox[{"\<\"67\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"39\"\>", "\[Rule]", "4"}], ",", 
+      RowBox[{"\<\"40\"\>", "\[Rule]", "\<\"%11%04%07%0C%3A%25\"\>"}], ",", 
+      RowBox[{"\<\"46\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"49\"\>", "\[Rule]", "0"}]}], "}"}]}], ",", 
+   RowBox[{"\<\"settings\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\<\"29\"\>", "\[Rule]", "5"}], ",", 
+      RowBox[{"\<\"57\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"20\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"1\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"56\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"28\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"9\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"10\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"58\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"21\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"2\"\>", "\[Rule]", "9"}], ",", 
+      RowBox[{"\<\"11\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"59\"\>", "\[Rule]", "3"}], ",", 
+      RowBox[{"\<\"50\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"22\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"3\"\>", "\[Rule]", "8"}], ",", 
+      RowBox[{"\<\"77\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"49\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"12\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"51\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"23\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"4\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"13\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"80\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"52\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"24\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"5\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"81\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"53\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"25\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"6\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"82\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"54\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"26\"\>", "\[Rule]", "4"}], ",", 
+      RowBox[{"\<\"7\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"55\"\>", "\[Rule]", "2"}], ",", 
+      RowBox[{"\<\"27\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"8\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"70\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"14\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"15\"\>", "\[Rule]", "4"}], ",", 
+      RowBox[{"\<\"32\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"60\"\>", "\[Rule]", "8"}], ",", 
+      RowBox[{"\<\"72\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"16\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"33\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"61\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"73\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"17\"\>", "\[Rule]", "2"}], ",", 
+      RowBox[{"\<\"34\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"62\"\>", "\[Rule]", "700000"}], ",", 
+      RowBox[{"\<\"74\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"18\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"75\"\>", "\[Rule]", "3"}], ",", 
+      RowBox[{"\<\"19\"\>", "\[Rule]", "6"}], ",", 
+      RowBox[{"\<\"30\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"31\"\>", "\[Rule]", "3"}], ",", 
+      RowBox[{"\<\"63\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"35\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"64\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"36\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"37\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"38\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"39\"\>", "\[Rule]", "4"}], ",", 
+      RowBox[{"\<\"68\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"69\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"76\"\>", "\[Rule]", "3"}], ",", 
+      RowBox[{"\<\"78\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"79\"\>", "\[Rule]", "0"}]}], "}"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.7005515848948317`*^9, 3.700551661553982*^9}, {
+   3.7005517353011837`*^9, 3.7005517506323433`*^9}, 3.7005518430318947`*^9, 
+   3.700552059197028*^9, {3.7005520917328176`*^9, 3.700552126812971*^9}, 
+   3.7005538092424717`*^9, {3.7005548914282293`*^9, 3.70055489914819*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{{3.7005515848948317`*^9, 3.700551661553982*^9}, {
+   3.7005517353011837`*^9, 3.7005517506323433`*^9}, 3.7005518430318947`*^9, 
+   3.700552059197028*^9, {3.7005520917328176`*^9, 3.700552126812971*^9}, 
+   3.7005538092424717`*^9, {3.7005548914282293`*^9, 3.700554899276669*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["CameraStatus", "Subsection",
+ CellChangeTimes->{{3.700555214233036*^9, 3.7005552167368097`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGetCameraStatus", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.700553141677725*^9, 3.700553142573969*^9}}],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{{3.700553143030244*^9, 3.700553193067363*^9}, {
+   3.700553223109528*^9, 3.700553243240241*^9}, {3.700553282468768*^9, 
+   3.700553317395961*^9}, {3.700553362300679*^9, 3.70055346782504*^9}, {
+   3.70055349826903*^9, 3.700553517255575*^9}, {3.7005539974615393`*^9, 
+   3.700554067630355*^9}, 3.700554099543728*^9, 3.70055442592624*^9, 
+   3.7005544656880703`*^9, {3.700554527492841*^9, 3.700554542063827*^9}, {
+   3.700554579401455*^9, 3.700554598754222*^9}, {3.700554780642045*^9, 
+   3.7005548245636053`*^9}, 3.700555204387754*^9, 3.70055571941782*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Recording: No\"\>"], "Print",
+ CellChangeTimes->{{3.700553143439951*^9, 3.7005532436977177`*^9}, {
+   3.700553283135921*^9, 3.70055331791468*^9}, {3.700553362834279*^9, 
+   3.700553468355982*^9}, {3.7005534987712307`*^9, 3.700553517790689*^9}, {
+   3.7005539982997293`*^9, 3.700554068440345*^9}, 3.700554100318356*^9, 
+   3.700554427378972*^9, 3.700554467069277*^9, {3.7005545286200542`*^9, 
+   3.700554543232395*^9}, {3.700554580562819*^9, 3.700554599822629*^9}, {
+   3.7005547820406218`*^9, 3.7005548259185133`*^9}, 3.700555205627033*^9, 
+   3.700555720807378*^9}],
+
+Cell[BoxData["\<\"Baterry Level: full\"\>"], "Print",
+ CellChangeTimes->{{3.700553143439951*^9, 3.7005532436977177`*^9}, {
+   3.700553283135921*^9, 3.70055331791468*^9}, {3.700553362834279*^9, 
+   3.700553468355982*^9}, {3.7005534987712307`*^9, 3.700553517790689*^9}, {
+   3.7005539982997293`*^9, 3.700554068440345*^9}, 3.700554100318356*^9, 
+   3.700554427378972*^9, 3.700554467069277*^9, {3.7005545286200542`*^9, 
+   3.700554543232395*^9}, {3.700554580562819*^9, 3.700554599822629*^9}, {
+   3.7005547820406218`*^9, 3.7005548259185133`*^9}, 3.700555205627033*^9, 
+   3.7005557208108797`*^9}],
+
+Cell[BoxData["\<\"Camera Mode: Video - Video\"\>"], "Print",
+ CellChangeTimes->{{3.700553143439951*^9, 3.7005532436977177`*^9}, {
+   3.700553283135921*^9, 3.70055331791468*^9}, {3.700553362834279*^9, 
+   3.700553468355982*^9}, {3.7005534987712307`*^9, 3.700553517790689*^9}, {
+   3.7005539982997293`*^9, 3.700554068440345*^9}, 3.700554100318356*^9, 
+   3.700554427378972*^9, 3.700554467069277*^9, {3.7005545286200542`*^9, 
+   3.700554543232395*^9}, {3.700554580562819*^9, 3.700554599822629*^9}, {
+   3.7005547820406218`*^9, 3.7005548259185133`*^9}, 3.700555205627033*^9, 
+   3.700555720814291*^9}],
+
+Cell[BoxData["\<\"Remaining Photos: 16607\"\>"], "Print",
+ CellChangeTimes->{{3.700553143439951*^9, 3.7005532436977177`*^9}, {
+   3.700553283135921*^9, 3.70055331791468*^9}, {3.700553362834279*^9, 
+   3.700553468355982*^9}, {3.7005534987712307`*^9, 3.700553517790689*^9}, {
+   3.7005539982997293`*^9, 3.700554068440345*^9}, 3.700554100318356*^9, 
+   3.700554427378972*^9, 3.700554467069277*^9, {3.7005545286200542`*^9, 
+   3.700554543232395*^9}, {3.700554580562819*^9, 3.700554599822629*^9}, {
+   3.7005547820406218`*^9, 3.7005548259185133`*^9}, 3.700555205627033*^9, 
+   3.700555720818318*^9}],
+
+Cell[BoxData["\<\"Remaining Video time: 10111s\"\>"], "Print",
+ CellChangeTimes->{{3.700553143439951*^9, 3.7005532436977177`*^9}, {
+   3.700553283135921*^9, 3.70055331791468*^9}, {3.700553362834279*^9, 
+   3.700553468355982*^9}, {3.7005534987712307`*^9, 3.700553517790689*^9}, {
+   3.7005539982997293`*^9, 3.700554068440345*^9}, 3.700554100318356*^9, 
+   3.700554427378972*^9, 3.700554467069277*^9, {3.7005545286200542`*^9, 
+   3.700554543232395*^9}, {3.700554580562819*^9, 3.700554599822629*^9}, {
+   3.7005547820406218`*^9, 3.7005548259185133`*^9}, 3.700555205627033*^9, 
+   3.7005557208223753`*^9}],
+
+Cell[BoxData["\<\"Number of Photo Batches taken: 4\"\>"], "Print",
+ CellChangeTimes->{{3.700553143439951*^9, 3.7005532436977177`*^9}, {
+   3.700553283135921*^9, 3.70055331791468*^9}, {3.700553362834279*^9, 
+   3.700553468355982*^9}, {3.7005534987712307`*^9, 3.700553517790689*^9}, {
+   3.7005539982997293`*^9, 3.700554068440345*^9}, 3.700554100318356*^9, 
+   3.700554427378972*^9, 3.700554467069277*^9, {3.7005545286200542`*^9, 
+   3.700554543232395*^9}, {3.700554580562819*^9, 3.700554599822629*^9}, {
+   3.7005547820406218`*^9, 3.7005548259185133`*^9}, 3.700555205627033*^9, 
+   3.700555720826144*^9}],
+
+Cell[BoxData["\<\"Number of Photo taken: 6\"\>"], "Print",
+ CellChangeTimes->{{3.700553143439951*^9, 3.7005532436977177`*^9}, {
+   3.700553283135921*^9, 3.70055331791468*^9}, {3.700553362834279*^9, 
+   3.700553468355982*^9}, {3.7005534987712307`*^9, 3.700553517790689*^9}, {
+   3.7005539982997293`*^9, 3.700554068440345*^9}, 3.700554100318356*^9, 
+   3.700554427378972*^9, 3.700554467069277*^9, {3.7005545286200542`*^9, 
+   3.700554543232395*^9}, {3.700554580562819*^9, 3.700554599822629*^9}, {
+   3.7005547820406218`*^9, 3.7005548259185133`*^9}, 3.700555205627033*^9, 
+   3.700555720829645*^9}],
+
+Cell[BoxData["\<\"Number of Video taken: 4\"\>"], "Print",
+ CellChangeTimes->{{3.700553143439951*^9, 3.7005532436977177`*^9}, {
+   3.700553283135921*^9, 3.70055331791468*^9}, {3.700553362834279*^9, 
+   3.700553468355982*^9}, {3.7005534987712307`*^9, 3.700553517790689*^9}, {
+   3.7005539982997293`*^9, 3.700554068440345*^9}, 3.700554100318356*^9, 
+   3.700554427378972*^9, 3.700554467069277*^9, {3.7005545286200542`*^9, 
+   3.700554543232395*^9}, {3.700554580562819*^9, 3.700554599822629*^9}, {
+   3.7005547820406218`*^9, 3.7005548259185133`*^9}, 3.700555205627033*^9, 
+   3.700555720833138*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Camera Settings", "Subsection",
+ CellChangeTimes->{{3.700555220417108*^9, 3.700555224601008*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGetCameraSettings", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.7005552287548723`*^9, 3.7005552323380117`*^9}, 
+   3.7005558140814466`*^9}],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{{3.700555290877643*^9, 3.700555311243361*^9}, {
+   3.7005557252203817`*^9, 3.700555729837839*^9}, 3.700555760271883*^9, {
+   3.700555809226433*^9, 3.700555874812777*^9}, 3.700556020938342*^9, 
+   3.7005561565710077`*^9, {3.700556207177123*^9, 3.7005562200847588`*^9}, 
+   3.700556340832644*^9, {3.700556383212697*^9, 3.7005564047933817`*^9}, 
+   3.7005566805459843`*^9, 3.700562358189207*^9, 3.700562481497752*^9, {
+   3.700562567860572*^9, 3.700562657776951*^9}, {3.7005627132011557`*^9, 
+   3.700562776021677*^9}, 3.700563200458126*^9, 3.7005632740085506`*^9, 
+   3.7005633611850243`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"20\"\>"], "Print",
+ CellChangeTimes->{{3.700555291020319*^9, 3.700555311368585*^9}, {
+   3.700555725503221*^9, 3.7005557300949574`*^9}, 3.700555760538947*^9, {
+   3.7005558094788*^9, 3.700555875038764*^9}, 3.7005560213125134`*^9, 
+   3.700556156987793*^9, {3.700556207549021*^9, 3.700556220470376*^9}, 
+   3.700556341406035*^9, {3.70055638372655*^9, 3.700556405346455*^9}, 
+   3.700556681263132*^9, 3.700562358988902*^9, 3.70056248231251*^9, {
+   3.7005625686850557`*^9, 3.700562658588491*^9}, {3.700562714168853*^9, 
+   3.700562776980618*^9}, 3.700563201390539*^9, 3.7005632749481297`*^9, 
+   3.700563362149706*^9}],
+
+Cell[BoxData["\<\"Video Settings:\"\>"], "Print",
+ CellChangeTimes->{{3.700555291020319*^9, 3.700555311368585*^9}, {
+   3.700555725503221*^9, 3.7005557300949574`*^9}, 3.700555760538947*^9, {
+   3.7005558094788*^9, 3.700555875038764*^9}, 3.7005560213125134`*^9, 
+   3.700556156987793*^9, {3.700556207549021*^9, 3.700556220470376*^9}, 
+   3.700556341406035*^9, {3.70055638372655*^9, 3.700556405346455*^9}, 
+   3.700556681263132*^9, 3.700562358988902*^9, 3.70056248231251*^9, {
+   3.7005625686850557`*^9, 3.700562658588491*^9}, {3.700562714168853*^9, 
+   3.700562776980618*^9}, 3.700563201390539*^9, 3.7005632749481297`*^9, 
+   3.700563362153039*^9}],
+
+Cell[BoxData["\<\"\\t\\tCurrent Mode: TimeLapse Video\"\>"], "Print",
+ CellChangeTimes->{{3.700555291020319*^9, 3.700555311368585*^9}, {
+   3.700555725503221*^9, 3.7005557300949574`*^9}, 3.700555760538947*^9, {
+   3.7005558094788*^9, 3.700555875038764*^9}, 3.7005560213125134`*^9, 
+   3.700556156987793*^9, {3.700556207549021*^9, 3.700556220470376*^9}, 
+   3.700556341406035*^9, {3.70055638372655*^9, 3.700556405346455*^9}, 
+   3.700556681263132*^9, 3.700562358988902*^9, 3.70056248231251*^9, {
+   3.7005625686850557`*^9, 3.700562658588491*^9}, {3.700562714168853*^9, 
+   3.700562776980618*^9}, 3.700563201390539*^9, 3.7005632749481297`*^9, 
+   3.700563362156913*^9}],
+
+Cell[BoxData["\<\"\\t\\tResolutin: 2.7K 4:3\"\>"], "Print",
+ CellChangeTimes->{{3.700555291020319*^9, 3.700555311368585*^9}, {
+   3.700555725503221*^9, 3.7005557300949574`*^9}, 3.700555760538947*^9, {
+   3.7005558094788*^9, 3.700555875038764*^9}, 3.7005560213125134`*^9, 
+   3.700556156987793*^9, {3.700556207549021*^9, 3.700556220470376*^9}, 
+   3.700556341406035*^9, {3.70055638372655*^9, 3.700556405346455*^9}, 
+   3.700556681263132*^9, 3.700562358988902*^9, 3.70056248231251*^9, {
+   3.7005625686850557`*^9, 3.700562658588491*^9}, {3.700562714168853*^9, 
+   3.700562776980618*^9}, 3.700563201390539*^9, 3.7005632749481297`*^9, 
+   3.7005633621612587`*^9}],
+
+Cell[BoxData["\<\"\\t\\tFPS: 15\"\>"], "Print",
+ CellChangeTimes->{{3.700555291020319*^9, 3.700555311368585*^9}, {
+   3.700555725503221*^9, 3.7005557300949574`*^9}, 3.700555760538947*^9, {
+   3.7005558094788*^9, 3.700555875038764*^9}, 3.7005560213125134`*^9, 
+   3.700556156987793*^9, {3.700556207549021*^9, 3.700556220470376*^9}, 
+   3.700556341406035*^9, {3.70055638372655*^9, 3.700556405346455*^9}, 
+   3.700556681263132*^9, 3.700562358988902*^9, 3.70056248231251*^9, {
+   3.7005625686850557`*^9, 3.700562658588491*^9}, {3.700562714168853*^9, 
+   3.700562776980618*^9}, 3.700563201390539*^9, 3.7005632749481297`*^9, 
+   3.7005633621649723`*^9}],
+
+Cell[BoxData["\<\"\\t\\tFOV: wide\"\>"], "Print",
+ CellChangeTimes->{{3.700555291020319*^9, 3.700555311368585*^9}, {
+   3.700555725503221*^9, 3.7005557300949574`*^9}, 3.700555760538947*^9, {
+   3.7005558094788*^9, 3.700555875038764*^9}, 3.7005560213125134`*^9, 
+   3.700556156987793*^9, {3.700556207549021*^9, 3.700556220470376*^9}, 
+   3.700556341406035*^9, {3.70055638372655*^9, 3.700556405346455*^9}, 
+   3.700556681263132*^9, 3.700562358988902*^9, 3.70056248231251*^9, {
+   3.7005625686850557`*^9, 3.700562658588491*^9}, {3.700562714168853*^9, 
+   3.700562776980618*^9}, 3.700563201390539*^9, 3.7005632749481297`*^9, 
+   3.700563362168626*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ TemplateBox[{
+  "StringJoin","string",
+   "\"String expected at position \\!\\(\\*RowBox[{\\\"2\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"\\\\\\\\t\\\\\\\\tTimeLapse Interval: \\\\\\\"\\\
+\", \\\"<>\\\", RowBox[{\\\"Missing\\\", \\\"[\\\", \
+RowBox[{\\\"\\\\\\\"KeyAbsent\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"3\\\\\\\"\\\
+\"}], \\\"]\\\"}], \\\"<>\\\", \\\"\\\\\\\"s\\\\\\\"\\\"}]\\).\"",2,413,15,
+   31782041737537692234,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.700563201428437*^9, 3.700563274993802*^9, 
+  3.70056336218884*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\<\"\\t\\tTimeLapse Interval: \"\>", "<>", 
+  RowBox[{"Missing", "[", 
+   RowBox[{"\<\"KeyAbsent\"\>", ",", "\<\"3\"\>"}], "]"}], 
+  "<>", "\<\"s\"\>"}]], "Print",
+ CellChangeTimes->{{3.700555291020319*^9, 3.700555311368585*^9}, {
+   3.700555725503221*^9, 3.7005557300949574`*^9}, 3.700555760538947*^9, {
+   3.7005558094788*^9, 3.700555875038764*^9}, 3.7005560213125134`*^9, 
+   3.700556156987793*^9, {3.700556207549021*^9, 3.700556220470376*^9}, 
+   3.700556341406035*^9, {3.70055638372655*^9, 3.700556405346455*^9}, 
+   3.700556681263132*^9, 3.700562358988902*^9, 3.70056248231251*^9, {
+   3.7005625686850557`*^9, 3.700562658588491*^9}, {3.700562714168853*^9, 
+   3.700562776980618*^9}, 3.700563201390539*^9, 3.7005632749481297`*^9, 
+   3.700563362191581*^9}],
+
+Cell[BoxData["\<\"\\t\\tVideoLoop Interval: 20m\"\>"], "Print",
+ CellChangeTimes->{{3.700555291020319*^9, 3.700555311368585*^9}, {
+   3.700555725503221*^9, 3.7005557300949574`*^9}, 3.700555760538947*^9, {
+   3.7005558094788*^9, 3.700555875038764*^9}, 3.7005560213125134`*^9, 
+   3.700556156987793*^9, {3.700556207549021*^9, 3.700556220470376*^9}, 
+   3.700556341406035*^9, {3.70055638372655*^9, 3.700556405346455*^9}, 
+   3.700556681263132*^9, 3.700562358988902*^9, 3.70056248231251*^9, {
+   3.7005625686850557`*^9, 3.700562658588491*^9}, {3.700562714168853*^9, 
+   3.700562776980618*^9}, 3.700563201390539*^9, 3.7005632749481297`*^9, 
+   3.700563362193609*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGetPossibleTimeLapseInterval", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.700564188610056*^9, 3.700564212247098*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"0.5\"\>", ",", "\<\"1\"\>", ",", "\<\"2\"\>", ",", "\<\"5\"\>",
+    ",", "\<\"10\"\>", ",", "\<\"30\"\>", ",", "\<\"60\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.700564206789171*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProSetMultiShotTimeLapseInterval", "[", 
+  RowBox[{
+   RowBox[{"goProGetPossibleTimeLapseInterval", "[", "]"}], 
+   "\[LeftDoubleBracket]", "7", "\[RightDoubleBracket]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.700564178652815*^9, 3.700564263971346*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["HTTPResponse",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False}, 
+    PanelBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->GrayLevel[1],
+               FrontFaceColor->GrayLevel[1],
+               BackFaceColor->GrayLevel[1],
+               GraphicsColor->GrayLevel[1],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FrontFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               BackFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               GraphicsColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{CloudObject`Private`file$ = 
+             FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 16:31:04 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 16:31:04 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{123, 125, 10}], 
+                Association[
+                "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                   "Date", "Fri, 07 Apr 2017 16:31:04 GMT"}, {
+                   "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                   "Content-type", "application/json\n"}}, "StatusCode" -> 
+                 200, "Cookies" -> {}, "ContentType" -> "application/json\n"],
+                 CharacterEncoding -> None], "BodyBytes"]]; 
+            Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/json\\n\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+      GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->GrayLevel[1],
+               FrontFaceColor->GrayLevel[1],
+               BackFaceColor->GrayLevel[1],
+               GraphicsColor->GrayLevel[1],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FrontFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               BackFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               GraphicsColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{
+            CloudObject`Private`file$ = FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 16:31:04 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 16:31:04 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{123, 125, 10}], 
+                Association[
+                "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                   "Date", "Fri, 07 Apr 2017 16:31:04 GMT"}, {
+                   "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                   "Content-type", "application/json\n"}}, "StatusCode" -> 
+                 200, "Cookies" -> {}, "ContentType" -> "application/json\n"],
+                 CharacterEncoding -> None], "BodyBytes"]]; 
+            Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/json\\n\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open$$],
+      ImageSize->Automatic],
+     BaselinePosition->Baseline],
+    DynamicModuleValues:>{}], "]"}],
+  HTTPResponse[
+   ByteArray[{123, 125, 10}], 
+   Association[
+   "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+      "Date", "Fri, 07 Apr 2017 16:31:04 GMT"}, {
+      "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+      "Content-type", "application/json\n"}}, "StatusCode" -> 200, 
+    "Cookies" -> {}, "ContentType" -> "application/json\n"], 
+   CharacterEncoding -> None],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{{3.700564236919032*^9, 3.700564265527256*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[{
- RowBox[{"goProDeleteFile", "[", "\"\<file\>\"", "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProDeleteLast", "[", "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProDeleteAll", "[", "]"}]}], "Input",
- CellChangeTimes->{{3.700419558067335*^9, 3.700419602280381*^9}}],
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetVideoIsoLimit", "[", 
+  RowBox[{
+   RowBox[{"goProGetPossibleVideoIsoLimit", "[", "]"}], 
+   "\[LeftDoubleBracket]", "6", "\[RightDoubleBracket]"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGetCameraSettings", "[", "]"}]}], "Input",
+ CellChangeTimes->{
+  3.700564999285378*^9, {3.70056718070372*^9, 3.700567192007687*^9}, {
+   3.700567294317931*^9, 3.700567304042307*^9}, {3.700567369087585*^9, 
+   3.7005673985478992`*^9}, 3.700567432519343*^9, {3.70056764977702*^9, 
+   3.7005677316430693`*^9}, 3.700567962405685*^9, {3.7005681436951437`*^9, 
+   3.700568166348782*^9}, {3.700568683501436*^9, 3.700568737247999*^9}, {
+   3.700568777053769*^9, 3.7005688088350143`*^9}, {3.70056944741782*^9, 
+   3.700569493384945*^9}}],
 
-Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/command/storage/delete?p=file\"\
-\>"], "Output",
- CellChangeTimes->{{3.7004195662666817`*^9, 3.7004196029560833`*^9}}],
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{
+  3.700564616503365*^9, {3.700564737025775*^9, 3.700564770867693*^9}, 
+   3.7005649184304447`*^9, {3.700564989747218*^9, 3.700565015270327*^9}, {
+   3.700565184622908*^9, 3.700565217996814*^9}, {3.700565369503941*^9, 
+   3.7005654009514017`*^9}, 3.70056673070193*^9, {3.7005668813862667`*^9, 
+   3.700566906403557*^9}, 3.700567041695277*^9, {3.700567181658312*^9, 
+   3.700567192313162*^9}, {3.7005672952025557`*^9, 3.7005673044387407`*^9}, {
+   3.700567370156122*^9, 3.700567399137848*^9}, {3.70056768974198*^9, 
+   3.7005677323717747`*^9}, 3.700567930387092*^9, 3.700567963606439*^9, {
+   3.700568038850422*^9, 3.700568065777583*^9}, 3.700568095909697*^9, {
+   3.7005681295144672`*^9, 3.70056816721383*^9}, {3.700568694364152*^9, 
+   3.700568737812729*^9}, {3.7005687780714407`*^9, 3.700568804090497*^9}, 
+   3.700569401332597*^9, {3.700569441713808*^9, 3.700569493861697*^9}}],
 
-Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/command/storage/delete/last\"\>\
-"], "Output",
- CellChangeTimes->{{3.7004195662666817`*^9, 3.700419602959612*^9}}],
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["HTTPResponse",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False}, 
+    PanelBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->GrayLevel[1],
+               FrontFaceColor->GrayLevel[1],
+               BackFaceColor->GrayLevel[1],
+               GraphicsColor->GrayLevel[1],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FrontFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               BackFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               GraphicsColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{CloudObject`Private`file$ = 
+             FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 17:58:13 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 17:58:13 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{123, 125, 10}], 
+                Association[
+                "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                   "Date", "Fri, 07 Apr 2017 17:58:13 GMT"}, {
+                   "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                   "Content-type", "application/json\n"}}, "StatusCode" -> 
+                 200, "Cookies" -> {}, "ContentType" -> "application/json\n"],
+                 CharacterEncoding -> None], "BodyBytes"]]; 
+            Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/json\\n\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+      GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->GrayLevel[1],
+               FrontFaceColor->GrayLevel[1],
+               BackFaceColor->GrayLevel[1],
+               GraphicsColor->GrayLevel[1],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FrontFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               BackFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               GraphicsColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{
+            CloudObject`Private`file$ = FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 17:58:13 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 17:58:13 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{123, 125, 10}], 
+                Association[
+                "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                   "Date", "Fri, 07 Apr 2017 17:58:13 GMT"}, {
+                   "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                   "Content-type", "application/json\n"}}, "StatusCode" -> 
+                 200, "Cookies" -> {}, "ContentType" -> "application/json\n"],
+                 CharacterEncoding -> None], "BodyBytes"]]; 
+            Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/json\\n\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open$$],
+      ImageSize->Automatic],
+     BaselinePosition->Baseline],
+    DynamicModuleValues:>{}], "]"}],
+  HTTPResponse[
+   ByteArray[{123, 125, 10}], 
+   Association[
+   "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+      "Date", "Fri, 07 Apr 2017 17:58:13 GMT"}, {
+      "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+      "Content-type", "application/json\n"}}, "StatusCode" -> 200, 
+    "Cookies" -> {}, "ContentType" -> "application/json\n"], 
+   CharacterEncoding -> None],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{
+  3.700564616503365*^9, {3.700564737025775*^9, 3.700564770867693*^9}, 
+   3.7005649184304447`*^9, {3.700564989747218*^9, 3.700565015270327*^9}, {
+   3.700565184622908*^9, 3.700565217996814*^9}, {3.700565369503941*^9, 
+   3.7005654009514017`*^9}, 3.70056673070193*^9, {3.7005668813862667`*^9, 
+   3.700566906403557*^9}, 3.700567041695277*^9, {3.700567181658312*^9, 
+   3.700567192313162*^9}, {3.7005672952025557`*^9, 3.7005673044387407`*^9}, {
+   3.700567370156122*^9, 3.700567399137848*^9}, {3.70056768974198*^9, 
+   3.7005677323717747`*^9}, 3.700567930387092*^9, 3.700567963606439*^9, {
+   3.700568038850422*^9, 3.700568065777583*^9}, 3.700568095909697*^9, {
+   3.7005681295144672`*^9, 3.70056816721383*^9}, {3.700568694364152*^9, 
+   3.700568737812729*^9}, {3.7005687780714407`*^9, 3.700568804090497*^9}, 
+   3.700569401332597*^9, {3.700569441713808*^9, 3.700569493929183*^9}}],
 
-Cell[BoxData["\<\"http://10.5.5.9/gp/gpControl/command/storage/delete/all\"\>\
-"], "Output",
- CellChangeTimes->{{3.7004195662666817`*^9, 3.700419602962885*^9}}]
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Video Settings:\"\>"], "Print",
+ CellChangeTimes->{
+  3.700564617563016*^9, {3.700564737946906*^9, 3.700564771826398*^9}, 
+   3.700564919341075*^9, {3.70056499084067*^9, 3.700565016468247*^9}, {
+   3.7005651862756557`*^9, 3.700565219272579*^9}, {3.7005653717161417`*^9, 
+   3.7005654021700373`*^9}, 3.7005667319561787`*^9, {3.700566882753312*^9, 
+   3.7005669078285713`*^9}, 3.700567043272979*^9, {3.700567183263966*^9, 
+   3.700567194326799*^9}, {3.700567297300194*^9, 3.700567306444248*^9}, {
+   3.7005673722020893`*^9, 3.700567400721367*^9}, {3.700567691610414*^9, 
+   3.700567734138935*^9}, 3.700567933107937*^9, 3.700567965385523*^9, {
+   3.700568040671981*^9, 3.700568097685059*^9}, {3.7005681312826366`*^9, 
+   3.7005681691175632`*^9}, {3.700568696728051*^9, 3.700568740089534*^9}, {
+   3.700568780368053*^9, 3.7005688063837233`*^9}, 3.700569403504538*^9, {
+   3.70056944384361*^9, 3.700569496136428*^9}}],
+
+Cell[BoxData["\<\"\\t\\tCurrent Mode: Video\"\>"], "Print",
+ CellChangeTimes->{
+  3.700564617563016*^9, {3.700564737946906*^9, 3.700564771826398*^9}, 
+   3.700564919341075*^9, {3.70056499084067*^9, 3.700565016468247*^9}, {
+   3.7005651862756557`*^9, 3.700565219272579*^9}, {3.7005653717161417`*^9, 
+   3.7005654021700373`*^9}, 3.7005667319561787`*^9, {3.700566882753312*^9, 
+   3.7005669078285713`*^9}, 3.700567043272979*^9, {3.700567183263966*^9, 
+   3.700567194326799*^9}, {3.700567297300194*^9, 3.700567306444248*^9}, {
+   3.7005673722020893`*^9, 3.700567400721367*^9}, {3.700567691610414*^9, 
+   3.700567734138935*^9}, 3.700567933107937*^9, 3.700567965385523*^9, {
+   3.700568040671981*^9, 3.700568097685059*^9}, {3.7005681312826366`*^9, 
+   3.7005681691175632`*^9}, {3.700568696728051*^9, 3.700568740089534*^9}, {
+   3.700568780368053*^9, 3.7005688063837233`*^9}, 3.700569403504538*^9, {
+   3.70056944384361*^9, 3.7005694961403513`*^9}}],
+
+Cell[BoxData["\<\"\\t\\tResolutin: 1080p\"\>"], "Print",
+ CellChangeTimes->{
+  3.700564617563016*^9, {3.700564737946906*^9, 3.700564771826398*^9}, 
+   3.700564919341075*^9, {3.70056499084067*^9, 3.700565016468247*^9}, {
+   3.7005651862756557`*^9, 3.700565219272579*^9}, {3.7005653717161417`*^9, 
+   3.7005654021700373`*^9}, 3.7005667319561787`*^9, {3.700566882753312*^9, 
+   3.7005669078285713`*^9}, 3.700567043272979*^9, {3.700567183263966*^9, 
+   3.700567194326799*^9}, {3.700567297300194*^9, 3.700567306444248*^9}, {
+   3.7005673722020893`*^9, 3.700567400721367*^9}, {3.700567691610414*^9, 
+   3.700567734138935*^9}, 3.700567933107937*^9, 3.700567965385523*^9, {
+   3.700568040671981*^9, 3.700568097685059*^9}, {3.7005681312826366`*^9, 
+   3.7005681691175632`*^9}, {3.700568696728051*^9, 3.700568740089534*^9}, {
+   3.700568780368053*^9, 3.7005688063837233`*^9}, 3.700569403504538*^9, {
+   3.70056944384361*^9, 3.700569496144957*^9}}],
+
+Cell[BoxData["\<\"\\t\\tFPS: 60\"\>"], "Print",
+ CellChangeTimes->{
+  3.700564617563016*^9, {3.700564737946906*^9, 3.700564771826398*^9}, 
+   3.700564919341075*^9, {3.70056499084067*^9, 3.700565016468247*^9}, {
+   3.7005651862756557`*^9, 3.700565219272579*^9}, {3.7005653717161417`*^9, 
+   3.7005654021700373`*^9}, 3.7005667319561787`*^9, {3.700566882753312*^9, 
+   3.7005669078285713`*^9}, 3.700567043272979*^9, {3.700567183263966*^9, 
+   3.700567194326799*^9}, {3.700567297300194*^9, 3.700567306444248*^9}, {
+   3.7005673722020893`*^9, 3.700567400721367*^9}, {3.700567691610414*^9, 
+   3.700567734138935*^9}, 3.700567933107937*^9, 3.700567965385523*^9, {
+   3.700568040671981*^9, 3.700568097685059*^9}, {3.7005681312826366`*^9, 
+   3.7005681691175632`*^9}, {3.700568696728051*^9, 3.700568740089534*^9}, {
+   3.700568780368053*^9, 3.7005688063837233`*^9}, 3.700569403504538*^9, {
+   3.70056944384361*^9, 3.700569496147387*^9}}],
+
+Cell[BoxData["\<\"\\t\\tFOV: wide\"\>"], "Print",
+ CellChangeTimes->{
+  3.700564617563016*^9, {3.700564737946906*^9, 3.700564771826398*^9}, 
+   3.700564919341075*^9, {3.70056499084067*^9, 3.700565016468247*^9}, {
+   3.7005651862756557`*^9, 3.700565219272579*^9}, {3.7005653717161417`*^9, 
+   3.7005654021700373`*^9}, 3.7005667319561787`*^9, {3.700566882753312*^9, 
+   3.7005669078285713`*^9}, 3.700567043272979*^9, {3.700567183263966*^9, 
+   3.700567194326799*^9}, {3.700567297300194*^9, 3.700567306444248*^9}, {
+   3.7005673722020893`*^9, 3.700567400721367*^9}, {3.700567691610414*^9, 
+   3.700567734138935*^9}, 3.700567933107937*^9, 3.700567965385523*^9, {
+   3.700568040671981*^9, 3.700568097685059*^9}, {3.7005681312826366`*^9, 
+   3.7005681691175632`*^9}, {3.700568696728051*^9, 3.700568740089534*^9}, {
+   3.700568780368053*^9, 3.7005688063837233`*^9}, 3.700569403504538*^9, {
+   3.70056944384361*^9, 3.7005694961496964`*^9}}],
+
+Cell[BoxData["\<\"\\t\\tTimeLapse Interval: 60s\"\>"], "Print",
+ CellChangeTimes->{
+  3.700564617563016*^9, {3.700564737946906*^9, 3.700564771826398*^9}, 
+   3.700564919341075*^9, {3.70056499084067*^9, 3.700565016468247*^9}, {
+   3.7005651862756557`*^9, 3.700565219272579*^9}, {3.7005653717161417`*^9, 
+   3.7005654021700373`*^9}, 3.7005667319561787`*^9, {3.700566882753312*^9, 
+   3.7005669078285713`*^9}, 3.700567043272979*^9, {3.700567183263966*^9, 
+   3.700567194326799*^9}, {3.700567297300194*^9, 3.700567306444248*^9}, {
+   3.7005673722020893`*^9, 3.700567400721367*^9}, {3.700567691610414*^9, 
+   3.700567734138935*^9}, 3.700567933107937*^9, 3.700567965385523*^9, {
+   3.700568040671981*^9, 3.700568097685059*^9}, {3.7005681312826366`*^9, 
+   3.7005681691175632`*^9}, {3.700568696728051*^9, 3.700568740089534*^9}, {
+   3.700568780368053*^9, 3.7005688063837233`*^9}, 3.700569403504538*^9, {
+   3.70056944384361*^9, 3.700569496152384*^9}}],
+
+Cell[BoxData["\<\"\\t\\tVideoLoop Interval: 20m\"\>"], "Print",
+ CellChangeTimes->{
+  3.700564617563016*^9, {3.700564737946906*^9, 3.700564771826398*^9}, 
+   3.700564919341075*^9, {3.70056499084067*^9, 3.700565016468247*^9}, {
+   3.7005651862756557`*^9, 3.700565219272579*^9}, {3.7005653717161417`*^9, 
+   3.7005654021700373`*^9}, 3.7005667319561787`*^9, {3.700566882753312*^9, 
+   3.7005669078285713`*^9}, 3.700567043272979*^9, {3.700567183263966*^9, 
+   3.700567194326799*^9}, {3.700567297300194*^9, 3.700567306444248*^9}, {
+   3.7005673722020893`*^9, 3.700567400721367*^9}, {3.700567691610414*^9, 
+   3.700567734138935*^9}, 3.700567933107937*^9, 3.700567965385523*^9, {
+   3.700568040671981*^9, 3.700568097685059*^9}, {3.7005681312826366`*^9, 
+   3.7005681691175632`*^9}, {3.700568696728051*^9, 3.700568740089534*^9}, {
+   3.700568780368053*^9, 3.7005688063837233`*^9}, 3.700569403504538*^9, {
+   3.70056944384361*^9, 3.700569496155621*^9}}],
+
+Cell[BoxData["\<\"\\t\\tPhoto In Video Interval: 60s\"\>"], "Print",
+ CellChangeTimes->{
+  3.700564617563016*^9, {3.700564737946906*^9, 3.700564771826398*^9}, 
+   3.700564919341075*^9, {3.70056499084067*^9, 3.700565016468247*^9}, {
+   3.7005651862756557`*^9, 3.700565219272579*^9}, {3.7005653717161417`*^9, 
+   3.7005654021700373`*^9}, 3.7005667319561787`*^9, {3.700566882753312*^9, 
+   3.7005669078285713`*^9}, 3.700567043272979*^9, {3.700567183263966*^9, 
+   3.700567194326799*^9}, {3.700567297300194*^9, 3.700567306444248*^9}, {
+   3.7005673722020893`*^9, 3.700567400721367*^9}, {3.700567691610414*^9, 
+   3.700567734138935*^9}, 3.700567933107937*^9, 3.700567965385523*^9, {
+   3.700568040671981*^9, 3.700568097685059*^9}, {3.7005681312826366`*^9, 
+   3.7005681691175632`*^9}, {3.700568696728051*^9, 3.700568740089534*^9}, {
+   3.700568780368053*^9, 3.7005688063837233`*^9}, 3.700569403504538*^9, {
+   3.70056944384361*^9, 3.700569496158038*^9}}],
+
+Cell[BoxData["\<\"\\t\\tLow Light: on\"\>"], "Print",
+ CellChangeTimes->{
+  3.700564617563016*^9, {3.700564737946906*^9, 3.700564771826398*^9}, 
+   3.700564919341075*^9, {3.70056499084067*^9, 3.700565016468247*^9}, {
+   3.7005651862756557`*^9, 3.700565219272579*^9}, {3.7005653717161417`*^9, 
+   3.7005654021700373`*^9}, 3.7005667319561787`*^9, {3.700566882753312*^9, 
+   3.7005669078285713`*^9}, 3.700567043272979*^9, {3.700567183263966*^9, 
+   3.700567194326799*^9}, {3.700567297300194*^9, 3.700567306444248*^9}, {
+   3.7005673722020893`*^9, 3.700567400721367*^9}, {3.700567691610414*^9, 
+   3.700567734138935*^9}, 3.700567933107937*^9, 3.700567965385523*^9, {
+   3.700568040671981*^9, 3.700568097685059*^9}, {3.7005681312826366`*^9, 
+   3.7005681691175632`*^9}, {3.700568696728051*^9, 3.700568740089534*^9}, {
+   3.700568780368053*^9, 3.7005688063837233`*^9}, 3.700569403504538*^9, {
+   3.70056944384361*^9, 3.700569496160577*^9}}],
+
+Cell[BoxData["\<\"\\t\\tSpot Meter: off\"\>"], "Print",
+ CellChangeTimes->{
+  3.700564617563016*^9, {3.700564737946906*^9, 3.700564771826398*^9}, 
+   3.700564919341075*^9, {3.70056499084067*^9, 3.700565016468247*^9}, {
+   3.7005651862756557`*^9, 3.700565219272579*^9}, {3.7005653717161417`*^9, 
+   3.7005654021700373`*^9}, 3.7005667319561787`*^9, {3.700566882753312*^9, 
+   3.7005669078285713`*^9}, 3.700567043272979*^9, {3.700567183263966*^9, 
+   3.700567194326799*^9}, {3.700567297300194*^9, 3.700567306444248*^9}, {
+   3.7005673722020893`*^9, 3.700567400721367*^9}, {3.700567691610414*^9, 
+   3.700567734138935*^9}, 3.700567933107937*^9, 3.700567965385523*^9, {
+   3.700568040671981*^9, 3.700568097685059*^9}, {3.7005681312826366`*^9, 
+   3.7005681691175632`*^9}, {3.700568696728051*^9, 3.700568740089534*^9}, {
+   3.700568780368053*^9, 3.7005688063837233`*^9}, 3.700569403504538*^9, {
+   3.70056944384361*^9, 3.700569496163104*^9}}],
+
+Cell[BoxData["\<\"\\t\\tProtune: on\"\>"], "Print",
+ CellChangeTimes->{
+  3.700564617563016*^9, {3.700564737946906*^9, 3.700564771826398*^9}, 
+   3.700564919341075*^9, {3.70056499084067*^9, 3.700565016468247*^9}, {
+   3.7005651862756557`*^9, 3.700565219272579*^9}, {3.7005653717161417`*^9, 
+   3.7005654021700373`*^9}, 3.7005667319561787`*^9, {3.700566882753312*^9, 
+   3.7005669078285713`*^9}, 3.700567043272979*^9, {3.700567183263966*^9, 
+   3.700567194326799*^9}, {3.700567297300194*^9, 3.700567306444248*^9}, {
+   3.7005673722020893`*^9, 3.700567400721367*^9}, {3.700567691610414*^9, 
+   3.700567734138935*^9}, 3.700567933107937*^9, 3.700567965385523*^9, {
+   3.700568040671981*^9, 3.700568097685059*^9}, {3.7005681312826366`*^9, 
+   3.7005681691175632`*^9}, {3.700568696728051*^9, 3.700568740089534*^9}, {
+   3.700568780368053*^9, 3.7005688063837233`*^9}, 3.700569403504538*^9, {
+   3.70056944384361*^9, 3.700569496165564*^9}}],
+
+Cell[BoxData["\<\"\\t\\tWhite Balance: auto\"\>"], "Print",
+ CellChangeTimes->{
+  3.700564617563016*^9, {3.700564737946906*^9, 3.700564771826398*^9}, 
+   3.700564919341075*^9, {3.70056499084067*^9, 3.700565016468247*^9}, {
+   3.7005651862756557`*^9, 3.700565219272579*^9}, {3.7005653717161417`*^9, 
+   3.7005654021700373`*^9}, 3.7005667319561787`*^9, {3.700566882753312*^9, 
+   3.7005669078285713`*^9}, 3.700567043272979*^9, {3.700567183263966*^9, 
+   3.700567194326799*^9}, {3.700567297300194*^9, 3.700567306444248*^9}, {
+   3.7005673722020893`*^9, 3.700567400721367*^9}, {3.700567691610414*^9, 
+   3.700567734138935*^9}, 3.700567933107937*^9, 3.700567965385523*^9, {
+   3.700568040671981*^9, 3.700568097685059*^9}, {3.7005681312826366`*^9, 
+   3.7005681691175632`*^9}, {3.700568696728051*^9, 3.700568740089534*^9}, {
+   3.700568780368053*^9, 3.7005688063837233`*^9}, 3.700569403504538*^9, {
+   3.70056944384361*^9, 3.70056949616796*^9}}],
+
+Cell[BoxData["\<\"\\t\\tColor Profile: gopro\"\>"], "Print",
+ CellChangeTimes->{
+  3.700564617563016*^9, {3.700564737946906*^9, 3.700564771826398*^9}, 
+   3.700564919341075*^9, {3.70056499084067*^9, 3.700565016468247*^9}, {
+   3.7005651862756557`*^9, 3.700565219272579*^9}, {3.7005653717161417`*^9, 
+   3.7005654021700373`*^9}, 3.7005667319561787`*^9, {3.700566882753312*^9, 
+   3.7005669078285713`*^9}, 3.700567043272979*^9, {3.700567183263966*^9, 
+   3.700567194326799*^9}, {3.700567297300194*^9, 3.700567306444248*^9}, {
+   3.7005673722020893`*^9, 3.700567400721367*^9}, {3.700567691610414*^9, 
+   3.700567734138935*^9}, 3.700567933107937*^9, 3.700567965385523*^9, {
+   3.700568040671981*^9, 3.700568097685059*^9}, {3.7005681312826366`*^9, 
+   3.7005681691175632`*^9}, {3.700568696728051*^9, 3.700568740089534*^9}, {
+   3.700568780368053*^9, 3.7005688063837233`*^9}, 3.700569403504538*^9, {
+   3.70056944384361*^9, 3.7005694961703243`*^9}}],
+
+Cell[BoxData["\<\"\\t\\tSharpness: high\"\>"], "Print",
+ CellChangeTimes->{
+  3.700564617563016*^9, {3.700564737946906*^9, 3.700564771826398*^9}, 
+   3.700564919341075*^9, {3.70056499084067*^9, 3.700565016468247*^9}, {
+   3.7005651862756557`*^9, 3.700565219272579*^9}, {3.7005653717161417`*^9, 
+   3.7005654021700373`*^9}, 3.7005667319561787`*^9, {3.700566882753312*^9, 
+   3.7005669078285713`*^9}, 3.700567043272979*^9, {3.700567183263966*^9, 
+   3.700567194326799*^9}, {3.700567297300194*^9, 3.700567306444248*^9}, {
+   3.7005673722020893`*^9, 3.700567400721367*^9}, {3.700567691610414*^9, 
+   3.700567734138935*^9}, 3.700567933107937*^9, 3.700567965385523*^9, {
+   3.700568040671981*^9, 3.700568097685059*^9}, {3.7005681312826366`*^9, 
+   3.7005681691175632`*^9}, {3.700568696728051*^9, 3.700568740089534*^9}, {
+   3.700568780368053*^9, 3.7005688063837233`*^9}, 3.700569403504538*^9, {
+   3.70056944384361*^9, 3.7005694961727133`*^9}}],
+
+Cell[BoxData["\<\"\\t\\tISO Mode: lock\"\>"], "Print",
+ CellChangeTimes->{
+  3.700564617563016*^9, {3.700564737946906*^9, 3.700564771826398*^9}, 
+   3.700564919341075*^9, {3.70056499084067*^9, 3.700565016468247*^9}, {
+   3.7005651862756557`*^9, 3.700565219272579*^9}, {3.7005653717161417`*^9, 
+   3.7005654021700373`*^9}, 3.7005667319561787`*^9, {3.700566882753312*^9, 
+   3.7005669078285713`*^9}, 3.700567043272979*^9, {3.700567183263966*^9, 
+   3.700567194326799*^9}, {3.700567297300194*^9, 3.700567306444248*^9}, {
+   3.7005673722020893`*^9, 3.700567400721367*^9}, {3.700567691610414*^9, 
+   3.700567734138935*^9}, 3.700567933107937*^9, 3.700567965385523*^9, {
+   3.700568040671981*^9, 3.700568097685059*^9}, {3.7005681312826366`*^9, 
+   3.7005681691175632`*^9}, {3.700568696728051*^9, 3.700568740089534*^9}, {
+   3.700568780368053*^9, 3.7005688063837233`*^9}, 3.700569403504538*^9, {
+   3.70056944384361*^9, 3.70056949617514*^9}}],
+
+Cell[BoxData["\<\"\\t\\tISO Limit: 200\"\>"], "Print",
+ CellChangeTimes->{
+  3.700564617563016*^9, {3.700564737946906*^9, 3.700564771826398*^9}, 
+   3.700564919341075*^9, {3.70056499084067*^9, 3.700565016468247*^9}, {
+   3.7005651862756557`*^9, 3.700565219272579*^9}, {3.7005653717161417`*^9, 
+   3.7005654021700373`*^9}, 3.7005667319561787`*^9, {3.700566882753312*^9, 
+   3.7005669078285713`*^9}, 3.700567043272979*^9, {3.700567183263966*^9, 
+   3.700567194326799*^9}, {3.700567297300194*^9, 3.700567306444248*^9}, {
+   3.7005673722020893`*^9, 3.700567400721367*^9}, {3.700567691610414*^9, 
+   3.700567734138935*^9}, 3.700567933107937*^9, 3.700567965385523*^9, {
+   3.700568040671981*^9, 3.700568097685059*^9}, {3.7005681312826366`*^9, 
+   3.7005681691175632`*^9}, {3.700568696728051*^9, 3.700568740089534*^9}, {
+   3.700568780368053*^9, 3.7005688063837233`*^9}, 3.700569403504538*^9, {
+   3.70056944384361*^9, 3.700569496177516*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProSetIsoMode", "[", 
+  RowBox[{
+   RowBox[{"goProGetPossibleIsoMode", "[", "]"}], "\[LeftDoubleBracket]", "2",
+    "\[RightDoubleBracket]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7005694133113203`*^9, 3.700569437775811*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["HTTPResponse",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False}, 
+    PanelBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->GrayLevel[1],
+               FrontFaceColor->GrayLevel[1],
+               BackFaceColor->GrayLevel[1],
+               GraphicsColor->GrayLevel[1],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FrontFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               BackFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               GraphicsColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{CloudObject`Private`file$ = 
+             FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 17:57:18 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 17:57:18 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{123, 125, 10}], 
+                Association[
+                "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                   "Date", "Fri, 07 Apr 2017 17:57:18 GMT"}, {
+                   "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                   "Content-type", "application/json\n"}}, "StatusCode" -> 
+                 200, "Cookies" -> {}, "ContentType" -> "application/json\n"],
+                 CharacterEncoding -> None], "BodyBytes"]]; 
+            Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/json\\n\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+      GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->GrayLevel[1],
+               FrontFaceColor->GrayLevel[1],
+               BackFaceColor->GrayLevel[1],
+               GraphicsColor->GrayLevel[1],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FrontFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               BackFaceColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               GraphicsColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{
+            CloudObject`Private`file$ = FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 17:57:18 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{123, 125, 10}], 
+                    Association[
+                    "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                    "Date", "Fri, 07 Apr 2017 17:57:18 GMT"}, {
+                    "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                    "Content-type", "application/json\n"}}, "StatusCode" -> 
+                    200, "Cookies" -> {}, "ContentType" -> 
+                    "application/json\n"], CharacterEncoding -> None]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{123, 125, 10}], 
+                Association[
+                "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+                   "Date", "Fri, 07 Apr 2017 17:57:18 GMT"}, {
+                   "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+                   "Content-type", "application/json\n"}}, "StatusCode" -> 
+                 200, "Cookies" -> {}, "ContentType" -> "application/json\n"],
+                 CharacterEncoding -> None], "BodyBytes"]]; 
+            Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/json\\n\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open$$],
+      ImageSize->Automatic],
+     BaselinePosition->Baseline],
+    DynamicModuleValues:>{}], "]"}],
+  HTTPResponse[
+   ByteArray[{123, 125, 10}], 
+   Association[
+   "Headers" -> {{"Transfer-Encoding", "chunked"}, {
+      "Date", "Fri, 07 Apr 2017 17:57:18 GMT"}, {
+      "Server", "Cherokee/1.2.101b160914_a7df3c5 (UNIX)"}, {
+      "Content-type", "application/json\n"}}, "StatusCode" -> 200, 
+    "Cookies" -> {}, "ContentType" -> "application/json\n"], 
+   CharacterEncoding -> None],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.700569438568759*^9}]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -2615,496 +5903,593 @@ Cell[580, 22, 101, 1, 93, "Title"],
 Cell[684, 25, 237, 3, 55, "Input"],
 Cell[924, 30, 280, 4, 55, "Input"],
 Cell[CellGroupData[{
-Cell[1229, 38, 91, 1, 65, "Section"],
+Cell[1229, 38, 148, 2, 65, "Section"],
 Cell[CellGroupData[{
-Cell[1345, 43, 237, 4, 55, "Input"],
-Cell[1585, 49, 225, 3, 32, "Output"],
-Cell[1813, 54, 225, 3, 32, "Output"]
+Cell[1402, 44, 226, 4, 32, "Input"],
+Cell[1631, 50, 12774, 311, 79, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14442, 366, 57, 1, 32, "Input"],
+Cell[14502, 369, 12877, 313, 79, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2087, 63, 98, 1, 65, "Section"],
-Cell[2188, 66, 161, 2, 55, "Input"],
+Cell[27428, 688, 158, 2, 65, "Section"],
+Cell[27589, 692, 161, 2, 55, "Input"],
 Cell[CellGroupData[{
-Cell[2374, 72, 240, 4, 32, "Input"],
-Cell[2617, 78, 345, 6, 34, "Output"]
+Cell[27775, 698, 240, 4, 32, "Input"],
+Cell[28018, 704, 369, 6, 34, "Output"]
+}, Open  ]],
+Cell[28402, 713, 92, 1, 32, "Input"],
+Cell[CellGroupData[{
+Cell[28519, 718, 349, 8, 32, "Input"],
+Cell[28871, 728, 1152, 26, 156, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2999, 89, 349, 8, 32, "Input"],
-Cell[3351, 99, 1152, 26, 156, "Output"]
+Cell[30060, 759, 167, 3, 32, "Input"],
+Cell[30230, 764, 303, 5, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4540, 130, 167, 3, 32, "Input"],
-Cell[4710, 135, 303, 5, 34, "Output"]
+Cell[30570, 774, 303, 8, 32, "Input"],
+Cell[30876, 784, 1078, 25, 156, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5050, 145, 303, 8, 32, "Input"],
-Cell[5356, 155, 1078, 25, 156, "Output"]
+Cell[31991, 814, 170, 3, 32, "Input"],
+Cell[32164, 819, 356, 7, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6471, 185, 170, 3, 32, "Input"],
-Cell[6644, 190, 356, 7, 34, "Output"]
+Cell[32557, 831, 305, 8, 32, "Input"],
+Cell[32865, 841, 1128, 26, 156, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7037, 202, 305, 8, 32, "Input"],
-Cell[7345, 212, 1128, 26, 156, "Output"]
+Cell[34030, 872, 104, 1, 44, "Subsection"],
+Cell[CellGroupData[{
+Cell[34159, 877, 76, 1, 32, "Input"],
+Cell[34238, 880, 281, 5, 34, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34556, 890, 314, 6, 32, "Input"],
+Cell[34873, 898, 12806, 312, 79, "Output"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8522, 244, 94, 1, 65, "Section"],
-Cell[8619, 247, 225, 3, 55, "Input"],
+Cell[47740, 1217, 94, 1, 65, "Section"],
+Cell[47837, 1220, 225, 3, 55, "Input"],
 Cell[CellGroupData[{
-Cell[8869, 254, 142, 2, 32, "Input"],
-Cell[9014, 258, 209, 4, 34, "Output"]
+Cell[48087, 1227, 142, 2, 32, "Input"],
+Cell[48232, 1231, 209, 4, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9260, 267, 790, 20, 77, "Input"],
-Cell[10053, 289, 843, 22, 48, "Output"],
-Cell[10899, 313, 843, 22, 48, "Output"],
-Cell[11745, 337, 842, 22, 48, "Output"]
+Cell[48478, 1240, 790, 20, 77, "Input"],
+Cell[49271, 1262, 843, 22, 48, "Output"],
+Cell[50117, 1286, 843, 22, 48, "Output"],
+Cell[50963, 1310, 842, 22, 48, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12636, 365, 88, 1, 65, "Section"],
-Cell[12727, 368, 161, 2, 55, "Input"],
+Cell[51854, 1338, 88, 1, 65, "Section"],
+Cell[51945, 1341, 161, 2, 55, "Input"],
 Cell[CellGroupData[{
-Cell[12913, 374, 142, 2, 32, "Input"],
-Cell[13058, 378, 246, 5, 34, "Output"]
+Cell[52131, 1347, 142, 2, 32, "Input"],
+Cell[52276, 1351, 246, 5, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[13341, 388, 145, 2, 32, "Input"],
-Cell[13489, 392, 179, 4, 34, "Output"]
+Cell[52559, 1361, 145, 2, 32, "Input"],
+Cell[52707, 1365, 179, 4, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[13705, 401, 147, 2, 32, "Input"],
-Cell[13855, 405, 181, 4, 34, "Output"]
+Cell[52923, 1374, 147, 2, 32, "Input"],
+Cell[53073, 1378, 181, 4, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14073, 414, 274, 7, 32, "Input"],
-Cell[14350, 423, 1020, 24, 138, "Output"]
+Cell[53291, 1387, 274, 7, 32, "Input"],
+Cell[53568, 1396, 1020, 24, 138, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[15407, 452, 274, 7, 32, "Input"],
-Cell[15684, 461, 816, 21, 84, "Output"]
+Cell[54625, 1425, 274, 7, 32, "Input"],
+Cell[54902, 1434, 816, 21, 84, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16537, 487, 281, 7, 32, "Input"],
-Cell[16821, 496, 818, 21, 84, "Output"]
+Cell[55755, 1460, 281, 7, 32, "Input"],
+Cell[56039, 1469, 818, 21, 84, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17688, 523, 93, 1, 65, "Section"],
-Cell[17784, 526, 161, 2, 55, "Input"],
+Cell[56906, 1496, 93, 1, 65, "Section"],
+Cell[57002, 1499, 161, 2, 55, "Input"],
 Cell[CellGroupData[{
-Cell[17970, 532, 137, 2, 32, "Input"],
-Cell[18110, 536, 138, 3, 34, "Output"]
+Cell[57188, 1505, 137, 2, 32, "Input"],
+Cell[57328, 1509, 138, 3, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18285, 544, 260, 7, 32, "Input"],
-Cell[18548, 553, 724, 19, 48, "Output"]
+Cell[57503, 1517, 260, 7, 32, "Input"],
+Cell[57766, 1526, 724, 19, 48, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19321, 578, 98, 1, 65, "Section"],
-Cell[19422, 581, 161, 2, 55, "Input"],
+Cell[58539, 1551, 98, 1, 65, "Section"],
+Cell[58640, 1554, 161, 2, 55, "Input"],
 Cell[CellGroupData[{
-Cell[19608, 587, 144, 2, 32, "Input"],
-Cell[19755, 591, 179, 4, 34, "Output"]
+Cell[58826, 1560, 144, 2, 32, "Input"],
+Cell[58973, 1564, 179, 4, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19971, 600, 276, 7, 32, "Input"],
-Cell[20250, 609, 840, 21, 84, "Output"]
+Cell[59189, 1573, 276, 7, 32, "Input"],
+Cell[59468, 1582, 840, 21, 84, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[21127, 635, 286, 7, 32, "Input"],
-Cell[21416, 644, 816, 21, 84, "Output"]
+Cell[60345, 1608, 286, 7, 32, "Input"],
+Cell[60634, 1617, 816, 21, 84, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22281, 671, 94, 1, 65, "Section"],
-Cell[22378, 674, 161, 2, 55, "Input"],
+Cell[61499, 1644, 94, 1, 65, "Section"],
+Cell[61596, 1647, 161, 2, 55, "Input"],
 Cell[CellGroupData[{
-Cell[22564, 680, 139, 2, 32, "Input"],
-Cell[22706, 684, 186, 4, 34, "Output"]
+Cell[61782, 1653, 139, 2, 32, "Input"],
+Cell[61924, 1657, 186, 4, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22929, 693, 727, 20, 77, "Input"],
-Cell[23659, 715, 804, 21, 66, "Output"],
-Cell[24466, 738, 806, 21, 66, "Output"],
-Cell[25275, 761, 806, 21, 66, "Output"]
+Cell[62147, 1666, 727, 20, 77, "Input"],
+Cell[62877, 1688, 804, 21, 66, "Output"],
+Cell[63684, 1711, 806, 21, 66, "Output"],
+Cell[64493, 1734, 806, 21, 66, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[26130, 788, 95, 1, 65, "Section"],
+Cell[65348, 1761, 95, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[26250, 793, 352, 5, 55, "Input"],
-Cell[26605, 800, 272, 6, 23, "Message"]
+Cell[65468, 1766, 352, 5, 55, "Input"],
+Cell[65823, 1773, 272, 6, 23, "Message"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[26914, 811, 292, 7, 55, "Input"],
-Cell[27209, 820, 304, 6, 23, "Message"],
-Cell[27516, 828, 304, 6, 23, "Message"],
-Cell[27823, 836, 156, 4, 32, "Output"]
+Cell[66132, 1784, 292, 7, 55, "Input"],
+Cell[66427, 1793, 304, 6, 23, "Message"],
+Cell[66734, 1801, 304, 6, 23, "Message"],
+Cell[67041, 1809, 156, 4, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28016, 845, 600, 13, 77, "Input"],
-Cell[28619, 860, 161, 3, 32, "Output"],
-Cell[28783, 865, 483, 9, 34, "Output"],
-Cell[29269, 876, 1365, 31, 228, "Output"]
+Cell[67234, 1818, 600, 13, 77, "Input"],
+Cell[67837, 1833, 161, 3, 32, "Output"],
+Cell[68001, 1838, 483, 9, 34, "Output"],
+Cell[68487, 1849, 1365, 31, 228, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[30671, 912, 552, 12, 77, "Input"],
-Cell[31226, 926, 105, 1, 32, "Output"],
-Cell[31334, 929, 366, 6, 34, "Output"],
-Cell[31703, 937, 1192, 27, 192, "Output"]
+Cell[69889, 1885, 552, 12, 77, "Input"],
+Cell[70444, 1899, 105, 1, 32, "Output"],
+Cell[70552, 1902, 366, 6, 34, "Output"],
+Cell[70921, 1910, 1192, 27, 192, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[32932, 969, 554, 12, 77, "Input"],
-Cell[33489, 983, 110, 1, 32, "Output"],
-Cell[33602, 986, 297, 5, 34, "Output"],
-Cell[33902, 993, 1019, 24, 138, "Output"]
+Cell[72150, 1942, 554, 12, 77, "Input"],
+Cell[72707, 1956, 110, 1, 32, "Output"],
+Cell[72820, 1959, 297, 5, 34, "Output"],
+Cell[73120, 1966, 1019, 24, 138, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[34970, 1023, 87, 1, 65, "Section"],
-Cell[35060, 1026, 276, 4, 55, "Input"],
+Cell[74188, 1996, 87, 1, 65, "Section"],
+Cell[74278, 1999, 276, 4, 55, "Input"],
 Cell[CellGroupData[{
-Cell[35361, 1034, 250, 4, 32, "Input"],
-Cell[35614, 1040, 255, 4, 32, "Output"]
+Cell[74579, 2007, 250, 4, 32, "Input"],
+Cell[74832, 2013, 255, 4, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[35906, 1049, 237, 4, 32, "Input"],
-Cell[36146, 1055, 299, 6, 34, "Output"]
+Cell[75124, 2022, 237, 4, 32, "Input"],
+Cell[75364, 2028, 299, 6, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[36482, 1066, 304, 8, 32, "Input"],
-Cell[36789, 1076, 1240, 29, 192, "Output"]
+Cell[75700, 2039, 304, 8, 32, "Input"],
+Cell[76007, 2049, 1240, 29, 192, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[38078, 1111, 88, 1, 65, "Section"],
+Cell[77296, 2084, 88, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[38191, 1116, 312, 4, 77, "Input"],
-Cell[38506, 1122, 82, 1, 32, "Output"]
+Cell[77409, 2089, 312, 4, 77, "Input"],
+Cell[77724, 2095, 82, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[38625, 1128, 133, 2, 32, "Input"],
-Cell[38761, 1132, 189, 4, 34, "Output"]
+Cell[77843, 2101, 133, 2, 32, "Input"],
+Cell[77979, 2105, 189, 4, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[38987, 1141, 251, 7, 32, "Input"],
-Cell[39241, 1150, 811, 21, 84, "Output"]
+Cell[78205, 2114, 251, 7, 32, "Input"],
+Cell[78459, 2123, 811, 21, 84, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[40101, 1177, 93, 1, 65, "Section"],
+Cell[79319, 2150, 93, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[40219, 1182, 246, 3, 77, "Input"],
-Cell[40468, 1187, 104, 1, 32, "Output"]
+Cell[79437, 2155, 246, 3, 77, "Input"],
+Cell[79686, 2160, 104, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[40609, 1193, 138, 2, 32, "Input"],
-Cell[40750, 1197, 158, 3, 34, "Output"]
+Cell[79827, 2166, 138, 2, 32, "Input"],
+Cell[79968, 2170, 158, 3, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[40945, 1205, 262, 7, 32, "Input"],
-Cell[41210, 1214, 722, 19, 48, "Output"]
+Cell[80163, 2178, 262, 7, 32, "Input"],
+Cell[80428, 2187, 722, 19, 48, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[41969, 1238, 136, 2, 32, "Input"],
-Cell[42108, 1242, 117, 1, 32, "Output"]
+Cell[81187, 2211, 136, 2, 32, "Input"],
+Cell[81326, 2215, 117, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[42262, 1248, 134, 2, 32, "Input"],
-Cell[42399, 1252, 117, 1, 32, "Output"]
+Cell[81480, 2221, 134, 2, 32, "Input"],
+Cell[81617, 2225, 117, 1, 32, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[42565, 1259, 152, 2, 65, "Section"],
+Cell[81783, 2232, 152, 2, 65, "Section"],
 Cell[CellGroupData[{
-Cell[42742, 1265, 246, 3, 77, "Input"],
-Cell[42991, 1270, 156, 3, 32, "Output"]
+Cell[81960, 2238, 246, 3, 77, "Input"],
+Cell[82209, 2243, 156, 3, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[43184, 1278, 195, 3, 32, "Input"],
-Cell[43382, 1283, 207, 5, 34, "Output"]
+Cell[82402, 2251, 195, 3, 32, "Input"],
+Cell[82600, 2256, 207, 5, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[43626, 1293, 323, 8, 32, "Input"],
-Cell[43952, 1303, 768, 21, 48, "Output"]
+Cell[82844, 2266, 323, 8, 32, "Input"],
+Cell[83170, 2276, 768, 21, 48, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[44757, 1329, 190, 3, 32, "Input"],
-Cell[44950, 1334, 192, 3, 32, "Output"]
+Cell[83975, 2302, 190, 3, 32, "Input"],
+Cell[84168, 2307, 192, 3, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[45179, 1342, 192, 3, 32, "Input"],
-Cell[45374, 1347, 193, 3, 32, "Output"]
+Cell[84397, 2315, 192, 3, 32, "Input"],
+Cell[84592, 2320, 193, 3, 32, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[45616, 1356, 97, 1, 65, "Section"],
+Cell[84834, 2329, 97, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[45738, 1361, 246, 3, 77, "Input"],
-Cell[45987, 1366, 104, 1, 32, "Output"]
+Cell[84956, 2334, 246, 3, 77, "Input"],
+Cell[85205, 2339, 104, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[46128, 1372, 139, 2, 32, "Input"],
-Cell[46270, 1376, 195, 4, 34, "Output"]
+Cell[85346, 2345, 139, 2, 32, "Input"],
+Cell[85488, 2349, 195, 4, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[46502, 1385, 264, 7, 32, "Input"],
-Cell[46769, 1394, 895, 22, 102, "Output"]
+Cell[85720, 2358, 264, 7, 32, "Input"],
+Cell[85987, 2367, 895, 22, 102, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[47713, 1422, 101, 1, 65, "Section"],
+Cell[86931, 2395, 101, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[47839, 1427, 246, 3, 77, "Input"],
-Cell[48088, 1432, 82, 1, 32, "Output"]
+Cell[87057, 2400, 246, 3, 77, "Input"],
+Cell[87306, 2405, 82, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[48207, 1438, 144, 2, 32, "Input"],
-Cell[48354, 1442, 176, 4, 34, "Output"]
+Cell[87425, 2411, 144, 2, 32, "Input"],
+Cell[87572, 2415, 176, 4, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[48567, 1451, 272, 7, 32, "Input"],
-Cell[48842, 1460, 814, 21, 84, "Output"]
+Cell[87785, 2424, 272, 7, 32, "Input"],
+Cell[88060, 2433, 814, 21, 84, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[49705, 1487, 103, 1, 65, "Section"],
+Cell[88923, 2460, 103, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[49833, 1492, 246, 3, 77, "Input"],
-Cell[50082, 1497, 131, 2, 32, "Output"]
+Cell[89051, 2465, 246, 3, 77, "Input"],
+Cell[89300, 2470, 131, 2, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[50250, 1504, 392, 9, 55, "Input"],
-Cell[50645, 1515, 226, 5, 34, "Output"],
-Cell[50874, 1522, 866, 22, 98, "Output"]
+Cell[89468, 2477, 392, 9, 55, "Input"],
+Cell[89863, 2488, 226, 5, 34, "Output"],
+Cell[90092, 2495, 866, 22, 98, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[51789, 1550, 111, 1, 65, "Section"],
+Cell[91007, 2523, 111, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[51925, 1555, 246, 3, 77, "Input"],
-Cell[52174, 1560, 104, 1, 32, "Output"]
+Cell[91143, 2528, 246, 3, 77, "Input"],
+Cell[91392, 2533, 104, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[52315, 1566, 431, 10, 55, "Input"],
-Cell[52749, 1578, 236, 5, 34, "Output"],
-Cell[52988, 1585, 996, 24, 152, "Output"]
+Cell[91533, 2539, 431, 10, 55, "Input"],
+Cell[91967, 2551, 236, 5, 34, "Output"],
+Cell[92206, 2558, 996, 24, 152, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[54033, 1615, 100, 1, 65, "Section"],
+Cell[93251, 2588, 100, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[54158, 1620, 246, 3, 77, "Input"],
-Cell[54407, 1625, 82, 1, 32, "Output"]
+Cell[93376, 2593, 246, 3, 77, "Input"],
+Cell[93625, 2598, 82, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[54526, 1631, 513, 11, 99, "Input"],
-Cell[55042, 1644, 134, 3, 34, "Output"],
-Cell[55179, 1649, 696, 19, 62, "Output"],
-Cell[55878, 1670, 120, 1, 32, "Output"],
-Cell[56001, 1673, 120, 1, 32, "Output"]
+Cell[93744, 2604, 513, 11, 99, "Input"],
+Cell[94260, 2617, 134, 3, 34, "Output"],
+Cell[94397, 2622, 696, 19, 48, "Output"],
+Cell[95096, 2643, 120, 1, 32, "Output"],
+Cell[95219, 2646, 120, 1, 32, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[56170, 1680, 101, 1, 65, "Section"],
+Cell[95388, 2653, 101, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[56296, 1685, 246, 3, 77, "Input"],
-Cell[56545, 1690, 82, 1, 32, "Output"]
+Cell[95514, 2658, 246, 3, 77, "Input"],
+Cell[95763, 2663, 82, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[56664, 1696, 358, 9, 55, "Input"],
-Cell[57025, 1707, 152, 4, 34, "Output"],
-Cell[57180, 1713, 756, 20, 80, "Output"]
+Cell[95882, 2669, 358, 9, 55, "Input"],
+Cell[96243, 2680, 152, 4, 34, "Output"],
+Cell[96398, 2686, 756, 20, 66, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[57985, 1739, 109, 1, 65, "Section"],
+Cell[97203, 2712, 109, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[58119, 1744, 246, 3, 77, "Input"],
-Cell[58368, 1749, 104, 1, 32, "Output"]
+Cell[97337, 2717, 246, 3, 77, "Input"],
+Cell[97586, 2722, 104, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[58509, 1755, 382, 9, 55, "Input"],
-Cell[58894, 1766, 260, 5, 34, "Output"],
-Cell[59157, 1773, 1020, 24, 152, "Output"]
+Cell[97727, 2728, 382, 9, 55, "Input"],
+Cell[98112, 2739, 260, 5, 34, "Output"],
+Cell[98375, 2746, 1020, 24, 138, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[60226, 1803, 108, 1, 65, "Section"],
+Cell[99444, 2776, 108, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[60359, 1808, 246, 3, 77, "Input"],
-Cell[60608, 1813, 104, 1, 32, "Output"]
+Cell[99577, 2781, 246, 3, 77, "Input"],
+Cell[99826, 2786, 104, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[60749, 1819, 370, 9, 55, "Input"],
-Cell[61122, 1830, 374, 7, 34, "Output"],
-Cell[61499, 1839, 1333, 29, 242, "Output"]
+Cell[99967, 2792, 370, 9, 55, "Input"],
+Cell[100340, 2803, 374, 7, 34, "Output"],
+Cell[100717, 2812, 1333, 29, 228, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[62881, 1874, 107, 1, 65, "Section"],
+Cell[102099, 2847, 107, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[63013, 1879, 246, 3, 77, "Input"],
-Cell[63262, 1884, 80, 1, 32, "Output"]
+Cell[102231, 2852, 246, 3, 77, "Input"],
+Cell[102480, 2857, 80, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[63379, 1890, 373, 9, 55, "Input"],
-Cell[63755, 1901, 176, 4, 34, "Output"],
-Cell[63934, 1907, 816, 21, 98, "Output"]
+Cell[102597, 2863, 373, 9, 55, "Input"],
+Cell[102973, 2874, 176, 4, 34, "Output"],
+Cell[103152, 2880, 816, 21, 84, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[64799, 1934, 105, 1, 65, "Section"],
+Cell[104017, 2907, 105, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[64929, 1939, 246, 3, 77, "Input"],
-Cell[65178, 1944, 82, 1, 32, "Output"]
+Cell[104147, 2912, 246, 3, 77, "Input"],
+Cell[104396, 2917, 82, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[65297, 1950, 367, 9, 55, "Input"],
-Cell[65667, 1961, 233, 5, 34, "Output"],
-Cell[65903, 1968, 999, 24, 152, "Output"]
+Cell[104515, 2923, 367, 9, 55, "Input"],
+Cell[104885, 2934, 233, 5, 34, "Output"],
+Cell[105121, 2941, 999, 24, 152, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[66951, 1998, 105, 1, 65, "Section"],
+Cell[106169, 2971, 105, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[67081, 2003, 246, 3, 77, "Input"],
-Cell[67330, 2008, 84, 1, 32, "Output"]
+Cell[106299, 2976, 246, 3, 77, "Input"],
+Cell[106548, 2981, 84, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[67451, 2014, 534, 12, 99, "Input"],
-Cell[67988, 2028, 134, 3, 34, "Output"],
-Cell[68125, 2033, 696, 19, 62, "Output"],
-Cell[68824, 2054, 118, 1, 32, "Output"],
-Cell[68945, 2057, 118, 1, 32, "Output"]
+Cell[106669, 2987, 534, 12, 99, "Input"],
+Cell[107206, 3001, 134, 3, 34, "Output"],
+Cell[107343, 3006, 696, 19, 62, "Output"],
+Cell[108042, 3027, 118, 1, 32, "Output"],
+Cell[108163, 3030, 118, 1, 32, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[69112, 2064, 95, 1, 65, "Section"],
+Cell[108330, 3037, 95, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[69232, 2069, 246, 3, 77, "Input"],
-Cell[69481, 2074, 84, 1, 32, "Output"]
+Cell[108450, 3042, 246, 3, 77, "Input"],
+Cell[108699, 3047, 84, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[69602, 2080, 340, 8, 55, "Input"],
-Cell[69945, 2090, 293, 6, 34, "Output"],
-Cell[70241, 2098, 1116, 26, 188, "Output"]
+Cell[108820, 3053, 340, 8, 55, "Input"],
+Cell[109163, 3063, 293, 6, 34, "Output"],
+Cell[109459, 3071, 1116, 26, 174, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[71406, 2130, 100, 1, 65, "Section"],
+Cell[110624, 3103, 100, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[71531, 2135, 246, 3, 77, "Input"],
-Cell[71780, 2140, 182, 3, 32, "Output"]
+Cell[110749, 3108, 246, 3, 77, "Input"],
+Cell[110998, 3113, 182, 3, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[71999, 2148, 423, 9, 55, "Input"],
-Cell[72425, 2159, 161, 4, 34, "Output"],
-Cell[72589, 2165, 755, 20, 80, "Output"]
+Cell[111217, 3121, 423, 9, 55, "Input"],
+Cell[111643, 3132, 161, 4, 34, "Output"],
+Cell[111807, 3138, 755, 20, 66, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[73393, 2191, 100, 1, 65, "Section"],
+Cell[112611, 3164, 100, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[73518, 2196, 246, 3, 77, "Input"],
-Cell[73767, 2201, 106, 1, 32, "Output"]
+Cell[112736, 3169, 246, 3, 77, "Input"],
+Cell[112985, 3174, 106, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[73910, 2207, 500, 10, 99, "Input"],
-Cell[74413, 2219, 158, 3, 34, "Output"],
-Cell[74574, 2224, 720, 19, 62, "Output"],
-Cell[75297, 2245, 142, 1, 32, "Output"],
-Cell[75442, 2248, 144, 1, 32, "Output"]
+Cell[113128, 3180, 500, 10, 99, "Input"],
+Cell[113631, 3192, 158, 3, 34, "Output"],
+Cell[113792, 3197, 720, 19, 48, "Output"],
+Cell[114515, 3218, 142, 1, 32, "Output"],
+Cell[114660, 3221, 144, 1, 32, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[75635, 2255, 90, 1, 65, "Section"],
+Cell[114853, 3228, 90, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[75750, 2260, 314, 4, 77, "Input"],
-Cell[76067, 2266, 82, 1, 32, "Output"]
+Cell[114968, 3233, 314, 4, 77, "Input"],
+Cell[115285, 3239, 82, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[76186, 2272, 325, 8, 55, "Input"],
-Cell[76514, 2282, 154, 4, 34, "Output"],
-Cell[76671, 2288, 756, 20, 80, "Output"]
+Cell[115404, 3245, 325, 8, 55, "Input"],
+Cell[115732, 3255, 154, 4, 34, "Output"],
+Cell[115889, 3261, 756, 20, 66, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[77476, 2314, 144, 2, 65, "Section"],
+Cell[116694, 3287, 144, 2, 65, "Section"],
 Cell[CellGroupData[{
-Cell[77645, 2320, 314, 4, 77, "Input"],
-Cell[77962, 2326, 82, 1, 32, "Output"]
+Cell[116863, 3293, 314, 4, 77, "Input"],
+Cell[117180, 3299, 82, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[78081, 2332, 333, 8, 55, "Input"],
-Cell[78417, 2342, 179, 4, 34, "Output"],
-Cell[78599, 2348, 778, 20, 80, "Output"]
+Cell[117299, 3305, 333, 8, 55, "Input"],
+Cell[117635, 3315, 179, 4, 34, "Output"],
+Cell[117817, 3321, 778, 20, 80, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[79426, 2374, 93, 1, 65, "Section"],
+Cell[118644, 3347, 93, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[79544, 2379, 246, 3, 77, "Input"],
-Cell[79793, 2384, 82, 1, 32, "Output"]
+Cell[118762, 3352, 246, 3, 77, "Input"],
+Cell[119011, 3357, 82, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[79912, 2390, 342, 8, 55, "Input"],
-Cell[80257, 2400, 136, 3, 34, "Output"],
-Cell[80396, 2405, 696, 19, 62, "Output"]
+Cell[119130, 3363, 342, 8, 55, "Input"],
+Cell[119475, 3373, 136, 3, 34, "Output"],
+Cell[119614, 3378, 696, 19, 48, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[81141, 2430, 96, 1, 65, "Section"],
+Cell[120359, 3403, 96, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[81262, 2435, 312, 4, 77, "Input"],
-Cell[81577, 2441, 84, 1, 32, "Output"]
+Cell[120480, 3408, 312, 4, 77, "Input"],
+Cell[120795, 3414, 84, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[81698, 2447, 212, 3, 55, "Input"],
-Cell[81913, 2452, 139, 1, 32, "Output"],
-Cell[82055, 2455, 139, 1, 32, "Output"]
+Cell[120916, 3420, 212, 3, 55, "Input"],
+Cell[121131, 3425, 139, 1, 32, "Output"],
+Cell[121273, 3428, 139, 1, 32, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[82243, 2462, 101, 1, 65, "Section"],
+Cell[121461, 3435, 101, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[82369, 2467, 246, 3, 77, "Input"],
-Cell[82618, 2472, 106, 1, 32, "Output"]
+Cell[121587, 3440, 246, 3, 77, "Input"],
+Cell[121836, 3445, 106, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[82761, 2478, 351, 8, 55, "Input"],
-Cell[83115, 2488, 218, 4, 34, "Output"],
-Cell[83336, 2494, 898, 22, 116, "Output"]
+Cell[121979, 3451, 351, 8, 55, "Input"],
+Cell[122333, 3461, 218, 4, 34, "Output"],
+Cell[122554, 3467, 898, 22, 102, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[84283, 2522, 93, 1, 65, "Section"],
+Cell[123501, 3495, 93, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[84401, 2527, 314, 4, 77, "Input"],
-Cell[84718, 2533, 129, 2, 32, "Output"]
+Cell[123619, 3500, 314, 4, 77, "Input"],
+Cell[123936, 3506, 129, 2, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[84884, 2540, 190, 3, 55, "Input"],
-Cell[85077, 2545, 183, 3, 32, "Output"],
-Cell[85263, 2550, 183, 3, 32, "Output"]
+Cell[124102, 3513, 190, 3, 55, "Input"],
+Cell[124295, 3518, 183, 3, 32, "Output"],
+Cell[124481, 3523, 183, 3, 32, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[85495, 2559, 91, 1, 65, "Section"],
+Cell[124713, 3532, 91, 1, 65, "Section"],
 Cell[CellGroupData[{
-Cell[85611, 2564, 246, 3, 77, "Input"],
-Cell[85860, 2569, 82, 1, 32, "Output"]
+Cell[124829, 3537, 246, 3, 77, "Input"],
+Cell[125078, 3542, 104, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[85979, 2575, 274, 4, 77, "Input"],
-Cell[86256, 2581, 165, 2, 32, "Output"],
-Cell[86424, 2585, 161, 2, 32, "Output"],
-Cell[86588, 2589, 160, 2, 32, "Output"]
+Cell[125219, 3548, 63, 1, 32, "Input"],
+Cell[125285, 3551, 12777, 311, 79, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[138099, 3867, 179, 3, 32, "Input"],
+Cell[138281, 3872, 12755, 311, 79, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[151097, 4190, 96, 1, 93, "Title"],
+Cell[CellGroupData[{
+Cell[151218, 4195, 957, 21, 55, "Input"],
+Cell[152178, 4218, 7185, 139, 195, "Output"],
+Cell[159366, 4359, 324, 4, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[159727, 4368, 102, 1, 44, "Subsection"],
+Cell[CellGroupData[{
+Cell[159854, 4373, 384, 6, 99, "Input"],
+Cell[160241, 4381, 614, 8, 32, "Output"],
+Cell[CellGroupData[{
+Cell[160880, 4393, 584, 8, 24, "Print"],
+Cell[161467, 4403, 592, 8, 24, "Print"],
+Cell[162062, 4413, 597, 8, 24, "Print"],
+Cell[162662, 4423, 594, 8, 24, "Print"],
+Cell[163259, 4433, 601, 8, 24, "Print"],
+Cell[163863, 4443, 603, 8, 24, "Print"],
+Cell[164469, 4453, 595, 8, 24, "Print"],
+Cell[165067, 4463, 595, 8, 24, "Print"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[165723, 4478, 103, 1, 45, "Subsection"],
+Cell[CellGroupData[{
+Cell[165851, 4483, 418, 7, 99, "Input"],
+Cell[166272, 4492, 650, 9, 32, "Output"],
+Cell[CellGroupData[{
+Cell[166947, 4505, 634, 9, 24, "Print"],
+Cell[167584, 4516, 647, 9, 24, "Print"],
+Cell[168234, 4527, 667, 9, 24, "Print"],
+Cell[168904, 4538, 659, 9, 24, "Print"],
+Cell[169566, 4549, 647, 9, 24, "Print"],
+Cell[170216, 4560, 647, 9, 24, "Print"]
+}, Open  ]],
+Cell[170878, 4572, 575, 11, 23, "Message"],
+Cell[CellGroupData[{
+Cell[171478, 4587, 785, 13, 26, "Print"],
+Cell[172266, 4602, 661, 9, 24, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[172976, 4617, 147, 2, 32, "Input"],
+Cell[173126, 4621, 233, 5, 34, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[173396, 4631, 280, 5, 32, "Input"],
+Cell[173679, 4638, 12777, 311, 79, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[186493, 4954, 1043, 19, 143, "Input"],
+Cell[187539, 4975, 940, 13, 32, "Output"],
+Cell[188482, 4990, 13611, 323, 79, "Output"],
+Cell[CellGroupData[{
+Cell[202118, 5317, 930, 13, 24, "Print"],
+Cell[203051, 5332, 942, 13, 24, "Print"],
+Cell[203996, 5347, 937, 13, 24, "Print"],
+Cell[204936, 5362, 928, 13, 24, "Print"],
+Cell[205867, 5377, 932, 13, 24, "Print"],
+Cell[206802, 5392, 944, 13, 24, "Print"],
+Cell[207749, 5407, 944, 13, 24, "Print"],
+Cell[208696, 5422, 949, 13, 24, "Print"],
+Cell[209648, 5437, 934, 13, 24, "Print"],
+Cell[210585, 5452, 936, 13, 24, "Print"],
+Cell[211524, 5467, 932, 13, 24, "Print"],
+Cell[212459, 5482, 939, 13, 24, "Print"],
+Cell[213401, 5497, 943, 13, 24, "Print"],
+Cell[214347, 5512, 938, 13, 24, "Print"],
+Cell[215288, 5527, 934, 13, 24, "Print"],
+Cell[216225, 5542, 935, 13, 24, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[217209, 5561, 253, 5, 32, "Input"],
+Cell[217465, 5568, 12753, 311, 79, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]

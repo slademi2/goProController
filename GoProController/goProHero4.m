@@ -278,13 +278,17 @@ goProGetPossibleMultiShotResolution::usage=
 
 (* ::Subsection:: *)
 (* TimeLapse interval *)
-goProSetTimeLapseInterval::usage=
-	"goProSetTimeLapseInterval[ _String] set TimeLapse interval to parameter given."
+goProSetMultiShotTimeLapseInterval::usage=
+	"goProSetMultiShotTimeLapseInterval[ _String] set TimeLapse for MultiShot interval to parameter given."
+goProSetVideoTimeLapseInterval::usage=
+	"goProSetVideoTimeLapseInterval[ _String] set TimeLapse for Video interval to parameter given."
 goProGetPossibleTimeLapseInterval::usage=
 	"goProGetPossibleTimeLapseInterval[ ] returns usable values for TimeLapse interval."
+goProSetTimeLapseInterval::usage=
+	"goProSetVideoTimeLapseInterval[ _String] set TimeLapse for Video interval to parameter given."	
 	
 	
-	
+
 
 (* ::Subsection:: *)
 (* MultiShot spot meter *)
@@ -392,8 +396,8 @@ goProLocateStop::usage =
 
 (* ::Subsection:: *)
 (* Delete *)
-goProDeleteFile::usage=
-	"goProDeleteFile[ _String] deletes file which name was given as parameter. Insert name in format /100GOPRO/file"
+(*goProDeleteFile::usage=
+	"goProDeleteFile[ _String] deletes file which name was given as parameter. Insert name in format /100GOPRO/file"*)
 goProDeleteLast::usage=
 	"goProDeleteLast[ ] deletes last file from memory."
 goProDeleteAll::usage=
@@ -402,7 +406,49 @@ goProDeleteAll::usage=
 
 
 
+(* ::Subsection:: *)
+(* Exposure *)
+goProGetPossibleExposure::usage =
+    "goProGetPossibleExposure[ ] returns possible parameters for exposure compensation settings"
+goProSetExposure::usage =
+    "goProSetExposure[ _String] sets exposure compensation to parameter given. The range is (-2 to +2), in 0.5 step increments. To see which parameters are supported call goProGetPossibleExposure[]. Only if protune mod is on."
+goProSetPhotoExposure::usage =
+    "goProSetExposure[ _String] sets exposure compensation to parameter given. The range is (-2 to +2), in 0.5 step increments. To see which parameters are supported call goProGetPossibleExposure[]. Only if protune mod is on."
+goProSetVideoExposure::usage =
+    "goProSetExposure[ _String] sets exposure compensation to parameter given. The range is (-2 to +2), in 0.5 step increments. To see which parameters are supported call goProGetPossibleExposure[]. Only if protune mod is on."
+goProSetMultiShotExposure::usage =
+    "goProSetExposure[ _String] sets exposure compensation to parameter given. The range is (-2 to +2), in 0.5 step increments. To see which parameters are supported call goProGetPossibleExposure[]. Only if protune mod is on."
 
+
+
+
+
+
+(* ::Subsection:: *)
+(* Protune *)
+goProGetPossibleProtune::usage =
+    "goProGetPossibleProtune[ ] returns possible values for protune mode."
+goProSetProtune::usage =
+    "goProSetProtune[ _String] switch protune mode on/off."
+goProSwitchProtuneOn::usage =
+    "goProSwitchProtuneOn[ ] Switch protune mode on."
+goProSwitchProtuneOff::usage =
+    "goProSwitchProtuneOff[ ] Switch protune mode off."
+
+
+
+
+(* ::Subsection:: *)
+(* CameraStatus *)
+goProGetCameraStatus::usage=
+	"goProGetCameraStatus[ ] Prints status of camera."
+
+
+
+(* ::Subsection:: *)
+(* Camera Settings *)
+goProGetCameraSettings::usage=
+	"goProGetCameraSettingd[ ] Prints settings of camera."
 
 (* ::Section:: *)
 (* Private Definitions *)	
@@ -432,11 +478,28 @@ goProMakeCommand[mode_String,param1_String,param2_String]:= goProUrl <> mode <> 
 goProMakeCommand[mode_String,param_String] := goProUrl <> mode <> "/" <> param;
 
 (*spusteni prikazu exec pomoci HTTPRequest a URLRead*)
-execute[exec_String] := ((*request = HTTPRequest[exec];
-     URLRead[request]*)exec)
+execute[exec_String] := (request = HTTPRequest[exec];
+     URLRead[request])
  
  
  
+ 
+(* ::Subsection:: *)
+(* Protune *)
+videoProtune="10"
+photoProtune="21"
+multiShotProtune="34"
+
+goProGetPossibleProtune[]:=spotMeterPossible
+
+goProSetProtune[param_String]:=(
+	execute[goProMakeCommand["setting",videoProtune,spotMeterToCode[[ToLowerCase[param] ]]]];
+	execute[goProMakeCommand["setting",photoProtune,spotMeterToCode[[ToLowerCase[param] ]]]];
+	execute[goProMakeCommand["setting",multiShotProtune,spotMeterToCode[[ToLowerCase[param] ]]]])
+
+goProSwitchProtuneOn[]:=goProSetProtune["on"]
+goProSwitchProtuneOff[]:=goProSetProtune["off"]
+
 
 (* ::Subsection:: *)
 (* Shutter *)
@@ -575,15 +638,15 @@ sharpnessPossible={"high","medium","low"};
 
 sharpnessToCode=<|"high"->"0","medium"->"1","low"->"2"|>
 
-sharpnessVideo="14"
-sharpnessPhoto="25"
-sharpnessMultiShot="38"
+videoSharpness="14"
+photoSharpness="25"
+multiShotSharpness="38"
 
 goProGetPossibleSharpness[]:=sharpnessPossible
 
-goProSetVideoSharpnes[param_String]:=execute[goProMakeCommand["setting",sharpnessVideo,sharpnessToCode[[ToLowerCase[param] ]]]]
-goProSetPhotoSharpnes[param_String]:=execute[goProMakeCommand["setting",sharpnessPhoto,sharpnessToCode[[ToLowerCase[param] ]]]]
-goProSetMultiShotSharpnes[param_String]:=execute[goProMakeCommand["setting",sharpnessMultiShot,sharpnessToCode[[ToLowerCase[param] ]]]]
+goProSetVideoSharpnes[param_String]:=execute[goProMakeCommand["setting",videoSharpness,sharpnessToCode[[ToLowerCase[param] ]]]]
+goProSetPhotoSharpnes[param_String]:=execute[goProMakeCommand["setting",photoSharpness,sharpnessToCode[[ToLowerCase[param] ]]]]
+goProSetMultiShotSharpnes[param_String]:=execute[goProMakeCommand["setting",multiShotSharpness,sharpnessToCode[[ToLowerCase[param] ]]]]
 
 
 
@@ -656,7 +719,10 @@ fpsToCode=<|
 "50"->"6",
 "48"->"7",
 "30"->"8",
-"25"->"9"
+"25"->"9",
+"24"->"10",
+"15"->"11",
+"12.5"->"12"
 |>
 fpsPossible={"240","120","100","90","80","60","50","48","30","25"}
 fps="3";
@@ -873,8 +939,9 @@ goProGetPossibleMultiShotResolution[]:=photoResPossible
 
 (* ::Subsection:: *)
 (* TimeLapse Interval *)
-timeLapseInterval="30"
-timeLapseIntervalToCode=<|"0.5"->"0",
+multiShotTimeLapseInterval="30"
+videoTimeLapseInterval="5"
+multiShotTimeLapseIntervalToCode=<|"0.5"->"0",
 "1"->"1",
 "2"->"2",
 "5"->"5",
@@ -882,9 +949,21 @@ timeLapseIntervalToCode=<|"0.5"->"0",
 "30"->"30",
 "60"->"60"
 |>
+videoTimeLapseIntervalToCode=<|
+"0.5"->"0",
+"1"->"1",
+"2"->"2",
+"5"->"3",
+"10"->"4",
+"30"->"5",
+"60"->"6"
+|>
 timeLapseIntervalPossible={"0.5","1","2","5","10","30","60"}
-goProSetTimeLapseInterval[param_String]:=execute[goProMakeCommand["setting",timeLapseInterval,timeLapseIntervalToCode[[param]]]]
+goProSetMultiShotTimeLapseInterval[param_String]:=execute[goProMakeCommand["setting",multiShotTimeLapseInterval,multiShotTimeLapseIntervalToCode[[param]]]]
+goProSetVideoTimeLapseInterval[param_String]:=execute[goProMakeCommand["setting",videoTimeLapseInterval,videoTimeLapseIntervalToCode[[param]]]]
 goProGetPossibleTimeLapseInterval[]:=timeLapseIntervalPossible
+goProSetTimeLapseInterval[param_String]:=(goProSetVideoTimeLapseInterval[param];goProSetMultiShotTimeLapseInterval[param])
+
 
 (* ::Subsection:: *)
 (* Photo Spot Meter *)
@@ -1030,6 +1109,30 @@ goProDeleteAll[]:=execute[goProMakeCommand["command/storage/delete","all"]]
 
 
 
+
+(* ::Subsection:: *)
+(* exposure *)
+(*exposure*)
+evVideo="15"
+evPhoto="26"
+evMultiShot="39"
+evToCode = <|
+    "-2.0"->"8",
+     "-1.5"->"7",
+     "-1.0"->"6",
+     "-0.5"->"5",
+     "0"->"4",
+     "+0.5"->"3",
+     "+1.0"->"2",
+     "+1.5"->"1",
+     "+2.0"->"0"
+|>
+evPossible = { "0","-2.0", "-1.5", "-1.0", "-0.5", "+0.5", "+1.0", "+1.5", "+2.0"}
+goProGetPossibleExposure[] := evPossible
+goProSetExposure[param_String] :=(goProSetVideoExposure[param];goProSetPhotoExposure[param];goProSetMultiShotExposure[param])
+goProSetVideoExposure[param_String] :=execute[goProMakeCommand["setting",evVideo,evToCode[[param]]]]
+goProSetPhotoExposure[param_String] :=execute[goProMakeCommand["setting",evPhoto,evToCode[[param]]]]
+goProSetMultiShotExposure[param_String] :=execute[goProMakeCommand["setting",evMultiShot,evToCode[[param]]]]
 	
 	
 (* ::Subsection:: *)
@@ -1041,6 +1144,137 @@ shutterSpeedPossible={}
 
 
 
+
+
+battery=""
+currentMode=""
+currentSubMode=""
+photoRemaining=""
+videoRemaining=""
+photoBatch=""
+numberOfVideos=""
+numberOfPhotos=""
+recording=""
+
+(* ::Section:: *)
+(* Status *)
+getCameraStatus[param_String]:= Association[
+   URLExecute[HTTPRequest["http://10.5.5.9/gp/gpControl/status"]][[
+     1]][[2]]][[param]]
+
+
+codeTobattery=<|"3"->"full","2"->"half","1"->"low","4"->"charging"|>
+
+codeTocurrentMode=<|"0"->"Video","1"->"Photo","2"->"MultiShot"|>
+
+codeTocurrentSubMode=
+<|"0"->
+	<|"0"->"Video","1"->"TimeLapse Video","2"->"Photo in Video","3"->"Looping"|>,
+"1"->
+	<|"0"->"Single Picture","1"->"Continuous","2"->"Night Photo"|>,
+"2"->
+	<|"0"->"Burst","1"->"TimeLapse","2"->"NightLapse"|>
+|>
+
+recordingDecode=<|"0"->"No","1"->"Yes"|>
+
+goProGetCameraStatus[]:=(
+recording=recordingDecode[[ToString[ getCameraStatus["8"] ]]];
+battery=codeTobattery[[ToString[ getCameraStatus["2"] ]]];
+currentMode=codeTocurrentMode[[ToString[ getCameraStatus["43"] ]]];
+currentSubMode=codeTocurrentSubMode[[ ToString[ getCameraStatus["43"]] ]][[ ToString[ getCameraStatus["44"] ] ]];
+photoRemaining=getCameraStatus["34"];
+videoRemaining=getCameraStatus["35"];
+photoBatch=getCameraStatus["36"];
+numberOfVideos=getCameraStatus["39"];
+numberOfPhotos=getCameraStatus["38"];
+
+Print["Recording: "<>recording];
+Print["Baterry Level: "<> battery];
+Print["Camera Mode: "<> currentMode <>" - "<> currentSubMode];
+Print["Remaining Photos: "<> ToString[photoRemaining]];
+Print["Remaining Video time: " <>ToString[videoRemaining] <> "s"];
+Print["Number of Photo Batches taken: "<>ToString[photoBatch]];
+Print["Number of Photo taken: "<>ToString[numberOfPhotos]];
+Print["Number of Video taken: "<>ToString[numberOfVideos]];
+)
+
+getSettings[param_String]:= Association[
+   URLExecute[HTTPRequest["http://10.5.5.9/gp/gpControl/status"]][[2]][[2]]][[param]]
+	
+
+subModeSetting=""
+videoResSetting=""
+fpsSetting=""
+fovSetting=""
+timeLapseIntervalSetting=""
+videoLoopSetting=""
+photoInVideoSetting=""
+lowLightSetting=""
+videoSpotMeterSetting=""
+protuneSetting=""
+whiteBalanceSetting=""
+videoColorProfileSetting=""
+videoSharpnessSetting=""
+videoExposureSetting=""
+isoModeSetting=""
+isoLimitVideoSetting=""
+
+codeTovideoResolution=Association[videoResToCodeBlack[[#]] -> # & /@ Keys[videoResToCodeBlack]];
+codeToFPS=Association[fpsToCode[[#]] -> # & /@ Keys[fpsToCode]];
+codeToFOV=Association[fovToCode[[#]] -> # & /@ Keys[fovToCode]];
+codeToVideoTimeLapseInterval=Association[videoTimeLapseIntervalToCode[[#]] -> # & /@ Keys[videoTimeLapseIntervalToCode]];
+codeTovideoLoop=Association[videoLoopToCode[[#]] -> # & /@ Keys[videoLoopToCode]];
+codeToPhotoInVideo=Association[photoInVideoToCode[[#]] -> # & /@ Keys[photoInVideoToCode]];
+codeToLowLight=Association[lowLightToCode[[#]] -> # & /@ Keys[lowLightToCode]];
+codeToSpotMeter=Association[spotMeterToCode[[#]] -> # & /@ Keys[spotMeterToCode]];
+codeToProtune=codeToSpotMeter
+codeToWhiteBalance=Association[wbToCode[[#]] -> # & /@ Keys[wbToCode]];
+codeToColorProfile=Association[coToCode[[#]] -> # & /@ Keys[coToCode]];
+codeToSharpness=Association[sharpnessToCode[[#]] -> # & /@ Keys[sharpnessToCode]];
+codeToExposure=Association[evToCode[[#]] -> # & /@ Keys[evToCode]];
+codeToIsoMode=Association[isoModeToCode[[#]] -> # & /@ Keys[isoModeToCode]];
+codeToIsoLimit=Association[isoLimitVideoToCode[[#]] -> # & /@ Keys[isoLimitVideoToCode]];
+
+goProGetCameraSettings[]:=(
+	subModeSetting=codeTocurrentSubMode[[ "0" ]][[ ToString[getSettings["68"]] ]];
+	videoResSetting=codeTovideoResolution[[ToString[getSettings[videoRes]]]];
+	fpsSetting=codeToFPS[[ToString[getSettings[fps]]]];
+	fovSetting=codeToFOV[[ToString[getSettings[fov]]]];
+	timeLapseIntervalSetting=codeToVideoTimeLapseInterval[[ToString[getSettings[videoTimeLapseInterval]]]];
+	videoLoopSetting=codeTovideoLoop[[ ToString[getSettings[videoLoop]] ]];
+	photoInVideoSetting=codeToPhotoInVideo[[ ToString[ToString[getSettings[photoInVideo]]] ]];
+	lowLightSetting=codeToLowLight[[ ToString[getSettings[lowLight]] ]];
+	videoSpotMeterSetting=codeToSpotMeter[[ ToString[getSettings[videoSpotMeter]] ]];
+	protuneSetting=codeToProtune[[ ToString[getSettings[videoProtune]] ]];
+	whiteBalanceSetting=codeToWhiteBalance[[ ToString[getSettings[wbVideo]] ]];
+	videoColorProfileSetting=codeToColorProfile[[ ToString[getSettings[coVideo]] ]];
+	videoSharpnessSetting=codeToSharpness[[ ToString[getSettings[videoSharpness]] ]];
+	videoExposureSetting=codeToExposure[[ ToString[getSettings[evVideo]] ]];
+	isoModeSetting=codeToIsoMode[[ ToString[getSettings[isoMode]] ]];
+	isoLimitVideoSetting=codeToIsoLimit[[ ToString[getSettings[isoLimitVideo]] ]];
+	
+	
+	
+	Print["Video Settings:"];
+	Print["		Current Mode: "<> subModeSetting];
+	Print["		Resolutin: "<>videoResSetting];
+	Print["		FPS: "<>fpsSetting];
+	Print["		FOV: "<>fovSetting];
+	Print["		TimeLapse Interval: "<>timeLapseIntervalSetting<>"s"];
+	Print["		VideoLoop Interval: "<>videoLoopSetting <> "m"];
+	Print["		Photo In Video Interval: "<>photoInVideoSetting<>"s"];
+	Print["		Low Light: "<>lowLightSetting];
+	Print["		Spot Meter: "<>videoSpotMeterSetting];
+	Print["		Protune: "<>protuneSetting];
+	Print["		White Balance: "<>whiteBalanceSetting];
+	Print["		Color Profile: "<>videoColorProfileSetting];
+	Print["		Sharpness: "<>videoSharpnessSetting];
+	Print["		ISO Mode: "<>isoModeSetting];	
+	Print["		ISO Limit: "<>isoLimitVideoSetting];	
+
+	
+)
 
 (* ::End:: *)
 (* Region Title *)
