@@ -993,7 +993,13 @@ resolution call goProGetPossibleFPS[ \"" <>
     )*)
     
    
- 
+
+(* ::Subsection:: *)
+(* Setting all parameters in one function *)
+   
+(*function downloadSettings[] will download all possible settings from camera and save them to the 
+	vareiables with suffix Def (Default), this function will be called before every usage of function goProSet[].
+*)   
  
 downloadSettings[]:=(
 	
@@ -1064,6 +1070,8 @@ exposureDef=goProGetPossibleExposure[][[1]];*)
     sharpness->goProGetPossibleSharpness[][[1]],
     exposure->goProGetPossibleExposure[][[1]]}*)
 
+
+
  
 Options[goProSet] = {videoResolution -> videoResolutionDef,
 	fps -> fpsDef,
@@ -1086,6 +1094,13 @@ Options[goProSet] = {videoResolution -> videoResolutionDef,
     iso->iso,
     sharpness->sharpnessDef,
     exposure->exposureDef}
+
+
+(*function goProSet[] enables camera setting through rules. The first thing to happen after usage of this function will be 
+	execution function downloadSettings[] to update variables. After updating variables function goProSet will test new values
+	against values downloaed from camera and set only those parameters which are not the same. This precaution will prevent 
+	us from overwhelming camera with useless http requests.
+ *)
 
 goProSet[OptionsPattern[]] :=(downloadSettings[];
     (*goProSetVideo[Flatten[{videoResolution->OptionValue[videoResolution],fps-> OptionValue[fps], fov->OptionValue[fov],videoMode->OptionValue[videoMode]}]];*)
