@@ -103,7 +103,7 @@ goProGetPossibleFPS::usage =
     "goProGetPossibleFPS[ _String] Returns list of possible FPS for video resolution specified by parameter"
 goProSetFPS::usage =
     "goProSetFPS[_String] Sets FPS to given parameter, but only if this amount of FPS is supported by actual video resolution.
-	 To see which parameter you can use for actual video resolution use goProGetPossibleFPS functuon"
+	 To see which parameter you can use for actual video resolution use goProGetPossibleFPS function"
     
     
 (*Orientation*)

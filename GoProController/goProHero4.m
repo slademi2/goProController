@@ -109,14 +109,14 @@ goProGetPossibleMultiShotIsoMinimum::usage=
 goProGetPossibleSharpness::usage=
 	"goProGetPossibleSharpness[ ] returns usable values for sharpness setting. "
 
-goProSetVideoSharpnes::usage=
+goProSetVideoSharpness::usage=
 	"goProSetVideoSharpnes[ _String] sets Video sharpness to parameter given, to see which parameter you can use call goProGetPossibleSharpness function."
 	
-goProSetPhotoSharpnes::usage=
-	"goProSetPhotoSharpnes[ _String] sets Photo sharpness to parameter given, to see which parameter you can use call goProGetPossibleSharpness function."
+goProSetPhotoSharpness::usage=
+	"goProSetPhotoSharpness[ _String] sets Photo sharpness to parameter given, to see which parameter you can use call goProGetPossibleSharpness function."
 	
-goProSetMultiShotSharpnes::usage=
-	"goProSetMultiShotSharpnes[ _String] sets MultiShot sharpness to parameter given, to see which parameter you can use call goProGetPossibleSharpness function."
+goProSetMultiShotSharpness::usage=
+	"goProSetMultiShotSharpness[ _String] sets MultiShot sharpness to parameter given, to see which parameter you can use call goProGetPossibleSharpness function."
 
 
 
@@ -139,8 +139,10 @@ goProSetVideoResolution::usage=
 (* FPS *)
 goProGetPossibleFPS::usage =
     "goProGetPossibleF[ ] Returns list of possible FPS."
-(*goProGetPossibleFPS::usage =
-    "goProGetPossibleFPS[ _String] Returns list of possible FPS for video resolution specified by parameter"*)
+goProGetPossibleFPS::usage =
+    "goProGetPossibleFPS[ _String] Returns list of possible FPS for video resolution specified by parameter"
+goProGetCurrentlyPossibleFPS::usage=
+	"goProGetCurrentlyPossibleFPS[] Returns possible FPS for current video resolution."   
 goProSetFPS::usage =
     "goProSetFPS[_String] Sets FPS to given parameter, but only if this amount of FPS is supported by actual video resolution.
 	 To see which parameter you can use for actual video resolution use goProGetPossibleFPS functuon"
@@ -236,7 +238,10 @@ goProSwitchPhotoSpotMeterOn::usage =
     "goProSwitchPhotoSpotMeterOn[ ] turns SpotMeter on."
 goProSwitchPhotoSpotMeterOff::usage =
     "goProSwitchPhotoSpotMeterOff[ ] turns SpotMeter off."
-
+goProSwitchSpotMeterOn::usage =
+    "goProSwitchPhotoSpotMeterOn[ ] turns SpotMeter on."
+goProSwitchSpotMeterOff::usage =
+    "goProSwitchPhotoSpotMeterOff[ ] turns SpotMeter off."
 
 
 (* ::Subsection:: *)
@@ -422,6 +427,18 @@ goProSetMultiShotExposure::usage =
 
 
 
+(* ::Subsection:: *)
+(* Shutter Time *)
+goProGetPossibleShutterTime::usage=
+	"goProGetPossibleShutterTime[ ] returns possible values for shutterTime."
+goProGetPossibleShutterTime::usage=
+	"goProGetPossibleShutterTime[ _String] returns possible values for shutterTime for FPS given as parameter."
+goProGetCurrentlyPossibleShutterTimeFPS::usage=
+	"goProGetCurrentlyPossibleShutterTimeFPS[ ] returns possible values for shutterTime for current FPS set."
+goProSetShutterTime::usage=
+	"goProSetShutterTime[_String] Sets time when shutter is open to parameter given (Only in Video Mode)."
+
+
 
 
 (* ::Subsection:: *)
@@ -430,6 +447,14 @@ goProGetPossibleProtune::usage =
     "goProGetPossibleProtune[ ] returns possible values for protune mode."
 goProSetProtune::usage =
     "goProSetProtune[ _String] switch protune mode on/off."
+
+goProSetVideoProtune::usage =
+    "goProSetVideoProtune[ _String] switch protune mode on/off."
+goProSetPhotoProtune::usage =
+    "goProSetPhotoProtune[ _String] switch protune mode on/off."
+goProSetMultiShotProtune::usage =
+    "goProSetMultiShotProtune[ _String] switch protune mode on/off."   
+ 
 goProSwitchProtuneOn::usage =
     "goProSwitchProtuneOn[ ] Switch protune mode on."
 goProSwitchProtuneOff::usage =
@@ -447,9 +472,72 @@ goProGetCameraStatus::usage=
 
 (* ::Subsection:: *)
 (* Camera Settings *)
-goProGetCameraSettings::usage=
-	"goProGetCameraSettingd[ ] Prints settings of camera."
+goProGetSettingReport::usage =
+    "goProGetSettingReport[ ] returns settings of camera"
+goProGetVideoSettingReport::usage =
+    "goProGetVideoSettingReport[ ] returns Video settings of camera"    
+goProGetPhotoSettingReport::usage =
+    "goProGetPhotoSettingReport[ ] returns Photo settings of camera"    
+goProGetMultiShotSettingReport::usage =
+    "goProGetMultiShotSettingReport[ ] returns MultiShot settings of camera"    
 
+    
+    
+
+(* ::Subsection:: *)
+(* Download *)
+goProGetFileList::usage=
+	"goProGetFileList[] returns list of files which were aquired by the camera." 
+goProDownloadFile::usage=
+	"goProDownloadFile[name_String,destination_String] download file which name was given as first parameter to the destination specified in second parameter. "
+goProDownloadAll::usage=
+	"goProDownloadAll[ _String] downloads all files from camera to destination given. TRALALALALAALLAALALALALAL ALA ALL A"
+goProGetFileURL::usage=
+	"goProGetFileURL[_String] returns URL string of file which name was given in parameter."	
+
+
+
+(* ::Subsection:: *)
+(* Modes *)
+goProSetBootMode::usage=
+	"goProSetBootMode[ _String] Sets boot mode to parameter given, to see options possible call goProGetPossibleBootMode[]. "
+goProGetPossibleBootMode::usage=
+	"goProGetPossibleBootMode[] returns possible options for boot mode.  "	
+	
+goProMode::usage=
+	"goProMode[ _String] Switches mode to parameter given. To see which parameter you can use call goProGetPossibleModes[]."
+goProGetPossibleModes::usage=
+	"goProGetPossibleModes[ ] returns possible camera modes ."
+	
+	
+
+
+(* ::Subsection:: *)
+(* Power *)
+(*goProTurnOn::usage = 
+    "goProTurnOn[ ] Turns on the gopro camera"*)
+
+goProTurnOff::usage =    
+    "goProTurnOn[ ] Turns off the gopro camera"
+    
+    
+    
+
+(* ::Subsection:: *)
+(* complete Setup *)
+goProSet::usage =
+    "goProSet[ ] enables to set camera via rules such as: {fps,fov,videoResolution,photoResolution,...}"
+   
+goProGetSettingReportAssociation::usage=
+	"goProGetSettingReportAssociation[ ] returns association field with all settings of camera."
+	
+goProGetVariables::usage=
+	"goProGetVariables[ ], returns all variables for goProSet function."
+	
+goProReport::usage=
+	"goProReport[_String] returns value set to parameter given such ase {videoResolution->1080p}"
+	
+	
 (* ::Section:: *)
 (* Private Definitions *)	
 
@@ -478,24 +566,82 @@ goProMakeCommand[mode_String,param1_String,param2_String]:= goProUrl <> mode <> 
 goProMakeCommand[mode_String,param_String] := goProUrl <> mode <> "/" <> param;
 
 (*spusteni prikazu exec pomoci HTTPRequest a URLRead*)
-execute[exec_String] := (request = HTTPRequest[exec];
+execute[exec_String] :=(request = HTTPRequest[exec];
      URLRead[request])
  
  
  
  
+ 
+ 
+
+(* ::Subsection:: *)
+(* Power *)
+(*
+macAddress=""
+goProSetMac[param_String]:=macAdress=param
+
+
+goProSetMac::mac="You have to set mac adress of camera first, use goProSetMac[_String]";
+*)
+
+
+
+goProTurnOff[]:=execute[goProMakeCommand["command","system","sleep"]]
+    
+ 
+ 
+ 
+
+(* ::Subsection:: *)
+(* Modes *)
+
+bootModeCode="53"
+bootModeToCode=<|
+	"Video"->"0",
+	"Photo"->"1",
+	"MultiShot"->"2"
+|>
+
+goProSetBootMode[param_String]:=execute[goProMakeCommand["setting",bootModeCode,bootModeToCode[[param]] ]]
+goProGetPossibleBootMode[]:=Keys[bootModeToCode]
+	
+	
+modesToCode=<|
+	"Video"->{"0","0"},
+	"TimeLapseVideo"->{"0","1"},
+	"PhotoInVideo"->{"0","2"},
+	"LoopingVideo"->{"0","3"},
+	"Photo"->{"1","0"},
+	"ContinuousPhoto"->{"1","1"},
+	"NightPhoto"->{"1","2"},
+	"Burst"->{"2","0"},
+	"TimeLapse"->{"2","1"},
+	"NightLapse"->{"2","2"}
+|>	
+
+goProGetPossibleModes[]:=Keys[modesToCode]
+goProMode[param_String]:=execute[goProMakeCommand["command","sub_mode?mode="<>modesToCode[[param]][[1]] <>
+	"&sub_mode=" <> modesToCode[[param]][[2]] ]]
+
+ 
+ 
 (* ::Subsection:: *)
 (* Protune *)
-videoProtune="10"
-photoProtune="21"
-multiShotProtune="34"
+videoProtuneCode="10"
+photoProtuneCode="21"
+multiShotProtuneCode="34"
 
 goProGetPossibleProtune[]:=spotMeterPossible
 
 goProSetProtune[param_String]:=(
-	execute[goProMakeCommand["setting",videoProtune,spotMeterToCode[[ToLowerCase[param] ]]]];
-	execute[goProMakeCommand["setting",photoProtune,spotMeterToCode[[ToLowerCase[param] ]]]];
-	execute[goProMakeCommand["setting",multiShotProtune,spotMeterToCode[[ToLowerCase[param] ]]]])
+	execute[goProMakeCommand["setting",videoProtuneCode,spotMeterToCode[[ToLowerCase[param] ]]]];
+	execute[goProMakeCommand["setting",photoProtuneCode,spotMeterToCode[[ToLowerCase[param] ]]]];
+	execute[goProMakeCommand["setting",multiShotProtuneCode,spotMeterToCode[[ToLowerCase[param] ]]]])
+
+goProSetVideoProtune[param_String]:=execute[goProMakeCommand["setting",videoProtuneCode,spotMeterToCode[[ToLowerCase[param] ]]]]
+goProSetPhotoProtune[param_String]:=execute[goProMakeCommand["setting",photoProtuneCode,spotMeterToCode[[ToLowerCase[param] ]]]]
+goProSetMultiShotProtune[param_String]:=execute[goProMakeCommand["setting",multiShotProtuneCode,spotMeterToCode[[ToLowerCase[param] ]]]]
 
 goProSwitchProtuneOn[]:=goProSetProtune["on"]
 goProSwitchProtuneOff[]:=goProSetProtune["off"]
@@ -512,9 +658,9 @@ goProStop[] :=
 
 (* ::Subsection:: *)
 (* WhiteBalance *)
-wbPhoto="22"
-wbVideo="11"
-wbMulti="35"
+wbPhotoCode="22"
+wbVideoCode="11"
+wbMultiCode="35"
 wbToCode = <|
 "auto"->"0",
 "3000k"->"1",
@@ -530,14 +676,14 @@ wbPossible = {"auto","3000k","4000k","4800k","5500k","6000k","6500k","native"}
 goProGetPossibleWhiteBalance[] :=
     wbPossible
 goProSetPhotoWhiteBalance[param_String] :=
-    execute[goProMakeCommand["setting",wbPhoto,wbToCode[[ToLowerCase[param] ]]]]
+    execute[goProMakeCommand["setting",wbPhotoCode,wbToCode[[ToLowerCase[param] ]]]]
 
 goProSetVideoWhiteBalance[param_String] :=
-    execute[goProMakeCommand["setting",wbVideo,wbToCode[[ToLowerCase[param] ]]]]	
+    execute[goProMakeCommand["setting",wbVideoCode,wbToCode[[ToLowerCase[param] ]]]]	
     
 
 goProSetMultiShotWhiteBalance[param_String] :=
-    execute[goProMakeCommand["setting",wbMulti,wbToCode[[ToLowerCase[param] ]]]]	
+    execute[goProMakeCommand["setting",wbMultiCode,wbToCode[[ToLowerCase[param] ]]]]	
     
     
 
@@ -545,18 +691,18 @@ goProSetMultiShotWhiteBalance[param_String] :=
 (* Collor Profile *)
 (*Color Profile *)
 
-coVideo="12"
-coPhoto="23"
-coMulti="36"
+coVideoCode="12"
+coPhotoCode="23"
+coMultiCode="36"
 coToCode = <|
     "gopro"->"0",
     "flat"->"1"
 |>;
 coPossible = {"GoPro","Flat"};
 goProGetPossibleColorProfile[] :=coPossible
-goProSetVideoColorProfile[param_String] := execute[goProMakeCommand["setting",coVideo,coToCode[[ToLowerCase[param] ]]]]
-goProSetPhotoColorProfile[param_String] := execute[goProMakeCommand["setting",coPhoto,coToCode[[ToLowerCase[param] ]]]]
-goProSetMultiShotColorProfile[param_String] :=execute[goProMakeCommand["setting",coMulti,coToCode[[ToLowerCase[param] ]]]]	
+goProSetVideoColorProfile[param_String] := execute[goProMakeCommand["setting",coVideoCode,coToCode[[ToLowerCase[param] ]]]]
+goProSetPhotoColorProfile[param_String] := execute[goProMakeCommand["setting",coPhotoCode,coToCode[[ToLowerCase[param] ]]]]
+goProSetMultiShotColorProfile[param_String] :=execute[goProMakeCommand["setting",coMultiCode,coToCode[[ToLowerCase[param] ]]]]	
 
 
 (* ::Subsection:: *)
@@ -587,27 +733,27 @@ isoLimitMultiToCode = <|
 |>;
 isoLimitMultiPossible = {"800","400","200","100"};
 
-isoLimitVideo="13"
-isoLimitPhoto="24"
-isoLimitMulti="37"
+isoLimitVideoCode="13"
+isoLimitPhotoCode="24"
+isoLimitMultiCode="37"
 
 
 goProGetPossibleVideoIsoLimit[]:=isoLimitVideoPossible
 goProGetPossiblePhotoIsoLimit[]:=isoLimitPhotoPossible
 goProGetPossibleMultiShotIsoLimit[]:=isoLimitMultiPossible
 
-goProSetVideoIsoLimit[param_String]:=execute[goProMakeCommand["setting",isoLimitVideo,isoLimitVideoToCode[[ToLowerCase[param] ]]]]
-goProSetPhotoIsoLimit[param_String]:=execute[goProMakeCommand["setting",isoLimitPhoto,isoLimitPhotoToCode[[ToLowerCase[param] ]]]]
-goProSetMultiShotIsoLimit[param_String]:=execute[goProMakeCommand["setting",isoLimitMulti,isoLimitMultiToCode[[ToLowerCase[param] ]]]]
+goProSetVideoIsoLimit[param_String]:=execute[goProMakeCommand["setting",isoLimitVideoCode,isoLimitVideoToCode[[ToLowerCase[param] ]]]]
+goProSetPhotoIsoLimit[param_String]:=execute[goProMakeCommand["setting",isoLimitPhotoCode,isoLimitPhotoToCode[[ToLowerCase[param] ]]]]
+goProSetMultiShotIsoLimit[param_String]:=execute[goProMakeCommand["setting",isoLimitMultiCode,isoLimitMultiToCode[[ToLowerCase[param] ]]]]
 
 
 (* ::Subsection:: *)
 (* ISO MODE *)
-isoMode="74"
+isoModeCode="74"
 isoModePossible={"max","lock"}
 isoModeToCode=<|"max"->"0","lock"->"1"|>
 
-goProSetIsoMode[param_String]:=execute[goProMakeCommand["setting",isoMode,isoModeToCode[[ToLowerCase[param] ]]]]
+goProSetIsoMode[param_String]:=execute[goProMakeCommand["setting",isoModeCode,isoModeToCode[[ToLowerCase[param] ]]]]
 goProGetPossibleIsoMode[]:=isoModePossible
 
 
@@ -622,13 +768,13 @@ isoMinToCode = <|
 "100"->"3"
 |>;
 
-isoMinPhoto="75"
-isoMinMulti="76"
+isoMinPhotoCode="75"
+isoMinMultiCode="76"
 
-goProSetPhotoIsoMinimum[param_String]:=execute[goProMakeCommand["setting",isoMinPhoto,isoMinToCode[[ToLowerCase[param] ]]]]
+goProSetPhotoIsoMinimum[param_String]:=execute[goProMakeCommand["setting",isoMinPhotoCode,isoMinToCode[[ToLowerCase[param] ]]]]
 goProGetPossiblePhotoIsoMinimum[]:=isoMinPossible
 
-goProSetMultiShotIsoMinimum[param_String]:=execute[goProMakeCommand["setting",isoMinMulti,isoMinToCode[[ToLowerCase[param] ]]]]
+goProSetMultiShotIsoMinimum[param_String]:=execute[goProMakeCommand["setting",isoMinMultiCode,isoMinToCode[[ToLowerCase[param] ]]]]
 goProGetPossibleMultiShotIsoMinimum[]:=isoMinPossible
 
 
@@ -638,15 +784,15 @@ sharpnessPossible={"high","medium","low"};
 
 sharpnessToCode=<|"high"->"0","medium"->"1","low"->"2"|>
 
-videoSharpness="14"
-photoSharpness="25"
-multiShotSharpness="38"
+videoSharpnessCode="14"
+photoSharpnessCode="25"
+multiShotSharpnessCode="38"
 
 goProGetPossibleSharpness[]:=sharpnessPossible
 
-goProSetVideoSharpnes[param_String]:=execute[goProMakeCommand["setting",videoSharpness,sharpnessToCode[[ToLowerCase[param] ]]]]
-goProSetPhotoSharpnes[param_String]:=execute[goProMakeCommand["setting",photoSharpness,sharpnessToCode[[ToLowerCase[param] ]]]]
-goProSetMultiShotSharpnes[param_String]:=execute[goProMakeCommand["setting",multiShotSharpness,sharpnessToCode[[ToLowerCase[param] ]]]]
+goProSetVideoSharpness[param_String]:=execute[goProMakeCommand["setting",videoSharpnessCode,sharpnessToCode[[ToLowerCase[param] ]]]]
+goProSetPhotoSharpness[param_String]:=execute[goProMakeCommand["setting",photoSharpnessCode,sharpnessToCode[[ToLowerCase[param] ]]]]
+goProSetMultiShotSharpness[param_String]:=execute[goProMakeCommand["setting",multiShotSharpnessCode,sharpnessToCode[[ToLowerCase[param] ]]]]
 
 
 
@@ -669,7 +815,6 @@ videoResToCodeBlack=<|
 videoResToCodeSilver=<| 
 "4K"->"1",
 "2.7K"->"4",
-"2.7K 4:3"->"6",
 "1440p"->"7",
 "1080p SuperView"->"8",
 "1080p"->"9",
@@ -687,7 +832,7 @@ videoResToCodeSession=<|
 "720p"->"12",
 "WVGA"->"13"
 |>
-videoRes="2"
+videoResCode="2"
 
 videoResPossibleBlack=Keys[videoResToCodeBlack];
 videoResPossibleSilver=Keys[videoResToCodeSilver];
@@ -700,9 +845,9 @@ goProGetPossibleVideoResolution[]:=Switch[model,"Black",videoResPossibleBlack,
 	"Session",videoResPossibleSession,
 	_, Message[goProSetCameraModel::model, model]
 	]
-goProSetVideoResolution[param_String]:=Switch[model,"Black",execute[goProMakeCommand["setting",videoRes,videoResToCodeBlack[[param]]]],
-	"Silver",execute[goProMakeCommand["setting",videoRes,videoResToCodeSilver[[param]]]],
-	"Session",execute[goProMakeCommand["setting",videoRes,videoResToCodeSession[[param]]]],
+goProSetVideoResolution[param_String]:=Switch[model,"Black",execute[goProMakeCommand["setting",videoResCode,videoResToCodeBlack[[param]]]],
+	"Silver",execute[goProMakeCommand["setting",videoResCode,videoResToCodeSilver[[param]]]],
+	"Session",execute[goProMakeCommand["setting",videoResCode,videoResToCodeSession[[param]]]],
 	_, Message[goProSetCameraModel::model, model]
 	]
 		
@@ -724,30 +869,134 @@ fpsToCode=<|
 "15"->"11",
 "12.5"->"12"
 |>
-fpsPossible={"240","120","100","90","80","60","50","48","30","25"}
-fps="3";
-(*toDo*)
-fpsPossibleSilver={}
-fpsToCodeSilver=<||>
+
+fpsPossibleBlack=<|
+(*"4K"*)"1"->{"30","25","24"},
+(*"4K SuperView"*)"2"->{"24"},
+(*"2.7K"*)"4"->{"60","50","48","30","25","24"},
+(*"2.7K SuperView"*)"5"->{"30","25"},
+(*"2.7K 4:3"*)"6"->{"30","25"},
+(*"1440p"*)"7"->{"80","60","50","48","30","25","24"},
+(*"1080p SuperView"*)"8"->{"80","60","50","48","30","25","24"},
+(*"1080p"*)"9"->{"120","90","60","50","48","30","25","24"},
+(*"960p"*)"10"->{"120","60","50"},
+(*"720p SuperView"*)"11"->{"120","60","50"},
+(*"720p"*)"12"->{"240","120","60","50","30","25"},
+(*"WVGA"*)"13"->{"240"}
+|>
+
+fpsPossibleSession=<|
+(*"1440p"*)"7"->{"30","25"},
+(*"1080p SuperView"*)"8"->{"48","30","25"},
+(*"1080p"*)"9"->{"60","50","30","25"},
+(*"960p"*)"10"->{"60","50","30","25"},
+(*"720p SuperView"*)"11"->{"60","50","30","25"},
+(*"720p"*)"12"->{"100","60","50","30","25"},
+(*"WVGA"*)"13"->{"120","100"}
+|>
+
+fpsPossibleSilver=<|
+(*"4K"*)"1"->{"15","12.5"},
+(*"2.7K"*)"4"->{"30","25","24"},
+(*"1440p"*)"7"->{"48","30","25","24"},
+(*"1080p SuperView"*)"8"->{"60","50","48","30","25","24"},
+(*"1080p"*)"9"->{"60","50","48","30","25","24"},
+(*"960p"*)"10"->{"100","60","50"},
+(*"720p SuperView"*)"11"->{"100","60","50"},
+(*"720p"*)"12"->{"120","60","50","30","25"},
+(*"WVGA"*)"13"->{"240"}
+|>
+
+fpsCode="3";
+
+fpsPossible={"240",
+"120",
+"100",
+"90",
+"80",
+"60",
+"50",
+"48",
+"30",
+"25",
+"24",
+"15",
+"12.5"}
 
 
-goProGetPossibleFPS[]:=Switch[model,"Black",fpsPossible,
-	"Silver",fpsPossibleSilver,
-	"Session",fpsPossible,
+goProGetPossibleFPS[]:=fpsPossible
+
+goProGetCurrentlyPossibleFPS[]:=Switch[model,
+	"Black", fpsPossibleBlack[[ ToString[getSettings[videoResCode]] ]],
+	"Silver",fpsPossibleSilver[[ ToString[getSettings[videoResCode]] ]],
+	"Session",fpsPossibleSession[[ ToString[getSettings[videoResCode]] ]],
+	_, Message[goProSetCameraModel::model, model]
+	]
+   
+goProGetPossibleFPS[param_String]:=Switch[model,"Black", fpsPossibleBlack[[videoResToCodeBlack[[param]]]],
+	"Silver",fpsPossibleSilver[[videoResToCodeSilver[[param]]]],
+	"Session",fpsPossibleSession[[videoResToCodeSession[[param]]]],
 	_, Message[goProSetCameraModel::model, model]
 	]
 
 	
-goProSetFPS[param_String]:=Switch[model,"Black",execute[goProMakeCommand["setting",fps,fpsToCode[[param]]]],
-	"Silver",execute[goProMakeCommand["setting",fps,fpsToCodeSilver[[param]]]],
-	"Session",execute[goProMakeCommand["setting",fps,fpsToCode[[param]]]],
+goProSetFPS[param_String]:=Switch[model,"Black",execute[goProMakeCommand["setting",fpsCode,fpsToCode[[param]]]],
+	"Silver",execute[goProMakeCommand["setting",fpsCode,fpsToCode[[param]]]],
+	"Session",execute[goProMakeCommand["setting",fpsCode,fpsToCode[[param]]]],
 	_, Message[goProSetCameraModel::model, model]
 	]
 
 
+
+
+(* ::Subsection:: *)
+(* Shutter Time *)
+shutterTimeToCode=<|
+	"auto"->"0",
+	"1/24"->"3",
+	"1/30"->"5",
+	"1/48"->"6",
+	"1/60"->"8",
+	"1/90"->"10",
+	"1/96"->"11",
+	"1/120"->"13",
+	"1/180"->"15",
+	"1/192"->"16",
+	"1/240"->"18",
+	"1/360"->"20",
+	"1/480"->"22",
+	"1/960"->"23"
+|>
+shutterTimeCode="73"
+shutterTimeFPSPossible=<|
+(*"240"*)"0"->{"auto","1/240","1/480","1/960"},
+(*"120"*)"1"->{"auto","1/120","1/240","1/480"},
+(*"100"*)"2"->{},
+(*"90"*)"3"->{"auto","1/90","1/180","1/360"},
+(*"80"*)"4"->{},
+(*"60"*)"5"->{"auto","1/60","1/120","1/240"},
+(*"50"*)"6"->{},
+(*"48"*)"7"->{"auto","1/48","1/96","1/192"},
+(*"30"*)"8"->{"auto","1/30","1/60","1/120"},
+(*"25"*)"9"->{},
+(*"24"*)"10"->{"auto","1/24","1/48","1/96"},
+(*"15"*)"11"->{},
+(*"12.5"*)"12"->{}
+|>
+
+shutterTimePossible=Keys[shutterTimeToCode]
+goProGetPossibleShutterTime[]:=shutterTimePossible
+goProGetPossibleShutterTime[param_String]:=shutterTimeFPSPossible[[fpsToCode[[param]]]]
+goProSetShutterTime[param_String]:=execute[goProMakeCommand["setting",shutterTimeCode,shutterTimeToCode[[param]]]]
+goProGetCurrentlyPossibleShutterTimeFPS[]:= shutterTimeFPSPossible[[ ToString[getSettings[fpsCode]] ]]
+
+
+
+
+
 (* ::Subsection:: *)
 (* FOV *)
-fov="4"
+fovCode="4"
 fovToCode=<|
 	"wide"->"0",
 	"medium"->"1",
@@ -756,16 +1005,16 @@ fovToCode=<|
 |>
 fovPossible={"wide","medium","narrow","linear"}
 goProGetPossibleFOV[]:=fovPossible
-goProSetFOV[param_String]:=execute[goProMakeCommand["setting",fov,fovToCode[[param]]]]
+goProSetFOV[param_String]:=execute[goProMakeCommand["setting",fovCode,fovToCode[[param]]]]
 
 
 
 (* ::Subsection:: *)
 (* LowLight *)
-lowLight="8"
+lowLightCode="8"
 lowLightToCode=<|"on"->"1","off"->"0"|>
 lowLightPossible={"on","off"}
-goProSetLowLight[param_String]:=execute[goProMakeCommand["setting",lowLight,lowLightToCode[[param]]]]
+goProSetLowLight[param_String]:=execute[goProMakeCommand["setting",lowLightCode,lowLightToCode[[param]]]]
 goProGetPossibleLowLight[]:=lowLightPossible
 goProSwitchLowLightOn[]:=goProSetLowLight["on"]
 goProSwitchLowLightOff[]:=goProSetLowLight["off"]
@@ -773,10 +1022,10 @@ goProSwitchLowLightOff[]:=goProSetLowLight["off"]
 
 (* ::Subsection:: *)
 (* Spot Meter *)
-videoSpotMeter="9"
+videoSpotMeterCode="9"
 spotMeterToCode=<|"on"->"1","off"->"0"|>
 spotMeterPossible={"on","off"}
-goProSetVideoSpotMeter[param_String]:=execute[goProMakeCommand["setting",videoSpotMeter,spotMeterToCode[[param]]]]
+goProSetVideoSpotMeter[param_String]:=execute[goProMakeCommand["setting",videoSpotMeterCode,spotMeterToCode[[param]]]]
 goProGetPossibleVideoSpotMeter[]:=spotMeterPossible
 goProSwitchVideoSpotMeterOn[]:=goProSetVideoSpotMeter["on"]
 goProSwitchVideoSpotMeterOff[]:=goProSetVideoSpotMeter["off"]
@@ -787,7 +1036,7 @@ goProSwitchVideoSpotMeterOff[]:=goProSetVideoSpotMeter["off"]
 
 (* ::Subsection:: *)
 (* Video Loop *)
-videoLoop="6"
+videoLoopCode="6"
 videoLoopToCode = <|
    "5"->"1",
    "20"->"2",
@@ -797,13 +1046,13 @@ videoLoopToCode = <|
    |>;
 videoLoopPossible = {"max","5","20","60","120"}
 goProGetPossibleVideoLoop[] :=videoLoopPossible
-goProSetVideoLoop[param_String]:=execute[goProMakeCommand["setting",videoLoop,videoLoopToCode[[param]]]]
+goProSetVideoLoop[param_String]:=execute[goProMakeCommand["setting",videoLoopCode,videoLoopToCode[[param]]]]
 
 
 
 (* ::Subsection:: *)
 (* PhotonVideo *)
-photoInVideo="7"
+photoInVideoCode="7"
 photoInVideoToCode = <|
     "5"->"1",
     "10"->"2",
@@ -813,7 +1062,7 @@ photoInVideoToCode = <|
 
 photoInVideoPossible = {"5","10","30","60"}
 goProGetPossiblePhotoInVideo[] :=photoInVideoPossible
-goProSetPhotoInVideo[param_String] :=execute[goProMakeCommand["setting",photoInVideo,photoInVideoToCode[[param]]]]
+goProSetPhotoInVideo[param_String] :=execute[goProMakeCommand["setting",photoInVideoCode,photoInVideoToCode[[param]]]]
 
 
 
@@ -822,7 +1071,7 @@ goProSetPhotoInVideo[param_String] :=execute[goProMakeCommand["setting",photoInV
 (* ::Subsection:: *)
 (* Photo Resolution *)
 
-photoRes="17"
+photoResCode="17"
 photoResToCode = <|
    "5M" -> "3",
    "7W" -> "1",
@@ -838,14 +1087,14 @@ photoResPossible = {
 };
 
  
-goProSetPhotoRes[param_String] := execute[goProMakeCommand["setting",photoRes,photoResToCode[[param]]]]
+goProSetPhotoRes[param_String] := execute[goProMakeCommand["setting",photoResCode,photoResToCode[[param]]]]
 goProGetPossiblePhotoRes[] :=photoResPossible
 
 
 
 (* ::Subsection:: *)
 (* NightPhotoExposureTime *)
-nightPhotoExTime="19"
+nightPhotoExTimeCode="19"
 nightPhotoExTimeToCode=<|"auto"->"0",
 "2"->"1",
 "5"->"2",
@@ -856,23 +1105,26 @@ nightPhotoExTimeToCode=<|"auto"->"0",
 |>
 nightPhotoExTimePossible={"auto","2","5","10","15","20","30"}
 goProGetPossibleNightPhotoExposureTime[]:=nightPhotoExTimePossible
-goProSetNightPhotoExposureTime[param_String]:=execute[goProMakeCommand["setting",nightPhotoExTime,nightPhotoExTimeToCode[[param]]]]
+goProSetNightPhotoExposureTime[param_String]:=execute[goProMakeCommand["setting",nightPhotoExTimeCode,nightPhotoExTimeToCode[[param]]]]
 
 
 (* ::Subsection:: *)
 (* Photo Spot Meter *)
-photoSpotMeter="20"
-goProSetPhotoSpotMeter[param_String]:=execute[goProMakeCommand["setting",photoSpotMeter,spotMeterToCode[[param]]]]
+photoSpotMeterCode="20"
+goProSetPhotoSpotMeter[param_String]:=execute[goProMakeCommand["setting",photoSpotMeterCode,spotMeterToCode[[param]]]]
 goProGetPossiblePhotoSpotMeter[]:=spotMeterPossible
 goProSwitchPhotoSpotMeterOn[]:=goProSetPhotoSpotMeter["on"]
 goProSwitchPhotoSpotMeterOff[]:=goProSetPhotoSpotMeter["off"]
+
+goProSwitchSpotMeterOn[]:=(goProSetPhotoSpotMeter["on"];goProSetVideoSpotMeter["on"];goProSetMultiShotSpotMeter["on"])
+goProSwitchSpotMeterOff[]:=(goProSetPhotoSpotMeter["off"];goProSetVideoSpotMeter["off"];goProSetMultiShotSpotMeter["off"])
 
 
 
 
 (* ::Subsection:: *)
 (* ContinuousPhoto *)
-continuousShot="18"
+continuousShotCode="18"
 continuousShotToCode = <|
    "3"->"0",
    "5"->"1",
@@ -880,7 +1132,7 @@ continuousShotToCode = <|
    |>;
 continuousShotPossible = {"3","5","10"}
 goProGetPossibleContinuousShot[] :=continuousShotPossible
-goProSetContinuousShot[param_String] :=execute[goProMakeCommand["setting",continuousShot,continuousShotToCode[[param]]]]
+goProSetContinuousShot[param_String] :=execute[goProMakeCommand["setting",continuousShotCode,continuousShotToCode[[param]]]]
 
 
 
@@ -888,7 +1140,7 @@ goProSetContinuousShot[param_String] :=execute[goProMakeCommand["setting",contin
 (* ::Subsection:: *)
 (* NightLapseExposureTime *)
 
-nightLapseExTime="31"
+nightLapseExTimeCode="31"
 nightLapseExTimeToCode=<|"auto"->"0",
 "2"->"1",
 "5"->"2",
@@ -899,14 +1151,14 @@ nightLapseExTimeToCode=<|"auto"->"0",
 |>
 nightLapseExTimePossible={"auto","2","5","10","15","20","30"}
 goProGetPossibleNightLapseExposureTime[]:=nightLapseExTimePossible
-goProSetNightLapseExposureTime[param_String]:=execute[goProMakeCommand["setting",nightLapseExTime,nightLapseExTimeToCode[[param]]]]
+goProSetNightLapseExposureTime[param_String]:=execute[goProMakeCommand["setting",nightLapseExTimeCode,nightLapseExTimeToCode[[param]]]]
 
 	
 	
 
 (* ::Subsection:: *)
 (* NightLapseTimeInterval *)
-nightLapseInterval="32"
+nightLapseIntervalCode="32"
 nightLapseIntervalPossible={"continuous","4s","5s","10s","15s","20s","30s","1m","2m","5m","30m","60m"}
 nightLapseIntervalToCode=<|
 "continuous"->"0",
@@ -923,7 +1175,7 @@ nightLapseIntervalToCode=<|
 "60m"->"3600"
 |>
 goProGetPossibleNightLapseInterval[]:=nightLapseIntervalPossible
-goProSetNightLapseInterval[param_String]:=execute[goProMakeCommand["setting",nightLapseInterval,nightLapseIntervalToCode[[param]]]]
+goProSetNightLapseInterval[param_String]:=execute[goProMakeCommand["setting",nightLapseIntervalCode,nightLapseIntervalToCode[[param]]]]
 	
 	
 	
@@ -931,16 +1183,16 @@ goProSetNightLapseInterval[param_String]:=execute[goProMakeCommand["setting",nig
 
 (* ::Subsection:: *)
 (* MultiShotresolution *)
-multiShotResolution="28"
-goProSetMultiShotResolution[param_String]:=execute[goProMakeCommand["setting",multiShotResolution,photoResToCode[[param]]]]
+multiShotResolutionCode="28"
+goProSetMultiShotResolution[param_String]:=execute[goProMakeCommand["setting",multiShotResolutionCode,photoResToCode[[param]]]]
 goProGetPossibleMultiShotResolution[]:=photoResPossible
 	
 
 
 (* ::Subsection:: *)
 (* TimeLapse Interval *)
-multiShotTimeLapseInterval="30"
-videoTimeLapseInterval="5"
+multiShotTimeLapseIntervalCode="30"
+videoTimeLapseIntervalCode="5"
 multiShotTimeLapseIntervalToCode=<|"0.5"->"0",
 "1"->"1",
 "2"->"2",
@@ -959,16 +1211,16 @@ videoTimeLapseIntervalToCode=<|
 "60"->"6"
 |>
 timeLapseIntervalPossible={"0.5","1","2","5","10","30","60"}
-goProSetMultiShotTimeLapseInterval[param_String]:=execute[goProMakeCommand["setting",multiShotTimeLapseInterval,multiShotTimeLapseIntervalToCode[[param]]]]
-goProSetVideoTimeLapseInterval[param_String]:=execute[goProMakeCommand["setting",videoTimeLapseInterval,videoTimeLapseIntervalToCode[[param]]]]
+goProSetMultiShotTimeLapseInterval[param_String]:=execute[goProMakeCommand["setting",multiShotTimeLapseIntervalCode,multiShotTimeLapseIntervalToCode[[param]]]]
+goProSetVideoTimeLapseInterval[param_String]:=execute[goProMakeCommand["setting",videoTimeLapseIntervalCode,videoTimeLapseIntervalToCode[[param]]]]
 goProGetPossibleTimeLapseInterval[]:=timeLapseIntervalPossible
 goProSetTimeLapseInterval[param_String]:=(goProSetVideoTimeLapseInterval[param];goProSetMultiShotTimeLapseInterval[param])
 
 
 (* ::Subsection:: *)
 (* Photo Spot Meter *)
-multiShotSpotMeter="33"
-goProSetMultiShotSpotMeter[param_String]:=execute[goProMakeCommand["setting",multiShotSpotMeter,spotMeterToCode[[param]]]]
+multiShotSpotMeterCode="33"
+goProSetMultiShotSpotMeter[param_String]:=execute[goProMakeCommand["setting",multiShotSpotMeterCode,spotMeterToCode[[param]]]]
 goProGetPossibleMultiShotSpotMeter[]:=spotMeterPossible
 goProSwitchMultiShotSpotMeterOn[]:=goProSetMultiShotSpotMeter["on"]
 goProSwitchMultiShotSpotMeterOff[]:=goProSetMultiShotSpotMeter["off"]
@@ -978,7 +1230,7 @@ goProSwitchMultiShotSpotMeterOff[]:=goProSetMultiShotSpotMeter["off"]
 
 (* ::Subsection:: *)
 (* Burst Rate *)
-burstRate="29"
+burstRateCode="29"
 burstRateToCode = <|
    "3/1"->"0",
    "5/1"->"1",
@@ -993,26 +1245,26 @@ burstRateToCode = <|
 burstRatePossible = {"3/1","5/1","10/1","10/2","10/3","30/1","30/2","30/3","30/6"}
 
 goProGetPossibleBurstRate[] := burstRatePossible
-goProSetBurstRate[param_String] := execute[goProMakeCommand["setting",burstRate,burstRateToCode[[param]]]]
+goProSetBurstRate[param_String] := execute[goProMakeCommand["setting",burstRateCode,burstRateToCode[[param]]]]
 
 
 
 
 (* ::Subsection:: *)
 (* Orientation *)
-orientation="52"
+orientationCode="52"
 orientationPossible = {"up","down","gyro"}
 orientationToCode=<|"up"->"1","down"->"2","gyro"->"0"|>
-goProSetOrientation[param_String]:=execute[goProMakeCommand["setting",orientation,orientationToCode[[param]]]]
+goProSetOrientation[param_String]:=execute[goProMakeCommand["setting",orientationCode,orientationToCode[[param]]]]
 goProGetPossibleOrientation[]:=orientationPossible
 
 
 
 (* ::Subsection:: *)
 (* Quick Capture *)
-quickCapture="54"
+quickCaptureCode="54"
 goProGetPossibleQuickCapture[]:=spotMeterPossible
-goProSetQuickCapture[param_String]:=execute[goProMakeCommand["setting",quickCapture,spotMeterToCode[[param]]]]
+goProSetQuickCapture[param_String]:=execute[goProMakeCommand["setting",quickCaptureCode,spotMeterToCode[[param]]]]
 goProSwitchQuickCaptureOn[]:=goProSetQuickCapture["on"]
 goProSwitchQuickCaptureOff[]:=goProSetQuickCapture["off"]
 
@@ -1020,7 +1272,7 @@ goProSwitchQuickCaptureOff[]:=goProSetQuickCapture["off"]
 
 (* ::Subsection:: *)
 (* LED *)
-led="55"
+ledCode="55"
 ledToCode = <|
     "off"->"0",
     "2"->"1",
@@ -1028,13 +1280,13 @@ ledToCode = <|
 |>
 ledPossible = {"off","2","4"}
 goProGetPossibleLed[] := ledPossible
-goProSetLed[param_String] := execute[goProMakeCommand["setting",led,ledToCode[[param]]]]
+goProSetLed[param_String] := execute[goProMakeCommand["setting",ledCode,ledToCode[[param]]]]
 
 
 
 (* ::Subsection:: *)
 (* Volume *)
-volume="56"
+volumeCode="56"
 volumeToCode = <|
     "off"->"2",
     "70"->"1",
@@ -1042,7 +1294,7 @@ volumeToCode = <|
 |>
 volumePossible = {"off","70","100"}
 goProGetPossibleVolume[] :=volumePossible
-goProSetVolume[param_String] := execute[goProMakeCommand["setting",volume,volumeToCode[[param]]]]
+goProSetVolume[param_String] := execute[goProMakeCommand["setting",volumeCode,volumeToCode[[param]]]]
  
 
 
@@ -1050,21 +1302,21 @@ goProSetVolume[param_String] := execute[goProMakeCommand["setting",volume,volume
 
 (* ::Subsection:: *)
 (* VideoMode *)
-videoMode="57"
+videoModeCode="57"
 videoModeToCode = <|
     "ntsc"->"0",
     "pal"->"1"
 |>
 videoModePossible = {"ntsc","pal"}
 goProGetPossibleVideoMode[] := videoModePossible
-goProSetVideoMode[param_String] :=execute[goProMakeCommand["setting",videoMode,videoModeToCode[[param]]]]
+goProSetVideoMode[param_String] :=execute[goProMakeCommand["setting",videoModeCode,videoModeToCode[[param]]]]
 
 
 (* ::Subsection:: *)
 (* LCD Display *)
-lcdDisplay="72"
-goProSwitchLCDDisplayOn[]:=execute[goProMakeCommand["setting",lcdDisplay,"1"]]
-goProSwitchLCDDisplayOff[]:=execute[goProMakeCommand["setting",lcdDisplay,"0"]]
+lcdDisplayCode="72"
+goProSwitchLCDDisplayOn[]:=execute[goProMakeCommand["setting",lcdDisplayCode,"1"]]
+goProSwitchLCDDisplayOff[]:=execute[goProMakeCommand["setting",lcdDisplayCode,"0"]]
 
 
 
@@ -1080,14 +1332,14 @@ goProGetPossibleLCDBrightness[]:=lcdBrightnessPossible*)
 
 (* ::Subsection:: *)
 (* Auto off	 *)
-autoOff="59"
+autoOffCode="59"
 autoOffToCode=<|"never"->"0",
 "1"->"1",
 "2"->"2",
 "3"->"3",
 "5"->"4"|>
 autoOffPossible={"never","1","2","3","5"}
-goProSetAutoPowerOff[param_String]:=execute[goProMakeCommand["setting",autoOff,autoOffToCode[[param]]]]
+goProSetAutoPowerOff[param_String]:=execute[goProMakeCommand["setting",autoOffCode,autoOffToCode[[param]]]]
 goProGetPossibleAutoPowerOff[]:=autoOffPossible
 
 
@@ -1113,9 +1365,9 @@ goProDeleteAll[]:=execute[goProMakeCommand["command/storage/delete","all"]]
 (* ::Subsection:: *)
 (* exposure *)
 (*exposure*)
-evVideo="15"
-evPhoto="26"
-evMultiShot="39"
+evVideoCode="15"
+evPhotoCode="26"
+evMultiShotCode="39"
 evToCode = <|
     "-2.0"->"8",
      "-1.5"->"7",
@@ -1130,17 +1382,11 @@ evToCode = <|
 evPossible = { "0","-2.0", "-1.5", "-1.0", "-0.5", "+0.5", "+1.0", "+1.5", "+2.0"}
 goProGetPossibleExposure[] := evPossible
 goProSetExposure[param_String] :=(goProSetVideoExposure[param];goProSetPhotoExposure[param];goProSetMultiShotExposure[param])
-goProSetVideoExposure[param_String] :=execute[goProMakeCommand["setting",evVideo,evToCode[[param]]]]
-goProSetPhotoExposure[param_String] :=execute[goProMakeCommand["setting",evPhoto,evToCode[[param]]]]
-goProSetMultiShotExposure[param_String] :=execute[goProMakeCommand["setting",evMultiShot,evToCode[[param]]]]
+goProSetVideoExposure[param_String] :=execute[goProMakeCommand["setting",evVideoCode,evToCode[[param]]]]
+goProSetPhotoExposure[param_String] :=execute[goProMakeCommand["setting",evPhotoCode,evToCode[[param]]]]
+goProSetMultiShotExposure[param_String] :=execute[goProMakeCommand["setting",evMultiShotCode,evToCode[[param]]]]
 	
-	
-(* ::Subsection:: *)
-(* VIDEO Shutter Speed *)
-shutterSpeedToCode=<|
-|>
-shutterSpeedPossible={}
-(*goProPossibleVideoShutterSpeed[]:=*)
+
 
 
 
@@ -1199,26 +1445,63 @@ Print["Number of Photo taken: "<>ToString[numberOfPhotos]];
 Print["Number of Video taken: "<>ToString[numberOfVideos]];
 )
 
-getSettings[param_String]:= Association[
-   URLExecute[HTTPRequest["http://10.5.5.9/gp/gpControl/status"]][[2]][[2]]][[param]]
+settings=""
+
+settingsInit[]:=settings=URLExecute[HTTPRequest["http://10.5.5.9/gp/gpControl/status"]]
+getSettings[param_String]:=Association[settings[[2]][[2]]][[param]]
 	
 
-subModeSetting=""
+videoSubModeSetting=""
 videoResSetting=""
 fpsSetting=""
 fovSetting=""
-timeLapseIntervalSetting=""
+videoTimeLapseIntervalSetting=""
 videoLoopSetting=""
 photoInVideoSetting=""
 lowLightSetting=""
 videoSpotMeterSetting=""
-protuneSetting=""
-whiteBalanceSetting=""
+videoProtuneSetting=""
+videoWhiteBalanceSetting=""
 videoColorProfileSetting=""
 videoSharpnessSetting=""
 videoExposureSetting=""
 isoModeSetting=""
-isoLimitVideoSetting=""
+videoIsoLimitSetting=""
+videoModeSetting=""
+shutterTimeSetting=""
+
+photoSubModeSetting=""
+continuousShotSetting=""
+photoResSetting=""
+photoSpotMeterSetting=""
+photoProtuneSetting=""
+photoWhiteBalanceSetting=""
+photoColorProfileSetting=""
+photoSharpnessSetting=""
+photoExposureSetting=""
+photoIsoLimitSetting=""
+photoIsoMinSetting=""
+
+
+multiShotSubModeSetting=""
+nightPhotoExTimeSetting=""
+multiShotSpotMeterSetting=""
+multiShotProtuneSetting=""
+multiShotWhiteBalanceSetting=""
+multiShotColorProfileSetting=""
+multiShotSharpnessSetting=""
+multiShotExposureSetting=""
+multiShotIsoLimitSetting=""
+multiShotIsoMinSetting=""
+nightLapseExTimeSetting=""
+burstRateSetting=""
+multiShotTimeLapseIntervalSetting=""
+nightLapseIntervalSetting=""
+multiShotResSetting=""
+
+volumeSetting=""
+autoOffSetting=""
+ledSetting=""
 
 codeTovideoResolution=Association[videoResToCodeBlack[[#]] -> # & /@ Keys[videoResToCodeBlack]];
 codeToFPS=Association[fpsToCode[[#]] -> # & /@ Keys[fpsToCode]];
@@ -1234,50 +1517,462 @@ codeToColorProfile=Association[coToCode[[#]] -> # & /@ Keys[coToCode]];
 codeToSharpness=Association[sharpnessToCode[[#]] -> # & /@ Keys[sharpnessToCode]];
 codeToExposure=Association[evToCode[[#]] -> # & /@ Keys[evToCode]];
 codeToIsoMode=Association[isoModeToCode[[#]] -> # & /@ Keys[isoModeToCode]];
-codeToIsoLimit=Association[isoLimitVideoToCode[[#]] -> # & /@ Keys[isoLimitVideoToCode]];
+codeToVideoIsoLimit=Association[isoLimitVideoToCode[[#]] -> # & /@ Keys[isoLimitVideoToCode]];
+codeToVideoMode=Association[videoModeToCode[[#]] -> # & /@ Keys[videoModeToCode]];
 
-goProGetCameraSettings[]:=(
-	subModeSetting=codeTocurrentSubMode[[ "0" ]][[ ToString[getSettings["68"]] ]];
-	videoResSetting=codeTovideoResolution[[ToString[getSettings[videoRes]]]];
-	fpsSetting=codeToFPS[[ToString[getSettings[fps]]]];
-	fovSetting=codeToFOV[[ToString[getSettings[fov]]]];
-	timeLapseIntervalSetting=codeToVideoTimeLapseInterval[[ToString[getSettings[videoTimeLapseInterval]]]];
-	videoLoopSetting=codeTovideoLoop[[ ToString[getSettings[videoLoop]] ]];
-	photoInVideoSetting=codeToPhotoInVideo[[ ToString[ToString[getSettings[photoInVideo]]] ]];
-	lowLightSetting=codeToLowLight[[ ToString[getSettings[lowLight]] ]];
-	videoSpotMeterSetting=codeToSpotMeter[[ ToString[getSettings[videoSpotMeter]] ]];
-	protuneSetting=codeToProtune[[ ToString[getSettings[videoProtune]] ]];
-	whiteBalanceSetting=codeToWhiteBalance[[ ToString[getSettings[wbVideo]] ]];
-	videoColorProfileSetting=codeToColorProfile[[ ToString[getSettings[coVideo]] ]];
-	videoSharpnessSetting=codeToSharpness[[ ToString[getSettings[videoSharpness]] ]];
-	videoExposureSetting=codeToExposure[[ ToString[getSettings[evVideo]] ]];
-	isoModeSetting=codeToIsoMode[[ ToString[getSettings[isoMode]] ]];
-	isoLimitVideoSetting=codeToIsoLimit[[ ToString[getSettings[isoLimitVideo]] ]];
+codeToPhotoRes=Association[photoResToCode[[#]] -> # & /@ Keys[photoResToCode]];
+codeToNightPhotoExTime=Association[nightPhotoExTimeToCode[[#]] -> # & /@ Keys[nightPhotoExTimeToCode]];
+codeToContinuousShot=Association[continuousShotToCode[[#]] -> # & /@ Keys[continuousShotToCode]];
+codeToIsoMin=Association[isoMinToCode[[#]] -> # & /@ Keys[isoMinToCode]];
+codeToPhotoIsoLimit=Association[isoLimitPhotoToCode[[#]] -> # & /@ Keys[isoLimitPhotoToCode]];
+codeToMultiShotIsoLimit=Association[isoLimitMultiToCode[[#]] -> # & /@ Keys[isoLimitMultiToCode]];
+codeToNightLapseExTime=Association[nightLapseExTimeToCode[[#]] -> # & /@ Keys[nightLapseExTimeToCode]];
+codeToBurstRate=Association[burstRateToCode[[#]] -> # & /@ Keys[burstRateToCode]];
+codeToMultiShotTimeLapseInterval=Association[multiShotTimeLapseIntervalToCode[[#]] -> # & /@ Keys[multiShotTimeLapseIntervalToCode]];
+codeToNightLapseInterval=Association[nightLapseIntervalToCode[[#]] -> # & /@ Keys[nightLapseIntervalToCode]];
+
+codeToVolume=Association[volumeToCode[[#]] -> # & /@ Keys[volumeToCode]];
+codeToAutoOff=Association[autoOffToCode[[#]] -> # & /@ Keys[autoOffToCode]];
+codeToLed=Association[ledToCode[[#]] -> # & /@ Keys[ledToCode]];
+
+
+codeToShutterTime=Association[shutterTimeToCode[[#]] -> # & /@ Keys[shutterTimeToCode]];
+
+downloadVideoSetting[]:=(
+	settingsInit[];
+	videoSubModeSetting=codeTocurrentSubMode[[ "0" ]][[ ToString[getSettings["68"]] ]];
+	videoResSetting=codeTovideoResolution[[ToString[getSettings[videoResCode]]]];
+	fpsSetting=codeToFPS[[ToString[getSettings[fpsCode]]]];
+	fovSetting=codeToFOV[[ToString[getSettings[fovCode]]]];
+	videoTimeLapseIntervalSetting=codeToVideoTimeLapseInterval[[ToString[getSettings[videoTimeLapseIntervalCode]]]];
+	videoLoopSetting=codeTovideoLoop[[ ToString[getSettings[videoLoopCode]] ]];
+	photoInVideoSetting=codeToPhotoInVideo[[ ToString[ToString[getSettings[photoInVideoCode]]] ]];
+	lowLightSetting=codeToLowLight[[ ToString[getSettings[lowLightCode]] ]];
+	videoSpotMeterSetting=codeToSpotMeter[[ ToString[getSettings[videoSpotMeterCode]] ]];
+	videoProtuneSetting=codeToProtune[[ ToString[getSettings[videoProtuneCode]] ]];
+	videoWhiteBalanceSetting=codeToWhiteBalance[[ ToString[getSettings[wbVideoCode]] ]];
+	videoColorProfileSetting=codeToColorProfile[[ ToString[getSettings[coVideoCode]] ]];
+	videoSharpnessSetting=codeToSharpness[[ ToString[getSettings[videoSharpnessCode]] ]];
+	videoExposureSetting=codeToExposure[[ ToString[getSettings[evVideoCode]] ]];
+	isoModeSetting=codeToIsoMode[[ ToString[getSettings[isoModeCode]] ]];
+	videoIsoLimitSetting=codeToVideoIsoLimit[[ ToString[getSettings[isoLimitVideoCode]] ]];
+	videoModeSetting=codeToVideoMode[[ ToString[getSettings[videoModeCode]] ]];
+	shutterTimeSetting=codeToShutterTime[[ ToString[getSettings[shutterTimeCode]] ]];
+	
+)
+
+downloadPhotoSetting[]:=(
+	settingsInit[];
+	photoSubModeSetting=codeTocurrentSubMode[[ "1" ]][[ ToString[getSettings["69"]] ]];
+	continuousShotSetting=codeToContinuousShot[[ ToString[getSettings[continuousShotCode]] ]];
+	photoResSetting=codeToPhotoRes[[ ToString[getSettings[photoResCode]] ]];
+	nightPhotoExTimeSetting=codeToNightPhotoExTime[[ ToString[getSettings[nightPhotoExTimeCode]] ]];
+	photoSpotMeterSetting=codeToSpotMeter[[ ToString[getSettings[photoSpotMeterCode]] ]];
+	photoProtuneSetting=codeToProtune[[ ToString[getSettings[photoProtuneCode]] ]];
+	photoWhiteBalanceSetting=codeToWhiteBalance[[ ToString[getSettings[wbPhotoCode]] ]];
+	photoColorProfileSetting=codeToColorProfile[[ ToString[getSettings[coPhotoCode]] ]];
+	photoSharpnessSetting=codeToSharpness[[ ToString[getSettings[photoSharpnessCode]] ]];
+	photoExposureSetting=codeToExposure[[ ToString[getSettings[evPhotoCode]] ]];
+	photoIsoLimitSetting=codeToPhotoIsoLimit[[ ToString[getSettings[isoLimitPhotoCode]] ]];
+	photoIsoMinSetting=codeToIsoMin[[ ToString[getSettings[isoMinPhotoCode]] ]];
+	
+)
+
+downloadMultiShotSetting[]:=(
+	settingsInit[];
+	multiShotSubModeSetting=codeTocurrentSubMode[[ "2" ]][[ ToString[getSettings["70"]] ]];
+	multiShotSpotMeterSetting=codeToSpotMeter[[ ToString[getSettings[multiShotSpotMeterCode]] ]];
+	multiShotProtuneSetting=codeToProtune[[ ToString[getSettings[photoProtuneCode]] ]];
+	multiShotWhiteBalanceSetting=codeToWhiteBalance[[ ToString[getSettings[wbMultiCode]] ]];
+	multiShotColorProfileSetting=codeToColorProfile[[ ToString[getSettings[coMultiCode]] ]];
+	multiShotSharpnessSetting=codeToSharpness[[ ToString[getSettings[multiShotSharpnessCode]] ]];
+	multiShotExposureSetting=codeToExposure[[ ToString[getSettings[evMultiShotCode]] ]];
+	multiShotIsoLimitSetting=codeToMultiShotIsoLimit[[ ToString[getSettings[isoLimitMultiCode]] ]];
+	multiShotIsoMinSetting=codeToIsoMin[[ ToString[getSettings[isoMinMultiCode]] ]];
+	nightLapseExTimeSetting=codeToNightLapseExTime[[ ToString[getSettings[nightLapseExTimeCode]] ]];
+	burstRateSetting=codeToBurstRate[[ ToString[getSettings[burstRateCode]] ]];
+	multiShotTimeLapseIntervalSetting=codeToMultiShotTimeLapseInterval[[ ToString[getSettings[multiShotTimeLapseIntervalCode]] ]];
+	nightLapseIntervalSetting=codeToNightLapseInterval[[ ToString[getSettings[nightLapseIntervalCode]] ]];
+	multiShotResSetting=codeToPhotoRes[[ ToString[getSettings[multiShotResolutionCode]] ]];
 	
 	
 	
+	
+)
+
+downloadOtherSetting[]:=(
+	settingsInit[];
+	volumeSetting=codeToVolume[[ ToString[getSettings[volumeCode]] ]];
+	autoOffSetting=codeToAutoOff[[ ToString[getSettings[autoOffCode]] ]];
+	ledSetting=codeToLed[[ ToString[getSettings[ledCode]] ]];
+)
+
+videoSettingReport[]:=(
 	Print["Video Settings:"];
-	Print["		Current Mode: "<> subModeSetting];
+	Print["		Current Mode: "<> videoSubModeSetting];
 	Print["		Resolutin: "<>videoResSetting];
 	Print["		FPS: "<>fpsSetting];
 	Print["		FOV: "<>fovSetting];
-	Print["		TimeLapse Interval: "<>timeLapseIntervalSetting<>"s"];
+	Print["		TimeLapse Interval: "<>videoTimeLapseIntervalSetting<>"s"];
 	Print["		VideoLoop Interval: "<>videoLoopSetting <> "m"];
 	Print["		Photo In Video Interval: "<>photoInVideoSetting<>"s"];
 	Print["		Low Light: "<>lowLightSetting];
 	Print["		Spot Meter: "<>videoSpotMeterSetting];
-	Print["		Protune: "<>protuneSetting];
-	Print["		White Balance: "<>whiteBalanceSetting];
+	Print["		Protune: "<>videoProtuneSetting];
+	Print["		White Balance: "<>videoWhiteBalanceSetting];
 	Print["		Color Profile: "<>videoColorProfileSetting];
 	Print["		Sharpness: "<>videoSharpnessSetting];
+	Print["		Exposure: "<>videoExposureSetting];
+	Print["		Shutter Time: "<>shutterTimeSetting];
 	Print["		ISO Mode: "<>isoModeSetting];	
-	Print["		ISO Limit: "<>isoLimitVideoSetting];	
-
-	
+	Print["		ISO Limit: "<>videoIsoLimitSetting];	
+	Print["		Video Mode: "<>videoModeSetting];
 )
 
-(* ::End:: *)
-(* Region Title *)
+multiShotSettingReport[]:=(
+	Print["MultiShot Settings:"];
+
+	Print["		Current Mode: "<> multiShotSubModeSetting];
+	Print["		Night Lapse Exposure Time: "<>nightLapseExTimeSetting];
+	Print["		Resolution: " <>multiShotResSetting];
+	Print["		BurstRate: "<>burstRateSetting];
+	Print["		TmeLapseInterval: "<> multiShotTimeLapseIntervalSetting];
+	Print["		NightLapseInterval: "<> nightLapseIntervalSetting];
+	Print["		Spot Meter: "<>multiShotSpotMeterSetting];
+	Print["		Protune: "<>multiShotProtuneSetting];
+	Print["		White Balance: "<>multiShotWhiteBalanceSetting];
+	Print["		Color Profile: "<>multiShotColorProfileSetting];
+	Print["		Sharpness: "<>multiShotSharpnessSetting];
+	Print["		Exposure: "<>multiShotExposureSetting];
+	Print["		ISO Limit: "<>multiShotIsoLimitSetting];
+	Print["		ISO Min: "<>multiShotIsoMinSetting];
+)
+
+photoSettingReport[]:=(
+	Print["Photo Settings:"];
+	Print["		Current Mode: "<> photoSubModeSetting];
+	Print["		Resolutin: "<>photoResSetting];
+	Print["		Continuous Photo Rate: "<> continuousShotSetting ];
+	Print["		Night Photo Exposure time : "<> nightPhotoExTimeSetting ];
+	Print["		Spot Meter: "<>photoSpotMeterSetting];
+	Print["		Protune: "<>photoProtuneSetting];
+	Print["		White Balance: "<>photoWhiteBalanceSetting];
+	Print["		Color Profile: "<>photoColorProfileSetting];
+	Print["		Sharpness: "<>photoSharpnessSetting];
+	Print["		Exposure: "<>photoExposureSetting];
+	Print["		ISO Limit: "<>photoIsoLimitSetting];	
+	Print["		ISO Min: "<>photoIsoMinSetting];
+
+)
+
+otherSettingReport[]:=(
+	Print["Other:"];
+	Print["		Volume: "<>volumeSetting];
+	Print["		AutoPowerOff: "<>autoOffSetting];
+	Print["		Led: "<>ledSetting];
+
+)
+
+goProGetVideoSettingReport[]:=(
+	downloadVideoSetting[];
+	videoSettingReport[];
+)
+
+goProGetPhotoSettingReport[]:=(
+	downloadPhotoSetting[];
+	photoSettingReport[];
+)
+
+goProGetMultiShotSettingReport[]:=(
+	downloadMultiShotSetting[];
+	multiShotSettingReport[];
+)
+
+goProGetSettingReport[]:=(
+	goProGetVideoSettingReport[];
+	goProGetPhotoSettingReport[];
+	goProGetMultiShotSettingReport[];
+	downloadOtherSetting[];
+	otherSettingReport[];
+)
+downloadAllSetting[]:=(
+	downloadVideoSetting[];
+	downloadPhotoSetting[];
+	downloadMultiShotSetting[];
+	downloadOtherSetting[];
+)
+
+
+
+
+goProGetSettingReportAssociation[]:=(downloadAllSetting[];<|
+"videoResolution"->videoResSetting,
+"fps"->fpsSetting,
+"fov"->fovSetting,
+"videoTimeLapseInterval"->videoTimeLapseIntervalSetting,
+"videoLoop"->videoLoopSetting,
+"photoInVideo"->photoInVideoSetting,
+"lowLight"->lowLightSetting,
+"videoSpotMeter"->videoSpotMeterSetting,
+"videoProtune"->videoProtuneSetting,
+"videoWhiteBalance"->videoWhiteBalanceSetting,
+"videoColorProfile"->videoColorProfileSetting,
+"videoSharpness"->videoSharpnessSetting,
+"videoExposure"->videoExposureSetting,
+"isoMode"->isoModeSetting,
+"videoIsoLimit"->videoIsoLimitSetting,
+"videoMode"->videoModeSetting,
+"shutterTime"->shutterTimeSetting,
+
+"continuousShot"->continuousShotSetting,
+"photoResolution"->photoResSetting,
+"photoSpotMeter"->photoSpotMeterSetting,
+"photoProtune"->photoProtuneSetting,
+"photoWhiteBalance"->photoWhiteBalanceSetting,
+"photoColorProfile"->photoColorProfileSetting,
+"photoSharpness"->photoSharpnessSetting,
+"photoExposure"->photoExposureSetting,
+"photoIsoLimit"->photoIsoLimitSetting,
+"photoIsoMin"->photoIsoMinSetting,
+"nightPhotoExposureTime"->nightPhotoExTimeSetting,
+
+"multiShotSpotMeter"->multiShotSpotMeterSetting,
+"multiShotProtune"->multiShotProtuneSetting,
+"multiShotWhiteBalance"->multiShotWhiteBalanceSetting,
+"multiShotColorProfile"->multiShotColorProfileSetting,
+"multiShotSharpness"->multiShotSharpnessSetting,
+"multiShotExposure"->multiShotExposureSetting,
+"multiShotIsoLimit"->multiShotIsoLimitSetting,
+"multiShotIsoMin"->multiShotIsoMinSetting,
+"nightLapseExposureTime"->nightLapseExTimeSetting,
+"burstRate"->burstRateSetting,
+"multiShotTimeLapseInterval"->multiShotTimeLapseIntervalSetting,
+"nightLapseInterval"->nightLapseIntervalSetting,
+"multiShotResolution"->multiShotResSetting,
+"volume"->volumeSetting,
+"autoOff"->autoOffSetting,
+"led"->ledSetting
+|>)
+
+goProReport[param_String]:= # -> goProGetSettingReportAssociation[][[#]] & /@ {param}
+
+goProGetVariables[]:=ToExpresion[#]&/@{
+	"videoResolution",
+"fps",
+"fov",
+"videoTimeLapseInterval",
+"videoLoop",
+"photoInVideo",
+"lowLight",
+"videoSpotMeter",
+"videoProtune",
+"videoWhiteBalance",
+"videoColorProfile",
+"videoSharpness",
+"videoExposure",
+"isoMode",
+"videoIsoLimit",
+"videoMode",
+"shutterTime",
+
+"continuousShot",
+"photoResolution",
+"photoSpotMeter",
+"photoProtune",
+"photoWhiteBalance",
+"photoColorProfile",
+"photoSharpness",
+"photoExposure",
+"photoIsoLimit",
+"photoIsoMin",
+"nightPhotoExposureTime",
+
+"multiShotSpotMeter",
+"multiShotProtune",
+"multiShotWhiteBalance",
+"multiShotColorProfile",
+"multiShotSharpness",
+"multiShotExposure",
+"multiShotIsoLimit",
+"multiShotIsoMin",
+"nightLapseExposureTime",
+"burstRate",
+"multiShotTimeLapseInterval",
+"nightLapseInterval",
+"multiShotResolution",
+"volume",
+"autoOff",
+"led"
+}
+
+
+(* ::Subsection:: *)
+(* Downlpad *)
+
+
+urlBase="http://10.5.5.9:8080/videos/DCIM/100GOPRO/";
+empty=""
+goProGetFileList::empty="No files on GoPro camera.";
+goProGetFileList[]:=(
+	files = {};
+	files = Flatten[
+  		AppendTo[files, 
+   		StringReplace[ToString[#] & /@ DeleteCases[ReadList[StringToStream[StringTrim[StringDrop[Import[urlBase], 13]]]],
+   			 _Real][[All, 3]], Whitespace -> ""]]]
+
+ )
+      
+ (*If[Import[urlBase] == $Failed,Message[goProGetFileList::empty, empty],*)     
+      
+goProDownloadFile[name_String,dest_String]:=URLDownload[urlBase<>name,dest<>name]
+goProDownloadAll[dest_String]:=URLDownload[urlBase<>#,dest<>#]&/@goProGetFileList[]
+
+goProGetFileURL[param_String]:=urlBase<>param
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(* ::Subsection:: *)
+(* goProSet *)
+
+
+Setting
+Options[goProSet] = {
+(*MODE SETTING*)
+videoResolution->videoResSetting,
+fps->fpsSetting,
+fov->fovSetting,
+videoTimeLapseInterval->videoTimeLapseIntervalSetting,
+videoLoop->videoLoopSetting,
+photoInVideo->photoInVideoSetting,
+lowLight->lowLightSetting,
+videoSpotMeter->videoSpotMeterSetting,
+videoProtune->videoProtuneSetting,
+videoWhiteBalance->videoWhiteBalanceSetting,
+videoColorProfile->videoColorProfileSetting,
+videoSharpness->videoSharpnessSetting,
+videoExposure->videoExposureSetting,
+isoMode->isoModeSetting,
+videoIsoLimit->videoIsoLimitSetting,
+videoMode->videoModeSetting,
+shutterTime->shutterTimeSetting,
+
+continuousShot->continuousShotSetting,
+photoResolution->photoResSetting,
+photoSpotMeter->photoSpotMeterSetting,
+photoProtune->photoProtuneSetting,
+photoWhiteBalance->photoWhiteBalanceSetting,
+photoColorProfile->photoColorProfileSetting,
+photoSharpness->photoSharpnessSetting,
+photoExposure->photoExposureSetting,
+photoIsoLimit->photoIsoLimitSetting,
+photoIsoMin->photoIsoMinSetting,
+nightPhotoExposureTime->nightPhotoExTimeSetting,
+
+multiShotSpotMeter->multiShotSpotMeterSetting,
+multiShotProtune->multiShotProtuneSetting,
+multiShotWhiteBalance->multiShotWhiteBalanceSetting,
+multiShotColorProfile->multiShotColorProfileSetting,
+multiShotSharpness->multiShotSharpnessSetting,
+multiShotExposure->multiShotExposureSetting,
+multiShotIsoLimit->multiShotIsoLimitSetting,
+multiShotIsoMin->multiShotIsoMinSetting,
+nightLapseExposureTime->nightLapseExTimeSetting,
+burstRate->burstRateSetting,
+multiShotTimeLapseInterval->multiShotTimeLapseIntervalSetting,
+nightLapseInterval->nightLapseIntervalSetting,
+multiShotResolution->multiShotResSetting,
+volume->volumeSetting,
+autoOff->autoOffSetting,
+led->ledSetting
+
+}
+
+
+goProSet[OptionsPattern[]] :=(
+	downloadVideoSetting[];
+	downloadPhotoSetting[];
+	downloadMultiShotSetting[];
+	downloadOtherSetting[];
+	
+	(*video*)
+	
+	If[!SameQ[OptionValue[videoResolution],videoResSetting],goProSetVideoResolution[OptionValue[videoResolution]]];
+	If[!SameQ[OptionValue[fps],fpsSetting],goProSetFPS[OptionValue[fps]]];
+	If[!SameQ[OptionValue[fov],fovSetting],goProSetFOV[OptionValue[fov]]];
+	If[!SameQ[OptionValue[videoTimeLapseInterval],videoTimeLapseIntervalSetting],goProSetVideoTimeLapseInterval[OptionValue[videoTimeLapseInterval]]];
+	If[!SameQ[OptionValue[videoLoop],videoLoopSetting],goProSetVideoLoop[OptionValue[videoLoop]]];
+	If[!SameQ[OptionValue[photoInVideo],photoInVideoSetting],goProSetPhotoInVideo[OptionValue[photoInVideo]]];
+	If[!SameQ[OptionValue[lowLight],lowLightSetting],goProSetLowLight[OptionValue[lowLight]]];
+	If[!SameQ[OptionValue[videoSpotMeter],videoSpotMeterSetting],goProSetVideoSpotMeter[OptionValue[videoSpotMeter]]];
+	If[!SameQ[OptionValue[videoProtune],videoProtuneSetting],goProSetVideoProtune[OptionValue[videoProtune]]];
+	If[!SameQ[OptionValue[videoWhiteBalance],videoWhiteBalanceSetting],goProSetVideoWhiteBalance[OptionValue[videoWhiteBalance]]];
+	If[!SameQ[OptionValue[videoColorProfile],videoColorProfileSetting],goProSetVideoColorProfile[OptionValue[videoColorProfile]]];
+	If[!SameQ[OptionValue[videoSharpness],videoSharpnessSetting],goProSetVideoSharpness[OptionValue[videoSharpness]]];
+	If[!SameQ[OptionValue[videoExposure],videoExposureSetting],goProSetVideoExposure[OptionValue[videoExposure]]];
+	If[!SameQ[OptionValue[isoMode],isoModeSetting],goProSetIsoMode[OptionValue[isoMode]]];
+	If[!SameQ[OptionValue[videoIsoLimit],videoIsoLimitSetting],goProSetVideoIsoLimit[OptionValue[videoIsoLimit]]];
+	If[!SameQ[OptionValue[videoMode],videoModeSetting],goProSetVideoMode[OptionValue[videoMode]]];
+	If[!SameQ[OptionValue[shutterTime],shutterTimeSetting],goProSetShutterTime[OptionValue[shutterTime]]];
+
+	(*Photo*)
+	If[!SameQ[OptionValue[continuousShot],continuousShotSetting],goProSetContinuousShot[OptionValue[continuousShot]]];
+	If[!SameQ[OptionValue[photoResolution],photoResSetting],goProSetPhotoRes[OptionValue[photoResolution]]];
+	If[!SameQ[OptionValue[photoSpotMeter],photoSpotMeterSetting],goProSetPhotoSpotMeter[OptionValue[photoSpotMeter]]];
+	If[!SameQ[OptionValue[photoProtune],photoProtuneSetting],goProSetPhotoProtune[OptionValue[photoProtune]]];
+	If[!SameQ[OptionValue[photoWhiteBalance],photoWhiteBalanceSetting],goProSetPhotoWhiteBalance[OptionValue[photoWhiteBalance]]];
+	If[!SameQ[OptionValue[photoColorProfile],photoColorProfileSetting],goProSetPhotoColorProfile[OptionValue[photoColorProfile]]];
+	If[!SameQ[OptionValue[photoSharpness],photoSharpnessSetting],goProSetPhotoSharpness[OptionValue[photoSharpness]]];	
+	If[!SameQ[OptionValue[photoExposure],photoExposureSetting],goProSetPhotoExposure[OptionValue[photoExposure]]];
+	If[!SameQ[OptionValue[photoIsoLimit],photoIsoLimitSetting],goProSetPhotoIsoLimit[OptionValue[photoIsoLimit]]];
+	If[!SameQ[OptionValue[photoIsoMin],photoIsoMinSetting],goProSetPhotoIsoMinimum[OptionValue[photoIsoMin]]];
+	If[!SameQ[OptionValue[nightPhotoExposureTime],nightPhotoExTimeSetting],goProSetNightPhotoExposureTime[OptionValue[nightPhotoExposureTime]]];
+	
+	(*MultiShot*)
+	If[!SameQ[OptionValue[multiShotSpotMeter],multiShotSpotMeterSetting],goProSetMultiShotSpotMeter[OptionValue[multiShotSpotMeter]]];
+	If[!SameQ[OptionValue[multiShotProtune],multiShotProtuneSetting],goProSetMultiShotProtune[OptionValue[multiShotProtune]]];
+	If[!SameQ[OptionValue[multiShotWhiteBalance],multiShotWhiteBalanceSetting],goProSetMultiShotWhiteBalance[OptionValue[multiShotWhiteBalance]]];
+	If[!SameQ[OptionValue[multiShotColorProfile],multiShotColorProfileSetting],goProSetMultiShotColorProfile[OptionValue[multiShotColorProfile]]];
+	If[!SameQ[OptionValue[multiShotSharpness],multiShotSharpnessSetting],goProSetMultiShotSharpness[OptionValue[multiShotSharpness]]];
+	If[!SameQ[OptionValue[multiShotExposure],multiShotExposureSetting],goProSetMultiShotExposure[OptionValue[multiShotExposure]]];
+	If[!SameQ[OptionValue[multiShotIsoLimit],multiShotIsoLimitSetting],goProSetMultiShotIsoLimit[OptionValue[multiShotIsoLimit]]];
+	If[!SameQ[OptionValue[multiShotIsoMin],multiShotIsoMinSetting],goProSetMultiShotIsoMinimum[OptionValue[multiShotIsoMin]]];
+	If[!SameQ[OptionValue[nightLapseExposureTime],nightLapseExTimeSetting],goProSetNightLapseExposureTime[OptionValue[nightLapseExposureTime]]];
+	If[!SameQ[OptionValue[burstRate],burstRateSetting],goProSetBurstRate[OptionValue[burstRate]]];
+	If[!SameQ[OptionValue[multiShotTimeLapseInterval],multiShotTimeLapseIntervalSetting],goProSetMultiShotTimeLapseInterval[OptionValue[multiShotTimeLapseInterval]]];
+	If[!SameQ[OptionValue[nightLapseInterval],nightLapseIntervalSetting],goProSetNightLapseInterval[OptionValue[nightLapseInterval]]];
+	If[!SameQ[OptionValue[multiShotResolution],multiShotResSetting],goProSetMultiShotResolution[OptionValue[multiShotResolution]]];
+	
+	(*other*)
+	If[!SameQ[OptionValue[volume],volumeSetting],goProSetVolume[OptionValue[volume]]];
+	If[!SameQ[OptionValue[autoOff],autoOffSetting],goProSetAutoPowerOff[OptionValue[autoOff]]];	
+	If[!SameQ[OptionValue[led],ledSetting],goProSetLed[OptionValue[led]]];
+	
+
+
+
+)
+
+
+
+
+
+
+
+
+    
+    
 
 End[]
 
