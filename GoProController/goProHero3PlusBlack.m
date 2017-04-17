@@ -271,12 +271,27 @@ goProSetTime::usage =
 goProGetTime::usage =
     "goProGetTime[ ] returns string which contains time set on camera."
 
+
+
+
     
      
 (*Settings report*)
 goProGetSettingReport::usage =
     "goProGetSettingReport[ ] returns settings of camera"
     
+
+(*Modes*)
+goProMode::usage=
+	"goProMode[ _String] Switches mode to parameter given. To see which parameter you can use call goProGetPossibleModes[]."
+goProGetPossibleModes::usage=
+	"goProGetPossibleModes[ ] returns possible camera modes ."
+goProSetBootMode::usage=
+	"goProSetBootMode[ _String] Sets boot mode to parameter given, to see options possible call goProGetPossibleBootMode[]. "
+goProGetPossibleBootMode::usage=
+	"goProGetPossibleBootMode[] returns possible options for boot mode.  "	
+
+
     
     
 (*saving settings to file*)
@@ -294,9 +309,18 @@ goProSaveSettings::usage =
 goProSet::usage =
     "goProSet[ ] enables to set camera via rules such as: {fps,fov,videoResolution,photoResolution,...}"
 
-goProSetVideo::usage =
+goProGetSettingReportAssociation::usage=
+	"goProGetSettingReportAssociation[ ] returns association field with all settings of camera."
+	
+goProGetVariables::usage=
+	"goProGetVariables[ ], returns all variables for goProSet function."
+	
+goProReport::usage=
+	"goProReport[_String] returns value set to parameter given such ase {videoResolution->1080p}"
+
+(*goProSetVideo::usage =
     "goProSetVideo[ ] enables to set video settings such as fps, fov, videoResolution through rules, for example: goProSetVideo[{fps->\"30\",fov->->\"wide\", videoResolution->\"1080p\" }]. All parameters are optional."
-    
+*)   
 
 
 (* ::Section:: *)
@@ -356,6 +380,23 @@ goProBurstMode[] :=
     execute[goProMakeCommand["camera", "CM", "02"]]
 goProTimeLapseMode[] :=
     execute[goProMakeCommand["camera", "CM", "03"]]
+
+
+modesToCode=<|
+	"Video"->"00",
+	"Photo"->"01",
+	"Burst"->"02",
+	"TimeLapse"->"03"
+|>	
+
+goProGetPossibleModes[]:=Keys[modesToCode]
+goProMode[param_String]:=execute[goProMakeCommand["camera", "CM", modesToCode[[param]] ]]
+
+
+
+
+goProSetBootMode[param_String]:=execute[goProMakeCommand["camera", "DM", modesToCode[[param]] ]]
+goProGetPossibleBootMode[]:=Keys[modesToCode]
 
 
 goProPlayHDMIMode[] :=
@@ -856,6 +897,7 @@ codeToVm = Association[vmToCode[[#]] -> # & /@ Keys[vmToCode]];
 
 
 
+
 codeToMode = <|
     "00"->"Video",
     "01"->"Photo",
@@ -964,34 +1006,6 @@ goProSaveSettings[file_String] :=
 (*downloading content*)
 
 
-(*SETTINGS via Options*)
-
-(*Options[goProSetVideo] = {videoResolution -> videoResolutionDef,
-	fps -> fpsDef,
-	fov -> fovDef,
-	videoMode->videoModeDef};
-goProSetVideo[OptionsPattern[]] := (
-	downloadSettings[];
-   
-    goProSetVideoRes[OptionValue[{videoResolution}][[1]]];
-    If[ MemberQ[goProGetPossibleFPS[OptionValue[videoResolution]], 
-      OptionValue[{fps}][[1]]],
-        goProSetFPS[OptionValue[{fps}][[1]]],
-        s = "The FPS value (" <> OptionValue[{fps}][[1]] <> 
-          ") is not possible for this video resolution ("  <> 
-          OptionValue[{videoResolution}][[1]] <> 
-          "), FPS was set to the highest value possible (" <> 
-          goProGetPossibleFPS[OptionValue[videoResolution]][[1]] <> 
-          "). If you wish to see which FPS can be used for certain video \
-resolution call goProGetPossibleFPS[ \"" <> 
-          OptionValue[videoResolution] <> "\" ]";
-        MessageDialog[s];
-    ];
-    goProSetFOV[OptionValue[{fov}][[1]]];
-    goProSetVideoMode[OptionValue[{videoMode}][[1]]]
-    
-    )*)
-    
    
 
 (* ::Subsection:: *)
@@ -1001,8 +1015,34 @@ resolution call goProGetPossibleFPS[ \"" <>
 	vareiables with suffix Def (Default), this function will be called before every usage of function goProSet[].
 *)   
  
+
+    modeDef=""
+    videoResolutionDef=""
+    fovDef=""
+    fpsDef=""
+    photoResolutionDef=""
+    burstRateDef=""
+    timeLapseDef=""
+    loopVideoDef=""
+    continuousShotDef=""
+    photoInVideoDef=""
+    volumeDef=""
+    ledDef=""
+    lowLightDef=""
+    spotMeterDef=""
+    autoPowerOffDef=""
+    videoModeDef=""
+    protuneDef=""
+    whiteBalanceDef=""
+    colorProfileDef=""
+    isoDef=""
+    sharpnessDef=""
+    exposureDef=""
+    bootModeDef=""
+
+
 downloadSettings[]:=(
-	
+	modeDef=codeToMode[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "cm"][[2]], 16]], 1] ]];
     videoResolutionDef=codeToVideoRes[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "vv"][[2]], 16]], 1] ]];
     fovDef=codeToFov[[ "0" <> ToString[goProGetStatus["camera", "fv"][[2]]] ]];
     fpsDef=codeToFPS[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "fs"][[2]], 16]], 1] ]];
@@ -1023,7 +1063,8 @@ downloadSettings[]:=(
     colorProfileDef=codeToCo[["0" <> ToString[goProGetStatus["camera", "co"][[2]] ] ]];
     isoDef=codeToGa[["0" <> ToString[goProGetStatus["camera", "ga"][[2]] ] ]];
     sharpnessDef=codeToSp[["0" <> ToString[goProGetStatus["camera", "sp"][[2]] ] ]];
-    exposureDef=codeToEv[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "ev"][[2]], 16]], 1] ]]
+    exposureDef=codeToEv[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "ev"][[2]], 16]], 1] ]];
+    bootModeDef=codeToMode[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "dm"][[2]], 16]], 1] ]]
     )
 (*Default options for parameters*)
 (*videoResolutionDef = "1080p";
@@ -1076,6 +1117,7 @@ exposureDef=goProGetPossibleExposure[][[1]];*)
 Options[goProSet] = {videoResolution -> videoResolutionDef,
 	fps -> fpsDef,
 	fov -> fovDef, 
+	mode->modeDef,
 	videoMode->videoModeDef,
     photoResolution->photoResolutionDef,
     loopVideo->loopVideoDef,
@@ -1093,7 +1135,9 @@ Options[goProSet] = {videoResolution -> videoResolutionDef,
     colorProfile->colorProfileDef,
     iso->iso,
     sharpness->sharpnessDef,
-    exposure->exposureDef}
+    exposure->exposureDef,
+    bootMode->bootModeDef
+    }
 
 
 (*function goProSet[] enables camera setting through rules. The first thing to happen after usage of this function will be 
@@ -1114,8 +1158,8 @@ goProSet[OptionsPattern[]] :=(downloadSettings[];
     ];*)
     If[!SameQ[OptionValue[fov],fovDef],goProSetFOV[OptionValue[fov]]];
     If[!SameQ[OptionValue[videoMode],videoModeDef],goProSetVideoMode[OptionValue[videoMode]]];
-	 
-	 
+	 If[!SameQ[OptionValue[mode],modeDef],goProMode[OptionValue[mode]]];
+	  If[!SameQ[OptionValue[bootMode],bootModeDef],goProSetBootMode[OptionValue[bootMode]]];
     
      If[!SameQ[OptionValue[photoResolution],photoResolutionDef],goProSetPhotoRes[OptionValue[photoResolution]]];   
      If[!SameQ[OptionValue[loopVideo],loopVideoDef],goProSetVideoLoop[OptionValue[loopVideo]]];
@@ -1136,6 +1180,60 @@ goProSet[OptionsPattern[]] :=(downloadSettings[];
      If[!SameQ[OptionValue[exposure],exposureDef],goProSetExposure[OptionValue[exposure]]];
     )
   
+goProGetSettingReportAssociation[]:=(downloadSettings[];<|
+	"videoResolution" -> videoResolutionDef,
+	"mode"->modeDef,
+	"fps" -> fpsDef,
+	"fov" -> fovDef, 
+	"videoMode"->videoModeDef,
+    "photoResolution"->photoResolutionDef,
+    "loopVideo"->loopVideoDef,
+    "burstRate"->burstRateDef,
+    "timeLapse"->timeLapseDef,
+    "continuousShot"->continuousShotDef,
+    "photoInVideo"->photoInVideoDef,
+    "volume"->volumeDef, 
+    "led"->ledDef, 
+    "lowLight"->lowLightDef,
+    "spotMeter"->spotMeterDef, 
+    "autoPowerOff"->autoPowerOffDef,
+    "protune"->protuneDef,
+    "whiteBalance"->whiteBalanceDef,
+    "colorProfile"->colorProfileDef,
+    "iso"->isoDef,
+    "sharpness"->sharpnessDef,
+    "exposure"->exposureDef,
+    "bootMode"->bootModeDef
+
+|>)
+
+goProReport[param_String]:= # -> goProGetSettingReportAssociation[][[#]] & /@ {param}
+
+goProGetVariables[]:=ToExpression[#]&/@{
+	"videoResolution" ,
+	"fps" ,
+	"fov" , 
+	"videoMode",
+    "photoResolution",
+    "loopVideo",
+    "burstRate",
+    "timeLapse",
+    "continuousShot",
+    "photoInVideo",
+    "volume", 
+    "led", 
+    "lowLight",
+    "spotMeter", 
+    "autoPowerOff",
+    "protune",
+    "whiteBalance",
+    "colorProfile",
+    "iso",
+    "sharpness",
+    "exposure",
+    "mode",
+    "bootMode"
+}
 
 
 End[]

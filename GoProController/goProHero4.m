@@ -1756,7 +1756,7 @@ goProGetSettingReportAssociation[]:=(downloadAllSetting[];<|
 
 goProReport[param_String]:= # -> goProGetSettingReportAssociation[][[#]] & /@ {param}
 
-goProGetVariables[]:=ToExpresion[#]&/@{
+goProGetVariables[]:=ToExpression[#]&/@{
 	"videoResolution",
 "fps",
 "fov",
