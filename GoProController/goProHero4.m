@@ -543,7 +543,7 @@ goProReport::usage=
 
 Begin["`Private`"] (* Begin Private Context *) 
 
-camera = "Hero4";
+camera = "HERO4";
 model="";
 
 goProGetCamera[] := camera
@@ -1757,7 +1757,7 @@ goProGetSettingReportAssociation[]:=(downloadAllSetting[];<|
 goProReport[param_String]:= # -> goProGetSettingReportAssociation[][[#]] & /@ {param}
 
 goProGetVariables[]:=ToExpression[#]&/@{
-	"videoResolution",
+"videoResolution",
 "fps",
 "fov",
 "videoTimeLapseInterval",

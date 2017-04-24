@@ -1,6 +1,6 @@
 (* Paclet Info File *)
 
-(* created 2017/04/04*)
+(* created 2017/04/24*)
 
 Paclet[
     Name -> "GoProController",
@@ -10,7 +10,7 @@ Paclet[
         {
             {"Documentation", Resources -> 
                 {"Guides/GoProController"}
-            , Language -> "English"}
+            , Language -> "English", MainPage -> "Guides/GoProController"}
         }
 ]
 

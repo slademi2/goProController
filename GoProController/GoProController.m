@@ -13,13 +13,13 @@ goProGetPossibleCamera::usage=
 Begin["`Private`"]
 (* Implementation of the package *)
 
-cameraPossible={"Hero3+","Hero4"}
+cameraPossible={"HERO3+","HERO4"}
 
 
 camera="";
 (*goProSetCamera[param_String]:=(model=param;If[param=="Hero3+Black",Get["GoProController`goProHero3PlusBlack`"],Get["GoProController`Package`"]])*)
-goProSetCamera[param_String]:=(camera=param;Switch[param,"Hero3+Black",Get["GoProController`goProHero3PlusBlack`"],
-	"Hero4",(Get["GoProController`goProHero4`"])
+goProSetCamera[param_String]:=(camera=param;Switch[param, "HERO3+",Get["GoProController`goProHero3`"],
+	"HERO4",(Get["GoProController`goProHero4`"])
 	])
 goProGetPossibleCamera[]:=cameraPossible
 

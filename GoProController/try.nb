@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    872024,      21901]
-NotebookOptionsPosition[    837122,      20844]
-NotebookOutlinePosition[    837455,      20859]
-CellTagsIndexPosition[    837412,      20856]
+NotebookDataLength[    882827,      22229]
+NotebookOptionsPosition[    845940,      21107]
+NotebookOutlinePosition[    846278,      21122]
+CellTagsIndexPosition[    846235,      21119]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -20839,11 +20839,274 @@ Cell[BoxData[
  RowBox[{"goProSet", "[", 
   RowBox[{"videoMode", "\[Rule]", "\"\<PAL\>\""}], "]"}]], "Input",
  CellChangeTimes->{{3.699893464102614*^9, 3.699893500598839*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["pokusy", "Section",
+ CellChangeTimes->{{3.701698570292899*^9, 3.701698577414014*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.701698698706923*^9, 3.701698704539002*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<Hero3+Black\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"goProInit", "[", "\"\<12345678\>\"", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.701698717289761*^9, 3.7016987272659903`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossibleFPS", "[", "\"\<720p\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetFPS", "[", 
+  RowBox[{
+   RowBox[{"goProGetPossibleFPS", "[", "\"\<WVGA\>\"", "]"}], 
+   "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.701698731146408*^9, 3.7016987582336082`*^9}, {
+  3.70169879625215*^9, 3.701698866110104*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"60\"\>", ",", "\<\"120\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.701698761193748*^9, 3.701698866396761*^9}}],
+
+Cell[BoxData["\<\"http://10.5.5.9/camera/FS?t=12345678&p=%0a\"\>"], "Output",
+ CellChangeTimes->{{3.701698761193748*^9, 3.701698866400415*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGetPossibleISO", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.7016989655448503`*^9, 3.701698970572242*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"6400\"\>", ",", "\<\"1600\"\>", ",", "\<\"400\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.701698970968095*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGetVariables", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.7016989370172787`*^9, 3.7016989385028477`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "videoResolution", ",", "fps", ",", "fov", ",", "videoMode", ",", 
+   "photoResolution", ",", "loopVideo", ",", "burstRate", ",", "timeLapse", 
+   ",", "continuousShot", ",", "photoInVideo", ",", "volume", ",", "led", ",",
+    "lowLight", ",", "spotMeter", ",", "autoPowerOff", ",", "protune", ",", 
+   "whiteBalance", ",", "colorProfile", ",", "iso", ",", "sharpness", ",", 
+   "exposure", ",", "mode", ",", "bootMode"}], "}"}]], "Output",
+ CellChangeTimes->{3.701698939335479*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProSet", "[", 
+  RowBox[{
+   RowBox[{"volume", "\[Rule]", "\"\<off\>\""}], ",", 
+   RowBox[{"videoResolution", "\[Rule]", "\"\<1080p\>\""}], ",", 
+   RowBox[{"fps", "\[Rule]", "\"\<30\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.701698874854164*^9, 3.7016989086415367`*^9}, {
+  3.7016990336796227`*^9, 3.701699068567112*^9}}],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.7016990744523287`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goProGetSettingReportAssociation", "[", "]"}], 
+  "\[LeftDoubleBracket]", "\"\<videoResolution\>\"", 
+  "\[RightDoubleBracket]"}]], "Input",
+ CellChangeTimes->{{3.7016991426191072`*^9, 3.701699195272398*^9}}],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.701699153449006*^9, 3.701699197269114*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["pom", "Section",
+ CellChangeTimes->{{3.7018762694024057`*^9, 3.7018762697879887`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.701876276266089*^9, 3.7018762765791197`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"goProSetCamera", "[", 
+  RowBox[{
+   RowBox[{"goProGetPossibleCamera", "[", "]"}], "\[LeftDoubleBracket]", "2", 
+   "\[RightDoubleBracket]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.701876284245829*^9, 3.701876294093378*^9}, {
+  3.701876347902883*^9, 3.701876354896285*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.70187630952178*^9, 3.701876345411199*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Hero3+\"\>", ",", "\<\"Hero4\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.701876342954424*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["goProReport", "Section",
+ CellChangeTimes->{{3.702059971826385*^9, 3.702059974297751*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<HERO3+\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetPassword", "[", "\"\<12345678\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.702059976454977*^9, 3.702059999075589*^9}, {
+  3.702060458207762*^9, 3.702060458430916*^9}}],
+
+Cell[BoxData["\<\"12345678\"\>"], "Output",
+ CellChangeTimes->{3.702060459180571*^9, 3.702060510327668*^9, 
+  3.70206129305624*^9, 3.7020613567771606`*^9, 3.7020614861682053`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProReport", "[", 
+  RowBox[{"{", 
+   RowBox[{"\"\<videoResolution\>\"", ",", "\"\<fov\>\""}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.702060018414548*^9, 3.702060048145303*^9}, {
+  3.702061319133294*^9, 3.702061319462006*^9}, {3.702061491475326*^9, 
+  3.7020614966188393`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"videoResolution\"\>", "\[Rule]", "\<\"1080p\"\>"}], ",", 
+   RowBox[{"\<\"fov\"\>", "\[Rule]", "\<\"wide\"\>"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.7020600430694637`*^9, 3.7020600725379343`*^9}, 
+   3.7020601760107927`*^9, 3.702060389113744*^9, 3.7020605449323187`*^9, {
+   3.702061299045198*^9, 3.702061320602157*^9}, 3.70206135923488*^9, {
+   3.702061488137608*^9, 3.70206149806861*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProReport", "[", "\"\<fv\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.702060083758106*^9, 3.702060095108818*^9}, 
+   3.702061501951542*^9}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "goProReport","missing","\"This parameter is not usable, try another.\"",2,
+   77,28,31791917545844735822,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.70206150259564*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", "Null", "}"}]], "Output",
+ CellChangeTimes->{
+  3.702060096197094*^9, {3.7020613376183043`*^9, 3.702061365821397*^9}, {
+   3.70206150065245*^9, 3.702061502598249*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGetVariables", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.702060178138558*^9, 3.7020601805867653`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "videoResolution", ",", "fps", ",", "fov", ",", "videoMode", ",", 
+   "photoResolution", ",", "loopVideo", ",", "burstRate", ",", "timeLapse", 
+   ",", "continuousShot", ",", "photoInVideo", ",", "volume", ",", "led", ",",
+    "lowLight", ",", "spotMeter", ",", "autoPowerOff", ",", "protune", ",", 
+   "whiteBalance", ",", "colorProfile", ",", "iso", ",", "sharpness", ",", 
+   "exposure", ",", "mode", ",", "bootMode"}], "}"}]], "Output",
+ CellChangeTimes->{3.7020601809713573`*^9, 3.702060466114064*^9, 
+  3.702061505436892*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProReport", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "vdf", ",", "fov", ",", "fps", ",", "protune", ",", "whiteBalance"}], 
+   "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.702060181899984*^9, 3.702060199558304*^9}, 
+   3.7020604101588373`*^9, {3.7020605170997953`*^9, 3.702060522027772*^9}, {
+   3.702060555174459*^9, 3.702060588043425*^9}, {3.702060636048518*^9, 
+   3.702060722909382*^9}, {3.70206151336724*^9, 3.702061513687711*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "goProReport","missing","\"This parameter is not usable, try another.\"",2,
+   80,29,31791917545844735822,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.702061514373704*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"Null", ",", 
+   RowBox[{"\<\"fov\"\>", "\[Rule]", "\<\"wide\"\>"}], ",", 
+   RowBox[{"\<\"fps\"\>", "\[Rule]", "\<\"60\"\>"}], ",", 
+   RowBox[{"\<\"protune\"\>", "\[Rule]", "\<\"on\"\>"}], ",", 
+   RowBox[{"\<\"whiteBalance\"\>", "\[Rule]", "\<\"auto\"\>"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.702060189693364*^9, 3.702060200167533*^9}, {
+   3.702060411654419*^9, 3.7020604310071163`*^9}, 3.702060467764143*^9, {
+   3.7020605143382177`*^9, 3.702060523619138*^9}, {3.702060558801354*^9, 
+   3.702060589600277*^9}, {3.702060644391006*^9, 3.7020607263964653`*^9}, {
+   3.702061509869369*^9, 3.7020615163187943`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProReport", "[", "\"\<fov\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.7020605329373083`*^9, 3.702060537688991*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"fov\"\>", "\[Rule]", "\<\"wide\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.702060538649474*^9, 3.70206154575801*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.702060423018444*^9, 3.702060423519368*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1600, 847},
-WindowMargins->{{370, Automatic}, {1, 25}},
+WindowSize->{1598, 847},
+WindowMargins->{{1, Automatic}, {1, Automatic}},
 FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
 StyleDefinitions->"Default.nb"
 ]
@@ -20987,9 +21250,9 @@ Cell[148562, 3732, 127, 3, 34, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[148726, 3740, 90, 1, 65, "Section"],
-Cell[148819, 3743, 349, 6, 77, "Text"],
+Cell[148819, 3743, 349, 6, 33, "Text"],
 Cell[149171, 3751, 1138, 42, 825, "Text"],
-Cell[150312, 3795, 710, 17, 78, "Input"],
+Cell[150312, 3795, 710, 17, 34, "Input"],
 Cell[151025, 3814, 154, 3, 34, "Input"],
 Cell[151182, 3819, 1050, 25, 263, "Input"],
 Cell[152235, 3846, 1977, 44, 308, "Input"],
@@ -21030,7 +21293,7 @@ Cell[CellGroupData[{
 Cell[198967, 5013, 101, 1, 44, "Subsection"],
 Cell[199071, 5016, 471, 11, 124, "Input"],
 Cell[199545, 5029, 1747, 38, 308, "Input"],
-Cell[201295, 5069, 662, 17, 78, "Input"],
+Cell[201295, 5069, 662, 17, 34, "Input"],
 Cell[CellGroupData[{
 Cell[201982, 5090, 128, 2, 32, "Input"],
 Cell[202113, 5094, 191, 4, 34, "Output"]
@@ -21165,14 +21428,14 @@ Cell[333910, 8352, 387, 5, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[334358, 8364, 97, 1, 93, "Title"],
-Cell[334458, 8367, 4460, 111, 420, "Input"],
+Cell[334458, 8367, 4460, 111, 375, "Input"],
 Cell[CellGroupData[{
 Cell[338943, 8482, 106, 1, 35, "Subsubsection"],
 Cell[339052, 8485, 906, 21, 123, "Input"],
 Cell[CellGroupData[{
-Cell[339983, 8510, 2394, 67, 282, "Input"],
-Cell[342380, 8579, 513, 13, 57, "Output"],
-Cell[342896, 8594, 945, 23, 61, "Output"]
+Cell[339983, 8510, 2394, 67, 238, "Input"],
+Cell[342380, 8579, 513, 13, 34, "Output"],
+Cell[342896, 8594, 945, 23, 36, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[343878, 8622, 590, 16, 79, "Input"],
@@ -21180,11 +21443,11 @@ Cell[344471, 8640, 89, 1, 32, "Output"],
 Cell[344563, 8643, 222, 6, 39, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[344822, 8654, 2317, 71, 284, "Input"],
+Cell[344822, 8654, 2317, 71, 240, "Input"],
 Cell[347142, 8727, 397, 8, 34, "Output"],
 Cell[347542, 8737, 372, 7, 34, "Output"]
 }, Open  ]],
-Cell[347929, 8747, 2045, 47, 217, "Input"],
+Cell[347929, 8747, 2045, 47, 149, "Input"],
 Cell[CellGroupData[{
 Cell[349999, 8798, 738, 10, 32, "Input"],
 Cell[350740, 8810, 656, 10, 24, "Print"]
@@ -21192,7 +21455,7 @@ Cell[350740, 8810, 656, 10, 24, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[351445, 8826, 104, 1, 35, "Subsubsection"],
-Cell[351552, 8829, 480, 12, 57, "Input"],
+Cell[351552, 8829, 480, 12, 34, "Input"],
 Cell[CellGroupData[{
 Cell[352057, 8845, 141, 2, 32, "Input"],
 Cell[352201, 8849, 150, 2, 32, "Output"]
@@ -21227,8 +21490,8 @@ Cell[356165, 8973, 209, 4, 32, "Input"],
 Cell[356377, 8979, 175, 2, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[356589, 8986, 481, 8, 84, "Subsubsection"],
-Cell[357073, 8996, 873, 21, 102, "Input"],
+Cell[356589, 8986, 481, 8, 60, "Subsubsection"],
+Cell[357073, 8996, 873, 21, 57, "Input"],
 Cell[CellGroupData[{
 Cell[357971, 9021, 126, 2, 32, "Input"],
 Cell[358100, 9025, 283, 5, 34, "Output"]
@@ -21237,7 +21500,7 @@ Cell[CellGroupData[{
 Cell[358420, 9035, 327, 7, 34, "Input"],
 Cell[358750, 9044, 255, 5, 34, "Output"]
 }, Open  ]],
-Cell[359020, 9052, 3293, 74, 437, "Input"],
+Cell[359020, 9052, 3293, 74, 305, "Input"],
 Cell[CellGroupData[{
 Cell[362338, 9130, 611, 11, 34, "Input"],
 Cell[362952, 9143, 14697, 347, 61, "Output"]
@@ -21248,7 +21511,7 @@ Cell[377892, 9500, 206, 3, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[378135, 9508, 137, 2, 32, "Input"],
-Cell[378275, 9512, 400, 7, 57, "Output"]
+Cell[378275, 9512, 400, 7, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[378712, 9524, 402, 6, 32, "Input"],
@@ -21267,11 +21530,11 @@ Cell[380541, 9569, 287, 6, 34, "Input"],
 Cell[380831, 9577, 13889, 336, 61, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[394757, 9918, 1845, 42, 259, "Input"],
-Cell[396605, 9962, 601, 12, 57, "Output"]
+Cell[394757, 9918, 1845, 42, 192, "Input"],
+Cell[396605, 9962, 601, 12, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[397243, 9979, 1285, 25, 102, "Input"],
+Cell[397243, 9979, 1285, 25, 57, "Input"],
 Cell[398531, 10006, 14136, 340, 61, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -21780,7 +22043,7 @@ Cell[720189, 17952, 125, 1, 24, "Print"]
 Cell[CellGroupData[{
 Cell[720375, 17960, 93, 1, 65, "Section"],
 Cell[720471, 17963, 198, 5, 57, "Input"],
-Cell[720672, 17970, 1665, 44, 281, "Input"],
+Cell[720672, 17970, 1665, 44, 236, "Input"],
 Cell[CellGroupData[{
 Cell[722362, 18018, 180, 3, 34, "Input"],
 Cell[722545, 18023, 225, 6, 34, "Output"]
@@ -21901,6 +22164,71 @@ Cell[836203, 20820, 136, 3, 34, "Output"]
 }, Open  ]],
 Cell[836354, 20826, 563, 9, 32, "Input"],
 Cell[836920, 20837, 174, 3, 32, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[837131, 20845, 91, 1, 65, "Section"],
+Cell[837225, 20848, 92, 1, 32, "Input"],
+Cell[837320, 20851, 355, 8, 79, "Input"],
+Cell[CellGroupData[{
+Cell[837700, 20863, 398, 8, 55, "Input"],
+Cell[838101, 20873, 158, 3, 34, "Output"],
+Cell[838262, 20878, 143, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[838442, 20884, 135, 2, 32, "Input"],
+Cell[838580, 20888, 160, 4, 34, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[838777, 20897, 135, 2, 32, "Input"],
+Cell[838915, 20901, 524, 9, 57, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[839476, 20915, 355, 7, 34, "Input"],
+Cell[839834, 20924, 79, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[839950, 20930, 243, 5, 32, "Input"],
+Cell[840196, 20937, 99, 1, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[840344, 20944, 92, 1, 65, "Section"],
+Cell[840439, 20947, 147, 2, 32, "Input"],
+Cell[840589, 20951, 298, 6, 32, "Input"],
+Cell[CellGroupData[{
+Cell[840912, 20961, 91, 1, 32, "Input"],
+Cell[841006, 20964, 140, 3, 34, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[841195, 20973, 96, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[841316, 20978, 386, 8, 78, "Input"],
+Cell[841705, 20988, 179, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[841921, 20995, 312, 7, 34, "Input"],
+Cell[842236, 21004, 452, 8, 34, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[842725, 21017, 165, 3, 32, "Input"],
+Cell[842893, 21022, 228, 5, 23, "Message"],
+Cell[843124, 21029, 195, 4, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[843356, 21038, 133, 2, 32, "Input"],
+Cell[843492, 21042, 573, 10, 57, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[844102, 21057, 459, 9, 34, "Input"],
+Cell[844564, 21068, 229, 5, 23, "Message"],
+Cell[844796, 21075, 664, 12, 34, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[845497, 21092, 142, 2, 32, "Input"],
+Cell[845642, 21096, 163, 3, 32, "Output"]
+}, Open  ]],
+Cell[845820, 21102, 92, 1, 32, "Input"]
 }, Open  ]]
 }, Open  ]]
 }

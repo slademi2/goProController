@@ -1,0 +1,521 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12855,        513]
+NotebookOptionsPosition[      8322,        350]
+NotebookOutlinePosition[      8936,        374]
+CellTagsIndexPosition[      8858,        369]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.0", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["GoProController", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["GoProController`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["GoProController/ref/goProSetCameraModel", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["goProSetCameraModel", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{"goProSetCameraModel", "[", 
+   StyleBox["param", "TI"], "]"}]], "InlineFormula"],
+ " \[LineSeparator]sets camera model to parameter ",
+ Cell[BoxData[
+  StyleBox["param", "TI"]], "InlineFormula",
+  FormatType->"StandardForm"],
+ " to further define model which you set via function ",
+ Cell[BoxData[
+  ButtonBox["goProSetCamera",
+   BaseStyle->"Link",
+   ButtonData->"paclet:GoProController/ref/goProSetCamera"]], "InlineFormula"],
+ ", such as Black, Silver, White, Session, etc. This parameter will be used \
+further in using ",
+ ButtonBox["GoProController",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/guide/GoProController"],
+ " package. "
+}], "Usage",
+ CellChangeTimes->{{3.7020331885609217`*^9, 3.702033355315935*^9}},
+ CellID->982511436],
+
+Cell["\<\
+The need of this function is determined by various setting for each camera \
+model. For example White edition has fewer setting options than Black edition \
+and so on.\
+\>", "Notes",
+ CellChangeTimes->{{3.702033362458226*^9, 3.702033425017601*^9}},
+ CellID->1067943069]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell["XXXX", "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Demonstrations", "RelatedDemonstrationsSection",
+ CellID->1268215905],
+
+Cell["XXXX", "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "RelatedLinksSection",
+ CellID->1584193535],
+
+Cell["XXXX", "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704],
+
+Cell["XXXX", "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "MoreAboutSection",
+ CellID->38303248],
+
+Cell["XXXX", "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell[BoxData[
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.7020317867279*^9, 3.7020317872855053`*^9}},
+ CellLabel->"In[1]:=",
+ CellID->1351927727],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProGetPossibleCamera", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", 
+  RowBox[{
+   RowBox[{"goProGetPossibleCamera", "[", "]"}], "\[LeftDoubleBracket]", "2", 
+   "\[RightDoubleBracket]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.702031797570755*^9, 3.702031823212748*^9}, {
+  3.702033595686186*^9, 3.702033595990683*^9}},
+ CellLabel->"In[1]:=",
+ CellID->2099590002],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"HERO3+\"\>", ",", "\<\"HERO4\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.702031823983657*^9, {3.702031867112813*^9, 3.7020318822098703`*^9}, {
+   3.702033596745595*^9, 3.702033612392049*^9}},
+ CellLabel->"Out[1]=",
+ CellID->769811716]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGetPossibleCameraModel", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.7020336234050007`*^9, 3.702033628258586*^9}},
+ CellLabel->"In[3]:=",
+ CellID->242360463],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Black\"\>", ",", "\<\"Silver\"\>", ",", "\<\"Session\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.702033628943101*^9},
+ CellLabel->"Out[3]=",
+ CellID->1661934636]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.702033579276353*^9, 3.7020335826933928`*^9}, {
+  3.702033615026804*^9, 3.702033618752808*^9}},
+ CellLabel->"In[4]:=",
+ CellID->2134418229],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.702033633451455*^9},
+ CellLabel->"Out[4]=",
+ CellID->557012341]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More Examples", "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Scope", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1293636265],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Generalizations & Extensions", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1020263627],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Options", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2061341341],
+
+Cell[BoxData[
+ InterpretationBox[Cell["XXXX", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1757724783],
+
+Cell[BoxData[
+ InterpretationBox[Cell["XXXX", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1295379749]
+}, Closed]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Applications", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->258228157],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Properties & Relations", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2123667759],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Possible Issues", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1305812373],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Interactive Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1653164318],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Neat Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->589267740]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{Automatic, 164}, {33, Automatic}},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[6802, 292, 100, 2, 56, "ExtendedExamplesSection",
+   CellTags->"ExtendedExamples",
+   CellID->1854448968]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 8720, 362}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 325, 14, 24, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[908, 38, 68, 1, 30, "CategorizationSection",
+ CellID->1122911449],
+Cell[979, 41, 79, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1061, 45, 88, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1152, 49, 85, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1240, 53, 84, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1361, 59, 55, 1, 20, "KeywordsSection",
+ CellID->477174294],
+Cell[1419, 62, 45, 1, 70, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1501, 68, 65, 1, 20, "TemplatesSection",
+ CellID->1872225408],
+Cell[1569, 71, 94, 2, 70, "Template",
+ CellID->1562036412],
+Cell[1666, 75, 82, 2, 70, "Template",
+ CellID->158391909],
+Cell[1751, 79, 81, 2, 70, "Template",
+ CellID->1360575930],
+Cell[1835, 83, 82, 2, 70, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1954, 90, 53, 1, 20, "DetailsSection",
+ CellID->307771771],
+Cell[2010, 93, 63, 2, 70, "Details",
+ CellID->670882175],
+Cell[2076, 97, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[2148, 101, 64, 2, 70, "Details",
+ CellID->8391405],
+Cell[2215, 105, 69, 2, 70, "Details",
+ CellID->3610269],
+Cell[2287, 109, 61, 2, 70, "Details",
+ CellID->401364205],
+Cell[2351, 113, 61, 2, 70, "Details",
+ CellID->350204745],
+Cell[2415, 117, 63, 2, 70, "Details",
+ CellID->732958810],
+Cell[2481, 121, 78, 2, 70, "Details",
+ CellID->222905350],
+Cell[2562, 125, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2666, 132, 62, 1, 64, "ObjectName",
+ CellID->1224892054],
+Cell[2731, 135, 823, 22, 111, "Usage",
+ CellID->982511436],
+Cell[3557, 159, 279, 6, 41, "Notes",
+ CellID->1067943069]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3873, 170, 57, 1, 45, "TutorialsSection",
+ CellID->250839057],
+Cell[3933, 173, 45, 1, 16, "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4015, 179, 83, 1, 32, "RelatedDemonstrationsSection",
+ CellID->1268215905],
+Cell[4101, 182, 58, 1, 16, "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4196, 188, 65, 1, 32, "RelatedLinksSection",
+ CellID->1584193535],
+Cell[4264, 191, 49, 1, 16, "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4350, 197, 55, 1, 32, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[4408, 200, 43, 1, 16, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4488, 206, 57, 1, 32, "MoreAboutSection",
+ CellID->38303248],
+Cell[4548, 209, 46, 1, 16, "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4631, 215, 356, 11, 70, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[4990, 228, 189, 4, 27, "Input",
+ CellID->1351927727],
+Cell[CellGroupData[{
+Cell[5204, 236, 415, 9, 48, "Input",
+ CellID->2099590002],
+Cell[5622, 247, 284, 7, 28, "Output",
+ CellID->769811716]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5943, 259, 186, 4, 27, "Input",
+ CellID->242360463],
+Cell[6132, 265, 211, 6, 28, "Output",
+ CellID->1661934636]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6380, 276, 245, 5, 27, "Input",
+ CellID->2134418229],
+Cell[6628, 283, 125, 3, 26, "Output",
+ CellID->557012341]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6802, 292, 100, 2, 56, "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+Cell[6905, 296, 125, 3, 34, "ExampleSection",
+ CellID->1293636265],
+Cell[7033, 301, 148, 3, 22, "ExampleSection",
+ CellID->1020263627],
+Cell[CellGroupData[{
+Cell[7206, 308, 127, 3, 22, "ExampleSection",
+ CellID->2061341341],
+Cell[7336, 313, 130, 3, 70, "ExampleSubsection",
+ CellID->1757724783],
+Cell[7469, 318, 130, 3, 70, "ExampleSubsection",
+ CellID->1295379749]
+}, Closed]],
+Cell[7614, 324, 131, 3, 22, "ExampleSection",
+ CellID->258228157],
+Cell[7748, 329, 142, 3, 22, "ExampleSection",
+ CellID->2123667759],
+Cell[7893, 334, 135, 3, 22, "ExampleSection",
+ CellID->1305812373],
+Cell[8031, 339, 140, 3, 22, "ExampleSection",
+ CellID->1653164318],
+Cell[8174, 344, 132, 3, 22, "ExampleSection",
+ CellID->589267740]
+}, Open  ]]
+}
+]
+*)
+
