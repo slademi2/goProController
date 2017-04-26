@@ -302,6 +302,34 @@ goProSaveSettings::usage =
 
 
 
+goProGetFileList::usage=
+	"goProGetFileList[] returns list of files which were aquired by the camera." 
+goProDownloadFile::usage=
+	"goProDownloadFile[name_String,destination_String] download file which name was given as first parameter to the destination specified in second parameter.
+	 goProDownloadFile[list_List,destination_String] download files in list from first parameter to the destination specified in second parameter. "
+	 
+	
+goProDownloadAllFiles::usage=
+	"goProDownloadAllFiles[ _String] downloads all files from camera to destination given."
+goProGetFileURL::usage=
+	"goProGetFileURL[_String] returns URL string of file which name was given in parameter."	
+	
+goProSetURLBase::usage=
+	"goProSetURLBase[_String] lets you set urlBase variable. Use it if you want to set another folder on camera for downloading data from camera."
+
+goProGetURLBase::usage=
+	"goProGetURLBase[] returns value of urlBase variable, which stores url for folder from which you can download data from camera."
+	
+	
+	
+goProDeleteAll::usage=
+	"goProDeleteAll[ ] deletes all files on camera."
+goProDeleteLastFile::usage=
+	"goProDeleteLastFile[ ] deletes last file captured on camera."
+ (*goProDeleteFile::usage=
+	"goProDeleteFile[_String] deletes file on camera which name you put as parameter."*)
+
+
 
 
 
@@ -315,13 +343,18 @@ goProGetSettingReportAssociation::usage=
 goProGetVariables::usage=
 	"goProGetVariables[ ], returns all variables for goProSet function."
 
-goProReport::usage=
-	"goProReport[_String] returns value set to parameter given such ase {videoResolution->1080p}"
+goProGet::usage=
+	"goProGet[_String] returns value set to parameter given such ase {videoResolution->1080p}"
 
 (*goProSetVideo::usage =
     "goProSetVideo[ ] enables to set video settings such as fps, fov, videoResolution through rules, for example: goProSetVideo[{fps->\"30\",fov->->\"wide\", videoResolution->\"1080p\" }]. All parameters are optional."
 *)
 
+
+goProTextModeOn::usage=
+	"goProTextModeOn[] functions goProSet* will only return String containing url adress."
+goProTextModeOff::usage=
+	"goProTextModeOff[] functions goProSet* will send requests on url adress of settings."
 
 (* ::Section:: *)
 (* Private Definitions *)
@@ -330,7 +363,10 @@ goProReport::usage=
 Begin["`Private`"]
 
 
-model = "HERO3+Black";
+camera = "HERO3+";
+goProGetCamera[]:=camera
+
+goProSetCameraModel[param_String]:=model=param;
 goProGetModel[] := model
 goProPassword="";
 
@@ -344,13 +380,26 @@ goProUrl = "http://10.5.5.9/";
 goProMakeCommand[unit_String, command_String, parram_String] :=
     goProUrl <> unit <> "/" <> command <> "?t=" <> goProPassword <>
      "&p=%" <> parram
+     
+ goProMakeCommand[unit_String, command_String] :=
+    goProUrl <> unit <> "/" <> command <> "?t=" <> goProPassword
 
+
+
+textMode=0;
+goProTextModeOn[]:=(textMode=1;)
+goProTextModeOff[]:=(textMode=0;)
 
 goProSetPassword::goProPassword="First you have to set password for Wifi! Call goProSetPassword[_String]";
 
 (*spusteni prikazu exec pomoci HTTPRequest a URLRead*)
-execute[exec_String] :=(If[goProPassword=="",Message[goProSetPassword::goProPassword, goProPassword],request = HTTPRequest[exec];
-     URLRead[request]])
+execute[exec_String] :=(If[goProPassword=="",Message[goProSetPassword::goProPassword, goProPassword],
+	If[textMode==0,
+		request = HTTPRequest[exec];
+    	URLRead[request],
+    	exec
+    ]
+])
 
 goProGetStatus[unit_String, param_String] :=If[goProPassword=="",Message[goProSetPassword::goProPassword, goProPassword],
     URLExecute[HTTPRequest[goProUrl <> unit <> "/" <> param <> "?t=" <> goProPassword]]
@@ -1067,50 +1116,7 @@ downloadSettings[]:=(
     exposureDef=codeToEv[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "ev"][[2]], 16]], 1] ]];
     bootModeDef=codeToMode[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "dm"][[2]], 16]], 1] ]]
     )
-(*Default options for parameters*)
-(*videoResolutionDef = "1080p";
-fpsDef= "30";
-fovDef = "wide";
-videoModeDef="NTSC";
-photoResolutionDef="12W";
-loopVideoDef="off";
-burstRateDef="30/1";
-timeLapseDef="1";
-continuousShotDef="1";
-photoInVideoDef="off";
-volumeDef="off";
-ledDef="4";
-lowLightDef="off";
-spotMeterDef="off";
-autoPowerOffDef="off";
-protuneDef="off";
-whiteBalanceDef="auto";
-colorProfileDef="GoPro";
-isoDef=goProGetPossibleISO[][[1]];
-sharpnessDef=goProGetPossibleSharpness[][[1]];
-exposureDef=goProGetPossibleExposure[][[1]];*)
 
-(*Options[goProSet] = {videoResolution -> "1080p",
-	fps -> "30",
-	fov -> "wide",
-	videoMode->"NTSC",
-    photoResolution->"12W",
-    loopVideo->"off",
-    burstRate->"30/1",
-    timeLapse->"1",
-    continuousShot->"1",
-    photoInVideo->"off",
-    volume->"off",
-    led->"4",
-    lowLight->"off",
-    spotMeter->"off",
-    autoPowerOff->"off",
-    protune->"off",
-    whiteBalance->"auto",
-    colorProfile->"GoPro",
-    iso->goProGetPossibleISO[][[1]],
-    sharpness->goProGetPossibleSharpness[][[1]],
-    exposure->goProGetPossibleExposure[][[1]]}*)
 
 
 
@@ -1237,18 +1243,18 @@ vars={
     "bootMode"
 }
 
-goProReport::missing="This parameter is not usable, try another.";
+goProGet::missing="This parameter is not usable, try another.";
 
 (*spusteni prikazu exec pomoci HTTPRequest a URLRead*)
-(*If[MemberQ[vars,param],Message[goProReport::missing, missing]]*)
+(*If[MemberQ[vars,param],Message[goProGet::missing, missing]]*)
 
-SetAttributes[goProReport,HoldAll];
+SetAttributes[goProGet,HoldAll];
 
-goProReport[param_]:= If[MemberQ[vars,#],# -> goProGetSettingReportAssociation[][[#]],Message[goProReport::missing, missing]] &/@ {ToString[param]}
+goProGet[param_]:= If[MemberQ[vars,#],# -> goProGetSettingReportAssociation[][[#]],Message[goProGet::missing, missing]] &/@ {ToString[param]}
 
-goProReport[list_List]:= If[MemberQ[vars,ToString[#]],ToString[#] -> goProGetSettingReportAssociation[][[ToString[#]]],Message[goProReport::missing, missing]]&/@ list
+goProGet[list_List]:= If[MemberQ[vars,ToString[#]],ToString[#] -> goProGetSettingReportAssociation[][[ToString[#]]],Message[goProGet::missing, missing]]&/@ list
 
-goProReport[param_String]:= If[MemberQ[vars,#],# -> goProGetSettingReportAssociation[][[#]],Message[goProReport::missing, missing]] & /@ {param}
+goProGet[param_String]:= If[MemberQ[vars,#],# -> goProGetSettingReportAssociation[][[#]],Message[goProGet::missing, missing]] & /@ {param}
 
 
 
@@ -1277,6 +1283,55 @@ goProGetVariables[]:=ToExpression[#]&/@{
     "mode",
     "bootMode"
 }
+
+
+
+(* ::Subsection:: *)
+(* Download *)
+urlBase="http://10.5.5.9:8080/DCIM/100GOPRO/";
+empty=""
+file=""
+goProGetFileList::empty="No files on GoPro camera.";
+goProGetFileList::file="`1` - No such file on GoPro camera.";
+goProGetFileList::directory="`1` - No such directory exists.";
+goProGetFileList[]:=(If[SameQ[Import[urlBase], $Failed],
+	Message[goProGetFileList::empty,empty]
+	,
+	files = {};
+	files = Flatten[
+  		AppendTo[files, 
+   		StringReplace[ToString[#] & /@ DeleteCases[ReadList[StringToStream[StringTrim[StringDrop[Import[urlBase], 13]]]],
+   			 _Real][[All, 3]], Whitespace -> ""]]]
+	]
+
+ )
+   
+
+goProSetURLBase[param_String]:=urlBase=param;
+goProGetURLBase[]:=urlBase;
+   
+ (*If[Import[urlBase] == $Failed,Message[goProGetFileList::empty, empty],*)     
+goProDownloadFile[list_List,dest_String]:=goProDownloadFile[#,dest]&/@list
+    
+goProDownloadFile[name_String,dest_String]:=If[URLRead[HTTPRequest[urlBase<>name]]["StatusCode"]!=200,
+		Message[goProGetFileList::file,name],
+		If[DirectoryQ[dest<>name],URLDownload[urlBase<>name,dest<>name],
+			Message[goProGetFileList::directory,dest]
+		]
+		
+	]
+goProDownloadAllFiles[dest_String]:=URLDownload[urlBase<>#,dest<>#]&/@goProGetFileList[]
+
+goProGetFileURL[name_String]:=If[URLRead[HTTPRequest[urlBase<>name]]["StatusCode"]!=200,
+	Message[goProGetFileList::file,name],
+	urlBase<>name
+]
+
+goProDeleteAll[]:=execute[goProMakeCommand["camera","DA"]]
+goProDeleteLastFile[]:=execute[goProMakeCommand["camera","DL"]]
+(*goProDeleteFile[name_String]:="1"*)
+
+
 
 
 End[]

@@ -491,7 +491,7 @@ goProGetFileList::usage=
 goProDownloadFile::usage=
 	"goProDownloadFile[name_String,destination_String] download file which name was given as first parameter to the destination specified in second parameter. "
 goProDownloadAll::usage=
-	"goProDownloadAll[ _String] downloads all files from camera to destination given. TRALALALALAALLAALALALALAL ALA ALL A"
+	"goProDownloadAll[ _String] downloads all files from camera to destination given."
 goProGetFileURL::usage=
 	"goProGetFileURL[_String] returns URL string of file which name was given in parameter."	
 
@@ -534,8 +534,8 @@ goProGetSettingReportAssociation::usage=
 goProGetVariables::usage=
 	"goProGetVariables[ ], returns all variables for goProSet function."
 	
-goProReport::usage=
-	"goProReport[_String] returns value set to parameter given such ase {videoResolution->1080p}"
+goProGet::usage=
+	"goProGet[_String] returns value set to parameter given such ase {videoResolution->1080p}"
 	
 	
 (* ::Section:: *)
@@ -1754,7 +1754,68 @@ goProGetSettingReportAssociation[]:=(downloadAllSetting[];<|
 "led"->ledSetting
 |>)
 
-goProReport[param_String]:= # -> goProGetSettingReportAssociation[][[#]] & /@ {param}
+
+vars={
+"videoResolution",
+"fps",
+"fov",
+"videoTimeLapseInterval",
+"videoLoop",
+"photoInVideo",
+"lowLight",
+"videoSpotMeter",
+"videoProtune",
+"videoWhiteBalance",
+"videoColorProfile",
+"videoSharpness",
+"videoExposure",
+"isoMode",
+"videoIsoLimit",
+"videoMode",
+"shutterTime",
+
+"continuousShot",
+"photoResolution",
+"photoSpotMeter",
+"photoProtune",
+"photoWhiteBalance",
+"photoColorProfile",
+"photoSharpness",
+"photoExposure",
+"photoIsoLimit",
+"photoIsoMin",
+"nightPhotoExposureTime",
+
+"multiShotSpotMeter",
+"multiShotProtune",
+"multiShotWhiteBalance",
+"multiShotColorProfile",
+"multiShotSharpness",
+"multiShotExposure",
+"multiShotIsoLimit",
+"multiShotIsoMin",
+"nightLapseExposureTime",
+"burstRate",
+"multiShotTimeLapseInterval",
+"nightLapseInterval",
+"multiShotResolution",
+"volume",
+"autoOff",
+"led"
+}
+
+goProGet::missing="This parameter is not usable, try another.";
+
+(*spusteni prikazu exec pomoci HTTPRequest a URLRead*)
+(*If[MemberQ[vars,param],Message[goProGet::missing, missing]]*)
+
+SetAttributes[goProGet,HoldAll];
+
+goProGet[param_]:= If[MemberQ[vars,#],# -> goProGetSettingReportAssociation[][[#]],Message[goProGet::missing, missing]] &/@ {ToString[param]}
+
+goProGet[list_List]:= If[MemberQ[vars,ToString[#]],ToString[#] -> goProGetSettingReportAssociation[][[ToString[#]]],Message[goProGet::missing, missing]]&/@ list
+
+goProGet[param_String]:= If[MemberQ[vars,#],# -> goProGetSettingReportAssociation[][[#]],Message[goProGet::missing, missing]] & /@ {param}
 
 goProGetVariables[]:=ToExpression[#]&/@{
 "videoResolution",

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     10133,        363]
-NotebookOptionsPosition[      7559,        271]
-NotebookOutlinePosition[      7971,        287]
-CellTagsIndexPosition[      7928,        284]
+NotebookDataLength[     10711,        375]
+NotebookOptionsPosition[      8135,        283]
+NotebookOutlinePosition[      8547,        299]
+CellTagsIndexPosition[      8504,        296]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -194,9 +194,9 @@ That has to be set to make this package fully work.\n",
    BaseStyle->"Link",
    ButtonData->"paclet:GoProController/ref/goProSetPassword"]], 
   "InlineFormula"],
- " -   function which will let you set password for WiFi which camera \
-distributes.  You will have to set password if you want to use HERO3 or \
-HERO3+."
+ "  \[LongDash]  function which will let you set password for WiFi which \
+camera distributes.  You will have to set password if you want to use HERO3 \
+or HERO3+."
 }], "GuideText",
  CellChangeTimes->{{3.702030564507308*^9, 3.702030613504491*^9}, {
   3.7020319224622*^9, 3.7020319540748587`*^9}, {3.702032525387158*^9, 
@@ -206,7 +206,7 @@ HERO3+."
   3.7020578408431664`*^9, 3.702057846251564*^9}, {3.702057969965008*^9, 
   3.7020580334476643`*^9}, {3.702058294610178*^9, 3.70205829715051*^9}, {
   3.7020587402421*^9, 3.702058755723875*^9}, {3.702058796118895*^9, 
-  3.702058827814506*^9}},
+  3.702058827814506*^9}, {3.7020960822896347`*^9, 3.702096083063393*^9}},
  CellID->1463276848]
 }, Open  ]],
 
@@ -214,11 +214,12 @@ Cell[CellGroupData[{
 
 Cell["\<\
 
-Functions listed bellow lets you set parameters of GoPro camera.\
+Functions listed bellow lets control GoPro camera.\
 \>", "GuideFunctionsSection",
  CellChangeTimes->{{3.702030443071993*^9, 3.702030468296771*^9}, 
    3.702030523321209*^9, {3.702030669747015*^9, 3.702030676914432*^9}, {
-   3.702058491907055*^9, 3.702058522945457*^9}},
+   3.702058491907055*^9, 3.702058522945457*^9}, {3.702096053035308*^9, 
+   3.702096056593083*^9}},
  CellID->845392231],
 
 Cell[TextData[{
@@ -226,19 +227,30 @@ Cell[TextData[{
   ButtonBox["goProSet",
    BaseStyle->"Link",
    ButtonData->"paclet:GoProController/ref/goProSet"]], "InlineFormula"],
- " -   function for setting every possible setting of camera via ",
+ "  \[LongDash]  function for setting every possible setting of camera via ",
  ButtonBox["Options",
   BaseStyle->"Link",
   ButtonData->"paclet:ref/Options"],
  ".\n",
  Cell[BoxData[
-  ButtonBox["goProReport",
+  ButtonBox["goProGet",
    BaseStyle->"Link",
-   ButtonData->"paclet:GoProController/ref/goProReport"]], "InlineFormula"],
- " -   lets you see how the camera is set."
+   ButtonData->"paclet:GoProController/ref/goProGet"]], "InlineFormula"],
+ "  \[LongDash]  lets you see how the camera is set.\n",
+ Cell[BoxData[
+  ButtonBox["goProTurnOn",
+   BaseStyle->"Link",
+   ButtonData->"paclet:GoProController/ref/goProTurnOn"]], "InlineFormula"],
+ "  \[LongDash] turns on the camera.\n",
+ Cell[BoxData[
+  ButtonBox["goProTurnOff",
+   BaseStyle->"Link",
+   ButtonData->"paclet:GoProController/ref/goProTurnOff"]], "InlineFormula"],
+ "  \[LongDash] turns off the camera."
 }], "GuideText",
  CellChangeTimes->{{3.7020588521606894`*^9, 3.7020588875164948`*^9}, {
-  3.702062524571637*^9, 3.702062565123357*^9}},
+  3.702062524571637*^9, 3.702062565123357*^9}, {3.7020953474847603`*^9, 
+  3.7020953878234787`*^9}, {3.7020960732770033`*^9, 3.702096126589806*^9}},
  CellID->1914796280]
 }, Open  ]],
 
@@ -270,7 +282,7 @@ Cell["Related Links", "GuideRelatedLinksSection",
  CellID->415694148]
 },
 WindowSize->{905, 847},
-WindowMargins->{{342, Automatic}, {1, Automatic}},
+WindowMargins->{{344, Automatic}, {1, Automatic}},
 FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "GuidePageStyles.nb", 
   CharacterEncoding -> "UTF-8"]
@@ -338,32 +350,32 @@ Cell[2812, 127, 394, 8, 110, "GuideFunctionsSection",
  CellID->1866139230],
 Cell[3209, 137, 630, 13, 39, "GuideText",
  CellID->203374175],
-Cell[3842, 152, 2217, 57, 172, "GuideText",
+Cell[3842, 152, 2275, 57, 172, "GuideText",
  CellID->1463276848]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6096, 214, 314, 7, 91, "GuideFunctionsSection",
+Cell[6154, 214, 350, 8, 91, "GuideFunctionsSection",
  CellID->845392231],
-Cell[6413, 223, 648, 18, 51, "GuideText",
+Cell[6507, 224, 1130, 29, 106, "GuideText",
  CellID->1914796280]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7098, 246, 62, 1, 74, "GuideTutorialsSection",
+Cell[7674, 258, 62, 1, 74, "GuideTutorialsSection",
  CellID->415694126],
-Cell[7163, 249, 49, 1, 23, "GuideTutorial",
+Cell[7739, 261, 49, 1, 23, "GuideTutorial",
  CellID->806871991],
-Cell[7215, 252, 50, 1, 23, "GuideTutorial",
+Cell[7791, 264, 50, 1, 23, "GuideTutorial",
  CellID->1885805579]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7302, 258, 62, 1, 74, "GuideMoreAboutSection",
+Cell[7878, 270, 62, 1, 74, "GuideMoreAboutSection",
  CellID->23220180],
-Cell[7367, 261, 51, 1, 23, "GuideMoreAbout",
+Cell[7943, 273, 51, 1, 23, "GuideMoreAbout",
  CellID->1567025153],
-Cell[7421, 264, 50, 1, 23, "GuideMoreAbout",
+Cell[7997, 276, 50, 1, 23, "GuideMoreAbout",
  CellID->252299663]
 }, Open  ]],
-Cell[7486, 268, 69, 1, 74, "GuideRelatedLinksSection",
+Cell[8062, 280, 69, 1, 74, "GuideRelatedLinksSection",
  CellID->415694148]
 }
 ]
