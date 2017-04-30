@@ -53,17 +53,6 @@ goProGetPossiblePhotoRes::usage =
     "goProGetPossiblePhotoRes[ ] Returns list of possible parameters for function goProSetVideoRes[_String]"
 
 
-goProPhotoRes12W::usage =
-    "goProPhotoRes12W[ ] Sets resolution of photo to 12mp and Wide picture"
-
-goProPhotoRes7W::usage =
-    "goProPhotoRes7W[ ] Sets resolution of photo to 7mp and Wide picture"
-
-goProPhotoRes7M::usage =
-    "goProPhotoRes7M[ ] Sets resolution of photo to 7mp and Medium picture"
-
-goProPhotoRes5M::usage =
-    "goProPhotoRes5M[ ] Sets resolution of photo to 5mp and Medium picture"
 
 (*video resolutions*)
 goProSetVideoRes::usage =
@@ -71,7 +60,7 @@ goProSetVideoRes::usage =
 goProGetPossibleVideoRes::usage =
     "goProGetPossibleVideoRes[ ] Returns list of possible parameters for function goProSetVideoRes[_String]"
 
-goProVideoRes4K::usage =
+(*goProVideoRes4K::usage =
     "goProVideoRes4K[ ]Sets resolution of video to 4K and 15FPS"
 goProVideoRes4K17to9::usage =
     "goProVideoRes4K17to9[ ] Sets resolution of video to 4K in 17:9 and 12FPS"
@@ -94,6 +83,7 @@ goProVideoRes720SV::usage =
     "goProVideoRes720SV[ ] Sets resolution of video to 720p Super View 60FPS"
 goProVideoResWVGA::usage =
     "goProVideoResWVGA[ ] Sets resolution of video to WVGA 240FPS"
+    *)
 
 
 (*FPS*)
@@ -355,6 +345,14 @@ goProTextModeOn::usage=
 	"goProTextModeOn[] functions goProSet* will only return String containing url adress."
 goProTextModeOff::usage=
 	"goProTextModeOff[] functions goProSet* will send requests on url adress of settings."
+	
+	
+
+goProGetCameraModelPossible::usage=
+	"goProGetCameraModelPossible[] returns possible parameters for goProSetCameraModel. "
+goProSetCameraModel::usage=
+	"goProSetCameraModel[ _String] Lets you specify model for camera which you set by goProSetCamera. It is 
+	important to know camera model for few functions of this library."
 
 (* ::Section:: *)
 (* Private Definitions *)
@@ -363,10 +361,33 @@ goProTextModeOff::usage=
 Begin["`Private`"]
 
 
-camera = "HERO3+";
+Print["camera: "<>camera]
 goProGetCamera[]:=camera
 
-goProSetCameraModel[param_String]:=model=param;
+model="";
+
+
+
+modelHero3Plus={"Silver","Black"}
+modelHero3={"White","Silver","Black"}
+
+goProSetCameraModel::model="First you have to specificate camera model! Call goProSetCameraModel[_String]";
+goProSetCameraModel::wrong="`1` - This parameter is not supported for camera model. See goProGetCameraModelPossible.";
+goProSetCameraModel::noNeed="You don't have to set camera model for `1`";
+goProSetCameraModel[param_String]:=Switch[camera,
+	"HERO3+",If[MemberQ[modelHero3Plus,param],model=param,
+		Message[goProSetCameraModel::wrong,param]
+	],
+	"HERO3",If[MemberQ[modelHero3,param],model=param,
+		Message[goProSetCameraModel::wrong,param]
+	],
+	_,Message[goProSetCameraModel::noNeed,camera]	
+]
+goProGetCameraModelPossible[]:=Switch[camera,
+	"HERO3+",modelHero3Plus,
+	"HERO3",modelHero3,
+	_,Message[goProSetCameraModel::noNeed,camera]
+]
 goProGetModel[] := model
 goProPassword="";
 
@@ -406,7 +427,8 @@ goProGetStatus[unit_String, param_String] :=If[goProPassword=="",Message[goProSe
 ]
 
 (*Funkce pro inicializaci hesla*)
-goProSetPassword[password_String] := (goProPassword = password)
+goProSetPassword::timeOut="Camera not found."
+goProSetPassword[password_String] := (goProPassword = password;If[SameQ[PingTime["10.5.5.9"], $TimedOut], Message[goProSetPassword::timeOut], downloadSettings[];])
 
 (*funkce pro zapnuti a vypnuti kamery*)
 goProTurnOn[] :=
@@ -467,7 +489,10 @@ photoResToCode = <|
    "5M" -> "03",
    "7W" -> "04",
    "12W" -> "05",
-   "7M" -> "06"
+   "7M" -> "06",
+   "11W"->"00",
+   "8M"->"01",
+   "5W"->"02"
    |>;
 
 
@@ -477,21 +502,50 @@ photoResPossible = {
    "12W",
    "7M"
 };
+photoResPossibleHERO2 = {
+   "5M",
+   "8M",
+   "11W",
+   "5W"
+};
+
+goProSet::param="Unsupported parameter `1`. Maybe you have set the wrong camera model."
+goProSetPhotoRes[param_String] :=Switch[camera,
+	"HERO3+",
+		execute[goProMakeCommand["camera","PR",photoResToCode[[param]]]],
+	"HERO2",
+		execute[goProMakeCommand["camera","PR",photoResToCode[[param]]]],
+	"HERO3",Switch[model,
+		"Black",
+			execute[goProMakeCommand["camera","PR",photoResToCode[[param]]]],
+		"Silver",
+			execute[goProMakeCommand["camera","PR",photoResToCode[[param]]]],
+		"White",
+			execute[goProMakeCommand["camera","PR",photoResToCode[[param]]]],
+		_,Message[goProSetCameraModel::model]		
+	]
+]
+    
+    
+goProGetPossiblePhotoRes[] :=Switch[camera,
+	"HERO3+",photoResPossible,
+	"HERO2",photoResPossibleHERO2,
+	"HERO3",Switch[model,
+		"Black",photoResPossible,
+		"Silver",photoResPossibleHERO2
+		,
+		"White",photoResPossibleHERO2
+		,
+		_,Message[goProSetCameraModel::model]
+		]	
+	]
 
 
-goProSetPhotoRes[param_String] :=
-    execute[goProMakeCommand["camera","PR",photoResToCode[[param]]]]
-goProGetPossiblePhotoRes[] :=
+photoResPossibleHERO2
+
     photoResPossible
 
-goProPhotoRes12W[] :=
-    goProSetVideoRes[photoResPossible[[3]]]
-goProPhotoRes7W[] :=
-    goProSetVideoRes[photoResPossible[[2]]]
-goProPhotoRes7M[] :=
-    goProSetVideoRes[photoResPossible[[4]]]
-goProPhotoRes5M[] :=
-    goProSetVideoRes[photoResPossible[[1]]]
+
 
 
 (*video settings*)
@@ -509,48 +563,52 @@ videoResToCode = <|
    "720p-SV" -> "0a"
    |>;
 
-videoResPossible = {
-    "WVGA",
-   "720p",
-   "960p",
-   "1080p",
-   "1440p",
-   "2.7K",
-   "4K",
-   "2.7K-17:9",
-   "4K-17:9",
-   "1080p-SV",
-   "720p-SV"
-};
+videoResToCodeHERO2=<|
+   "WVGA-60" -> "00",
+   "WVGA-120" -> "01",
+   "720p-30" -> "02" ,
+   "720p-60" -> "03",
+   "960p-30" -> "04",
+   "960p-48" -> "05",
+   "1080p-30" -> "06"
+|>
+videoResToCodeHERO3=<|
+	"WVGA-240" -> "00",
+   "720p-120" -> "01",
+   "960p-100" -> "02" ,
+   "1080p-60" -> "03",
+   "1440p-40" -> "04",
+   "2.7K-30" -> "05",
+   "4K" -> "06",
+   "2.7K-17:9" -> "07",
+   "4K-17:9" -> "08"
+   |>
 
-goProSetVideoRes[param_String] :=
-    execute[goProMakeCommand["camera","VV",videoResToCode[[param]]]]
-goProGetPossibleVideoRes[] :=
-    videoResPossible
+videoResPossibleHERO3Plus = Keys[videoResToCode];
+videoResPossibleHERO2=Keys[videoResToCodeHERO2];
+videoResPossibleHERO3=Keys[videoResToCodeHERO3];
+
+goProSetVideoRes[param_String] :=Switch[camera, "HERO3+",execute[goProMakeCommand["camera","VV",videoResToCode[[param]]]],
+	"HERO2",execute[goProMakeCommand["camera","VR",videoResToCodeHERO2[[param]]]],
+	"HERO3",(Switch[model,
+		"Black",execute[goProMakeCommand["camera","VV",videoResToCodeHERO3[[param]]]],
+		"Silver",execute[goProMakeCommand["camera","VR",videoResToCodeHERO2[[param]]]],
+		"White",execute[goProMakeCommand["camera","VR",videoResToCodeHERO2[[param]]]],			
+		_,Message[goProSetCameraModel::model,model]
+		])
+	]
+	
+goProGetPossibleVideoRes[] :=Switch[camera, "HERO3+",videoResPossibleHERO3Plus,
+	"HERO2",videoResPossibleHERO2,
+	"HERO3",(Switch[model,
+		"Black",videoResPossibleHERO3,
+		"Silver",videoResPossibleHERO2,	
+		"White",videoResPossibleHERO2,
+		_,Message[goProSetCameraModel::model,model]
+		])
+	]
 
 
-goProVideoResWVGA[] :=
-    goProSetVideoRes[videoResPossible[[1]]]
-goProVideoRes720[] :=
-    goProSetVideoRes[videoResPossible[[2]]]
-goProVideoRes960[] :=
-    goProSetVideoRes[videoResPossible[[3]]]
-goProVideoRes1080[] :=
-    goProSetVideoRes[videoResPossible[[4]]]
-goProVideoRes1440[] :=
-    goProSetVideoRes[videoResPossible[[5]]]
-goProVideoRes2point7K[] :=
-    goProSetVideoRes[videoResPossible[[6]]]
-goProVideoRes4K[] :=
-    goProSetVideoRes[videoResPossible[[7]]]
-goProVideoRes2point7K17to9[] :=
-    goProSetVideoRes[videoResPossible[[8]]]
-goProVideoRes4K17to9[] :=
-    goProSetVideoRes[videoResPossible[[9]]]
-goProVideoRes1080SV[] :=
-    goProSetVideoRes[videoResPossible[[10]]]
-goProVideoRes720SV[] :=
-    goProSetVideoRes[videoResPossible[[11]]]
 
 
 (*FPS*)
@@ -581,19 +639,28 @@ fpsPossible = <|
    "06" -> {"15"},
    "08" -> {"12"}
    |>;
+   
+fpsPossibleAll={"240","120","100","60","50", "48", "30","25", "24","12p5","15"}
+   
 (*to change FPS use this function goProSetFPS[], but you must give fps
  which is possible for actual video resolution, to see which fps is supported use function goProGetPossibleFPS*)
-goProSetFPS[f_String] :=
-    execute[goProMakeCommand["camera","FS",fpsToCode[[f]]]]
+goProSetFPS::notSupported="This function is not supported for this camera (`1`)."
+goProSetFPS[f_String] := execute[goProMakeCommand["camera","FS",fpsToCode[[f]]]]
 
 
-goProGetPossibleFPS[] :=
+goProGetPossibleFPS[] :=Switch[camera,"HERO3+",
     fpsPossible[[
     "0" <> StringTake[
-    ToString[BaseForm[goProGetStatus["camera", "vv"][[2]], 16]], 1]]]
+    ToString[BaseForm[goProGetStatus["camera", "vv"][[2]], 16]], 1]]],
+    _,fpsPossibleAll
+]
+    
 
-goProGetPossibleFPS[res_String] :=
-    fpsPossible[[videoResToCode[[res]]]]
+goProGetPossibleFPS[res_String] :=Switch[camera,"HERO3+",
+    fpsPossible[[videoResToCode[[res]]]],
+    _,Message[goProSetFPS::notSupported,camera]
+]
+    
 
 
 (*orientatione up/down*)
@@ -662,10 +729,16 @@ brToCode = <|
    |>;
 brPossible = {"3/1","10/1","10/2","30/1","30/2","30/3"}
 
-goProGetPossibleBurstRate[] :=
-    brPossible
-goProSetBurstRate[param_String] :=
-    execute[goProMakeCommand["camera","BU",brToCode[[param]]]]
+goProSetBurstRate::notSupported="This camera model(`1`) can't set Burst rate. It only supports 10/1s burst mode."
+goProGetPossibleBurstRate[] := Switch[camera,"HERO3+", brPossible,
+	"HERO3", brPossible,
+	"HERO2",Message[goProSetBurstRate::notSupported,camera]
+]
+	
+goProSetBurstRate[param_String] :=Switch[camera,"HERO3+", execute[goProMakeCommand["camera","BU",brToCode[[param]]]],
+	"HERO3", execute[goProMakeCommand["camera","BU",brToCode[[param]]]],
+	"HERO2",Message[goProSetBurstRate::notSupported,camera]
+]
 
 
 (*LoopVideo*)
@@ -677,10 +750,17 @@ loToCode = <|
    "max"->"05"
    |>;
 loPossible = {"off", "5","20","60","max"}
-goProGetPossibleVideoLoop[] :=
-    loPossible
-goProSetVideoLoop[param_String] :=
-    execute[goProMakeCommand["camera","LO",loToCode[[ToLowerCase[param] ]]]]
+
+goProSetVideoLoop::notSupported="This camera model(`1`) can't use looping video."
+goProGetPossibleVideoLoop[] :=Switch[camera,"HERO3+", loPossible,
+	"HERO3", loPossible,
+	"HERO2",Message[goProSetVideoLoop::notSupported,camera]
+]
+goProSetVideoLoop[param_String] :=Switch[camera,"HERO3+",  execute[goProMakeCommand["camera","LO",loToCode[[ToLowerCase[param] ]]]],
+	"HERO3",  execute[goProMakeCommand["camera","LO",loToCode[[ToLowerCase[param] ]]]],
+	"HERO2",Message[goProSetVideoLoop::notSupported,camera]
+]
+   
 
 
 (*Continuous Shot*)
@@ -690,11 +770,19 @@ csToCode = <|
    "5"->"05",
    "10"->"0a"
    |>;
+   
+goProSetContinuousShot::notSupported ="This camera model(`1`) can't use continuous shot."
 csPossible = {"1", "3","5","10"}
-goProGetPossibleContinuousShot[] :=
+goProGetPossibleContinuousShot[] := Switch[camera,"HERO3+", csPossible,
+	"HERO3", csPossible,
+	"HERO2",Message[goProSetContinuousShot::notSupported,camera]
+]
     csPossible
-goProSetContinuousShot[param_String] :=
-    execute[goProMakeCommand["camera","CS",csToCode[[ToLowerCase[param] ]]]]
+goProSetContinuousShot[param_String] :=Switch[camera,"HERO3+", execute[goProMakeCommand["camera","CS",csToCode[[ToLowerCase[param] ]]]],
+	"HERO3", execute[goProMakeCommand["camera","CS",csToCode[[ToLowerCase[param] ]]]],
+	"HERO2",Message[goProSetContinuousShot::notSupported,camera]
+]
+    
 
 (*Photo in Video*)
 pnToCode = <|
@@ -706,10 +794,20 @@ pnToCode = <|
 |>
 
 pnPossible = {"off","5","10","30","60"}
-goProGetPossiblePhotoInVideo[] :=
-    pnPossible
-goProSetPhotoInVideo[param_String] :=
-    execute[goProMakeCommand["camera","PN",pnToCode[[ToLowerCase[param] ]]]]
+
+goProSetPhotoInVideo::notSupported ="This camera model(`1`) can't use photo in video."
+
+goProGetPossiblePhotoInVideo[] :=Switch[camera,"HERO3+",pnPossible,
+	"HERO3",pnPossible,
+	"HERO2",Message[goProSetPhotoInVideo::notSupported,camera]
+]
+    
+goProSetPhotoInVideo[param_String] :=Switch[camera,"HERO3+", execute[goProMakeCommand["camera","PN",pnToCode[[ToLowerCase[param] ]]]],
+	"HERO3", execute[goProMakeCommand["camera","PN",pnToCode[[ToLowerCase[param] ]]]],
+	"HERO2",Message[goProSetPhotoInVideo::notSupported,camera]
+]
+
+   
 
 
 (*Volume*)
@@ -752,11 +850,20 @@ wbToCode = <|
     "CAMRAW"->"04"
 |>
 
+goProSetWhiteBalance::notSupported ="This camera model(`1`) can't use white balance."
+
 wbPossible = {"auto","3000k","5500k","6500k","CAMRAW","camraw"}
-goProGetPossibleWhiteBalance[] :=
-    wbPossible
-goProSetWhiteBalance[param_String] :=
-    execute[goProMakeCommand["camera","WB",wbToCode[[ToLowerCase[param] ]]]]
+
+goProGetPossibleWhiteBalance[] :=Switch[camera,"HERO3+", wbPossible,
+	"HERO3", wbPossible,
+	"HERO2",Message[goProSetWhiteBalance::notSupported,camera]
+]
+    
+goProSetWhiteBalance[param_String] := Switch[camera,"HERO3+",  execute[goProMakeCommand["camera","WB",wbToCode[[ToLowerCase[param] ]]]],
+	"HERO3",  execute[goProMakeCommand["camera","WB",wbToCode[[ToLowerCase[param] ]]]],
+	"HERO2",Message[goProSetWhiteBalance::notSupported,camera]
+]
+   
 
 
 (*Color Profile (protune)*)
@@ -765,10 +872,20 @@ coToCode = <|
     "flat"->"01"
 |>
 coPossible = {"GoPro","Flat"}
-goProGetPossibleColorProfile[] :=
-    coPossible
-goProSetColorProfile[param_String] :=
-    execute[goProMakeCommand["camera","CO",coToCode[[ToLowerCase[param] ]]]]
+
+
+goProSetColorProfile::notSupported ="This camera model(`1`) can't change color profile."
+
+goProGetPossibleColorProfile[] :=Switch[camera,"HERO3+",  coPossible,
+	"HERO3",  Message[goProSetColorProfile::notSupported,camera],
+	"HERO2",Message[goProSetColorProfile::notSupported,camera]
+]
+    
+goProSetColorProfile[param_String] :=Switch[camera,"HERO3+",   execute[goProMakeCommand["camera","CO",coToCode[[ToLowerCase[param] ]]]],
+	"HERO3", Message[goProSetColorProfile::notSupported,camera],
+	"HERO2",Message[goProSetColorProfile::notSupported,camera]
+]
+   
 
 (*ISO*)
 gaToCode = <|
@@ -777,10 +894,18 @@ gaToCode = <|
     "400"->"02"
 |>
 gaPossible = {"6400","1600","400"}
-goProGetPossibleISO[] :=
-    gaPossible
-goProSetISO[param_String] :=
-    execute[goProMakeCommand["camera","GA",gaToCode[[ToLowerCase[param] ]]]]
+
+goProSetISO::notSupported ="This camera model(`1`) can't change ISO."
+
+goProGetPossibleISO[] :=Switch[camera,"HERO3+",  gaPossible,
+	"HERO3",  Message[goProSetISO::notSupported,camera],
+	"HERO2",Message[goProSetISO::notSupported,camera]
+]
+goProSetISO[param_String] :=Switch[camera,"HERO3+", execute[goProMakeCommand["camera","GA",gaToCode[[ToLowerCase[param] ]]]],
+	"HERO3", Message[goProSetISO::notSupported,camera],	
+	"HERO2",Message[goProSetISO::notSupported,camera]
+]
+   
 
 
 (*Sharpness*)
@@ -790,10 +915,18 @@ spToCode = <|
     "low"->"02"
 |>
 spPossible = {"high","medium","low"}
-goProGetPossibleSharpness[] :=
-    spPossible
-goProSetSharpness[param_String] :=
-    execute[goProMakeCommand["camera","SP",spToCode[[ToLowerCase[param] ]]]]
+
+goProSetSharpness::notSupported ="This camera model(`1`) can't change sharpness."
+
+goProGetPossibleSharpness[] :=Switch[camera,"HERO3+",spPossible,
+	"HERO3",Message[goProSetISO::notSupported,camera],
+	"HERO2",Message[goProSetSharpness::notSupported,camera]
+]
+   
+goProSetSharpness[param_String] :=Switch[camera,"HERO3+",   execute[goProMakeCommand["camera","SP",spToCode[[ToLowerCase[param] ]]]],
+	"HERO3",  Message[goProSetISO::notSupported,camera],
+	"HERO2",Message[goProSetSharpness::notSupported,camera]
+]
 
 (*exposure*)
 evToCode = <|
@@ -808,10 +941,18 @@ evToCode = <|
      "+2.0"->"0e"
 |>
 evPossible = { "0","-2.0", "-1.5", "-1.0", "-0.5", "+0.5", "+1.0", "+1.5", "+2.0"}
-goProGetPossibleExposure[] :=
-    evPossible
-goProSetExposure[param_String] :=
-    execute[goProMakeCommand["camera","EV",evToCode[[ToLowerCase[param] ]]]]
+
+goProSetExposure::notSupported ="This camera model(`1`) can't change exposure."
+goProGetPossibleExposure[] :=Switch[camera,"HERO3+",evPossible,
+	"HERO3",Message[goProSetISO::notSupported,camera],
+	"HERO2",Message[goProSetExposure::notSupported,camera]
+]
+    
+goProSetExposure[param_String] :=Switch[camera,"HERO3+",execute[goProMakeCommand["camera","EV",evToCode[[ToLowerCase[param] ]]]],
+	"HERO3",Message[goProSetISO::notSupported,camera],
+	"HERO2",Message[goProSetExposure::notSupported,camera]
+]
+    
 
 
 (*Low Light*)
@@ -820,10 +961,20 @@ lwToCode = <|
     "on"->"01"
 |>
 lwPossible = {"off","on"}
-goProGetPossibleLowLight[] :=
-    lwPossible
+
+goProSetLowLight::notSupported ="This camera model(`1`) can't low light setting."
+
+goProGetPossibleLowLight[] :=Switch[camera,"HERO3+",lwPossible,
+	"HERO3",lwPossible,
+	"HERO2",Message[goProSetLowLight::notSupported,camera]
+]
+    
 goProSetLowLight[param_String] :=
-    execute[goProMakeCommand["camera","LW",lwToCode[[ToLowerCase[param] ]]]]
+Switch[camera,"HERO3+", execute[goProMakeCommand["camera","LW",lwToCode[[ToLowerCase[param] ]]]],
+	"HERO3", execute[goProMakeCommand["camera","LW",lwToCode[[ToLowerCase[param] ]]]],
+	"HERO2",Message[goProSetLowLight::notSupported,camera]
+]
+   
 goProSwitchLowLightOn[] :=
     goProSetLowLight["on"]
 goProSwitchLowLightOff[] :=
@@ -1092,6 +1243,7 @@ goProSaveSettings[file_String] :=
 
 
 downloadSettings[]:=(
+	Switch[camera,"HERO3+",(
 	modeDef=codeToMode[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "cm"][[2]], 16]], 1] ]];
     videoResolutionDef=codeToVideoRes[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "vv"][[2]], 16]], 1] ]];
     fovDef=codeToFov[[ "0" <> ToString[goProGetStatus["camera", "fv"][[2]]] ]];
@@ -1114,14 +1266,54 @@ downloadSettings[]:=(
     isoDef=codeToGa[["0" <> ToString[goProGetStatus["camera", "ga"][[2]] ] ]];
     sharpnessDef=codeToSp[["0" <> ToString[goProGetStatus["camera", "sp"][[2]] ] ]];
     exposureDef=codeToEv[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "ev"][[2]], 16]], 1] ]];
-    bootModeDef=codeToMode[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "dm"][[2]], 16]], 1] ]]
+    bootModeDef=codeToMode[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "dm"][[2]], 16]], 1] ]];
+    ),
+    "HERO3",(
+	modeDef=codeToMode[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "cm"][[2]], 16]], 1] ]];
+    videoResolutionDef=codeToVideoRes[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "vv"][[2]], 16]], 1] ]];
+    fovDef=codeToFov[[ "0" <> ToString[goProGetStatus["camera", "fv"][[2]]] ]];
+    fpsDef=codeToFPS[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "fs"][[2]], 16]], 1] ]];
+    photoResolutionDef=codeToPhotoRes[["0" <> ToString[goProGetStatus["camera", "pr"][[2]] ] ]];
+    timeLapseDef=getTimeInterval[];
+    burstRateDef=codeToBr[["0" <> ToString[goProGetStatus["camera", "bu"][[2]] ] ]];
+    loopVideoDef=codeToLo[["0" <> ToString[goProGetStatus["camera", "lo"][[2]] ] ]];
+    continuousShotDef=codeToCs[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "cs"][[2]], 16]], 1] ]];
+    photoInVideoDef=codeToPn[["0" <> ToString[goProGetStatus["camera", "pn"][[2]] ] ]];
+    volumeDef=codeToBs[["0" <> ToString[goProGetStatus["camera", "bs"][[2]] ] ]];
+    ledDef=codeToLb[["0" <> ToString[goProGetStatus["camera", "lb"][[2]] ] ]];
+    lowLightDef=codeToLw[["0" <> ToString[goProGetStatus["camera", "lw"][[2]] ] ]];
+    spotMeterDef=codeToEx[["0" <> ToString[goProGetStatus["camera", "ex"][[2]] ] ]];
+    autoPowerOffDef=codeToAo[["0" <> ToString[goProGetStatus["camera", "ao"][[2]] ] ]];
+    videoModeDef=codeToVm[["0" <> ToString[goProGetStatus["camera", "vm"][[2]] ] ]];
+    protuneDef=codeToPt[["0" <> ToString[goProGetStatus["camera", "pt"][[2]] ] ]];
+    whiteBalanceDef=codeToWb[["0" <> ToString[goProGetStatus["camera", "wb"][[2]] ] ]];
+    bootModeDef=codeToMode[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "dm"][[2]], 16]], 1] ]];
+    ),
+    "HERO2",(
+    modeDef=codeToMode[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "cm"][[2]], 16]], 1] ]];
+    videoResolutionDef=codeToVideoRes[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "vv"][[2]], 16]], 1] ]];
+    fovDef=codeToFov[[ "0" <> ToString[goProGetStatus["camera", "fv"][[2]]] ]];
+    fpsDef=codeToFPS[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "fs"][[2]], 16]], 1] ]];
+    photoResolutionDef=codeToPhotoRes[["0" <> ToString[goProGetStatus["camera", "pr"][[2]] ] ]];
+    timeLapseDef=getTimeInterval[];
+    volumeDef=codeToBs[["0" <> ToString[goProGetStatus["camera", "bs"][[2]] ] ]];
+    ledDef=codeToLb[["0" <> ToString[goProGetStatus["camera", "lb"][[2]] ] ]];
+    spotMeterDef=codeToEx[["0" <> ToString[goProGetStatus["camera", "ex"][[2]] ] ]];
+    autoPowerOffDef=codeToAo[["0" <> ToString[goProGetStatus["camera", "ao"][[2]] ] ]];
+    videoModeDef=codeToVm[["0" <> ToString[goProGetStatus["camera", "vm"][[2]] ] ]];
+    protuneDef=codeToPt[["0" <> ToString[goProGetStatus["camera", "pt"][[2]] ] ]];
+    bootModeDef=codeToMode[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "dm"][[2]], 16]], 1] ]];
+    )
+	]
+    
     )
 
 
 
 
 
-Options[goProSet] = {videoResolution -> videoResolutionDef,
+Options[goProSet] = Switch[camera,"HERO3+",{
+	videoResolution -> videoResolutionDef,
 	fps -> fpsDef,
 	fov -> fovDef,
 	mode->modeDef,
@@ -1144,7 +1336,45 @@ Options[goProSet] = {videoResolution -> videoResolutionDef,
     sharpness->sharpnessDef,
     exposure->exposureDef,
     bootMode->bootModeDef
+    },
+    "HERO3",{
+	videoResolution -> videoResolutionDef,
+	fps -> fpsDef,
+	fov -> fovDef,
+	mode->modeDef,
+	videoMode->videoModeDef,
+    photoResolution->photoResolutionDef,
+    loopVideo->loopVideoDef,
+    burstRate->burstRateDef,
+    timeLapse->timeLapseDef,
+    continuousShot->continuousShotDef,
+    photoInVideo->photoInVideoDef,
+    volume->volumeDef,
+    led->ledDef,
+    lowLight->lowLightDef,
+    spotMeter->spotMeterDef,
+    autoPowerOff->autoPowerOffDef,
+    protune->protuneDef,
+    whiteBalance->whiteBalanceDef,
+    bootMode->bootModeDef
+    },
+    "HERO2",{
+    videoResolution -> videoResolutionDef,
+	fov -> fovDef,
+	fps -> fpsDef,
+	mode->modeDef,
+	videoMode->videoModeDef,
+    photoResolution->photoResolutionDef,
+    timeLapse->timeLapseDef,
+    volume->volumeDef,
+    led->ledDef,
+    spotMeter->spotMeterDef,
+    autoPowerOff->autoPowerOffDef,
+    protune->protuneDef,
+    bootMode->bootModeDef
     }
+    
+]
 
 
 (*function goProSet[] enables camera setting through rules. The first thing to happen after usage of this function will be
@@ -1153,11 +1383,13 @@ Options[goProSet] = {videoResolution -> videoResolutionDef,
 	us from overwhelming camera with useless http requests.
  *)
 
-goProSet[OptionsPattern[]] :=(If[goProPassword=="",Message[goProSetPassword::goProPassword, goProPassword],downloadSettings[];
+goProSet[OptionsPattern[]] :=(If[goProPassword=="",Message[goProSetPassword::goProPassword, goProPassword],
+	downloadSettings[];
     (*goProSetVideo[Flatten[{videoResolution->OptionValue[videoResolution],fps-> OptionValue[fps], fov->OptionValue[fov],videoMode->OptionValue[videoMode]}]];*)
 
 	 (*I am using the test on SameQ so i won't do request which will set the same setting as which is already set*)
 	 
+	Switch[camera,"HERO3+",(
 	goProSetVideoRes[OptionValue[videoResolution]];
 	goProSetFPS[OptionValue[fps]];
 
@@ -1186,6 +1418,50 @@ goProSet[OptionsPattern[]] :=(If[goProPassword=="",Message[goProSetPassword::goP
      If[!SameQ[OptionValue[iso],isoDef],goProSetISO[OptionValue[iso]]];
      If[!SameQ[OptionValue[sharpness],sharpnessDef],goProSetSharpness[OptionValue[sharpness]]];
      If[!SameQ[OptionValue[exposure],exposureDef],goProSetExposure[OptionValue[exposure]]];
+     ),
+     "HERO3",(
+	goProSetVideoRes[OptionValue[videoResolution]];
+	goProSetFPS[OptionValue[fps]];
+
+    (*If[ MemberQ[goProGetPossibleFPS[OptionValue[videoResolution]], OptionValue[fps] ],
+
+    ];*)
+    If[!SameQ[OptionValue[fov],fovDef],goProSetFOV[OptionValue[fov]]];
+    If[!SameQ[OptionValue[videoMode],videoModeDef],goProSetVideoMode[OptionValue[videoMode]]];
+	 If[!SameQ[OptionValue[mode],modeDef],goProMode[OptionValue[mode]]];
+	  If[!SameQ[OptionValue[bootMode],bootModeDef],goProSetBootMode[OptionValue[bootMode]]];
+	
+     If[!SameQ[OptionValue[photoResolution],photoResolutionDef],goProSetPhotoRes[OptionValue[photoResolution]]];
+     If[!SameQ[OptionValue[loopVideo],loopVideoDef],goProSetVideoLoop[OptionValue[loopVideo]]];
+     If[!SameQ[OptionValue[burstRate],burstRateDef],goProSetBurstRate[OptionValue[burstRate]]];
+     If[!SameQ[OptionValue[timeLapse],timeLapseDef],goProSetTimeLapse[OptionValue[timeLapse]]];
+     If[!SameQ[OptionValue[continuousShot],continuousShotDef],goProSetContinuousShot[OptionValue[continuousShot]]];
+     If[!SameQ[OptionValue[photoInVideo],photoInVideoDef],goProSetPhotoInVideo[OptionValue[photoInVideo]]];
+     If[!SameQ[OptionValue[volume],volumeDef],goProSetVolume[OptionValue[volume]]];
+     If[!SameQ[OptionValue[led],ledDef],goProSetLed[OptionValue[led]]];
+     If[!SameQ[OptionValue[lowLight],lowLightDef],goProSetLowLight[OptionValue[lowLight]]];
+     If[!SameQ[OptionValue[spotMeter],spotMeterDef],goProSetSpotMeter[OptionValue[spotMeter]]];
+     If[!SameQ[OptionValue[autoPowerOff],autoPowerOffDef],goProSetAutoPowerOff[OptionValue[autoPowerOff]]];
+     If[!SameQ[OptionValue[protune],protuneDef],goProSetProtune[OptionValue[protune]]];
+     If[!SameQ[OptionValue[whiteBalance],whiteBalanceDef],goProSetWhiteBalance[OptionValue[whiteBalance]]];
+     ),
+     "HERO2",(
+     goProSetVideoRes[OptionValue[videoResolution]];
+     
+     goProSetFPS[OptionValue[fps]];
+    If[!SameQ[OptionValue[fov],fovDef],goProSetFOV[OptionValue[fov]]];
+    If[!SameQ[OptionValue[videoMode],videoModeDef],goProSetVideoMode[OptionValue[videoMode]]];
+	 If[!SameQ[OptionValue[mode],modeDef],goProMode[OptionValue[mode]]];
+	  If[!SameQ[OptionValue[bootMode],bootModeDef],goProSetBootMode[OptionValue[bootMode]]];
+     If[!SameQ[OptionValue[photoResolution],photoResolutionDef],goProSetPhotoRes[OptionValue[photoResolution]]];
+     If[!SameQ[OptionValue[timeLapse],timeLapseDef],goProSetTimeLapse[OptionValue[timeLapse]]];
+     If[!SameQ[OptionValue[volume],volumeDef],goProSetVolume[OptionValue[volume]]];
+     If[!SameQ[OptionValue[led],ledDef],goProSetLed[OptionValue[led]]];
+     If[!SameQ[OptionValue[spotMeter],spotMeterDef],goProSetSpotMeter[OptionValue[spotMeter]]];
+     If[!SameQ[OptionValue[autoPowerOff],autoPowerOffDef],goProSetAutoPowerOff[OptionValue[autoPowerOff]]];
+     If[!SameQ[OptionValue[protune],protuneDef],goProSetProtune[OptionValue[protune]]];
+     )
+	]
 	]
     )
 
@@ -1248,17 +1524,21 @@ goProGet::missing="This parameter is not usable, try another.";
 (*spusteni prikazu exec pomoci HTTPRequest a URLRead*)
 (*If[MemberQ[vars,param],Message[goProGet::missing, missing]]*)
 
+
 SetAttributes[goProGet,HoldAll];
 
-goProGet[param_]:= If[MemberQ[vars,#],# -> goProGetSettingReportAssociation[][[#]],Message[goProGet::missing, missing]] &/@ {ToString[param]}
+goProGet[param_]:= (If[SameQ[Head[Evaluate[param]],List]||SameQ[Head[Evaluate[param]],String],goProGet[Evaluate[param]],
+	If[MemberQ[vars,#],# -> goProGetSettingReportAssociation[][[#]],Message[goProGet::missing, missing]] &/@ {ToString[param]}])
 
-goProGet[list_List]:= If[MemberQ[vars,ToString[#]],ToString[#] -> goProGetSettingReportAssociation[][[ToString[#]]],Message[goProGet::missing, missing]]&/@ list
+goProGet[list_List]:= If[MemberQ[vars,ToString[#]],ToString[#] -> goProGetSettingReportAssociation[][[ToString[#]]],
+	(Print["not member"];Message[goProGet::missing, missing])]&/@ list
 
-goProGet[param_String]:= If[MemberQ[vars,#],# -> goProGetSettingReportAssociation[][[#]],Message[goProGet::missing, missing]] & /@ {param}
+goProGet[param_String]:= (If[MemberQ[vars,#],# -> goProGetSettingReportAssociation[][[#]],Message[goProGet::missing, missing]] & /@ {param})
 
 
 
-goProGetVariables[]:=ToExpression[#]&/@{
+goProGetVariables[]:=Switch[camera,"HERO3+",
+	ToExpression[#]&/@{
 	"videoResolution",
 	"fps",
 	"fov",
@@ -1282,7 +1562,47 @@ goProGetVariables[]:=ToExpression[#]&/@{
     "exposure",
     "mode",
     "bootMode"
-}
+	},
+	"HERO3",
+	ToExpression[#]&/@{
+	"videoResolution",
+	"fps",
+	"fov",
+	"videoMode",
+    "photoResolution",
+    "loopVideo",
+    "burstRate",
+    "timeLapse",
+    "continuousShot",
+    "photoInVideo",
+    "volume",
+    "led",
+    "lowLight",
+    "spotMeter",
+    "autoPowerOff",
+    "protune",
+    "whiteBalance",
+    "mode",
+    "bootMode"
+	},
+	"HERO2",
+	ToExpression[#]&/@{
+	"videoResolution",
+	"fov",
+	"fps",
+	"videoMode",
+    "photoResolution",
+    "timeLapse",
+    "volume",
+    "led",
+    "spotMeter",
+    "autoPowerOff",
+    "protune",
+    "mode",
+    "bootMode"
+	}
+]
+	
 
 
 

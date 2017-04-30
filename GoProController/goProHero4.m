@@ -490,7 +490,7 @@ goProGetFileList::usage=
 	"goProGetFileList[] returns list of files which were aquired by the camera." 
 goProDownloadFile::usage=
 	"goProDownloadFile[name_String,destination_String] download file which name was given as first parameter to the destination specified in second parameter. "
-goProDownloadAll::usage=
+goProDownloadAllFiles::usage=
 	"goProDownloadAll[ _String] downloads all files from camera to destination given."
 goProGetFileURL::usage=
 	"goProGetFileURL[_String] returns URL string of file which name was given in parameter."	
@@ -508,6 +508,12 @@ goProMode::usage=
 	"goProMode[ _String] Switches mode to parameter given. To see which parameter you can use call goProGetPossibleModes[]."
 goProGetPossibleModes::usage=
 	"goProGetPossibleModes[ ] returns possible camera modes ."
+	
+goProSetURLBase::usage=
+	"goProSetURLBase[_String] lets you set urlBase variable. Use it if you want to set another folder on camera for downloading data from camera."
+
+goProGetURLBase::usage=
+	"goProGetURLBase[] returns value of urlBase variable, which stores url for folder from which you can download data from camera."
 	
 	
 
@@ -551,7 +557,8 @@ goProGetCamera[] := camera
 modelPossible={"Black","Silver","Session"}
 goProGetPossibleCameraModel[]:=modelPossible
 
-goProSetCameraModel[param_String]:=model=param
+goProSetCameraModel::wrong="You can't set model to `1`, please see goProGetPossibleCameraModel to get list of usable parameters."
+goProSetCameraModel[param_String]:=If[MemberQ[modelPossible,param],model=param,Message[goProSetCameraModel::wrong,param]]
 goProGetCameraModel[]:=model;
 
 
@@ -838,7 +845,6 @@ videoResPossibleBlack=Keys[videoResToCodeBlack];
 videoResPossibleSilver=Keys[videoResToCodeSilver];
 videoResPossibleSession=Keys[videoResToCodeSession];
 
-goProSetCameraModel::model="First you have to specificate camera model! Call goProSetCameraModel[_String]";
 
 goProGetPossibleVideoResolution[]:=Switch[model,"Black",videoResPossibleBlack,
 	"Silver",videoResPossibleSilver,
@@ -1354,7 +1360,6 @@ goProLocateStop[] :=execute[goProMakeCommand["command/system","locate?p=0"]]
 
 (* ::Subsection:: *)
 (* Delete *)
-goProDeleteFile[param_String]:=execute[goProMakeCommand["command/storage","delete?p="<>param]]
 goProDeleteLast[]:=execute[goProMakeCommand["command/storage/delete","last"]]
 goProDeleteAll[]:=execute[goProMakeCommand["command/storage/delete","all"]]
 
@@ -1808,14 +1813,15 @@ goProGet::missing="This parameter is not usable, try another.";
 
 (*spusteni prikazu exec pomoci HTTPRequest a URLRead*)
 (*If[MemberQ[vars,param],Message[goProGet::missing, missing]]*)
-
 SetAttributes[goProGet,HoldAll];
 
-goProGet[param_]:= If[MemberQ[vars,#],# -> goProGetSettingReportAssociation[][[#]],Message[goProGet::missing, missing]] &/@ {ToString[param]}
+goProGet[param_]:= (If[SameQ[Head[Evaluate[param]],List]||SameQ[Head[Evaluate[param]],String],goProGet[Evaluate[param]],
+	If[MemberQ[vars,#],# -> goProGetSettingReportAssociation[][[#]],Message[goProGet::missing, missing]] &/@ {ToString[param]}])
 
-goProGet[list_List]:= If[MemberQ[vars,ToString[#]],ToString[#] -> goProGetSettingReportAssociation[][[ToString[#]]],Message[goProGet::missing, missing]]&/@ list
+goProGet[list_List]:= If[MemberQ[vars,ToString[#]],ToString[#] -> goProGetSettingReportAssociation[][[ToString[#]]],
+	(Print["not member"];Message[goProGet::missing, missing])]&/@ list
 
-goProGet[param_String]:= If[MemberQ[vars,#],# -> goProGetSettingReportAssociation[][[#]],Message[goProGet::missing, missing]] & /@ {param}
+goProGet[param_String]:= (If[MemberQ[vars,#],# -> goProGetSettingReportAssociation[][[#]],Message[goProGet::missing, missing]] & /@ {param})
 
 goProGetVariables[]:=ToExpression[#]&/@{
 "videoResolution",
@@ -1872,23 +1878,47 @@ goProGetVariables[]:=ToExpression[#]&/@{
 
 
 urlBase="http://10.5.5.9:8080/videos/DCIM/100GOPRO/";
+
+
 empty=""
+file=""
 goProGetFileList::empty="No files on GoPro camera.";
-goProGetFileList[]:=(
+goProGetFileList::file="`1` - No such file on GoPro camera.";
+goProGetFileList::directory="`1` - No such directory exists.";
+
+
+goProGetFileList[]:=(If[SameQ[Import[urlBase], $Failed],
+	Message[goProGetFileList::empty,empty]
+	,
 	files = {};
 	files = Flatten[
   		AppendTo[files, 
    		StringReplace[ToString[#] & /@ DeleteCases[ReadList[StringToStream[StringTrim[StringDrop[Import[urlBase], 13]]]],
    			 _Real][[All, 3]], Whitespace -> ""]]]
+]
 
  )
       
- (*If[Import[urlBase] == $Failed,Message[goProGetFileList::empty, empty],*)     
-      
-goProDownloadFile[name_String,dest_String]:=URLDownload[urlBase<>name,dest<>name]
-goProDownloadAll[dest_String]:=URLDownload[urlBase<>#,dest<>#]&/@goProGetFileList[]
+goProSetURLBase[param_String]:=urlBase=param;
+goProGetURLBase[]:=urlBase;
 
-goProGetFileURL[param_String]:=urlBase<>param
+
+goProDownloadFile[list_List,dest_String]:=goProDownloadFile[#,dest]&/@list     
+goProDownloadFile[name_String,dest_String]:=If[URLRead[HTTPRequest[urlBase<>name]]["StatusCode"]!=200,
+		Message[goProGetFileList::file,name],
+		If[DirectoryQ[dest<>name],URLDownload[urlBase<>name,dest<>name],
+			Message[goProGetFileList::directory,dest]
+		]
+		
+	]
+
+
+goProDownloadAllFiles[dest_String]:=URLDownload[urlBase<>#,dest<>#]&/@goProGetFileList[]
+
+goProGetFileURL[name_String]:=If[URLRead[HTTPRequest[urlBase<>name]]["StatusCode"]!=200,
+	Message[goProGetFileList::file,name],
+	urlBase<>name
+]
 
 
 

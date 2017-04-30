@@ -13,14 +13,22 @@ goProGetPossibleCamera::usage=
 Begin["`Private`"]
 (* Implementation of the package *)
 
-cameraPossible={"HERO3+","HERO4"}
+cameraPossible={"HERO3+","HERO4","HERO2","HERO3"}
+
 
 
 camera="";
+goProSetCamera::cameraNotSet="`1` No such camera supported. You have to set valid camera. See goProGetPossibleCamera to get list of camera supported."
 (*goProSetCamera[param_String]:=(model=param;If[param=="Hero3+Black",Get["GoProController`goProHero3PlusBlack`"],Get["GoProController`Package`"]])*)
-goProSetCamera[param_String]:=(camera=param;Switch[param, "HERO3+",Get["GoProController`goProHero3`"],
-	"HERO4",(Get["GoProController`goProHero4`"])
-	])
+goProSetCamera[param_String]:=(camera=param;Switch[param, 
+	"HERO2",Get["GoProController`goProHero3`"],
+	"HERO3",Get["GoProController`goProHero3`"],
+	"HERO3+",Get["GoProController`goProHero3`"],	
+	"HERO4",Get["GoProController`goProHero4`"],
+	_, Message[goProSetCamera::cameraNotSet, param];""
+	]
+	)
+
 goProGetPossibleCamera[]:=cameraPossible
 
 

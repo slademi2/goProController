@@ -1,0 +1,1309 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     42835,       1301]
+NotebookOptionsPosition[     38786,       1151]
+NotebookOutlinePosition[     39199,       1167]
+CellTagsIndexPosition[     39156,       1164]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.0", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Tutorial", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["GoProController", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["GoProController`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["GoProController/tutorial/HERO2", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1427428552],
+
+Cell["XXXX", "Keywords",
+ CellID->1251852827]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->218895918],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->795871300],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->199739161],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->40625308],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->357121918],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->35949532],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->929432370],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["HERO2", "Title",
+ CellID->509267359],
+
+Cell["\<\
+This tutorial will help you to understand controlling of GoPro HERO 2 \
+cameras. It is highly recommended to read the manual for this camera model, \
+it can be found on GoPro website.\
+\>", "Text",
+ CellChangeTimes->{{3.7023609585732803`*^9, 3.702360983083706*^9}, {
+  3.702361076647669*^9, 3.702361125211306*^9}, {3.702362657244957*^9, 
+  3.7023627554794807`*^9}},
+ CellID->591812887],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+This loads the package GoProController and set it for usage of GoProHERO 2 \
+cameras:\
+\>", "MathCaption",
+ CellChangeTimes->{{3.3703745915818357`*^9, 3.37037459387849*^9}, {
+   3.702361140199995*^9, 3.7023611545231028`*^9}, {3.702361195344594*^9, 
+   3.702361202443049*^9}, 3.7023612442783747`*^9},
+ CellID->1825449234],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<HERO2\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.3703745980265493`*^9, 3.370374602095455*^9}, {
+  3.702361158588273*^9, 3.702361175145495*^9}, {3.7023612496237297`*^9, 
+  3.7023612744062567`*^9}},
+ CellLabel->"In[11]:=",
+ CellID->1373894796],
+
+Cell[BoxData["\<\"camera: HERO2\"\>"], "Print",
+ CellChangeTimes->{3.7023612776174393`*^9, 3.7023649334715157`*^9, 
+  3.702365123629367*^9},
+ CellLabel->"During evaluation of In[11]:=",
+ CellID->1643799784]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Now we have loaded the package and set it to HERO 2. The next step is to set  \
+the password for WiFi which the camera is broadcasting. Without that camera \
+can't be controlled.\
+\>", "MathCaption",
+ CellChangeTimes->{{3.3703745915818357`*^9, 3.37037459387849*^9}, {
+   3.702361140199995*^9, 3.7023611545231028`*^9}, {3.702361195344594*^9, 
+   3.702361202443049*^9}, 3.7023612442783747`*^9, {3.702361313219561*^9, 
+   3.702361329114328*^9}, {3.702361369379922*^9, 3.702361463392161*^9}},
+ CellID->147134958],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goProSetPassword", "[", "\"\<12345678\>\"", "]"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"if", " ", "the", " ", "password", " ", "is", " ", "12345678"}], 
+   "*)"}], ";"}]], "Input",
+ CellChangeTimes->{{3.3703745980265493`*^9, 3.370374602095455*^9}, {
+  3.702361158588273*^9, 3.702361175145495*^9}, {3.7023612496237297`*^9, 
+  3.7023612744062567`*^9}, {3.70236146884688*^9, 3.702361506143901*^9}},
+ CellLabel->"In[13]:=",
+ CellID->1582738395]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Controlling the camera", "Section",
+ CellChangeTimes->{{3.3702661238247538`*^9, 3.370266130890768*^9}, 
+   3.371301959371707*^9, {3.3751044240283327`*^9, 3.375104428916211*^9}, {
+   3.702361693126265*^9, 3.702361723242806*^9}},
+ CellID->2591],
+
+Cell["\<\
+For controlling the camera we use functions such as  goProShutter for taking \
+photo or starting video recording and goProStop for stopping video record.\
+\>", "Text",
+ CellChangeTimes->{{3.370266383267888*^9, 3.370266396180509*^9}, {
+  3.371302130018546*^9, 3.37130215414326*^9}, {3.3752017953356285`*^9, 
+  3.3752017953356285`*^9}, {3.7023618029096203`*^9, 3.7023619382943163`*^9}},
+ CellID->16706],
+
+Cell[BoxData[GridBox[{
+   {
+    RowBox[{
+     ButtonBox["goProShutter",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/goProShutter"], "[", "]"}], 
+    Cell["Camera starts recording or take photo.", "TableText"]},
+   {
+    RowBox[{
+     RowBox[{
+      ButtonBox["goProStop",
+       BaseStyle->"Link",
+       ButtonData->"paclet:GoProController/ref/goProStop"], "[", "]"}], "\n", 
+     
+     RowBox[{
+      ButtonBox["goProTurnOn",
+       BaseStyle->"Link",
+       ButtonData->"paclet:GoProController/ref/goProTurnOn"], "[", "]"}], 
+     "\n", 
+     RowBox[{
+      ButtonBox["goProTurnOff",
+       BaseStyle->"Link",
+       ButtonData->"paclet:GoProController/ref/goProTurnOff"], "[", "]"}]}], 
+    Cell["\<\
+Camera stops recording.
+Turns on the camera.
+Turns off the camera.\
+\>", "TableText"]}
+  }]], "DefinitionBox",
+ CellChangeTimes->{{3.702362023633564*^9, 3.7023620897265882`*^9}, {
+  3.702362488292068*^9, 3.702362556947942*^9}},
+ CellID->1271926102],
+
+Cell["", "Caption",
+ CellChangeTimes->{{3.702362874885539*^9, 3.702362875538899*^9}},
+ CellID->1020702259]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Setting camera parameters", "Section",
+ CellChangeTimes->{{3.3702661238247538`*^9, 3.370266130890768*^9}, 
+   3.371301959371707*^9, {3.3751044240283327`*^9, 3.375104428916211*^9}, {
+   3.702361693126265*^9, 3.702361723242806*^9}, {3.70236288869349*^9, 
+   3.7023628939376287`*^9}},
+ CellID->1610906309],
+
+Cell["\<\
+For setting camera parameters we use functions which names starts on string \
+\"goProSet \". Those functions can set only one parameter of camera at time. \
+For example function goProSetVideoRes[_String] will set video resolution of \
+camera.\
+\>", "Text",
+ CellChangeTimes->{{3.370266383267888*^9, 3.370266396180509*^9}, {
+  3.371302130018546*^9, 3.37130215414326*^9}, {3.3752017953356285`*^9, 
+  3.3752017953356285`*^9}, {3.7023618029096203`*^9, 3.7023619382943163`*^9}, {
+  3.7023628984803257`*^9, 3.7023630202629642`*^9}},
+ CellID->287586024],
+
+Cell[TextData[{
+ "The second way to set camera is to use function ",
+ Cell[BoxData[
+  ButtonBox["goProSet",
+   BaseStyle->"Link",
+   ButtonData->"paclet:GoProController/ref/goProSet"]], "InlineFormula"],
+ ". This function will let us specify many parameters of camera at once and \
+it works through ",
+ ButtonBox["Options",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Options"],
+ ". The default value for every option is  the value on which is camera \
+currently set. If it wasn't this way camera would be set to default options \
+with every usage of this function (except the options used in its  use)."
+}], "Text",
+ CellChangeTimes->{{3.370266383267888*^9, 3.370266396180509*^9}, {
+  3.371302130018546*^9, 3.37130215414326*^9}, {3.3752017953356285`*^9, 
+  3.3752017953356285`*^9}, {3.7023618029096203`*^9, 3.7023619382943163`*^9}, {
+  3.7023628984803257`*^9, 3.70236304827006*^9}, {3.702363086610429*^9, 
+  3.7023631278016148`*^9}, {3.702363425550972*^9, 3.7023635600374537`*^9}, {
+  3.7023636625928707`*^9, 3.702363731063196*^9}},
+ CellID->1758738144],
+
+Cell[BoxData[GridBox[{
+   {
+    RowBox[{
+     ButtonBox["videoResolution",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/videoResolution"], "\n", 
+     ButtonBox["fov",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/fov"], "\n", 
+     ButtonBox["fps",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/fps"], "\n", 
+     ButtonBox["mode",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/mode"], "\n", 
+     ButtonBox["videoMode",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/videoMode"], "\n", 
+     ButtonBox["photoResolution",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/photoResolution"], "\n", 
+     ButtonBox["timeLapse",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/timeLapse"], "\n", 
+     ButtonBox["volume",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/volume"], "\n", 
+     ButtonBox["led",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/led"], "\n", 
+     ButtonBox["spotMeter",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/spotMeter"], "\n", 
+     ButtonBox["autoPowerOff",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/autoPowerOff"], "\n", 
+     ButtonBox["protune",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/protune"], "\n", 
+     ButtonBox["bootMode",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/bootMode"]}], Cell["\<\
+Sets video resolution.
+Sets the field of view.
+Sets frames per second.
+Sets camera to given mode.
+Sets video mode of camera.
+Sets photo resolution.
+Sets Time lapse interval.
+Sets volume of camera beeping.
+Sets number of flashing camera led makes.
+Switches spot meter on or off.
+Sets automatic turning off the camera.
+Switches protune on or of.
+Sets default boot mode of camera\
+\>", "TableText"]},
+   {"\[Placeholder]", Cell["", "TableText"]}
+  }]], "DefinitionBox",
+ CellChangeTimes->{{3.70236448369204*^9, 3.702364565739461*^9}, {
+  3.702364618495863*^9, 3.702364657050631*^9}, {3.7023648229529047`*^9, 
+  3.702364852614326*^9}},
+ CellID->2089542564],
+
+Cell["Setting camera parameters.", "Caption",
+ CellChangeTimes->{{3.702364902675523*^9, 3.702364913288559*^9}},
+ CellID->1518495753],
+
+Cell[CellGroupData[{
+
+Cell["XXXX", "MathCaption",
+ CellID->388558967],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGetVariables", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.70236449807997*^9, 3.702364503015197*^9}},
+ CellLabel->"In[5]:=",
+ CellID->940580666],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "videoResolution", ",", "fov", ",", "fps", ",", "videoMode", ",", 
+   "photoResolution", ",", "timeLapse", ",", "volume", ",", "led", ",", 
+   "spotMeter", ",", "autoPowerOff", ",", "protune", ",", "mode", ",", 
+   "bootMode"}], "}"}]], "Output",
+ CellChangeTimes->{3.7023645035270243`*^9, 3.702364944533958*^9, 
+  3.702365128188203*^9, 3.70236757248895*^9, 3.702367920646009*^9},
+ CellLabel->"Out[5]=",
+ CellID->577943665]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<HERO2\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetPassword", "[", "\"\<12345678\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGetPossibleVideoRes", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSet", "[", 
+  RowBox[{"photoResolution", "\[Rule]", "\"\<5W\>\""}], "]"}]}], "Input",
+ CellChangeTimes->{{3.702364947709584*^9, 3.702364995003028*^9}, {
+   3.702365167936194*^9, 3.702365202094733*^9}, 3.702367603143942*^9, {
+   3.70236766574826*^9, 3.7023676708157053`*^9}, {3.7023677742824717`*^9, 
+   3.702367784886607*^9}, {3.702367850197242*^9, 3.702367870912602*^9}},
+ CellLabel->"In[1]:=",
+ CellID->274056890],
+
+Cell[BoxData["\<\"camera: HERO2\"\>"], "Print",
+ CellChangeTimes->{
+  3.702365130336228*^9, {3.702365169564221*^9, 3.7023652130063868`*^9}, 
+   3.7023652455607243`*^9, {3.702365314905416*^9, 3.702365342405798*^9}, 
+   3.702366421301474*^9, 3.702367524479752*^9, {3.7023675583968763`*^9, 
+   3.7023675679942827`*^9}, {3.702367658734396*^9, 3.7023676714169493`*^9}, 
+   3.702367775945403*^9, 3.702367813852928*^9, {3.702367850938286*^9, 
+   3.702367871607869*^9}, 3.702367916941139*^9},
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->496903310],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"WVGA-60\"\>", ",", "\<\"WVGA-120\"\>", ",", "\<\"720p-30\"\>", 
+   ",", "\<\"720p-60\"\>", ",", "\<\"960p-30\"\>", ",", "\<\"960p-48\"\>", 
+   ",", "\<\"1080p-30\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.702364982031075*^9, 3.7023649954807587`*^9}, 
+   3.702365129996217*^9, {3.7023651695799713`*^9, 3.70236521300778*^9}, 
+   3.702365245562619*^9, {3.7023653149070587`*^9, 3.702365342407448*^9}, 
+   3.702366421620028*^9, {3.7023675297060137`*^9, 3.702367569725891*^9}, {
+   3.702367659064734*^9, 3.702367671725999*^9}, 3.702367776336972*^9, 
+   3.702367813884088*^9, {3.702367851296899*^9, 3.70236787274186*^9}, 
+   3.7023679187298193`*^9},
+ CellLabel->"Out[3]=",
+ CellID->1083219704]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGet", "[", "photoResolution", "]"}]], "Input",
+ CellChangeTimes->{{3.702367872561397*^9, 3.702367886638403*^9}},
+ CellLabel->"In[39]:=",
+ CellID->1967973851],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"photoResolution\"\>", "\[Rule]", "\<\"5M\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.702367887555768*^9},
+ CellLabel->"Out[39]=",
+ CellID->1855609732]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+List of all functions for HERO 2, but some of them doesn't work, it is \
+because HERO 2 is controlled the same way as HERO 3 and so they are in the \
+same source file.\
+\>", "MathCaption",
+ CellChangeTimes->{{3.702367936440631*^9, 3.702368039139962*^9}},
+ CellID->1143126835],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GoProController`*"}]], "Input",
+ CellLabel->"In[6]:=",
+ CellID->1524235264],
+
+Cell[BoxData[
+ DynamicModuleBox[{Typeset`open$$ = True}, 
+  PaneSelectorBox[{False->
+   RowBox[{
+    OpenerBox[Dynamic[Typeset`open$$],
+     ImageSize->Small], 
+    StyleBox["GoProController`", "InfoHeading"]}], True->GridBox[{
+     {
+      RowBox[{
+       OpenerBox[Dynamic[Typeset`open$$],
+        ImageSize->Small], 
+       StyleBox["GoProController`", "InfoHeading"]}]},
+     {GridBox[{
+        {
+         ButtonBox["goProBurstMode",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProBurstMode", "GoProController`"}},
+          
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSet",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProSet", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProDeleteAll",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProDeleteAll", "GoProController`"}},
+          
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetAutoPowerOff",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetAutoPowerOff", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProDeleteLastFile",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProDeleteLastFile", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetBootMode",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetBootMode", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProDownloadAllFiles",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProDownloadAllFiles", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetBurstRate",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetBurstRate", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProDownloadFile",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProDownloadFile", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetCamera",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProSetCamera", "GoProController`"}},
+          
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGet",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProGet", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetCameraModel",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetCameraModel", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetCameraModelPossible",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetCameraModelPossible", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetColorProfile",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetColorProfile", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetFileList",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetFileList", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetContinuousShot",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetContinuousShot", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetFileURL",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProGetFileURL", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetExposure",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetExposure", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetModel",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProGetModel", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetFOV",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProSetFOV", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleAutoPowerOff",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleAutoPowerOff", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetFPS",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProSetFPS", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleBootMode",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleBootMode", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetISO",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProSetISO", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleBurstRate",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleBurstRate", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetLed",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProSetLed", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleCamera",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleCamera", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetLowLight",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetLowLight", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleColorProfile",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleColorProfile", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetOrientationDown",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetOrientationDown", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleContinuousShot",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleContinuousShot", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetOrientationUp",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetOrientationUp", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleExposure",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleExposure", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetPassword",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetPassword", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleFOV",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleFOV", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetPhotoInVideo",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetPhotoInVideo", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleFPS",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleFPS", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetPhotoRes",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetPhotoRes", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleISO",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleISO", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetProtune",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProSetProtune", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleLed",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleLed", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetSharpness",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetSharpness", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleLowLight",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleLowLight", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetSpotMeter",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetSpotMeter", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleModes",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleModes", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetSpotMeterOff",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetSpotMeterOff", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossiblePhotoInVideo",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossiblePhotoInVideo", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetSpotMeterOn",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetSpotMeterOn", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossiblePhotoRes",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossiblePhotoRes", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetTime",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProSetTime", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleProtune",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleProtune", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetTimeLapse",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetTimeLapse", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleSharpness",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleSharpness", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetURLBase",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProSetURLBase", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleSpotMeter",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleSpotMeter", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetVideoLoop",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetVideoLoop", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleTimeLapse",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleTimeLapse", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetVideoMode",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetVideoMode", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleVideoLoop",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleVideoLoop", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetVideoRes",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetVideoRes", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleVideoMode",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleVideoMode", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetVolume",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProSetVolume", "GoProController`"}},
+          
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleVideoRes",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleVideoRes", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSetWhiteBalance",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSetWhiteBalance", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleVolume",
+          BaseStyle->"InformationLink",
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleVolume", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProShutter",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProShutter", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetPossibleWhiteBalance",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetPossibleWhiteBalance", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProStop",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProStop", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetSettingReport",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetSettingReport", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSwitchLowLightOff",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSwitchLowLightOff", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetSettingReportAssociation",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetSettingReportAssociation", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSwitchLowLightOn",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSwitchLowLightOn", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetStatus",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProGetStatus", "GoProController`"}},
+          
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSwitchProtuneOff",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSwitchProtuneOff", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetTime",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProGetTime", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProSwitchProtuneOn",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSwitchProtuneOn", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetURLBase",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProGetURLBase", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProTextModeOff",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProTextModeOff", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProGetVariables",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProGetVariables", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProTextModeOn",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProTextModeOn", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProLocate",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProLocate", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProTimeLapseMode",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProTimeLapseMode", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProLocateStop",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProLocateStop", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProTurnOff",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProTurnOff", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProMode",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProMode", "GoProController`"}},
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProTurnOn",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProTurnOn", "GoProController`"}},
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProPhotoMode",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProPhotoMode", "GoProController`"}},
+          
+          ButtonNote->"GoProController`"], 
+         ButtonBox["goProVideoMode",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {"goProVideoMode", "GoProController`"}},
+          
+          ButtonNote->"GoProController`"]},
+        {
+         ButtonBox["goProSaveSettings",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info63702375251-2452470", {
+            "goProSaveSettings", "GoProController`"}},
+          ButtonNote->"GoProController`"], ""}
+       },
+       DefaultBaseStyle->"InfoGrid",
+       GridBoxItemSize->{"Columns" -> {{
+            Scaled[0.475]}}}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
+   Dynamic[Typeset`open$$],
+   ImageSize->Automatic]]], "Print", "InfoCell",
+ CellChangeTimes->{3.7023680517291737`*^9},
+ CellID->31163274]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "TutorialMoreAboutSection",
+ CellID->23220180],
+
+Cell["XXXX", "TutorialMoreAbout",
+ CellID->1567025153]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Tutorials", "RelatedTutorialsSection",
+ CellID->415694126],
+
+Cell["XXXX", "RelatedTutorials",
+ CellID->806871991]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Wolfram Education Group Courses", "TutorialRelatedLinksSection",
+ CellID->415694148],
+
+Cell["XXXX", "TutorialRelatedLinks",
+ CellID->415694149]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{799, 847},
+WindowMargins->{{1, Automatic}, {1, Automatic}},
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "TutorialPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 325, 14, 24, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[908, 38, 68, 1, 30, "CategorizationSection",
+ CellID->1122911449],
+Cell[979, 41, 81, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1063, 45, 88, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1154, 49, 85, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1242, 53, 75, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1354, 59, 56, 1, 20, "KeywordsSection",
+ CellID->1427428552],
+Cell[1413, 62, 45, 1, 70, "Keywords",
+ CellID->1251852827]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1495, 68, 53, 1, 20, "DetailsSection",
+ CellID->307771771],
+Cell[1551, 71, 63, 2, 70, "Details",
+ CellID->218895918],
+Cell[1617, 75, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[1689, 79, 66, 2, 70, "Details",
+ CellID->795871300],
+Cell[1758, 83, 71, 2, 70, "Details",
+ CellID->199739161],
+Cell[1832, 87, 60, 2, 70, "Details",
+ CellID->40625308],
+Cell[1895, 91, 61, 2, 70, "Details",
+ CellID->357121918],
+Cell[1959, 95, 62, 2, 70, "Details",
+ CellID->35949532],
+Cell[2024, 99, 78, 2, 70, "Details",
+ CellID->929432370],
+Cell[2105, 103, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2209, 110, 42, 1, 107, "Title",
+ CellID->509267359],
+Cell[2254, 113, 395, 8, 40, "Text",
+ CellID->591812887],
+Cell[CellGroupData[{
+Cell[2674, 125, 330, 7, 55, "MathCaption",
+ CellID->1825449234],
+Cell[CellGroupData[{
+Cell[3029, 136, 376, 7, 48, "Input",
+ CellID->1373894796],
+Cell[3408, 145, 206, 4, 22, "Print",
+ CellID->1643799784]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3663, 155, 518, 9, 71, "MathCaption",
+ CellID->147134958],
+Cell[4184, 166, 473, 10, 29, "Input",
+ CellID->1582738395]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4694, 181, 248, 4, 44, "Section",
+ CellID->2591],
+Cell[4945, 187, 410, 7, 40, "Text",
+ CellID->16706],
+Cell[5358, 196, 980, 31, 103, "DefinitionBox",
+ CellID->1271926102],
+Cell[6341, 229, 106, 2, 29, "Caption",
+ CellID->1020702259]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6484, 236, 308, 5, 44, "Section",
+ CellID->1610906309],
+Cell[6795, 243, 556, 10, 57, "Text",
+ CellID->287586024],
+Cell[7354, 255, 1057, 21, 75, "Text",
+ CellID->1758738144],
+Cell[8414, 278, 2217, 61, 290, "DefinitionBox",
+ CellID->2089542564],
+Cell[10634, 341, 132, 2, 29, "Caption",
+ CellID->1518495753],
+Cell[CellGroupData[{
+Cell[10791, 347, 47, 1, 39, "MathCaption",
+ CellID->388558967],
+Cell[CellGroupData[{
+Cell[10863, 352, 173, 4, 27, "Input",
+ CellID->940580666],
+Cell[11039, 358, 465, 10, 50, "Output",
+ CellID->577943665]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11541, 373, 766, 13, 108, "Input",
+ CellID->274056890],
+Cell[12310, 388, 548, 9, 22, "Print",
+ CellID->496903310],
+Cell[12861, 399, 735, 13, 28, "Output",
+ CellID->1083219704]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13633, 417, 186, 4, 27, "Input",
+ CellID->1967973851],
+Cell[13822, 423, 200, 6, 26, "Output",
+ CellID->1855609732]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14071, 435, 285, 6, 55, "MathCaption",
+ CellID->1143126835],
+Cell[CellGroupData[{
+Cell[14381, 445, 104, 3, 27, "Input",
+ CellID->1524235264],
+Cell[14488, 450, 23729, 668, 1108, "Print",
+ CellID->31163274]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38278, 1125, 65, 1, 74, "TutorialMoreAboutSection",
+ CellID->23220180],
+Cell[38346, 1128, 54, 1, 23, "TutorialMoreAbout",
+ CellID->1567025153]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38437, 1134, 72, 1, 74, "RelatedTutorialsSection",
+ CellID->415694126],
+Cell[38512, 1137, 52, 1, 23, "RelatedTutorials",
+ CellID->806871991]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38601, 1143, 98, 1, 74, "TutorialRelatedLinksSection",
+ CellID->415694148],
+Cell[38702, 1146, 56, 1, 23, "TutorialRelatedLinks",
+ CellID->415694149]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
