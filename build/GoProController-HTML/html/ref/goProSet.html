@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <meta charset="UTF-8">
+
+<title>goProSet&mdash;Wolfram Language Documentation</title>
+<meta name="buildnumber" content="0000000" />
+<meta name="historydata" content="{0.0, , , }" />
+<meta name="keywords" content="goProSet" />
+
+<meta name="description" content="goProSet[setting1 -&amp;gt; value1, setting2 -&amp;gt; value2, ...] sets GoPro setting1, setting2 to value1, value2 ... to get list of setting parameters use goProGetVariables. goProSet stands for single functions such as goProSetVideoRes, goProSetFPS, etc. It calls this functions in its body with parameters given." />
+<script language="JavaScript" type="text/javascript">baselang='goProSet';</script>
+<!--#include virtual="/common/includes/gl-head-includes.html"-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--[if IE]>
+<style type="text/css">
+/* doctype problem overrides */
+#menu .searchboxsub, #menu .searchboxsub-on { padding-bottom: 0; }
+#menu .headerSearchSubmit { margin-bottom: 4px; }
+
+/*
+.WRIdropMenu .WRImenuContents { margin-top: -2px; margin-left: -2px; }
+.WRIdropMenu .WRImenuContents .WRImenuContents { margin: 0; }
+*/
+</style>
+<![endif]-->
+<link rel="stylesheet" href="/webMathematica/Resources/Documentation/English/css/reference.css" />
+
+<script src="/webMathematica/Resources/Documentation/English/javascript/reference.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/documentation-search.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/faster-page-load.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/hyperlink-filter.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/brokenlinks.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/clipboard.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/image-swap.js"></script>
+
+<script language="JavaScript" type="text/javascript" src="/2013/javascript/toggle-highlight.js"></script>
+</head>
+<body id="ref" class="function">
+<a name="top"></a>
+ 
+<div class="main-wrapper">
+<div class="outer-wrapper">
+
+<div class="wrapper mainOuter">
+    <div class="mainContent">
+ <div class="topContentWrap">
+  <div class="ribbonWrap">
+   <span class="ribbonOuter"><span class="ribbonInner">GO PRO CONTROLLER SYMBOL</span></span>
+  </div>
+  <ul class="dropdown">
+   <li>
+    <a href="#">Related Guides</a>
+    <ul class="sub_menu">
+     <li>
+      <a href="/language/GoProController/guide/GoProController.html"><span class="dropdownPad">GoProController Package</span></a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+  <div class="clear"><!-- --></div>
+ </div>
+ <h1>goProSet</h1>
+ <div class="functionIntroWrap">
+  <div class="functionIntro">
+   <p><span class="IF">goProSet<span class="openbracket">[</span><span class="TI">setting1</span><span class="special-character Rule">&#62754;</span><span class="TI">value1</span><span class="comma">,</span><span class="TI">setting2</span><span class="special-character Rule">&#62754;</span><span class="TI">value2</span><span class="comma">,</span>...<span class="closebracket">]</span></span>
+&nbsp;&nbsp;&nbsp;&nbsp;sets GoPro  <span class="IF"><span class="TI">setting1<span class="comma">,</span>setting2</span></span>  to<span class="TI"> </span><span class="TI">Span[{class -&gt; TI}, value1, ,, value2,  , ...]</span><span class="TI"> </span><span class="TI"><span class="plain">to get list of </span></span><span class="IF">setting</span> <span class="TR">parameters use </span><span class="TR"><div class="TR">
+      <a href="../ref/goProGetVariables.html">goProGetVariables</a>
+     </div></span><span class="TR">. </span><span class="TR"><a href="../ref/goProSet.html">goProSet</a></span><span class="TR"> stands for single functions such as goProSetVideoRes, goProSetFPS, etc. It calls this functions in its body with parameters given.</span></p>
+  </div>
+ </div>
+ <div class="expandWrap closed"
+     id="DetailsAndOptions">
+  <div class="expandOuter">
+   <h2 class="expandInner"><a class="expand hide" title="show" href="#">Details</a><a class="collapse" title="hide" href="#">Details</a></h2>
+   <div class="expanded">
+    <ul class="functionList">
+     <li><a name="1174398404"></a>Function <a href="../ref/goProSet.html">goProSet</a> enables to set many GoPro settings at once. It is based on <a href="http://reference.wolfram.com/language/ref/Options.html">Options</a> function and  its options you can find by <a href="../ref/goProGetVariables.html">goProGetVariables</a> which will also enable whispering on those variables. goProSet itself calls other functions in its body such as <span class="TR">goProSetVideoRes, goProSetFPS, etc.</span></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+ <div class="expandWrap"
+     id="Examples">
+  <div class="expandOuter">
+   <h2 class="expandInner"><a class="expand hide" title="show" href="#">Examples</a><a class="collapse" title="hide" href="#">Examples</a><a class="all opener" title="open all" href="#"><span>open all</span></a><a class="all closer hide" title="close all" href="#"><span>close all</span></a></h2>
+   <div class="expanded">
+    <div class="expandSubWrap">
+     <div class="expandSubOuter">
+      <h3 class="expandSubInner"><a class="expand hide" href="#" title="show">Basic Examples<span class="special-character NonBreakingSpace">&#160;</span><span class="special-character NonBreakingSpace">&#160;</span><span>(1)</span></a><a class="collapse" href="#" title="hide">Basic Examples<span class="special-character NonBreakingSpace">&#160;</span><span class="special-character NonBreakingSpace">&#160;</span><span>(1)</span></a></h3>
+      <div class="expanded">
+       <table class="InCell">
+        <tr><td class="lab">In[1]:=</td><td class="Input"><div>
+           <a name="2125804311"></a>
+           <img src="Files/goProSet/I_2.png"
+               height="16"
+               width="137"
+               alt="Click for copyable input" />
+          </div><div id="i_1_out" class="IFL"></div></td></tr>
+       </table>
+       <table class="InCell">
+        <tr><td class="lab">In[2]:=</td><td class="Input"><div>
+           <a name="1789116677"></a>
+           <img src="Files/goProSet/I_4.png"
+               height="33"
+               width="158"
+               alt="Click for copyable input" />
+          </div><div id="i_3_out" class="IFL"></div></td></tr>
+       </table>
+       <div class="IO">
+        <table class="InCell">
+         <tr><td class="lab">In[3]:=</td><td class="Input"><div>
+            <a name="561051100"></a>
+            <img src="Files/goProSet/I_6.png"
+                height="16"
+                width="111"
+                alt="Click for copyable input" />
+           </div><div id="i_5_out" class="IFL"></div></td></tr>
+        </table>
+        <table class="OCell">
+         <tr><td class="lab">Out[3]=</td><td class="Output"><div class="output-image">
+            <img src="Files/goProSet/O_1.png"
+                height="50"
+                width="478"
+                alt="" />
+           </div></td></tr>
+        </table>
+       </div>
+       <div class="IO">
+        <table class="InCell">
+         <tr><td class="lab">In[4]:=</td><td class="Input"><div>
+            <a name="668957734"></a>
+            <img src="Files/goProSet/I_8.png"
+                height="16"
+                width="157"
+                alt="Click for copyable input" />
+           </div><div id="i_7_out" class="IFL"></div></td></tr>
+        </table>
+        <table class="OCell">
+         <tr><td class="lab">Out[4]=</td><td class="Output"><div class="output-image">
+            <img src="Files/goProSet/O_2.png"
+                height="16"
+                width="452"
+                alt="" />
+           </div></td></tr>
+        </table>
+       </div>
+       <div class="IO">
+        <table class="InCell">
+         <tr><td class="lab">In[5]:=</td><td class="Input"><div>
+            <a name="1076677147"></a>
+            <img src="Files/goProSet/I_10.png"
+                height="16"
+                width="173"
+                alt="Click for copyable input" />
+           </div><div id="i_9_out" class="IFL"></div></td></tr>
+        </table>
+        <table class="OCell">
+         <tr><td class="lab">Out[5]=</td><td class="Output"><div class="output-image">
+            <img src="Files/goProSet/O_3.png"
+                height="16"
+                width="80"
+                alt="" />
+           </div></td></tr>
+        </table>
+       </div>
+       <div class="IO">
+        <table class="InCell">
+         <tr><td class="lab">In[6]:=</td><td class="Input"><div>
+            <a name="627137697"></a>
+            <img src="Files/goProSet/I_12.png"
+                height="16"
+                width="129"
+                alt="Click for copyable input" />
+           </div><div id="i_11_out" class="IFL"></div></td></tr>
+        </table>
+        <table class="OCell">
+         <tr><td class="lab">Out[6]=</td><td class="Output"><div class="output-image">
+            <img src="Files/goProSet/O_4.png"
+                height="16"
+                width="131"
+                alt="" />
+           </div></td></tr>
+        </table>
+       </div>
+       <div class="IO">
+        <table class="InCell">
+         <tr><td class="lab">In[7]:=</td><td class="Input"><div>
+            <a name="947146714"></a>
+            <img src="Files/goProSet/I_14.png"
+                height="16"
+                width="160"
+                alt="Click for copyable input" />
+           </div><div id="i_13_out" class="IFL"></div></td></tr>
+        </table>
+        <table class="OCell">
+         <tr><td class="lab">Out[7]=</td><td class="Output"><div class="output-image">
+            <img src="Files/goProSet/O_5.png"
+                height="16"
+                width="101"
+                alt="" />
+           </div></td></tr>
+        </table>
+       </div>
+       <div class="IO">
+        <table class="InCell">
+         <tr><td class="lab">In[8]:=</td><td class="Input"><div>
+            <a name="515626047"></a>
+            <img src=""
+                data-src="Files/goProSet/I_16.png"
+                data-big="507 101"
+                data-small="305 118"
+                alt="Click for copyable input" />
+           </div><div id="i_15_out" class="IFL"></div></td></tr>
+        </table>
+        <table class="OCell">
+         <tr><td class="lab">Out[8]=</td><td class="Output"><div class="output-image">
+            <img src="Files/goProSet/O_6.png"
+                height="16"
+                width="143"
+                alt="" />
+           </div></td></tr>
+        </table>
+        <table class="OCell">
+         <tr><td class="lab">Out[8]=</td><td class="Output"><div class="output-image">
+            <img src="Files/goProSet/O_7.png"
+                height="16"
+                width="55"
+                alt="" />
+           </div></td></tr>
+        </table>
+        <table class="OCell">
+         <tr><td class="lab">Out[8]=</td><td class="Output"><div class="output-image">
+            <img src="Files/goProSet/O_8.png"
+                height="16"
+                width="69"
+                alt="" />
+           </div></td></tr>
+        </table>
+        <table class="OCell">
+         <tr><td class="lab">Out[8]=</td><td class="Output"><div class="output-image">
+            <img src="Files/goProSet/O_9.png"
+                height="16"
+                width="138"
+                alt="" />
+           </div></td></tr>
+        </table>
+       </div>
+       <div class="TR" id="1022670580"><a name="1022670580"></a>You have two ways how to set settings of GoPro camera. You can set each setting separately or with function <span class="IF"><a class="package-symbol" href="../ref/goProSet.html">goProSet</a></span> which provides you with possibility to set many settings at once.</div>
+       <div class="IO">
+        <table class="InCell">
+         <tr><td class="lab">In[1]:=</td><td class="Input"><div>
+            <a name="480739020"></a>
+            <img src="Files/goProSet/I_18.png"
+                height="16"
+                width="111"
+                alt="Click for copyable input" />
+           </div><div id="i_17_out" class="IFL"></div></td></tr>
+        </table>
+        <table class="OCell">
+         <tr><td class="lab">Out[1]=</td><td class="Output"><div class="output-image">
+            <img src="Files/goProSet/O_10.png"
+                height="50"
+                width="478"
+                alt="" />
+           </div></td></tr>
+        </table>
+       </div>
+       <div class="IO">
+        <table class="InCell">
+         <tr><td class="lab">In[2]:=</td><td class="Input"><div>
+            <a name="413493288"></a>
+            <img src="Files/goProSet/I_20.png"
+                height="50"
+                width="361"
+                alt="Click for copyable input" />
+           </div><div id="i_19_out" class="IFL"></div></td></tr>
+        </table>
+        <table class="OCell">
+         <tr><td class="lab">Out[2]=</td><td class="Output"><div class="output-image">
+            <img src="Files/goProSet/O_11.png"
+                height="16"
+                width="143"
+                alt="" />
+           </div></td></tr>
+        </table>
+        <table class="OCell">
+         <tr><td class="lab">Out[2]=</td><td class="Output"><div class="output-image">
+            <img src="Files/goProSet/O_12.png"
+                height="16"
+                width="138"
+                alt="" />
+           </div></td></tr>
+        </table>
+       </div>
+       <div class="IO">
+        <table class="InCell">
+         <tr><td class="lab">In[3]:=</td><td class="Input"><div>
+            <a name="820036327"></a>
+            <img src="Files/goProSet/I_22.png"
+                height="67"
+                width="183"
+                alt="Click for copyable input" />
+           </div><div id="i_21_out" class="IFL"></div></td></tr>
+        </table>
+        <table class="OCell">
+         <tr><td class="lab">Out[3]=</td><td class="Output"><div class="output-image">
+            <img src="Files/goProSet/O_13.png"
+                height="16"
+                width="137"
+                alt="" />
+           </div></td></tr>
+        </table>
+        <table class="OCell">
+         <tr><td class="lab">Out[3]=</td><td class="Output"><div class="output-image">
+            <img src="Files/goProSet/O_14.png"
+                height="16"
+                width="132"
+                alt="" />
+           </div></td></tr>
+        </table>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="toplink">
+     <a href="#top">Top</a>
+    </div>
+    <div class="clear"><!-- --></div>
+   </div>
+  </div>
+ </div>
+ <div class="expandWrap"
+     id="RelatedGuides">
+  <div class="expandOuter">
+   <h2 class="expandInner"><a class="expand hide" title="show" href="#">Related Guides</a><a class="collapse" title="hide" href="#">Related Guides</a></h2>
+   <div class="expanded">
+    <ul class="functionList">
+     <li>
+      <a name="1547036891"></a>
+      <a class="package-symbol" href="../guide/GoProController.html">GoProController Package</a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</div>
+</div><!-- /wrapper -->
+
+	
+</div>
+
+
+</body></html>

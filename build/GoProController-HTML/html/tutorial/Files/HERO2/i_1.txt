@@ -1,0 +1,3 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>Get[&quot;GoProController`&quot;]
+goProGetPossibleCamera[]
+goProSetCamera[&quot;HERO2&quot;]</pre><div class='IFU'><a name='1373894796'></a>http://wolfram.com/xid/04jgvtnjiehzcjjt8orlvzyfwm-wz9mam</div>

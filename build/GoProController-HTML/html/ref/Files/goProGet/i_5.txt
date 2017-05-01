@@ -1,0 +1,6 @@
+<pre name='i_5_in' id='i_5_in' class='IFT'>goProSet[videoResolution -&gt; &quot;1080p&quot;, fps -&gt; &quot;60&quot;, fov -&gt; &quot;wide&quot;, 
+ photoResolution -&gt; &quot;12W&quot;]
+goProGet[{videoResolution, fps, fov, photoResolution}]
+goProGet[{&quot;videoResolution&quot;, &quot;fps&quot;, fov, photoResolution}]
+goProGet[videoResolution]
+goProGet[&quot;videoResolution&quot;]</pre><div class='IFU'><a name='1131952073'></a>http://wolfram.com/xid/0isl9lcvz6yx7jl0qfq1d25h2-sz7x3f</div>

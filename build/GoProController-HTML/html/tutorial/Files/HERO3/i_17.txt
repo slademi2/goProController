@@ -1,0 +1,5 @@
+<pre name='i_17_in' id='i_17_in' class='IFT'>(*Setting the package to HERO3+*)
+Get[&quot;GoProController`&quot;]
+goProSetCamera[&quot;HERO3+&quot;]
+goProSetCameraModel[&quot;Black&quot;]
+goProSetPassword[&quot;12345678&quot;] (*if the password is 12345678*);</pre><div class='IFU'><a name='1211772279'></a>http://wolfram.com/xid/04jgvtnjiehzcjjt8orlvzyfwl-ubqrrd</div>

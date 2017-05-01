@@ -1,0 +1,3 @@
+<pre name='i_7_in' id='i_7_in' class='IFT'>goProTurnOn[]
+goProSet[videoResolution -&gt; &quot;720p&quot;]
+goProGet[videoResolution]</pre><div class='IFU'><a name='370579231'></a>http://wolfram.com/xid/0br2l0kpuopryuakgktpyibcy28l-gew21t</div>

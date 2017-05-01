@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <meta charset="UTF-8">
+
+<title>HERO3 &amp; HERO3+&mdash;Wolfram Language Documentation</title>
+<meta name="buildnumber" content="0000000" />
+<meta name="historydata" content="{0.0, , , }" />
+<meta name="keywords" content="HERO3" />
+
+<meta name="description" content="This tutorial will help you to understand controlling of GoPro HERO3 or HERO3+ cameras. It is highly recommended to read the manual for this camera model, it can be found on GoPro website. Before controlling camera you need to set the package first. You have to do that because package need to know which files have to be loaded and it is impossible to control goProCamera without WiFi password. Package setup functions." />
+<script language="JavaScript" type="text/javascript">baselang='HERO3';</script>
+<script language="JavaScript" type="text/javascript">packagename='GoProController';</script>
+<!--#include virtual="/common/includes/gl-head-includes.html"-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--[if IE]>
+<style type="text/css">
+/* doctype problem overrides */
+#menu .searchboxsub, #menu .searchboxsub-on { padding-bottom: 0; }
+#menu .headerSearchSubmit { margin-bottom: 4px; }
+
+/*
+.WRIdropMenu .WRImenuContents { margin-top: -2px; margin-left: -2px; }
+.WRIdropMenu .WRImenuContents .WRImenuContents { margin: 0; }
+*/
+</style>
+<![endif]-->
+<link rel="stylesheet" href="/webMathematica/Resources/Documentation/English/css/reference.css" />
+
+<script src="/webMathematica/Resources/Documentation/English/javascript/reference.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/documentation-search.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/faster-page-load.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/hyperlink-filter.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/brokenlinks.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/clipboard.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/image-swap.js"></script>
+
+</head>
+<body id="tutorial">
+<a name="top"></a>
+ 
+<div class="main-wrapper">
+<div class="outer-wrapper">
+
+<div class="wrapper mainOuter">
+    <div class="mainContent">
+ <div class="topContentWrap">
+  <div class="ribbonWrap">
+   <span class="ribbonOuter"><span class="ribbonInner">GO PRO CONTROLLER TUTORIAL</span></span>
+  </div>
+  
+  <div class="clear"><!-- --></div>
+ </div>
+ <h1 class="Title"><a name="509267359"></a>HERO3 &amp; HERO3+</h1>
+ <div class="TutorialJumpBox">
+  <table class="nogridboxdividers">
+   <col />
+   <col />
+   <tr class="lineAbove" style=""><td><a class="package-symbol" href="../tutorial/HERO3.html#1147065604">Package setup</a></td><td><a class="package-symbol" href="../tutorial/HERO3.html#2020261348">Controlling the camera</a></td></tr>
+   <tr class="" style=""><td><a class="package-symbol" href="../tutorial/HERO3.html#1610906309">Setting camera parameters</a></td><td><a class="package-symbol" href="../tutorial/HERO3.html#889545618">Downloading and deleting files from camera</a></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="591812887"></a>This tutorial will help you to understand controlling of GoPro HERO3 or HERO3+ cameras. It is highly recommended to read the manual for this camera model, it can be found on GoPro website.</p>
+ <h2 class="Section"><a name="1147065604"></a>Package setup</h2>
+ <p class="Text"><a name="1127271971"></a>Before controlling camera you need to set the package first. You have to do that because package need to know which files have to be loaded and it is impossible to control goProCamera without WiFi password.</p>
+ <div class="MathTable DefinitionBox">
+  <a name="932885528"></a>
+  <table class="nogridboxdividers">
+   <col width="40%" />
+   <col width="60%" />
+   <tr class="lineAbove" style=""><td>goProSetCamera<span class="openbracket">[</span>camera<span class="closebracket">]</span></td><td><span class="TT">Sets camera generation to parameter given. You can use goPoGetPossibleCamera to see which cameras are supported by this package.</span></td></tr>
+   <tr class="" style=""><td>goProGetPossibleCamera<span class="openbracket">[</span><span class="closebracket">]</span></td><td><span class="TT">returns possible cameras for this package</span></td></tr>
+   <tr class="" style=""><td>goProSetPassword <span class="openbracket">[</span>password_String<span class="closebracket">]</span></td><td><span class="TT">you need to call this function to set camera WiFi password. Without that package can't control your camera.</span></td></tr>
+   <tr class="" style=""><td>goProSetCameraModel<span class="openbracket">[</span>model<span class="closebracket">]</span></td><td><span class="TT"><span class="specialcharacters">Specificates camera model in generation <span class="openparenthesis">(</span>Black<span class="comma">,</span> White<span class="comma">,</span>..<span class="closeparenthesis">)</span>. The package needs this information.</span></span></td></tr>
+   <tr class="" style=""><td>goProGetPossibleCameraMode<span class="openbracket">[</span><span class="closebracket">]</span></td><td><span class="TT">returns possible camera models within generation</span></td></tr>
+  </table>
+ </div>
+ <p class="Caption"><a name="492680226"></a>Package setup functions.</p>
+ <div class="MCap"><a name="1825449234"></a>This loads the package GoProController and set it for usage of GoProHERO 2 cameras:</div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[8]:=</td><td class="Input"><div>
+      <a name="1373894796"></a>
+      <img src="Files/HERO3/I_2.png"
+          height="33"
+          width="148"
+          alt="Click for copyable input" />
+     </div><div id="i_1_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[9]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_1.png"
+          height="16"
+          width="184"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[10]:=</td><td class="Input"><div>
+      <a name="222653374"></a>
+      <img src="Files/HERO3/I_4.png"
+          height="16"
+          width="151"
+          alt="Click for copyable input" />
+     </div><div id="i_3_out" class="IFL"></div></td></tr>
+  </table>
+  <div class="Print">
+   <a name="916688877"></a>
+   <img class="FlushInput"
+       src="Files/HERO3/Image_1.gif"
+       alt=" " />
+  </div>
+ </div>
+ <p class="Text"><a name="479826094"></a>Without set camera model package can't work properly. Some functions need this information.</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[11]:=</td><td class="Input"><div>
+      <a name="289713918"></a>
+      <img src="Files/HERO3/I_6.png"
+          height="16"
+          width="160"
+          alt="Click for copyable input" />
+     </div><div id="i_5_out" class="IFL"></div></td></tr>
+  </table>
+  <img src="Files/HERO3/2.gif"
+      height="15"
+      width="635"
+      alt=""
+      class="Message" />
+ </div>
+ <p class="Text"><a name="451072549"></a>Listing camera models.</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[12]:=</td><td class="Input"><div>
+      <a name="1453594133"></a>
+      <img src="Files/HERO3/I_8.png"
+          height="16"
+          width="182"
+          alt="Click for copyable input" />
+     </div><div id="i_7_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[12]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_2.png"
+          height="16"
+          width="112"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="490632353"></a>The camera models are different for each camera generation.</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[13]:=</td><td class="Input"><div>
+      <a name="342547117"></a>
+      <img src="Files/HERO3/I_10.png"
+          height="16"
+          width="158"
+          alt="Click for copyable input" />
+     </div><div id="i_9_out" class="IFL"></div></td></tr>
+  </table>
+  <div class="Print">
+   <a name="1988807061"></a>
+   <img class="FlushInput"
+       src="Files/HERO3/Image_3.gif"
+       alt=" " />
+  </div>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[14]:=</td><td class="Input"><div>
+      <a name="1604500669"></a>
+      <img src="Files/HERO3/I_12.png"
+          height="16"
+          width="182"
+          alt="Click for copyable input" />
+     </div><div id="i_11_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[14]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_3.png"
+          height="16"
+          width="75"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <p class="Text"><a name="1377125043"></a>After setting camera model the package will work properly.</p>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[15]:=</td><td class="Input"><div>
+      <a name="1537297477"></a>
+      <img src="Files/HERO3/I_14.png"
+          height="16"
+          width="178"
+          alt="Click for copyable input" />
+     </div><div id="i_13_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[15]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_4.png"
+          height="16"
+          width="30"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="MCap"><a name="147134958"></a>Now we have loaded the package and set it to HERO3 or HERO3+. The next step is to set  the password for WiFi which the camera is broadcasting. Without that camera can't be controlled.</div>
+ <table class="InCell">
+  <tr><td class="lab">In[13]:=</td><td class="Input"><div>
+     <a name="1582738395"></a>
+     <img src="Files/HERO3/I_16.png"
+         height="16"
+         width="357"
+         alt="Click for copyable input" />
+    </div><div id="i_15_out" class="IFL"></div></td></tr>
+ </table>
+ <h2 class="Section"><a name="1610906309"></a>Setting camera parameters</h2>
+ <p class="Text"><a name="287586024"></a>For setting camera parameters we use functions which names starts on string &quot;goProSet &quot;. Those functions can set only one parameter of camera at time. For example function goProSetVideoRes[_String] will set video resolution of camera.</p>
+ <p class="Text"><a name="1758738144"></a>The second way to set camera is to use function <span class="IF"><a class="package-symbol" href="../ref/goProSet.html">goProSet</a></span>. This function will let us specify many parameters of camera at once and it works through <a href="http://reference.wolfram.com/language/ref/Options.html">Options</a>. The default value for every option is  the value on which is camera currently set. If it wasn't this way camera would be set to default options with every usage of this function (except the options used in its  use).</p>
+ <p class="Caption"><a name="1518495753"></a>Setting camera parameters.</p>
+ <div class="MathTable DefinitionBox">
+  <a name="565688341"></a>
+  <table class="nogridboxdividers">
+   <col width="40%" />
+   <col width="60%" />
+   <tr class="lineAbove" style=""><td>videoResolution</td><td><span class="TT">Sets video resolution.</span></td></tr>
+   <tr class="" style=""><td>fov</td><td><span class="TT">Sets the field of view.</span></td></tr>
+   <tr class="" style=""><td>fps</td><td><span class="TT">Sets frames per second.</span></td></tr>
+   <tr class="" style=""><td>videoMode</td><td><span class="TT">Sets camera to given mode.</span></td></tr>
+   <tr class="" style=""><td>photoResolution</td><td><span class="TT">Sets photo resolution.</span></td></tr>
+   <tr class="" style=""><td>timeLapse</td><td><span class="TT">Sets Time lapse interval.</span></td></tr>
+   <tr class="" style=""><td>volume</td><td><span class="TT">Sets volume of camera beeping</span></td></tr>
+   <tr class="" style=""><td>led</td><td><span class="TT">Sets number of flashing camera led makes.</span></td></tr>
+   <tr class="" style=""><td>spotMeter</td><td><span class="TT">Switches spot meter on or off.</span></td></tr>
+   <tr class="" style=""><td>autoPowerOff</td><td><span class="TT">Sets automatic turning off the camera.</span></td></tr>
+   <tr class="" style=""><td>protune</td><td><span class="TT">Switches protune on or of.</span></td></tr>
+   <tr class="" style=""><td>bootMode</td><td><span class="TT">Sets default boot mode of camera</span></td></tr>
+   <tr class="" style=""><td>loopVideo</td><td><span class="TT">Sets video in loop.</span></td></tr>
+   <tr class="" style=""><td>burstRate</td><td><span class="TT"><span class="KeyEvent">Esc</span>Sets rate of burst mode.</span></td></tr>
+   <tr class="" style=""><td>continuousShot</td><td><span class="TT">Sets continuous photo.</span></td></tr>
+   <tr class="" style=""><td>lowLight</td><td><span class="TT">Switches low light on or off.</span></td></tr>
+   <tr class="" style=""><td>whiteBalance</td><td><span class="TT">Sets white balance.</span></td></tr>
+   <tr class="" style=""><td>photoInVideo</td><td><span class="TT">Sets photo in video.</span></td></tr>
+  </table>
+ </div>
+ <p class="Caption"><a name="1466032346"></a>Setting camera parameters for HERO3.</p>
+ <div class="MathTable DefinitionBox">
+  <a name="188903013"></a>
+  <table class="nogridboxdividers">
+   <col width="40%" />
+   <col width="60%" />
+   <tr class="lineAbove" style=""><td>videoResolution</td><td><span class="TT">Sets video resolution.</span></td></tr>
+   <tr class="" style=""><td>fov</td><td><span class="TT">Sets the field of view.</span></td></tr>
+   <tr class="" style=""><td>fps</td><td><span class="TT">Sets frames per second.</span></td></tr>
+   <tr class="" style=""><td>videoMode</td><td><span class="TT">Sets camera to given mode.</span></td></tr>
+   <tr class="" style=""><td>photoResolution</td><td><span class="TT">Sets photo resolution.</span></td></tr>
+   <tr class="" style=""><td>timeLapse</td><td><span class="TT">Sets Time lapse interval.</span></td></tr>
+   <tr class="" style=""><td>volume</td><td><span class="TT">Sets volume of camera beeping</span></td></tr>
+   <tr class="" style=""><td>led</td><td><span class="TT">Sets number of flashing camera led makes.</span></td></tr>
+   <tr class="" style=""><td>spotMeter</td><td><span class="TT">Switches spot meter on or off.</span></td></tr>
+   <tr class="" style=""><td>autoPowerOff</td><td><span class="TT">Sets automatic turning off the camera.</span></td></tr>
+   <tr class="" style=""><td>protune</td><td><span class="TT">Switches protune on or of.</span></td></tr>
+   <tr class="" style=""><td>bootMode</td><td><span class="TT">Sets default boot mode of camera</span></td></tr>
+   <tr class="" style=""><td>loopVideo</td><td><span class="TT">Sets video in loop.</span></td></tr>
+   <tr class="" style=""><td>burstRate</td><td><span class="TT"><span class="KeyEvent">Esc</span>Sets rate of burst mode.</span></td></tr>
+   <tr class="" style=""><td>continuousShot</td><td><span class="TT">Sets continuous photo.</span></td></tr>
+   <tr class="" style=""><td>lowLight</td><td><span class="TT">Switches low light on or off.</span></td></tr>
+   <tr class="" style=""><td>whiteBalance</td><td><span class="TT">Sets white balance.</span></td></tr>
+   <tr class="" style=""><td>photoInVideo</td><td><span class="TT">Sets photo in video.</span></td></tr>
+   <tr class="" style=""><td>colorProfile</td><td><span class="TT">Sets color profile.</span></td></tr>
+   <tr class="" style=""><td>iso</td><td><span class="TT">Sets iso.</span></td></tr>
+   <tr class="" style=""><td>sharpness</td><td><span class="TT">Sets sharpness.</span></td></tr>
+   <tr class="" style=""><td>exposure</td><td><span class="TT">Sets exposure compensation.</span></td></tr>
+  </table>
+ </div>
+ <p class="Caption"><a name="923594839"></a>Setting camera parameters for HERO3+.</p>
+ <div class="MCap"><a name="441051913"></a>Setting package to HERO3/HERO3+</div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[16]:=</td><td class="Input"><div>
+      <a name="1211772279"></a>
+      <img src="Files/HERO3/I_18.png"
+          height="84"
+          width="357"
+          alt="Click for copyable input" />
+     </div><div id="i_17_out" class="IFL"></div></td></tr>
+  </table>
+  <div class="Print">
+   <a name="1199642347"></a>
+   <img class="FlushInput"
+       src="Files/HERO3/Image_4.gif"
+       alt=" " />
+  </div>
+  <table class="OCell">
+   <tr><td class="lab">Out[18]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_5.png"
+          height="16"
+          width="30"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="MCap"><a name="2011084192"></a>It is important to turn on the camera before trying to control it ! Otherwise the package will not work properly.</div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[7]:=</td><td class="Input"><div>
+      <a name="1341113980"></a>
+      <img src="Files/HERO3/I_20.png"
+          height="16"
+          width="83"
+          alt="Click for copyable input" />
+     </div><div id="i_19_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[7]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_6.png"
+          height="43"
+          width="346"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="MCap"><a name="1353514701"></a>Get possible parameters for some setting</div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[20]:=</td><td class="Input"><div>
+      <a name="1387146263"></a>
+      <img src=""
+          data-src="Files/HERO3/I_22.png"
+          data-big="476 33"
+          data-small="342 33"
+          alt="Click for copyable input" />
+     </div><div id="i_21_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[20]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_7.png"
+          height="16"
+          width="101"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[21]:=</td><td class="Input"><div>
+      <a name="915282352"></a>
+      <img src="Files/HERO3/I_24.png"
+          height="16"
+          width="163"
+          alt="Click for copyable input" />
+     </div><div id="i_23_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[21]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_8.png"
+          height="16"
+          width="177"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[22]:=</td><td class="Input"><div>
+      <a name="199735315"></a>
+      <img src="Files/HERO3/I_26.png"
+          height="16"
+          width="185"
+          alt="Click for copyable input" />
+     </div><div id="i_25_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[22]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_9.png"
+          height="16"
+          width="93"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="MCap"><a name="1245402537"></a>Get possible parameters for some setting</div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[31]:=</td><td class="Input"><div>
+      <a name="1664779243"></a>
+      <img src=""
+          data-src="Files/HERO3/I_28.png"
+          data-big="476 33"
+          data-small="342 33"
+          alt="Click for copyable input" />
+     </div><div id="i_27_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[31]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_10.png"
+          height="16"
+          width="101"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[32]:=</td><td class="Input"><div>
+      <a name="257847417"></a>
+      <img src="Files/HERO3/I_30.png"
+          height="16"
+          width="163"
+          alt="Click for copyable input" />
+     </div><div id="i_29_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[32]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_11.png"
+          height="16"
+          width="177"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[33]:=</td><td class="Input"><div>
+      <a name="1468055911"></a>
+      <img src="Files/HERO3/I_32.png"
+          height="16"
+          width="185"
+          alt="Click for copyable input" />
+     </div><div id="i_31_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[33]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_12.png"
+          height="16"
+          width="93"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[34]:=</td><td class="Input"><div>
+      <a name="1702277935"></a>
+      <img src="Files/HERO3/I_34.png"
+          height="16"
+          width="157"
+          alt="Click for copyable input" />
+     </div><div id="i_33_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[34]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_13.png"
+          height="16"
+          width="452"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="MCap"><a name="388558967"></a>Example of setting camera parameters.</div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[37]:=</td><td class="Input"><div>
+      <a name="940580666"></a>
+      <img src="Files/HERO3/I_36.png"
+          height="16"
+          width="147"
+          alt="Click for copyable input" />
+     </div><div id="i_35_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[37]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_14.png"
+          height="50"
+          width="478"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <table class="InCell">
+  <tr><td class="lab">In[38]:=</td><td class="Input"><div>
+     <a name="251470906"></a>
+     <img src="Files/HERO3/I_38.png"
+         height="16"
+         width="164"
+         alt="Click for copyable input" />
+    </div><div id="i_37_out" class="IFL"></div></td></tr>
+ </table>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[39]:=</td><td class="Input"><div>
+      <a name="274056890"></a>
+      <img src="Files/HERO3/I_40.png"
+          height="50"
+          width="260"
+          alt="Click for copyable input" />
+     </div><div id="i_39_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[39]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_15.png"
+          height="16"
+          width="101"
+          alt="" />
+     </div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[41]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_16.png"
+          height="16"
+          width="277"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="MCap"><a name="1445740488"></a>Next example will show you how to see which parameters are set on camera</div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[42]:=</td><td class="Input"><div>
+      <a name="1967973851"></a>
+      <img src="Files/HERO3/I_42.png"
+          height="16"
+          width="391"
+          alt="Click for copyable input" />
+     </div><div id="i_41_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[42]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_17.png"
+          height="16"
+          width="462"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[43]:=</td><td class="Input"><div>
+      <a name="103095197"></a>
+      <img src="Files/HERO3/I_44.png"
+          height="16"
+          width="385"
+          alt="Click for copyable input" />
+     </div><div id="i_43_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[43]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_18.png"
+          height="84"
+          width="493"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[44]:=</td><td class="Input"><div>
+      <a name="1524235264"></a>
+      <img src="Files/HERO3/I_46.png"
+          height="16"
+          width="110"
+          alt="Click for copyable input" />
+     </div><div id="i_45_out" class="IFL"></div></td></tr>
+  </table>
+  <div class="Print">
+   <a name="1026690036"></a>
+   <img class="FlushInput"
+       src="Files/HERO3/Image_5.gif"
+       alt=" " />
+  </div>
+ </div>
+ <h2 class="Section"><a name="2020261348"></a>Controlling the camera</h2>
+ <p class="Text"><a name="933781132"></a>We can control camera via functions for shutter and for changing camera mode. </p>
+ <div class="MathTable DefinitionBox">
+  <a name="1458783392"></a>
+  <table class="nogridboxdividers">
+   <col width="40%" />
+   <col width="60%" />
+   <tr class="lineAbove" style=""><td>goProTurnOn<span class="openbracket">[</span><span class="closebracket">]</span></td><td><span class="TT">turns on camera</span></td></tr>
+   <tr class="" style=""><td>goProTurnOff<span class="openbracket">[</span><span class="closebracket">]</span></td><td><span class="TT">turns off camera</span></td></tr>
+   <tr class="" style=""><td>goProShutter<span class="openbracket">[</span><span class="closebracket">]</span></td><td><span class="TT"><span class="specialcharacters">starts recording or take a photo <span class="openparenthesis">(</span>depends on camera mode<span class="closeparenthesis">)</span></span></span></td></tr>
+   <tr class="" style=""><td>goProStop<span class="openbracket">[</span><span class="closebracket">]</span></td><td><span class="TT">stops recording</span></td></tr>
+   <tr class="" style=""><td>goProMode<span class="openbracket">[</span>mode<span class="closebracket">]</span></td><td><span class="TT">sets camera mode to parameter given</span></td></tr>
+   <tr class="" style=""><td>goProGetPossibleModes<span class="openbracket">[</span><span class="closebracket">]</span></td><td><span class="TT">returns possible modes on camera</span></td></tr>
+   <tr class="" style=""><td>goProVideoMode<span class="openbracket">[</span><span class="closebracket">]</span></td><td><span class="TT">switches camera to video mode</span></td></tr>
+   <tr class="" style=""><td>goProPhotoMode<span class="openbracket">[</span><span class="closebracket">]</span></td><td><span class="TT">switches camera to photo mode</span></td></tr>
+   <tr class="" style=""><td>goProBurstMode<span class="openbracket">[</span><span class="closebracket">]</span></td><td><span class="TT">switches camera to burst mode</span></td></tr>
+   <tr class="" style=""><td>goProTimeLapseMode<span class="openbracket">[</span><span class="closebracket">]</span></td><td><span class="TT">switches camera to Time lapse mode</span></td></tr>
+  </table>
+ </div>
+ <p class="Caption"><a name="521916346"></a>Controlling the camera.</p>
+ <div class="MCap"><a name="210530946"></a>It is important to turn on the camera before trying to control it !</div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[33]:=</td><td class="Input"><div>
+      <a name="799893120"></a>
+      <img src="Files/HERO3/I_48.png"
+          height="33"
+          width="92"
+          alt="Click for copyable input" />
+     </div><div id="i_47_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[34]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_19.png"
+          height="16"
+          width="89"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[42]:=</td><td class="Input"><div>
+      <a name="1221517305"></a>
+      <img src="Files/HERO3/I_50.png"
+          height="16"
+          width="101"
+          alt="Click for copyable input" />
+     </div><div id="i_49_out" class="IFL"></div></td></tr>
+  </table>
+  <img src="Files/HERO3/6.gif"
+      height="15"
+      width="635"
+      alt=""
+      class="Message" />
+  <img src="Files/HERO3/7.gif"
+      height="15"
+      width="275"
+      alt=""
+      class="Message" />
+ </div>
+ <table class="InCell">
+  <tr><td class="lab">In[43]:=</td><td class="Input"><div>
+     <a name="925523387"></a>
+     <img src="Files/HERO3/I_52.png"
+         height="16"
+         width="87"
+         alt="Click for copyable input" />
+    </div><div id="i_51_out" class="IFL"></div></td></tr>
+ </table>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[44]:=</td><td class="Input"><div>
+      <a name="881838120"></a>
+      <img src="Files/HERO3/I_54.png"
+          height="16"
+          width="101"
+          alt="Click for copyable input" />
+     </div><div id="i_53_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[44]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_20.png"
+          height="16"
+          width="89"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="MCap"><a name="1728828580"></a>Switching modes</div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[45]:=</td><td class="Input"><div>
+      <a name="195503368"></a>
+      <img src="Files/HERO3/I_56.png"
+          height="16"
+          width="113"
+          alt="Click for copyable input" />
+     </div><div id="i_55_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[45]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_21.png"
+          height="43"
+          width="346"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[46]:=</td><td class="Input"><div>
+      <a name="130790836"></a>
+      <img src="Files/HERO3/I_58.png"
+          height="16"
+          width="101"
+          alt="Click for copyable input" />
+     </div><div id="i_57_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[46]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_22.png"
+          height="16"
+          width="89"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[47]:=</td><td class="Input"><div>
+      <a name="836854765"></a>
+      <img src="Files/HERO3/I_60.png"
+          height="16"
+          width="84"
+          alt="Click for copyable input" />
+     </div><div id="i_59_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[47]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_23.png"
+          height="43"
+          width="346"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[48]:=</td><td class="Input"><div>
+      <a name="693477158"></a>
+      <img src="Files/HERO3/I_62.png"
+          height="16"
+          width="101"
+          alt="Click for copyable input" />
+     </div><div id="i_61_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[48]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_24.png"
+          height="16"
+          width="329"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[49]:=</td><td class="Input"><div>
+      <a name="983308975"></a>
+      <img src="Files/HERO3/I_64.png"
+          height="16"
+          width="102"
+          alt="Click for copyable input" />
+     </div><div id="i_63_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[49]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_25.png"
+          height="43"
+          width="346"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[50]:=</td><td class="Input"><div>
+      <a name="703823027"></a>
+      <img src="Files/HERO3/I_66.png"
+          height="16"
+          width="84"
+          alt="Click for copyable input" />
+     </div><div id="i_65_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[50]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_26.png"
+          height="43"
+          width="346"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[51]:=</td><td class="Input"><div>
+      <a name="465212027"></a>
+      <img src="Files/HERO3/I_68.png"
+          height="16"
+          width="68"
+          alt="Click for copyable input" />
+     </div><div id="i_67_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[51]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_27.png"
+          height="43"
+          width="346"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[52]:=</td><td class="Input"><div>
+      <a name="1474418717"></a>
+      <img src="Files/HERO3/I_70.png"
+          height="16"
+          width="101"
+          alt="Click for copyable input" />
+     </div><div id="i_69_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[52]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_28.png"
+          height="16"
+          width="416"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[53]:=</td><td class="Input"><div>
+      <a name="553190623"></a>
+      <img src="Files/HERO3/I_72.png"
+          height="16"
+          width="92"
+          alt="Click for copyable input" />
+     </div><div id="i_71_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[53]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_29.png"
+          height="43"
+          width="346"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[54]:=</td><td class="Input"><div>
+      <a name="1863964437"></a>
+      <img src="Files/HERO3/I_74.png"
+          height="16"
+          width="101"
+          alt="Click for copyable input" />
+     </div><div id="i_73_out" class="IFL"></div></td></tr>
+  </table>
+  <img src="Files/HERO3/8.gif"
+      height="15"
+      width="635"
+      alt=""
+      class="Message" />
+  <img src="Files/HERO3/9.gif"
+      height="15"
+      width="275"
+      alt=""
+      class="Message" />
+ </div>
+ <h2 class="Section"><a name="889545618"></a>Downloading and deleting files from camera</h2>
+ <p class="Text"><a name="377864662"></a>The downloading files from camera is quiet simple. It is possible to download it manually from http://10.5.5.9:8080/DCIM/ or by using functions from this package.</p>
+ <p class="Text"><a name="419917810"></a>There are three functions that are made to make downloading easy.  Functions goProGetURLBase and goProSetURLBase will let you know or let you set the URL from which data will be downloaded. The default value is http://10.5.5.9:8080/DCIM/100GOPRO/ </p>
+ <p class="Text"><a name="127719993"></a>The function goProGetFileList will return list of files at the address  which is set by goProSetURLBase or at default URL ( http://10.5.5.9:8080/DCIM/100GOPRO/ ).</p>
+ <p class="Text"><a name="443817208"></a>Finally function goProDownloadFile will let you download file which name you give as parameter. You can use it for downloading single file or list of files. To get names of files you can use function goProGetFileList. Function goProDownloadAllFiles downloads all files from camera which are in folder set by goProSetURLBase.</p>
+ <div class="MathTable DefinitionBox">
+  <a name="1978788228"></a>
+  <table class="nogridboxdividers">
+   <col width="40%" />
+   <col width="60%" />
+   <tr class="lineAbove" style=""><td>goProSetURLBase <span class="openbracket">[</span>url_String<span class="closebracket">]</span></td><td><span class="TT">lets you set url of folder from which you want to download files. Default value is http://10.5.5.9:8080/DCIM/100GOPRO/ </span></td></tr>
+   <tr class="" style=""><td>goProGetURLBase<span class="openbracket">[</span> <span class="closebracket">]</span></td><td><span class="TT">returns String of url  from which files will be downloaded</span></td></tr>
+   <tr class="" style=""><td>goProDownloadFile<span class="openbracket">[</span>name<span class="comma">,</span>dest<span class="closebracket">]</span></td><td><span class="TT">downloads file named <span class="TI">name</span>  from camera to the destination <span class="TI">dest</span></span></td></tr>
+   <tr class="" style=""><td>goProDownloadAllFiles <span class="openbracket">[</span>dest<span class="closebracket">]</span></td><td><span class="TT">download all files from camera to destination given</span></td></tr>
+   <tr class="" style=""><td>goProGetFileList <span class="openbracket">[</span><span class="closebracket">]</span></td><td><span class="TT">returns List of file names present in folder which you get by goProGetURLBase</span></td></tr>
+   <tr class="" style=""><td>goProGetFileURL<span class="openbracket">[</span>name<span class="closebracket">]</span></td><td><span class="TT">returns string of whole URL to the file which name is given as parameter</span></td></tr>
+  </table>
+ </div>
+ <p class="Caption"><a name="110642876"></a>Functions for downloading files from camera.</p>
+ <p class="Text"><a name="438773335"></a>For deleting files we have two functions. One for deleting all files from camera and other for deleting only last file captured.</p>
+ <div class="MathTable DefinitionBox">
+  <a name="1287667594"></a>
+  <table class="nogridboxdividers">
+   <col width="40%" />
+   <col width="60%" />
+   <tr class="lineAbove" style=""><td>goProDeleteLast<span class="openbracket">[</span> <span class="closebracket">]</span></td><td><span class="TT">deletes last file taken on camera</span></td></tr>
+   <tr class="" style=""><td>goProDeleteAll<span class="openbracket">[</span> <span class="closebracket">]</span></td><td><span class="TT">deletes all files on camera</span></td></tr>
+  </table>
+ </div>
+ <p class="Caption"><a name="1083167274"></a>Deleting functions.</p>
+ <div class="MCap"><a name="1771579100"></a>Example of downloading images</div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[5]:=</td><td class="Input"><div>
+      <a name="210546345"></a>
+      <img src="Files/HERO3/I_76.png"
+          height="67"
+          width="357"
+          alt="Click for copyable input" />
+     </div><div id="i_75_out" class="IFL"></div></td></tr>
+  </table>
+  <div class="Print">
+   <a name="1027641970"></a>
+   <img class="FlushInput"
+       src="Files/HERO3/Image_10.gif"
+       alt=" " />
+  </div>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[26]:=</td><td class="Input"><div>
+      <a name="1761096403"></a>
+      <img src="Files/HERO3/I_78.png"
+          height="16"
+          width="101"
+          alt="Click for copyable input" />
+     </div><div id="i_77_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[26]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_30.png"
+          height="16"
+          width="174"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[27]:=</td><td class="Input"><div>
+      <a name="608573309"></a>
+      <img src="Files/HERO3/I_80.png"
+          height="16"
+          width="260"
+          alt="Click for copyable input" />
+     </div><div id="i_79_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[27]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_31.png"
+          height="16"
+          width="278"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[28]:=</td><td class="Input"><div>
+      <a name="1308078202"></a>
+      <img src="Files/HERO3/I_82.png"
+          height="16"
+          width="72"
+          alt="Click for copyable input" />
+     </div><div id="i_81_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[28]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_32.png"
+          height="362"
+          width="483"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[29]:=</td><td class="Input"><div>
+      <a name="885347940"></a>
+      <img src="Files/HERO3/I_84.png"
+          height="16"
+          width="182"
+          alt="Click for copyable input" />
+     </div><div id="i_83_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[29]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_33.png"
+          height="20"
+          width="353"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="MCap"><a name="225972517"></a>Example of deleting files on camera</div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[12]:=</td><td class="Input"><div>
+      <a name="1751402591"></a>
+      <img src="Files/HERO3/I_86.png"
+          height="16"
+          width="101"
+          alt="Click for copyable input" />
+     </div><div id="i_85_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[12]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_34.png"
+          height="16"
+          width="345"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[13]:=</td><td class="Input"><div>
+      <a name="914623406"></a>
+      <img src="Files/HERO3/I_88.png"
+          height="16"
+          width="101"
+          alt="Click for copyable input" />
+     </div><div id="i_87_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[13]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_35.png"
+          height="43"
+          width="346"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[14]:=</td><td class="Input"><div>
+      <a name="1967417371"></a>
+      <img src="Files/HERO3/I_90.png"
+          height="16"
+          width="101"
+          alt="Click for copyable input" />
+     </div><div id="i_89_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[14]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_36.png"
+          height="16"
+          width="260"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[15]:=</td><td class="Input"><div>
+      <a name="21305103"></a>
+      <img src="Files/HERO3/I_92.png"
+          height="16"
+          width="92"
+          alt="Click for copyable input" />
+     </div><div id="i_91_out" class="IFL"></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[15]=</td><td class="Output"><div class="output-image">
+      <img src="Files/HERO3/O_37.png"
+          height="43"
+          width="346"
+          alt="" />
+     </div></td></tr>
+  </table>
+ </div>
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab">In[16]:=</td><td class="Input"><div>
+      <a name="889608403"></a>
+      <img src="Files/HERO3/I_94.png"
+          height="16"
+          width="101"
+          alt="Click for copyable input" />
+     </div><div id="i_93_out" class="IFL"></div></td></tr>
+  </table>
+  <img src="Files/HERO3/11.gif"
+      height="15"
+      width="635"
+      alt=""
+      class="Message" />
+  <img src="Files/HERO3/12.gif"
+      height="15"
+      width="275"
+      alt=""
+      class="Message" />
+ </div>
+</div>
+</div><!-- /wrapper -->
+
+
+	
+</div>
+
+
+</body></html>

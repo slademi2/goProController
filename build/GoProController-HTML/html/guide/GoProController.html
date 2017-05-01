@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <meta charset="UTF-8">
+
+<title>GoProController Package&mdash;Wolfram Language Documentation</title>
+<meta name="buildnumber" content="0000000" />
+<meta name="historydata" content="{0.0, , , }" />
+<meta name="keywords" content="GoProController" />
+
+<meta name="description" content="GoProController is a library of functions used to control GoPro cameras. It contains many functions to set every possible parameter of camera such as resolution, FPS, FOV, etc. It also contains functions for downloading recorded content from camera. Get to know your camera well. You need to know which parameters can be set for each setting of camera. There are functions which will help you to choose right parameters but they are not unmistakable. This package was tested only on GoPro HERO 3+ Black edition and HERO4 Silver edition so it may contain bugs for other cameras." />
+<script language="JavaScript" type="text/javascript">baselang='GoProController';</script>
+<!--#include virtual="/common/includes/gl-head-includes.html"-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--[if IE]>
+<style type="text/css">
+/* doctype problem overrides */
+#menu .searchboxsub, #menu .searchboxsub-on { padding-bottom: 0; }
+#menu .headerSearchSubmit { margin-bottom: 4px; }
+
+/*
+.WRIdropMenu .WRImenuContents { margin-top: -2px; margin-left: -2px; }
+.WRIdropMenu .WRImenuContents .WRImenuContents { margin: 0; }
+*/
+</style>
+<![endif]-->
+<link rel="stylesheet" href="/webMathematica/Resources/Documentation/English/css/reference.css" />
+
+<script src="/webMathematica/Resources/Documentation/English/javascript/reference.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/documentation-search.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/faster-page-load.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/hyperlink-filter.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/brokenlinks.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/clipboard.js"></script>
+<script src="/webMathematica/Resources/Documentation/English/javascript/image-swap.js"></script>
+
+<!--#include virtual="/2013/includes/carousel-head.html"--> 
+</head>
+<body id="guide">
+<a name="top"></a>
+ 
+<div class="main-wrapper">
+<div class="outer-wrapper">
+
+<div class="wrapper mainOuter">
+    <div class="mainContent">
+ <div class="topContentWrap">
+  <div class="ribbonWrap">
+   <span class="ribbonOuter"><span class="ribbonInner">GO PRO CONTROLLER GUIDE</span></span>
+  </div>
+  <ul class="dropdown">
+   <li>
+    <a href="#">Functions</a>
+    <ul class="sub_menu">
+     <li>
+      <a href="/language/GoProController/ref/goProGet.html"><span class="dropdownPad">goProGet</span></a>
+     </li>
+     <li>
+      <a href="/language/GoProController/ref/goProGetPossibleCamera.html"><span class="dropdownPad">goProGetPossibleCamera</span></a>
+     </li>
+     <li>
+      <a href="/language/GoProController/ref/goProGetPossibleCameraModel.html"><span class="dropdownPad">goProGetPossibleCameraModel</span></a>
+     </li>
+     <li>
+      <a href="/language/GoProController/ref/goProSet.html"><span class="dropdownPad">goProSet</span></a>
+     </li>
+     <li>
+      <a href="/language/GoProController/ref/goProSetCamera.html"><span class="dropdownPad">goProSetCamera</span></a>
+     </li>
+     <li>
+      <a href="/language/GoProController/ref/goProSetCameraModel.html"><span class="dropdownPad">goProSetCameraModel</span></a>
+     </li>
+     <li>
+      <a href="/language/GoProController/ref/goProSetPassword.html"><span class="dropdownPad">goProSetPassword</span></a>
+     </li>
+     <li>
+      <a href="/language/GoProController/ref/goProShutter.html"><span class="dropdownPad">goProShutter</span></a>
+     </li>
+     <li>
+      <a href="/language/GoProController/ref/goProStop.html"><span class="dropdownPad">goProStop</span></a>
+     </li>
+     <li>
+      <a href="/language/GoProController/ref/goProTurnOff.html"><span class="dropdownPad">goProTurnOff</span></a>
+     </li>
+     <li>
+      <a href="/language/GoProController/ref/goProTurnOn.html"><span class="dropdownPad">goProTurnOn</span></a>
+     </li>
+     <li>
+      <a href="/language/GoProController/tutorial/HERO2.html"><span class="dropdownPad">HERO2</span></a>
+     </li>
+     <li>
+      <a href="/language/GoProController/tutorial/HERO4.html"><span class="dropdownPad">HERO4</span></a>
+     </li>
+     <li>
+      <a href="/language/ref/List.html"><span class="dropdownPad">List</span></a>
+     </li>
+     <li>
+      <a href="/language/ref/Options.html"><span class="dropdownPad">Options</span></a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#">Tutorials</a>
+    <ul class="sub_menu">
+     <li>
+      <a href="/language/GoProController/tutorial/HERO2.html"><span class="dropdownPad">HERO2&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+     </li>
+     <li>
+      <a href="/language/GoProController/tutorial/HERO3AndHERO3+.html"><span class="dropdownPad">HERO3 &amp; HERO3+</span></a>
+     </li>
+     <li>
+      <a href="/language/GoProController/tutorial/HERO4.html"><span class="dropdownPad">HERO4</span></a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+  <div class="clear"><!-- --></div>
+ </div>
+ <h1><a name="942062912"></a>GoProController Package</h1>
+ <p class="intro"><a name="2001916300"></a>GoProController is a library of functions used to control GoPro cameras. It contains many functions to set every possible parameter of camera such as resolution, FPS,  FOV, etc. It also contains functions for downloading recorded content from camera.<span class='br'>&nbsp;</span>Get to know your camera well. You need to know which parameters can be set for each setting of camera. There are functions which will help you to choose right parameters but they are not unmistakable. This package was tested only on GoPro HERO 3+ Black edition and HERO4 Silver edition so it may contain bugs for other cameras.</p>
+ <div class="expandWrap">
+  <div class="expandOuter">
+   <h2 class="expandInner"><a class="expand hide" title="show" href="#"><img src="Files/GoProController/1.gif" height="17" width="6" alt="" /><br />Functions listed bellow are crucial for this package to work right and you will have to call them before trying controlling the GoPro camera.</a><a class="collapse" title="hide" href="#"><img src="Files/GoProController/1.gif" height="17" width="6" alt="" /><br />Functions listed bellow are crucial for this package to work right and you will have to call them before trying controlling the GoPro camera.</a></h2>
+   <div class="expanded">
+    <div class="GuideDelimiterTop"><!-- --></div>
+    <p class="singleFunction"><a name="203374175"></a><span class="IFSans"><a class="package-symbol" href="../ref/goProSetCamera.html">goProSetCamera</a></span> <span class="dash">&mdash;</span> function for setting camera model. You have to set camera model before using this package further.</p>
+    <p class="singleFunction"><a name="1463276848"></a><span class="IFSans"><a class="package-symbol" href="../ref/goProGetPossibleCamera.html">goProGetPossibleCamera</a></span> <span class="dash">&mdash;</span> function returning <a href="http://reference.wolfram.com/language/ref/List.html">List</a> of possible models for function <span class="IFSans"><a class="package-symbol" href="../ref/goProSetCamera.html">goProSetCamera</a></span>.<br /><span class="IFSans"><a class="package-symbol" href="../ref/goProSetCameraModel.html">goProSetCameraModel</a></span> <span class="dash">&mdash;</span> function for setting further specification of camera model. That has to be set to make this package fully work.<br /><span class="IFSans"><a class="package-symbol" href="../ref/goProGetPossibleCameraModel.html">goProGetPossibleCameraModel</a></span>  <span class="dash">&mdash;</span> function returning <a href="http://reference.wolfram.com/language/ref/List.html">List</a> of possible models for function <span class="IFSans"><a class="package-symbol" href="../ref/goProSetCameraModel.html">goProSetCameraModel</a></span><br /><span class="IFSans"><a class="package-symbol" href="../ref/goProSetPassword.html">goProSetPassword</a></span>  <span class="dash">&mdash;</span>  function which will let you set password for WiFi which camera distributes.  You will have to set password if you want to use HERO3 or HERO3+.</p>
+   </div>
+  </div>
+ </div>
+ <div class="expandWrap">
+  <div class="expandOuter">
+   <h2 class="expandInner"><a class="expand hide" title="show" href="#"><img src="Files/GoProController/2.gif" height="17" width="6" alt="" /><br />Functions listed bellow control GoPro camera.</a><a class="collapse" title="hide" href="#"><img src="Files/GoProController/2.gif" height="17" width="6" alt="" /><br />Functions listed bellow control GoPro camera.</a></h2>
+   <div class="expanded">
+    <div class="GuideDelimiterTop"><!-- --></div>
+    <p class="singleFunction"><a name="1914796280"></a><span class="IFSans"><a class="package-symbol" href="../ref/goProSet.html">goProSet</a></span>  <span class="dash">&mdash;</span>  function for setting every possible setting of camera via <a href="http://reference.wolfram.com/language/ref/Options.html">Options</a>.<br /><span class="IFSans"><a class="package-symbol" href="../ref/goProGet.html">goProGet</a></span>  <span class="dash">&mdash;</span>  lets you see how the camera is set.<br /><span class="IFSans"><a class="package-symbol" href="../ref/goProTurnOn.html">goProTurnOn</a></span>  <span class="dash">&mdash;</span> turns on the camera.<br /><span class="IFSans"><a class="package-symbol" href="../ref/goProTurnOff.html">goProTurnOff</a></span>  <span class="dash">&mdash;</span> turns off the camera.<br /><span class="IFSans"><a class="package-symbol" href="../ref/goProShutter.html">goProShutter</a></span>  <span class="dash">&mdash;</span> camera starts recording or takes a photo.<br /><span class="IFSans"><a class="package-symbol" href="../ref/goProStop.html">goProStop</a></span>   <span class="dash">&mdash;</span> camera stops recording.</p>
+   </div>
+  </div>
+ </div>
+ <div class="expandWrap">
+  <div class="expandOuter">
+   <h2 class="expandInner"><a class="expand hide" title="show" href="#"><img src="Files/GoProController/3.gif" height="17" width="6" alt="" />Tutorials for controlling GoProCamera</a><a class="collapse" title="hide" href="#"><img src="Files/GoProController/3.gif" height="17" width="6" alt="" />Tutorials for controlling GoProCamera</a></h2>
+   <div class="expanded">
+    <div class="GuideDelimiterTop"><!-- --></div>
+    <p class="singleFunction"><a name="1231741363"></a><a href="../tutorial/HERO2.html">HERO2</a>  <span class="dash">&mdash;</span> Tutorial for GoPro HERO2.<br /><a href="../tutorial/HERO3.html">HERO3 &amp; HERO3+</a> <span class="dash">&mdash;</span>  Tutorial for GoPro HERO3 and HERO3+.<br /><a href="../tutorial/HERO4.html">HERO4</a>  <span class="dash">&mdash;</span> Tutorial for GoProHero4.</p>
+   </div>
+  </div>
+ </div>
+</div>
+</div><!-- /wrapper -->
+
+	
+</div>
+
+
+</body></html>

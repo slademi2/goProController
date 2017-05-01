@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     11396,        331]
-NotebookOptionsPosition[      8890,        266]
-NotebookOutlinePosition[     10713,        308]
-CellTagsIndexPosition[     10670,        305]
+NotebookDataLength[     15857,        457]
+NotebookOptionsPosition[     12733,        380]
+NotebookOutlinePosition[     14891,        426]
+CellTagsIndexPosition[     14848,        423]
 WindowTitle->GoProController Package
 WindowFrame->Normal*)
 
@@ -32,26 +32,59 @@ Cell[BoxData[GridBox[{
          TextCell[
           Row[{"Functions", 
             Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
-        StripOnInput->False], {"\<\"goProGetPossibleCamera\"\>":>
-       Documentation`HelpLookup[
+        StripOnInput->False], {"\<\"goProGet\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProGet"], \
+"\<\"goProGetPossibleCamera\"\>":>Documentation`HelpLookup[
        "paclet:GoProController/ref/goProGetPossibleCamera"], \
 "\<\"goProGetPossibleCameraModel\"\>":>Documentation`HelpLookup[
        "paclet:GoProController/ref/goProGetPossibleCameraModel"], \
-"\<\"goProReport\"\>":>Documentation`HelpLookup[
-       "paclet:GoProController/ref/goProReport"], "\<\"goProSet\"\>":>
-       Documentation`HelpLookup[
+"\<\"goProSet\"\>":>Documentation`HelpLookup[
        "paclet:GoProController/ref/goProSet"], "\<\"goProSetCamera\"\>":>
        Documentation`HelpLookup[
        "paclet:GoProController/ref/goProSetCamera"], "\<\"goProSetCameraModel\
 \"\>":>Documentation`HelpLookup[
        "paclet:GoProController/ref/goProSetCameraModel"], \
 "\<\"goProSetPassword\"\>":>Documentation`HelpLookup[
-       "paclet:GoProController/ref/goProSetPassword"], "\<\"List\"\>":>
+       "paclet:GoProController/ref/goProSetPassword"], "\<\"goProShutter\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProShutter"], "\<\"goProStop\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProStop"], "\<\"goProTurnOff\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProTurnOff"], "\<\"goProTurnOn\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProTurnOn"], "\<\"HERO2\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/tutorial/HERO2"], "\<\"HERO4\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/tutorial/HERO4"], "\<\"List\"\>":>
        Documentation`HelpLookup["paclet:ref/List"], "\<\"Options\"\>":>
        Documentation`HelpLookup["paclet:ref/Options"]},
        Appearance->None,
        MenuAppearance->Automatic,
        MenuStyle->"GuideFunction"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Tutorials",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Tutorials", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"HERO2\\t\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/tutorial/HERO2"], "\<\"HERO3 & HERO3+\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/tutorial/HERO3AndHERO3+"], "\<\"HERO4\"\>":>
+       Documentation`HelpLookup["paclet:GoProController/tutorial/HERO4"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"GuideTutorial"]],
       LineSpacing->{1.4, 0}],
      "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
 \[ThickSpace]",
@@ -96,7 +129,7 @@ GoProController.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$1985], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2225], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "GoProController/guide/GoProController", ".html"]], None}]}]},
@@ -106,10 +139,6 @@ GoProController.html"], StandardForm]], "Input", TextClipboardType ->
       LineSpacing->{1.4, 0}]
     }], "AnchorBar"]}
   }]], "AnchorBarGrid",
- GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
-     Scaled[0.65], {
-      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
-   "RowsIndexed" -> {}}},
  CellID->1],
 
 Cell[CellGroupData[{
@@ -121,7 +150,12 @@ Cell["\<\
 GoProController is a library of functions used to control GoPro cameras. It \
 contains many functions to set every possible parameter of camera such as \
 resolution, FPS,  FOV, etc. It also contains functions for downloading \
-recorded content from camera.\
+recorded content from camera.
+Get to know your camera well. You need to know which parameters can be set \
+for each setting of camera. There are functions which will help you to choose \
+right parameters but they are not unmistakable. This package was tested only \
+on GoPro HERO 3+ Black edition and HERO4 Silver edition so it may contain \
+bugs for other cameras.\
 \>", "GuideAbstract",
  CellID->2001916300]
 }, Open  ]],
@@ -215,7 +249,9 @@ set to make this package fully work.\n",
     "paclet:GoProController/ref/goProSetPassword"},
    "RefLink",
    BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- " -   function which will let you set password for WiFi which camera \
+ "  ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ "  function which will let you set password for WiFi which camera \
 distributes.  You will have to set password if you want to use HERO3 or \
 HERO3+."
 }], "GuideText",
@@ -235,7 +271,7 @@ Cell[TextData[{
      ImageSize->{6, 0}],
     CacheGraphics->False],
    Spacer[6]]]],
- "\nFunctions listed bellow lets you set parameters of GoPro camera."
+ "\nFunctions listed bellow control GoPro camera."
 }], "GuideFunctionsSection",
  CellID->845392231],
 
@@ -247,19 +283,97 @@ Cell[TextData[{
      TextData["goProSet"]],"paclet:GoProController/ref/goProSet"},
    "RefLink",
    BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- " -   function for setting every possible setting of camera via ",
+ "  ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ "  function for setting every possible setting of camera via ",
  ButtonBox["Options",
   BaseStyle->"Link",
   ButtonData->"paclet:ref/Options"],
  ".\n",
  Cell[BoxData[
   TemplateBox[{Cell[
-     TextData["goProReport"]],"paclet:GoProController/ref/goProReport"},
+     TextData["goProGet"]],"paclet:GoProController/ref/goProGet"},
    "RefLink",
    BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- " -   lets you see how the camera is set."
+ "  ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ "  lets you see how the camera is set.\n",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["goProTurnOn"]],"paclet:GoProController/ref/goProTurnOn"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "  ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " turns on the camera.\n",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["goProTurnOff"]],"paclet:GoProController/ref/goProTurnOff"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "  ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " turns off the camera.\n",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["goProShutter"]],"paclet:GoProController/ref/goProShutter"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "  ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " camera starts recording or takes a photo.\n",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["goProStop"]],"paclet:GoProController/ref/goProStop"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "   ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " camera stops recording."
 }], "GuideText",
- CellID->1914796280]
+ CellID->1914796280],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Tutorials for controlling GoProCamera"
+}], "GuideFunctionsSection",
+ CellID->1110246741],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ ButtonBox["HERO2",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/HERO2"],
+ "  ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Tutorial for GoPro HERO2.\n",
+ ButtonBox["HERO3 & HERO3+",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/HERO3"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ "  Tutorial for GoPro HERO3 and HERO3+.\n",
+ ButtonBox["HERO4",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/HERO4"],
+ "  ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Tutorial for GoProHero4."
+}], "GuideText",
+ CellID->1231741363]
 }, Open  ]],
 
 Cell[" ", "FooterCell"]
@@ -278,7 +392,7 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2017, 4, 25, 0, 52, 26.832367}", 
+   "built" -> "{2017, 5, 1, 20, 12, 2.731604}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -287,10 +401,14 @@ TaggingRules->{
     "GoProController is a library of functions used to control GoPro cameras. \
 It contains many functions to set every possible parameter of camera such as \
 resolution, FPS, FOV, etc. It also contains functions for downloading \
-recorded content from camera.", "synonyms" -> {}, "tabletags" -> 
-    DocumentationBuild`Make`Private`tabletaggingrules$1927, "title" -> 
-    "GoProController Package", "titlemodifier" -> "", "windowtitle" -> 
-    "GoProController Package", "type" -> "Guide", "uri" -> 
+recorded content from camera. Get to know your camera well. You need to know \
+which parameters can be set for each setting of camera. There are functions \
+which will help you to choose right parameters but they are not unmistakable. \
+This package was tested only on GoPro HERO 3+ Black edition and HERO4 Silver \
+edition so it may contain bugs for other cameras.", "synonyms" -> {}, 
+    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$2155, 
+    "title" -> "GoProController Package", "titlemodifier" -> "", 
+    "windowtitle" -> "GoProController Package", "type" -> "Guide", "uri" -> 
     "GoProController/guide/GoProController"}, "SearchTextTranslated" -> ""},
 FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
@@ -307,32 +425,40 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[595, 21, 3967, 91, 70, "AnchorBarGrid",
+Cell[595, 21, 5310, 120, 70, "AnchorBarGrid",
  CellID->1],
 Cell[CellGroupData[{
-Cell[4587, 116, 65, 1, 70, "GuideTitle",
+Cell[5930, 145, 65, 1, 70, "GuideTitle",
  CellID->942062912],
-Cell[4655, 119, 310, 6, 70, "GuideAbstract",
+Cell[5998, 148, 646, 11, 70, "GuideAbstract",
  CellID->2001916300]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5002, 130, 385, 12, 70, "GuideFunctionsSection",
+Cell[6681, 164, 385, 12, 70, "GuideFunctionsSection",
  CellID->1866139230],
-Cell[5390, 144, 31, 0, 70, "SectionHeaderSpacer"],
-Cell[5424, 146, 398, 12, 70, "GuideText",
+Cell[7069, 178, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[7103, 180, 398, 12, 70, "GuideText",
  CellID->203374175],
-Cell[5825, 160, 1995, 61, 70, "GuideText",
+Cell[7504, 194, 2040, 63, 70, "GuideText",
  CellID->1463276848],
-Cell[7823, 223, 31, 0, 70, "SectionFooterSpacer"]
+Cell[9547, 259, 31, 0, 70, "SectionFooterSpacer"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7891, 228, 305, 11, 70, "GuideFunctionsSection",
+Cell[9615, 264, 286, 11, 70, "GuideFunctionsSection",
  CellID->845392231],
-Cell[8199, 241, 31, 0, 70, "SectionHeaderSpacer"],
-Cell[8233, 243, 615, 18, 70, "GuideText",
- CellID->1914796280]
+Cell[9904, 277, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[9938, 279, 1765, 54, 70, "GuideText",
+ CellID->1914796280],
+Cell[11706, 335, 31, 0, 70, "SectionFooterSpacer"]
 }, Open  ]],
-Cell[8863, 264, 23, 0, 70, "FooterCell"]
+Cell[CellGroupData[{
+Cell[11774, 340, 277, 11, 70, "GuideFunctionsSection",
+ CellID->1110246741],
+Cell[12054, 353, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[12088, 355, 603, 20, 70, "GuideText",
+ CellID->1231741363]
+}, Open  ]],
+Cell[12706, 378, 23, 0, 70, "FooterCell"]
 }
 ]
 *)

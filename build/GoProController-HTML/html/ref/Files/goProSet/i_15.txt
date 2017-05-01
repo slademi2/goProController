@@ -1,0 +1,7 @@
+<pre name='i_15_in' id='i_15_in' class='IFT'>goProSet[videoResolution -&gt; &quot;1080p&quot;, fps -&gt; &quot;48&quot;, fov -&gt; &quot;wide&quot;, 
+ photoResolution -&gt; &quot;12W&quot;]
+goProReport[&quot;videoResolution&quot;]
+goProReport[&quot;fps&quot;]
+goProReport[&quot;fov&quot;]
+goProReport[&quot;photoResolution&quot;]
+</pre><div class='IFU'><a name='515626047'></a>http://wolfram.com/xid/0isl9lcvz6yx7jl0qfq1d24tf-is9xv1</div>

@@ -1,0 +1,2 @@
+<pre name='i_21_in' id='i_21_in' class='IFT'>goProGetPossiblePhotoRes[](*possible parameters for goProSetPhotoRes \
+or goProSet[photoResolution\[Rule]param]*)</pre><div class='IFU'><a name='1387146263'></a>http://wolfram.com/xid/04jgvtnjiehzcjjt8orlvzyfwl-w75m6x</div>

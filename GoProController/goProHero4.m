@@ -1360,7 +1360,7 @@ goProLocateStop[] :=execute[goProMakeCommand["command/system","locate?p=0"]]
 
 (* ::Subsection:: *)
 (* Delete *)
-goProDeleteLast[]:=execute[goProMakeCommand["command/storage/delete","last"]]
+goProDeleteLastFile[]:=execute[goProMakeCommand["command/storage/delete","last"]]
 goProDeleteAll[]:=execute[goProMakeCommand["command/storage/delete","all"]]
 
 

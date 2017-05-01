@@ -1,0 +1,2 @@
+<pre name='i_23_in' id='i_23_in' class='IFT'>goProSet[photoResolution -&gt; &quot;12W&quot;]
+goProGet[{photoResolution, videoResolution}]</pre><div class='IFU'><a name='274056890'></a>http://wolfram.com/xid/04jgvtnjiehzcjjt8orlvzyfwp-etf9xo</div>

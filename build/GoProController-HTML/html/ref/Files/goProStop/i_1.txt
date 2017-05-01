@@ -1,0 +1,8 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>Get[&quot;GoProController`&quot;]
+goProSetCamera[&quot;HERO3+&quot;]
+goProSetPassword[&quot;12345678&quot;];
+goProTurnOn[];
+goProGetFileList[]
+goProVideoMode[];
+goProShutter[];
+</pre><div class='IFU'><a name='2072822295'></a>http://wolfram.com/xid/08bl7iko5w0xzbk72v5aphod5-8kd17d</div>

@@ -314,8 +314,8 @@ goProGetURLBase::usage=
 	
 goProDeleteAll::usage=
 	"goProDeleteAll[ ] deletes all files on camera."
-goProDeleteLastFile::usage=
-	"goProDeleteLastFile[ ] deletes last file captured on camera."
+goProDeleteLast::usage=
+	"goProDeleteLast[ ] deletes last file captured on camera."
  (*goProDeleteFile::usage=
 	"goProDeleteFile[_String] deletes file on camera which name you put as parameter."*)
 
@@ -348,8 +348,8 @@ goProTextModeOff::usage=
 	
 	
 
-goProGetCameraModelPossible::usage=
-	"goProGetCameraModelPossible[] returns possible parameters for goProSetCameraModel. "
+goProGetPossibleCameraModel::usage=
+	"goProGetPossibleCameraModel[] returns possible parameters for goProSetCameraModel. "
 goProSetCameraModel::usage=
 	"goProSetCameraModel[ _String] Lets you specify model for camera which you set by goProSetCamera. It is 
 	important to know camera model for few functions of this library."
@@ -371,6 +371,7 @@ model="";
 modelHero3Plus={"Silver","Black"}
 modelHero3={"White","Silver","Black"}
 
+
 goProSetCameraModel::model="First you have to specificate camera model! Call goProSetCameraModel[_String]";
 goProSetCameraModel::wrong="`1` - This parameter is not supported for camera model. See goProGetCameraModelPossible.";
 goProSetCameraModel::noNeed="You don't have to set camera model for `1`";
@@ -383,7 +384,7 @@ goProSetCameraModel[param_String]:=Switch[camera,
 	],
 	_,Message[goProSetCameraModel::noNeed,camera]	
 ]
-goProGetCameraModelPossible[]:=Switch[camera,
+goProGetPossibleCameraModel[]:=Switch[camera,
 	"HERO3+",modelHero3Plus,
 	"HERO3",modelHero3,
 	_,Message[goProSetCameraModel::noNeed,camera]
@@ -1647,8 +1648,8 @@ goProGetFileURL[name_String]:=If[URLRead[HTTPRequest[urlBase<>name]]["StatusCode
 	urlBase<>name
 ]
 
-goProDeleteAll[]:=execute[goProMakeCommand["camera","DA"]]
-goProDeleteLastFile[]:=execute[goProMakeCommand["camera","DL"]]
+goProDeleteAll[]:=execute["http://10.5.5.9/camera/DA?t="<>goProPassword]
+goProDeleteLast[]:=execute["http://10.5.5.9/camera/DL?t="<>goProPassword]
 (*goProDeleteFile[name_String]:="1"*)
 
 
