@@ -1,4 +1,0 @@
-<pre name='i_75_in' id='i_75_in' class='IFT'>(*Setting the package to HERO2*)
-Get[&quot;GoProController`&quot;]
-goProSetCamera[&quot;HERO2&quot;]
-goProSetPassword[&quot;12345678&quot;] (*if the password is 12345678*);</pre><div class='IFU'><a name='210546345'></a>http://wolfram.com/xid/04jgvtnjiehzcjjt8orlvzyfwl-drm0vv</div>

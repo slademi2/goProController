@@ -1,4 +1,0 @@
-<pre name='i_9_in' id='i_9_in' class='IFT'>(*Setting the package to HERO3+*)
-Get[&quot;GoProController`&quot;]
-goProSetCamera[&quot;HERO4&quot;]
-goProSetCameraModel[&quot;Black&quot;]</pre><div class='IFU'><a name='1211772279'></a>http://wolfram.com/xid/04jgvtnjiehzcjjt8orlvzyfwp-ubqrrd</div>

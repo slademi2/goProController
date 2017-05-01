@@ -1,3 +1,0 @@
-<pre name='i_17_in' id='i_17_in' class='IFT'>goProGetPossiblePhotoRes[]
-goProSet[photoResolution -&gt; &quot;5W&quot;]
-goProGet[photoResolution]</pre><div class='IFU'><a name='274056890'></a>http://wolfram.com/xid/04jgvtnjiehzcjjt8orlvzyfwm-etf9xo</div>

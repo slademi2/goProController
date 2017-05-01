@@ -1,4 +1,0 @@
-<pre name='i_57_in' id='i_57_in' class='IFT'>(*Setting the package to HERO2*)
-Get[&quot;GoProController`&quot;]
-goProSetCamera[&quot;HERO4&quot;]
-goProSetCameraModel[&quot;Black&quot;];</pre><div class='IFU'><a name='1018173847'></a>http://wolfram.com/xid/04jgvtnjiehzcjjt8orlvzyfwp-q4g985</div>

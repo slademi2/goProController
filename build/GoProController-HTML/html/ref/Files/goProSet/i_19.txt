@@ -1,3 +1,0 @@
-<pre name='i_19_in' id='i_19_in' class='IFT'>goProSet[videoResolution -&gt; &quot;1080p&quot;, photoResolution -&gt; &quot;12W&quot;]
-goProReport[&quot;videoResolution&quot;]
-goProReport[&quot;photoResolution&quot;]</pre><div class='IFU'><a name='413493288'></a>http://wolfram.com/xid/0isl9lcvz6yx7jl0qfq1d24tf-g4gvqy</div>

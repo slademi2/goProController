@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     15857,        457]
-NotebookOptionsPosition[     12733,        380]
-NotebookOutlinePosition[     14891,        426]
-CellTagsIndexPosition[     14848,        423]
+NotebookDataLength[     20585,        597]
+NotebookOptionsPosition[     17175,        512]
+NotebookOutlinePosition[     19334,        558]
+CellTagsIndexPosition[     19291,        555]
 WindowTitle->GoProController Package
 WindowFrame->Normal*)
 
@@ -32,20 +32,39 @@ Cell[BoxData[GridBox[{
          TextCell[
           Row[{"Functions", 
             Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
-        StripOnInput->False], {"\<\"goProGet\"\>":>Documentation`HelpLookup[
-       "paclet:GoProController/ref/goProGet"], \
+        StripOnInput->False], {"\<\"goProDeleteAll\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProDeleteAll"], \
+"\<\"goProDeleteLast\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProDeleteLast"], \
+"\<\"goProDownloadAllFiles\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProDownloadAllFiles"], \
+"\<\"goProDownloadFile\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProDownloadFile"], "\<\"goProGet\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProGet"], "\<\"goProGetFileList\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProGetFileList"], "\<\"goProGetFileURL\"\
+\>":>Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProGetFileURL"], \
 "\<\"goProGetPossibleCamera\"\>":>Documentation`HelpLookup[
        "paclet:GoProController/ref/goProGetPossibleCamera"], \
 "\<\"goProGetPossibleCameraModel\"\>":>Documentation`HelpLookup[
        "paclet:GoProController/ref/goProGetPossibleCameraModel"], \
-"\<\"goProSet\"\>":>Documentation`HelpLookup[
+"\<\"goProGetURLBase\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProGetURLBase"], "\<\"goProSet\"\>":>
+       Documentation`HelpLookup[
        "paclet:GoProController/ref/goProSet"], "\<\"goProSetCamera\"\>":>
        Documentation`HelpLookup[
        "paclet:GoProController/ref/goProSetCamera"], "\<\"goProSetCameraModel\
 \"\>":>Documentation`HelpLookup[
        "paclet:GoProController/ref/goProSetCameraModel"], \
 "\<\"goProSetPassword\"\>":>Documentation`HelpLookup[
-       "paclet:GoProController/ref/goProSetPassword"], "\<\"goProShutter\"\>":>
+       "paclet:GoProController/ref/goProSetPassword"], "\<\"goProSetup\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/tutorial/goProSetup"], \
+"\<\"goProSetURLBase\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProSetURLBase"], "\<\"goProShutter\"\>":>
        Documentation`HelpLookup[
        "paclet:GoProController/ref/goProShutter"], "\<\"goProStop\"\>":>
        Documentation`HelpLookup[
@@ -77,10 +96,14 @@ Cell[BoxData[GridBox[{
          TextCell[
           Row[{"Tutorials", 
             Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
-        StripOnInput->False], {"\<\"HERO2\\t\"\>":>Documentation`HelpLookup[
-       "paclet:GoProController/tutorial/HERO2"], "\<\"HERO3 & HERO3+\"\>":>
+        StripOnInput->
+         False], {"\<\"Downloading and deleting files from GoPro\"\>":>
        Documentation`HelpLookup[
-       "paclet:GoProController/tutorial/HERO3AndHERO3+"], "\<\"HERO4\"\>":>
+       "paclet:GoProController/tutorial/goProDownload"], "\<\"HERO2\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/tutorial/HERO2"], "\<\"HERO3 and HERO3+\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/tutorial/HERO3"], "\<\"HERO4\"\>":>
        Documentation`HelpLookup["paclet:GoProController/tutorial/HERO4"]},
        Appearance->None,
        MenuAppearance->Automatic,
@@ -129,7 +152,7 @@ GoProController.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2225], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2516], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "GoProController/guide/GoProController", ".html"]], None}]}]},
@@ -347,6 +370,104 @@ Cell[TextData[{
      ImageSize->{6, 0}],
     CacheGraphics->False],
    Spacer[6]]]],
+ "\nFunctions listed bellow are made for access to the files on GoPro \
+camera."
+}], "GuideFunctionsSection",
+ CellID->1931553461],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["goProGetFileList"]],
+    "paclet:GoProController/ref/goProGetFileList"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "  ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ "  returns list containing names of files on camera\n",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["goProGetURLBase"]],
+    "paclet:GoProController/ref/goProGetURLBase"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ "  returns String containing URL on which package searches for files on \
+camera.\n",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["goProSetURLBase"]],
+    "paclet:GoProController/ref/goProSetURLBase"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " lets you change URL on which is package searching for files on camera.\n",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["goProDownloadFile"]],
+    "paclet:GoProController/ref/goProDownloadFile"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " download a file from camera\n",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["goProDownloadAllFiles"]],
+    "paclet:GoProController/ref/goProDownloadAllFiles"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "  ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " downloads all files from camera\n",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["goProGetFileURL"]],
+    "paclet:GoProController/ref/goProGetFileURL"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "   ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ "  returns URL string of file on camera\n",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["goProDeleteLast"]],
+    "paclet:GoProController/ref/goProDeleteLast"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "   ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ "delete last file captured by camera\n",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["goProDeleteAll"]],"paclet:GoProController/ref/goProDeleteAll"},
+   
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "   ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " deletes all files on camera"
+}], "GuideText",
+ CellID->1152962598],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
  "Tutorials for controlling GoProCamera"
 }], "GuideFunctionsSection",
  CellID->1110246741],
@@ -354,6 +475,11 @@ Cell[TextData[{
 Cell["", "SectionHeaderSpacer"],
 
 Cell[TextData[{
+ ButtonBox["Downloading and deleting files from GoPro",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/goProDownload"],
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Tutorial for GoPro HERO2.\n",
  ButtonBox["HERO2",
   BaseStyle->"Link",
   ButtonData->"paclet:GoProController/tutorial/HERO2"],
@@ -371,7 +497,13 @@ Cell[TextData[{
   ButtonData->"paclet:GoProController/tutorial/HERO4"],
  "  ",
  StyleBox["\[LongDash]", "GuideEmDash"],
- " Tutorial for GoProHero4."
+ " Tutorial for GoProHero4.\n",
+ ButtonBox["goProSetup",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/goProSetup"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " setting GoPro camera."
 }], "GuideText",
  CellID->1231741363]
 }, Open  ]],
@@ -392,7 +524,7 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2017, 5, 1, 20, 12, 2.731604}", 
+   "built" -> "{2017, 5, 1, 22, 23, 31.738440}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -406,7 +538,7 @@ which parameters can be set for each setting of camera. There are functions \
 which will help you to choose right parameters but they are not unmistakable. \
 This package was tested only on GoPro HERO 3+ Black edition and HERO4 Silver \
 edition so it may contain bugs for other cameras.", "synonyms" -> {}, 
-    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$2155, 
+    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$2433, 
     "title" -> "GoProController Package", "titlemodifier" -> "", 
     "windowtitle" -> "GoProController Package", "type" -> "Guide", "uri" -> 
     "GoProController/guide/GoProController"}, "SearchTextTranslated" -> ""},
@@ -425,40 +557,48 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[595, 21, 5310, 120, 70, "AnchorBarGrid",
+Cell[595, 21, 6486, 143, 70, "AnchorBarGrid",
  CellID->1],
 Cell[CellGroupData[{
-Cell[5930, 145, 65, 1, 70, "GuideTitle",
+Cell[7106, 168, 65, 1, 70, "GuideTitle",
  CellID->942062912],
-Cell[5998, 148, 646, 11, 70, "GuideAbstract",
+Cell[7174, 171, 646, 11, 70, "GuideAbstract",
  CellID->2001916300]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6681, 164, 385, 12, 70, "GuideFunctionsSection",
+Cell[7857, 187, 385, 12, 70, "GuideFunctionsSection",
  CellID->1866139230],
-Cell[7069, 178, 31, 0, 70, "SectionHeaderSpacer"],
-Cell[7103, 180, 398, 12, 70, "GuideText",
+Cell[8245, 201, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[8279, 203, 398, 12, 70, "GuideText",
  CellID->203374175],
-Cell[7504, 194, 2040, 63, 70, "GuideText",
+Cell[8680, 217, 2040, 63, 70, "GuideText",
  CellID->1463276848],
-Cell[9547, 259, 31, 0, 70, "SectionFooterSpacer"]
+Cell[10723, 282, 31, 0, 70, "SectionFooterSpacer"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9615, 264, 286, 11, 70, "GuideFunctionsSection",
+Cell[10791, 287, 286, 11, 70, "GuideFunctionsSection",
  CellID->845392231],
-Cell[9904, 277, 31, 0, 70, "SectionHeaderSpacer"],
-Cell[9938, 279, 1765, 54, 70, "GuideText",
+Cell[11080, 300, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[11114, 302, 1765, 54, 70, "GuideText",
  CellID->1914796280],
-Cell[11706, 335, 31, 0, 70, "SectionFooterSpacer"]
+Cell[12882, 358, 31, 0, 70, "SectionFooterSpacer"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11774, 340, 277, 11, 70, "GuideFunctionsSection",
+Cell[12950, 363, 317, 12, 70, "GuideFunctionsSection",
+ CellID->1931553461],
+Cell[13270, 377, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[13304, 379, 2443, 75, 70, "GuideText",
+ CellID->1152962598],
+Cell[15750, 456, 31, 0, 70, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15818, 461, 277, 11, 70, "GuideFunctionsSection",
  CellID->1110246741],
-Cell[12054, 353, 31, 0, 70, "SectionHeaderSpacer"],
-Cell[12088, 355, 603, 20, 70, "GuideText",
+Cell[16098, 474, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[16132, 476, 1001, 31, 70, "GuideText",
  CellID->1231741363]
 }, Open  ]],
-Cell[12706, 378, 23, 0, 70, "FooterCell"]
+Cell[17148, 510, 23, 0, 70, "FooterCell"]
 }
 ]
 *)

@@ -1614,7 +1614,7 @@ empty=""
 file=""
 goProGetFileList::empty="No files on GoPro camera.";
 goProGetFileList::file="`1` - No such file on GoPro camera.";
-goProGetFileList::directory="`1` - No such directory exists.";
+goProDownloadFile::directory="`1` - No such directory exists.";
 goProGetFileList[]:=(If[SameQ[Import[urlBase], $Failed],
 	Message[goProGetFileList::empty,empty]
 	,
@@ -1636,8 +1636,8 @@ goProDownloadFile[list_List,dest_String]:=goProDownloadFile[#,dest]&/@list
     
 goProDownloadFile[name_String,dest_String]:=If[URLRead[HTTPRequest[urlBase<>name]]["StatusCode"]!=200,
 		Message[goProGetFileList::file,name],
-		If[DirectoryQ[dest<>name],URLDownload[urlBase<>name,dest<>name],
-			Message[goProGetFileList::directory,dest]
+		If[DirectoryQ[dest],URLDownload[urlBase<>name,dest<>name],
+			Message[goProDownloadFile::directory,dest]
 		]
 		
 	]

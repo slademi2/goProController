@@ -1,2 +1,0 @@
-<pre name='i_3_in' id='i_3_in' class='IFT'>goProSetCamera[&quot;HERO3+&quot;]
-goProInit[&quot;12345678&quot;];</pre><div class='IFU'><a name='1789116677'></a>http://wolfram.com/xid/0isl9lcvz6yx7jl0qfq1d24tf-3vg9jr</div>

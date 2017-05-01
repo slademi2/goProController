@@ -1,2 +1,0 @@
-<pre name='i_3_in' id='i_3_in' class='IFT'>goProGetPossibleCamera[]
-goProSetCamera[goProGetPossibleCamera[][[2]]]</pre><div class='IFU'><a name='2099590002'></a>http://wolfram.com/xid/0bqmt5v2ode99gdzer5b267p4v10g7911c9o2lst-80bsas</div>

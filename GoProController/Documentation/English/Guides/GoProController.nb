@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     14162,        451]
-NotebookOptionsPosition[     11337,        351]
-NotebookOutlinePosition[     11747,        367]
-CellTagsIndexPosition[     11704,        364]
+NotebookDataLength[     17992,        549]
+NotebookOptionsPosition[     14922,        441]
+NotebookOutlinePosition[     15332,        457]
+CellTagsIndexPosition[     15289,        454]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -273,6 +273,82 @@ Cell[TextData[{
 
 Cell[CellGroupData[{
 
+Cell["\<\
+
+Functions listed bellow are made for access to the files on GoPro camera.\
+\>", "GuideFunctionsSection",
+ CellChangeTimes->{{3.702030443071993*^9, 3.702030468296771*^9}, 
+   3.702030523321209*^9, {3.702030669747015*^9, 3.702030676914432*^9}, {
+   3.702058491907055*^9, 3.702058522945457*^9}, {3.702096053035308*^9, 
+   3.702096056593083*^9}, {3.702645733380645*^9, 3.7026457347119093`*^9}, {
+   3.702653513204912*^9, 3.702653526062944*^9}},
+ CellID->1931553461],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["goProGetFileList",
+   BaseStyle->"Link",
+   ButtonData->"paclet:GoProController/ref/goProGetFileList"]], 
+  "InlineFormula"],
+ "  \[LongDash]  returns list containing names of files on camera\n",
+ Cell[BoxData[
+  ButtonBox["goProGetURLBase",
+   BaseStyle->"Link",
+   ButtonData->"paclet:GoProController/ref/goProGetURLBase"]], 
+  "InlineFormula"],
+ " \[LongDash]  returns String containing URL on which package searches for \
+files on camera.\n",
+ Cell[BoxData[
+  ButtonBox["goProSetURLBase",
+   BaseStyle->"Link",
+   ButtonData->"paclet:GoProController/ref/goProSetURLBase"]], 
+  "InlineFormula"],
+ " \[LongDash] lets you change URL on which is package searching for files on \
+camera.\n",
+ Cell[BoxData[
+  ButtonBox["goProDownloadFile",
+   BaseStyle->"Link",
+   ButtonData->"paclet:GoProController/ref/goProDownloadFile"]], 
+  "InlineFormula"],
+ " \[LongDash] download a file from camera\n",
+ Cell[BoxData[
+  ButtonBox["goProDownloadAllFiles",
+   BaseStyle->"Link",
+   ButtonData->"paclet:GoProController/ref/goProDownloadAllFiles"]], 
+  "InlineFormula"],
+ "  \[LongDash] downloads all files from camera\n",
+ Cell[BoxData[
+  ButtonBox["goProGetFileURL",
+   BaseStyle->"Link",
+   ButtonData->"paclet:GoProController/ref/goProGetFileURL"]], 
+  "InlineFormula"],
+ "   \[LongDash]  returns URL string of file on camera\n",
+ Cell[BoxData[
+  ButtonBox["goProDeleteLast",
+   BaseStyle->"Link",
+   ButtonData->"paclet:GoProController/ref/goProDeleteLast"]], 
+  "InlineFormula"],
+ "   \[LongDash]delete last file captured by camera\n",
+ Cell[BoxData[
+  ButtonBox["goProDeleteAll",
+   BaseStyle->"Link",
+   ButtonData->"paclet:GoProController/ref/goProDeleteAll"]], "InlineFormula"],
+ "   \[LongDash] deletes all files on camera"
+}], "GuideText",
+ CellChangeTimes->{{3.7020588521606894`*^9, 3.7020588875164948`*^9}, {
+  3.702062524571637*^9, 3.702062565123357*^9}, {3.7020953474847603`*^9, 
+  3.7020953878234787`*^9}, {3.7020960732770033`*^9, 3.702096126589806*^9}, {
+  3.7023623253945704`*^9, 3.702362387511078*^9}, {3.702653532284114*^9, 
+  3.7026535617241497`*^9}, {3.702653722139769*^9, 3.702653800421084*^9}, {
+  3.702654461735588*^9, 3.702654519005847*^9}, {3.702654558864912*^9, 
+  3.702654657337318*^9}, {3.702654831441658*^9, 3.702654831662717*^9}, {
+  3.7026549345181427`*^9, 3.702654934739842*^9}, {3.7026550686150637`*^9, 
+  3.702655068818214*^9}, {3.702655272836718*^9, 3.702655273535448*^9}},
+ CellID->1152962598]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
 Cell["Tutorials for controlling GoProCamera", "GuideFunctionsSection",
  CellChangeTimes->{{3.702030443071993*^9, 3.702030468296771*^9}, 
    3.702030523321209*^9, {3.702030669747015*^9, 3.702030676914432*^9}, {
@@ -282,6 +358,10 @@ Cell["Tutorials for controlling GoProCamera", "GuideFunctionsSection",
  CellID->1110246741],
 
 Cell[TextData[{
+ ButtonBox["Downloading and deleting files from GoPro",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/goProDownload"],
+ "\[LongDash] Tutorial for GoPro HERO2.\n",
  ButtonBox["HERO2",
   BaseStyle->"Link",
   ButtonData->"paclet:GoProController/tutorial/HERO2"],
@@ -293,14 +373,20 @@ Cell[TextData[{
  ButtonBox["HERO4",
   BaseStyle->"Link",
   ButtonData->"paclet:GoProController/tutorial/HERO4"],
- "  \[LongDash] Tutorial for GoProHero4."
+ "  \[LongDash] Tutorial for GoProHero4.\n",
+ ButtonBox["goProSetup",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/goProSetup"],
+ " \[LongDash] setting GoPro camera."
 }], "GuideText",
  CellChangeTimes->{{3.7020588521606894`*^9, 3.7020588875164948`*^9}, {
   3.702062524571637*^9, 3.702062565123357*^9}, {3.7020953474847603`*^9, 
   3.7020953878234787`*^9}, {3.7020960732770033`*^9, 3.702096126589806*^9}, {
   3.7023623253945704`*^9, 3.702362387511078*^9}, {3.702647984881228*^9, 
   3.702648091154866*^9}, {3.702651004943845*^9, 3.70265103579637*^9}, {
-  3.7026510673031054`*^9, 3.702651070955188*^9}},
+  3.7026510673031054`*^9, 3.702651070955188*^9}, {3.702656996800992*^9, 
+  3.70265708835128*^9}, {3.702657276474413*^9, 3.7026572765111113`*^9}, {
+  3.7026587948225927`*^9, 3.702658827073001*^9}},
  CellID->1231741363]
 }, Open  ]],
 
@@ -310,22 +396,26 @@ Cell["Tutorials for controlling GoPro cameras.", "GuideTutorialsSection",
  CellChangeTimes->{{3.702647560691703*^9, 3.702647569680531*^9}},
  CellID->415694126],
 
-Cell[TextData[ButtonBox["HERO2\t",
- BaseStyle->"Link",
- ButtonData->"paclet:GoProController/tutorial/HERO2"]], "GuideTutorial",
- CellChangeTimes->{{3.702637292854104*^9, 3.7026373018441677`*^9}, {
-  3.7026374270763702`*^9, 3.702637436793983*^9}, {3.702647578681587*^9, 
-  3.702647582432376*^9}},
- CellID->806871991],
-
-Cell[TextData[ButtonBox["HERO3 & HERO3+",
+Cell[TextData[ButtonBox["Downloading and deleting files from GoPro",
  BaseStyle->"Link",
  ButtonData->
-  "paclet:GoProController/tutorial/HERO3AndHERO3+"]], "GuideTutorial",
- CellChangeTimes->{{3.702637466985299*^9, 3.702637471066471*^9}, {
-  3.702637531309877*^9, 3.702637537350459*^9}, {3.702637741548732*^9, 
-  3.702637747779888*^9}, {3.702637839416226*^9, 3.702637840436451*^9}},
- CellID->1885805579],
+  "paclet:GoProController/tutorial/goProDownload"]], "GuideTutorial",
+ CellChangeTimes->{{3.702637292854104*^9, 3.7026373018441677`*^9}, {
+   3.7026374270763702`*^9, 3.702637436793983*^9}, {3.702647578681587*^9, 
+   3.702647582432376*^9}, 3.702656981579631*^9},
+ CellID->806871991],
+
+Cell[TextData[ButtonBox["HERO2",
+ BaseStyle->"Link",
+ ButtonData->"paclet:GoProController/tutorial/HERO2"]], "GuideTutorial",
+ CellChangeTimes->{{3.702657245209346*^9, 3.7026572591584177`*^9}},
+ CellID->543054715],
+
+Cell[TextData[ButtonBox["HERO3 and HERO3+",
+ BaseStyle->"Link",
+ ButtonData->"paclet:GoProController/tutorial/HERO3"]], "GuideTutorial",
+ CellChangeTimes->{{3.702656209703389*^9, 3.702656225394875*^9}},
+ CellID->994496438],
 
 Cell[TextData[ButtonBox["HERO4",
  BaseStyle->"Link",
@@ -350,7 +440,7 @@ Cell["Related Links", "GuideRelatedLinksSection",
  CellID->415694148]
 },
 WindowSize->{799, 847},
-WindowMargins->{{2, Automatic}, {1, Automatic}},
+WindowMargins->{{1, Automatic}, {1, Automatic}},
 FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "GuidePageStyles.nb", 
   CharacterEncoding -> "UTF-8"]
@@ -428,30 +518,38 @@ Cell[6985, 230, 1568, 40, 161, "GuideText",
  CellID->1914796280]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8590, 275, 427, 6, 72, "GuideFunctionsSection",
+Cell[8590, 275, 472, 9, 91, "GuideFunctionsSection",
+ CellID->1931553461],
+Cell[9065, 286, 2463, 60, 264, "GuideText",
+ CellID->1152962598]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11565, 351, 427, 6, 72, "GuideFunctionsSection",
  CellID->1110246741],
-Cell[9020, 283, 914, 20, 75, "GuideText",
+Cell[11995, 359, 1394, 30, 128, "GuideText",
  CellID->1231741363]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9971, 308, 159, 2, 74, "GuideTutorialsSection",
+Cell[13426, 394, 159, 2, 74, "GuideTutorialsSection",
  CellID->415694126],
-Cell[10133, 312, 315, 6, 23, "GuideTutorial",
+Cell[13588, 398, 384, 7, 23, "GuideTutorial",
  CellID->806871991],
-Cell[10451, 320, 377, 7, 23, "GuideTutorial",
- CellID->1885805579],
-Cell[10831, 329, 212, 4, 23, "GuideTutorial",
+Cell[13975, 407, 213, 4, 23, "GuideTutorial",
+ CellID->543054715],
+Cell[14191, 413, 222, 4, 23, "GuideTutorial",
+ CellID->994496438],
+Cell[14416, 419, 212, 4, 23, "GuideTutorial",
  CellID->1707249146]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11080, 338, 62, 1, 74, "GuideMoreAboutSection",
+Cell[14665, 428, 62, 1, 74, "GuideMoreAboutSection",
  CellID->23220180],
-Cell[11145, 341, 51, 1, 23, "GuideMoreAbout",
+Cell[14730, 431, 51, 1, 23, "GuideMoreAbout",
  CellID->1567025153],
-Cell[11199, 344, 50, 1, 23, "GuideMoreAbout",
+Cell[14784, 434, 50, 1, 23, "GuideMoreAbout",
  CellID->252299663]
 }, Open  ]],
-Cell[11264, 348, 69, 1, 74, "GuideRelatedLinksSection",
+Cell[14849, 438, 69, 1, 74, "GuideRelatedLinksSection",
  CellID->415694148]
 }
 ]
