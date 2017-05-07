@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     23864,        661]
-NotebookOptionsPosition[     20782,        570]
-NotebookOutlinePosition[     22888,        627]
-CellTagsIndexPosition[     22803,        622]
+NotebookDataLength[     23858,        661]
+NotebookOptionsPosition[     20781,        570]
+NotebookOutlinePosition[     22883,        627]
+CellTagsIndexPosition[     22798,        622]
 WindowTitle->goProTurnOn
 WindowFrame->Normal*)
 
@@ -81,7 +81,7 @@ goProTurnOn.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$12725], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$13846], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "GoProController/ref/goProTurnOn", ".html"]], None}]}]},
@@ -141,7 +141,7 @@ Cell[TextData[{
 }], "PrimaryExamplesSection",
  WholeCellGroupOpener->True,
  CellTags->"PrimaryExamplesSection",
- CellID->1429549966],
+ CellID->114547343],
 
 Cell[CellGroupData[{
 
@@ -151,7 +151,7 @@ Cell[TextData[{
  Cell["(1)", "ExampleCount"]
 }], "ExampleSection", "ExampleSection",
  WholeCellGroupOpener->True,
- CellID->412155236],
+ CellID->877627228],
 
 Cell[BoxData[
  RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}]], "Input",
@@ -563,7 +563,7 @@ Cell[BoxData[
    "paclet:GoProController/guide/GoProController"},
   "RefLink",
   BaseStyle->"MoreAbout"]], "MoreAbout",
- CellID->1031399695]
+ CellID->2129090411]
 }, Open  ]],
 
 Cell[" ", "FooterCell"]
@@ -584,7 +584,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2017, 5, 1, 22, 23, 59.771668}", 
+   "built" -> "{2017, 5, 8, 1, 1, 0.459333}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -614,14 +614,14 @@ StyleDefinitions->Notebook[{
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[4414, 128, 388, 15, 33, "PrimaryExamplesSection",
+  Cell[4414, 128, 387, 15, 33, "PrimaryExamplesSection",
    CellTags->"PrimaryExamplesSection",
-   CellID->1429549966]}
+   CellID->114547343]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 22659, 615}
+ {"PrimaryExamplesSection", 22655, 615}
  }
 *)
 (*NotebookFileOutline
@@ -632,37 +632,37 @@ Cell[3706, 99, 288, 11, 48, "ObjectNameGrid"],
 Cell[3997, 112, 392, 12, 84, "Usage",
  CellID->982511436],
 Cell[CellGroupData[{
-Cell[4414, 128, 388, 15, 33, "PrimaryExamplesSection",
+Cell[4414, 128, 387, 15, 33, "PrimaryExamplesSection",
  CellTags->"PrimaryExamplesSection",
- CellID->1429549966],
+ CellID->114547343],
 Cell[CellGroupData[{
-Cell[4827, 147, 195, 6, 28, "ExampleSection",
- CellID->412155236],
-Cell[5025, 155, 123, 3, 28, "Input",
+Cell[4826, 147, 195, 6, 28, "ExampleSection",
+ CellID->877627228],
+Cell[5024, 155, 123, 3, 28, "Input",
  CellID->1069267781],
-Cell[5151, 160, 124, 3, 28, "Input",
+Cell[5150, 160, 124, 3, 28, "Input",
  CellID->1270186233],
-Cell[5278, 165, 148, 5, 30, "Input",
+Cell[5277, 165, 148, 5, 30, "Input",
  CellID->1176073543],
 Cell[CellGroupData[{
-Cell[5451, 174, 299, 7, 65, "Input",
+Cell[5450, 174, 299, 7, 65, "Input",
  CellID->370579231],
-Cell[5753, 183, 14128, 341, 67, "Output",
+Cell[5752, 183, 14128, 341, 67, "Output",
  CellID->1176183229],
-Cell[19884, 526, 246, 8, 37, "Output",
+Cell[19883, 526, 246, 8, 37, "Output",
  CellID->182919969]
 }, Open  ]]
 }, Open  ]],
-Cell[20157, 538, 31, 0, 29, "SectionFooterSpacer"]
+Cell[20156, 538, 31, 0, 29, "SectionFooterSpacer"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[20225, 543, 276, 12, 33, "MoreAboutSection",
+Cell[20224, 543, 276, 12, 33, "MoreAboutSection",
  CellID->38303248],
-Cell[20504, 557, 31, 0, 14, "SectionHeaderSpacer"],
-Cell[20538, 559, 202, 6, 20, "MoreAbout",
- CellID->1031399695]
+Cell[20503, 557, 31, 0, 14, "SectionHeaderSpacer"],
+Cell[20537, 559, 202, 6, 20, "MoreAbout",
+ CellID->2129090411]
 }, Open  ]],
-Cell[20755, 568, 23, 0, 42, "FooterCell"]
+Cell[20754, 568, 23, 0, 42, "FooterCell"]
 }
 ]
 *)

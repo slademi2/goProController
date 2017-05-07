@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    577394,      11521]
-NotebookOptionsPosition[    566214,      11147]
-NotebookOutlinePosition[    568954,      11216]
-CellTagsIndexPosition[    568872,      11211]
+NotebookDataLength[    577389,      11521]
+NotebookOptionsPosition[    566213,      11147]
+NotebookOutlinePosition[    568950,      11216]
+CellTagsIndexPosition[    568868,      11211]
 WindowTitle->HERO2
 WindowFrame->Normal*)
 
@@ -81,7 +81,7 @@ tutorial/HERO2.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$14349], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$16103], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "GoProController/tutorial/HERO2", ".html"]], None}]}]},
@@ -10301,7 +10301,7 @@ pRfAPdNP0w6pBMi1FCBYfvP594f/B2EPwj8=
  ImageRegion->{{0, 1}, {0, 1}},
  CellTags->"RasterizedOutput",
  CellLabel->"Out[28]=",
- CellID->1218651323]
+ CellID->687363251]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -11160,7 +11160,7 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2017, 5, 1, 22, 24, 6.170276}", 
+   "built" -> "{2017, 5, 8, 1, 1, 8.963123}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -11172,7 +11172,7 @@ it can be found on GoPro website. Before controlling camera you need to set \
 the package first. You have to do that because package need to know which \
 files have to be loaded and it is impossible to control goProCamera without \
 WiFi password. Package setup functions.", "synonyms" -> {}, "tabletags" -> 
-    DocumentationBuild`Make`Private`tabletaggingrules$14036, "title" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$15790, "title" -> 
     "HERO2", "titlemodifier" -> "", "windowtitle" -> "HERO2", "type" -> 
     "Tutorial", "uri" -> "GoProController/tutorial/HERO2"}, 
   "SearchTextTranslated" -> ""},
@@ -11203,14 +11203,14 @@ StyleDefinitions->Notebook[{
 (*CellTagsOutline
 CellTagsIndex->{
  "RasterizedOutput"->{
-  Cell[170940, 4344, 363030, 5959, 407, "Output",
+  Cell[170940, 4344, 363029, 5959, 407, "Output",
    CellTags->"RasterizedOutput",
-   CellID->1218651323]}
+   CellID->687363251]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"RasterizedOutput", 568741, 11204}
+ {"RasterizedOutput", 568738, 11204}
  }
 *)
 (*NotebookFileOutline
@@ -11469,60 +11469,60 @@ Cell[170576, 4328, 217, 6, 37, "Output",
 Cell[CellGroupData[{
 Cell[170830, 4339, 107, 3, 28, "Input",
  CellID->1308078202],
-Cell[170940, 4344, 363030, 5959, 407, "Output",
+Cell[170940, 4344, 363029, 5959, 407, "Output",
  CellTags->"RasterizedOutput",
- CellID->1218651323]
+ CellID->687363251]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[534007, 10308, 130, 3, 70, "Input",
+Cell[534006, 10308, 130, 3, 70, "Input",
  CellID->885347940],
-Cell[534140, 10313, 391, 13, 70, "Output",
+Cell[534139, 10313, 391, 13, 70, "Output",
  CellID->142059951]
 }, Open  ]],
-Cell[534546, 10329, 78, 1, 70, "MathCaption",
+Cell[534545, 10329, 78, 1, 70, "MathCaption",
  CellID->225972517],
 Cell[CellGroupData[{
-Cell[534649, 10334, 109, 3, 70, "Input",
+Cell[534648, 10334, 109, 3, 70, "Input",
  CellID->1751402591],
-Cell[534761, 10339, 308, 9, 39, "Output",
+Cell[534760, 10339, 308, 9, 39, "Output",
  CellID->593826678]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[535106, 10353, 107, 3, 70, "Input",
+Cell[535105, 10353, 107, 3, 70, "Input",
  CellID->914623406],
-Cell[535216, 10358, 14149, 341, 70, "Output",
+Cell[535215, 10358, 14149, 341, 70, "Output",
  CellID->501837580]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[549402, 10704, 109, 3, 70, "Input",
+Cell[549401, 10704, 109, 3, 70, "Input",
  CellID->1967417371],
-Cell[549514, 10709, 277, 8, 39, "Output",
+Cell[549513, 10709, 277, 8, 39, "Output",
  CellID->1626424671]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[549828, 10722, 105, 3, 70, "Input",
+Cell[549827, 10722, 105, 3, 70, "Input",
  CellID->21305103],
-Cell[549936, 10727, 14150, 341, 70, "Output",
+Cell[549935, 10727, 14150, 341, 70, "Output",
  CellID->1792314746]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[564123, 11073, 108, 3, 70, "Input",
+Cell[564122, 11073, 108, 3, 70, "Input",
  CellID->889608403],
-Cell[564234, 11078, 475, 11, 70, "Message",
+Cell[564233, 11078, 475, 11, 70, "Message",
  CellID->1140804751],
-Cell[564712, 11091, 238, 6, 70, "Message",
+Cell[564711, 11091, 238, 6, 70, "Message",
  CellID->1921746236]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[564999, 11103, 287, 12, 70, "RelatedTutorialsSection",
+Cell[564998, 11103, 287, 12, 70, "RelatedTutorialsSection",
  CellID->415694126],
-Cell[565289, 11117, 31, 0, 70, "SectionHeaderSpacer"],
-Cell[565323, 11119, 837, 22, 70, "RelatedTutorials",
+Cell[565288, 11117, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[565322, 11119, 837, 22, 70, "RelatedTutorials",
  CellID->806871991]
 }, Open  ]]
 }, Open  ]],
-Cell[566187, 11145, 23, 0, 70, "FooterCell"]
+Cell[566186, 11145, 23, 0, 70, "FooterCell"]
 }
 ]
 *)

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   1041356,      26394]
-NotebookOptionsPosition[    995279,      24986]
-NotebookOutlinePosition[    995617,      25001]
-CellTagsIndexPosition[    995574,      24998]
+NotebookDataLength[   1069193,      27081]
+NotebookOptionsPosition[   1020680,      25595]
+NotebookOutlinePosition[   1021018,      25610]
+CellTagsIndexPosition[   1020975,      25607]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -24981,6 +24981,615 @@ Cell[BoxData[
  CellChangeTimes->{{3.702654099442547*^9, 3.7026541239433727`*^9}, 
    3.702654200983571*^9}]
 }, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ulo\[ZHacek]en\[IAcute] nastaven\[IAcute]", "Section",
+ CellChangeTimes->{{3.702894168357397*^9, 3.7028941872554502`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<HERO3+\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetPassword", "[", "\"\<12345678\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.70289418824788*^9, 3.702894213312416*^9}, {
+  3.702894275570407*^9, 3.702894282736423*^9}, {3.702894734682428*^9, 
+  3.7028947733502207`*^9}}],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{{3.702894210478382*^9, 3.702894213718961*^9}, 
+   3.702894283663618*^9, 3.7028943530032187`*^9, {3.70289473703414*^9, 
+   3.7028947738906393`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"pom", "=", 
+  RowBox[{"goProGet", "[", 
+   RowBox[{"goProGetVariables", "[", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7028942563348227`*^9, 3.70289426823582*^9}, {
+  3.7028943827446337`*^9, 3.702894383486348*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"videoResolution\"\>", "\[Rule]", "\<\"1080p\"\>"}], ",", 
+   RowBox[{"\<\"fps\"\>", "\[Rule]", "\<\"60\"\>"}], ",", 
+   RowBox[{"\<\"fov\"\>", "\[Rule]", "\<\"wide\"\>"}], ",", 
+   RowBox[{"\<\"videoMode\"\>", "\[Rule]", "\<\"ntsc\"\>"}], ",", 
+   RowBox[{"\<\"photoResolution\"\>", "\[Rule]", "\<\"12W\"\>"}], ",", 
+   RowBox[{"\<\"loopVideo\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"burstRate\"\>", "\[Rule]", "\<\"3/1\"\>"}], ",", 
+   RowBox[{"\<\"timeLapse\"\>", "\[Rule]", "\<\"1\"\>"}], ",", 
+   RowBox[{"\<\"continuousShot\"\>", "\[Rule]", "\<\"1\"\>"}], ",", 
+   RowBox[{"\<\"photoInVideo\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"volume\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"led\"\>", "\[Rule]", "\<\"4\"\>"}], ",", 
+   RowBox[{"\<\"lowLight\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"spotMeter\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"autoPowerOff\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"protune\"\>", "\[Rule]", "\<\"on\"\>"}], ",", 
+   RowBox[{"\<\"whiteBalance\"\>", "\[Rule]", "\<\"auto\"\>"}], ",", 
+   RowBox[{"\<\"colorProfile\"\>", "\[Rule]", "\<\"gopro\"\>"}], ",", 
+   RowBox[{"\<\"iso\"\>", "\[Rule]", "\<\"6400\"\>"}], ",", 
+   RowBox[{"\<\"sharpness\"\>", "\[Rule]", "\<\"high\"\>"}], ",", 
+   RowBox[{"\<\"exposure\"\>", "\[Rule]", "\<\"0\"\>"}], ",", 
+   RowBox[{"\<\"mode\"\>", "\[Rule]", "\<\"Video\"\>"}], ",", 
+   RowBox[{"\<\"bootMode\"\>", "\[Rule]", "\<\"Video\"\>"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.702894268907914*^9, {3.7028943720932293`*^9, 3.702894399907668*^9}, {
+   3.702894747540614*^9, 3.7028947874662*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"StringQ", "[", 
+  RowBox[{
+   RowBox[{"pom", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+   "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"func", "[", "#", "]"}], "&"}], "/@", "pom"}]}], "Input",
+ CellChangeTimes->{{3.7028943857303047`*^9, 3.7028944231337433`*^9}, {
+  3.702894491822896*^9, 3.70289452611281*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.702894401382773*^9, 3.702894423788006*^9}, {
+   3.702894495329896*^9, 3.702894527171646*^9}, 3.702894647013928*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "Null", ",", "Null", ",", "Null", ",", "Null", ",", "Null", ",", "Null", 
+   ",", "Null", ",", "Null", ",", "Null", ",", "Null", ",", "Null", ",", 
+   "Null", ",", "Null", ",", "Null", ",", "Null", ",", "Null", ",", "Null", 
+   ",", "Null", ",", "Null", ",", "Null", ",", "Null", ",", "Null", ",", 
+   "Null"}], "}"}]], "Output",
+ CellChangeTimes->{{3.702894401382773*^9, 3.702894423788006*^9}, {
+   3.702894495329896*^9, 3.702894527171646*^9}, 3.702894659491324*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"func", "[", "x_Rule", "]"}], ":=", 
+  RowBox[{"goProSet", "[", 
+   RowBox[{
+    RowBox[{"ToExpression", "[", 
+     RowBox[{"x", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+     "]"}], "\[Rule]", 
+    RowBox[{"x", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.702894407957006*^9, 3.702894408417556*^9}, {
+  3.702894467463046*^9, 3.7028944883889437`*^9}, {3.702894573773603*^9, 
+  3.702894611530319*^9}}],
+
+Cell[BoxData[
+ RowBox[{"goProSet", "[", 
+  RowBox[{"videoResolution", "\[Rule]", "\"\<720p\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.702894624298585*^9, 3.702894641088751*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<pom.xls\>\""}], ",", 
+   RowBox[{"goProGet", "[", 
+    RowBox[{"goProGetVariables", "[", "]"}], "]"}], ",", "\"\<Table\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.702894783051654*^9, 3.702894845130818*^9}, 
+   3.702894954027018*^9, {3.702895320186429*^9, 3.702895321880641*^9}, {
+   3.7028953523786793`*^9, 3.7028953530030622`*^9}, {3.7028953896755247`*^9, 
+   3.702895393099751*^9}, {3.7028955884970493`*^9, 3.702895589049281*^9}, {
+   3.7028957612468967`*^9, 3.702895840685473*^9}}],
+
+Cell[BoxData["\<\"/home/cukr/workspace/GoProController/GoProController/pom.\
+xls\"\>"], "Output",
+ CellChangeTimes->{{3.70289480453992*^9, 3.7028948456165857`*^9}, {
+   3.702894967088299*^9, 3.702894987250993*^9}, 3.702895336749208*^9, 
+   3.702895366951229*^9, 3.702895411418984*^9, 3.7028956088208857`*^9, 
+   3.702895783937602*^9, {3.702895829261633*^9, 3.7028958533158913`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"k", "=", 
+  RowBox[{"Import", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<pom.xls\>\""}], ",", 
+    "\"\<Table\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.702895096167577*^9, 3.702895159953454*^9}, {
+  3.702895259263836*^9, 3.702895328160039*^9}, {3.702895372234858*^9, 
+  3.702895403413946*^9}, {3.702895591029735*^9, 3.7028955940701036`*^9}, {
+  3.7028956814997587`*^9, 3.702895692480884*^9}, {3.7028958119900503`*^9, 
+  3.702895825059423*^9}, {3.702895861196465*^9, 3.702895862292678*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"videoResolution\"\>", ",", "\<\"->\"\>", ",", "720"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"fps\"\>", ",", "\<\"->\"\>", ",", "60"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"fov\"\>", ",", "\<\"->\"\>", ",", "\<\"wide\"\>"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"videoMode\"\>", ",", "\<\"->\"\>", ",", "\<\"ntsc\"\>"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"photoResolution\"\>", ",", "\<\"->\"\>", 
+     ",", "\<\"12W\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"loopVideo\"\>", ",", "\<\"->\"\>", ",", "\<\"off\"\>"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"burstRate\"\>", ",", "\<\"->\"\>", ",", "\<\"3/1\"\>"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"timeLapse\"\>", ",", "\<\"->\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"continuousShot\"\>", ",", "\<\"->\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"photoInVideo\"\>", ",", "\<\"->\"\>", ",", "\<\"off\"\>"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"volume\"\>", ",", "\<\"->\"\>", ",", "\<\"off\"\>"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"led\"\>", ",", "\<\"->\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"lowLight\"\>", ",", "\<\"->\"\>", ",", "\<\"off\"\>"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"spotMeter\"\>", ",", "\<\"->\"\>", ",", "\<\"off\"\>"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"autoPowerOff\"\>", ",", "\<\"->\"\>", ",", "\<\"off\"\>"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"protune\"\>", ",", "\<\"->\"\>", ",", "\<\"on\"\>"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"whiteBalance\"\>", ",", "\<\"->\"\>", ",", "\<\"auto\"\>"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"colorProfile\"\>", ",", "\<\"->\"\>", ",", "\<\"gopro\"\>"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"iso\"\>", ",", "\<\"->\"\>", ",", "6400"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"sharpness\"\>", ",", "\<\"->\"\>", ",", "\<\"high\"\>"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"exposure\"\>", ",", "\<\"->\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"mode\"\>", ",", "\<\"->\"\>", ",", "\<\"Video\"\>"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"bootMode\"\>", ",", "\<\"->\"\>", ",", "\<\"Video\"\>"}], 
+    "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.7028952958319798`*^9, 3.702895306721294*^9}, {
+   3.7028953421190653`*^9, 3.702895378316288*^9}, 3.7028954116585007`*^9, 
+   3.7028956089576283`*^9, {3.702895683843617*^9, 3.702895692935885*^9}, {
+   3.7028958293587723`*^9, 3.702895863018532*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"pom", "=", 
+  RowBox[{"goProGet", "[", 
+   RowBox[{"goProGetVariables", "[", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.702895884473711*^9, 3.702895891223856*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"videoResolution\"\>", "\[Rule]", "\<\"720p\"\>"}], ",", 
+   RowBox[{"\<\"fps\"\>", "\[Rule]", "\<\"60\"\>"}], ",", 
+   RowBox[{"\<\"fov\"\>", "\[Rule]", "\<\"wide\"\>"}], ",", 
+   RowBox[{"\<\"videoMode\"\>", "\[Rule]", "\<\"ntsc\"\>"}], ",", 
+   RowBox[{"\<\"photoResolution\"\>", "\[Rule]", "\<\"12W\"\>"}], ",", 
+   RowBox[{"\<\"loopVideo\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"burstRate\"\>", "\[Rule]", "\<\"3/1\"\>"}], ",", 
+   RowBox[{"\<\"timeLapse\"\>", "\[Rule]", "\<\"1\"\>"}], ",", 
+   RowBox[{"\<\"continuousShot\"\>", "\[Rule]", "\<\"1\"\>"}], ",", 
+   RowBox[{"\<\"photoInVideo\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"volume\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"led\"\>", "\[Rule]", "\<\"4\"\>"}], ",", 
+   RowBox[{"\<\"lowLight\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"spotMeter\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"autoPowerOff\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"protune\"\>", "\[Rule]", "\<\"on\"\>"}], ",", 
+   RowBox[{"\<\"whiteBalance\"\>", "\[Rule]", "\<\"auto\"\>"}], ",", 
+   RowBox[{"\<\"colorProfile\"\>", "\[Rule]", "\<\"gopro\"\>"}], ",", 
+   RowBox[{"\<\"iso\"\>", "\[Rule]", "\<\"6400\"\>"}], ",", 
+   RowBox[{"\<\"sharpness\"\>", "\[Rule]", "\<\"high\"\>"}], ",", 
+   RowBox[{"\<\"exposure\"\>", "\[Rule]", "\<\"0\"\>"}], ",", 
+   RowBox[{"\<\"mode\"\>", "\[Rule]", "\<\"Video\"\>"}], ",", 
+   RowBox[{"\<\"bootMode\"\>", "\[Rule]", "\<\"Video\"\>"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.702895904401948*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<pom.xls\>\""}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"pom", "\[LeftDoubleBracket]", 
+      RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+     RowBox[{"pom", "\[LeftDoubleBracket]", 
+      RowBox[{"All", ",", "2"}], "\[RightDoubleBracket]"}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.702895923654705*^9, 3.702895940249402*^9}, {
+  3.702895988303444*^9, 3.702896014141424*^9}, {3.702896717051732*^9, 
+  3.702896719490184*^9}, {3.702896796078717*^9, 3.702896845463925*^9}}],
+
+Cell[BoxData["\<\"/home/cukr/workspace/GoProController/GoProController/pom.\
+xls\"\>"], "Output",
+ CellChangeTimes->{{3.7028959306173964`*^9, 3.702895940756864*^9}, {
+   3.702896009607603*^9, 3.702896015549316*^9}, 3.7028967201836777`*^9, {
+   3.702896800425373*^9, 3.702896815135021*^9}, 3.702896846163327*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"k", "=", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{
+    RowBox[{"Import", "[", 
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<pom.xls\>\""}], 
+     "]"}], ",", "1"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.702896016458432*^9, 3.702896072136589*^9}, {
+  3.702896134012845*^9, 3.702896136591558*^9}, {3.702896278520258*^9, 
+  3.7028962789859247`*^9}, {3.702896314174449*^9, 3.702896318794466*^9}, {
+  3.702896447736668*^9, 3.702896499217433*^9}, {3.702896568094784*^9, 
+  3.70289668103368*^9}, {3.702896726058187*^9, 3.702896768813555*^9}, {
+  3.702896862600445*^9, 3.702896929070348*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"videoResolution\"\>", ",", "\<\"fps\"\>", ",", "\<\"fov\"\>",
+      ",", "\<\"videoMode\"\>", ",", "\<\"photoResolution\"\>", 
+     ",", "\<\"loopVideo\"\>", ",", "\<\"burstRate\"\>", 
+     ",", "\<\"timeLapse\"\>", ",", "\<\"continuousShot\"\>", 
+     ",", "\<\"photoInVideo\"\>", ",", "\<\"volume\"\>", ",", "\<\"led\"\>", 
+     ",", "\<\"lowLight\"\>", ",", "\<\"spotMeter\"\>", 
+     ",", "\<\"autoPowerOff\"\>", ",", "\<\"protune\"\>", 
+     ",", "\<\"whiteBalance\"\>", ",", "\<\"colorProfile\"\>", 
+     ",", "\<\"iso\"\>", ",", "\<\"sharpness\"\>", ",", "\<\"exposure\"\>", 
+     ",", "\<\"mode\"\>", ",", "\<\"bootMode\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"720p\"\>", ",", "\<\"60\"\>", ",", "\<\"wide\"\>", 
+     ",", "\<\"ntsc\"\>", ",", "\<\"12W\"\>", ",", "\<\"off\"\>", 
+     ",", "\<\"3/1\"\>", ",", "\<\"1\"\>", ",", "\<\"1\"\>", 
+     ",", "\<\"off\"\>", ",", "\<\"off\"\>", ",", "\<\"4\"\>", 
+     ",", "\<\"off\"\>", ",", "\<\"off\"\>", ",", "\<\"off\"\>", 
+     ",", "\<\"on\"\>", ",", "\<\"auto\"\>", ",", "\<\"gopro\"\>", 
+     ",", "\<\"6400\"\>", ",", "\<\"high\"\>", ",", "\<\"0\"\>", 
+     ",", "\<\"Video\"\>", ",", "\<\"Video\"\>"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.702896024787055*^9, 3.702896072579255*^9}, 
+   3.702896137244486*^9, 3.702896279489717*^9, 3.7028963194747667`*^9, {
+   3.70289645983355*^9, 3.702896500692821*^9}, {3.702896575855381*^9, 
+   3.702896615483199*^9}, {3.702896646690764*^9, 3.702896682101273*^9}, {
+   3.702896723170189*^9, 3.702896769406704*^9}, {3.70289686832127*^9, 
+   3.702896929931796*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"v", "=", 
+  RowBox[{
+  "k", "\[LeftDoubleBracket]", "1", 
+   "\[RightDoubleBracket]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"val", "=", 
+  RowBox[{"{", 
+   RowBox[{"k", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+   "}"}]}]}], "Input",
+ CellChangeTimes->{{3.702896531738312*^9, 3.702896562723201*^9}, {
+  3.702896932061756*^9, 3.702896950819024*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"videoResolution\"\>", ",", "\<\"fps\"\>", ",", "\<\"fov\"\>", 
+   ",", "\<\"videoMode\"\>", ",", "\<\"photoResolution\"\>", 
+   ",", "\<\"loopVideo\"\>", ",", "\<\"burstRate\"\>", 
+   ",", "\<\"timeLapse\"\>", ",", "\<\"continuousShot\"\>", 
+   ",", "\<\"photoInVideo\"\>", ",", "\<\"volume\"\>", ",", "\<\"led\"\>", 
+   ",", "\<\"lowLight\"\>", ",", "\<\"spotMeter\"\>", 
+   ",", "\<\"autoPowerOff\"\>", ",", "\<\"protune\"\>", 
+   ",", "\<\"whiteBalance\"\>", ",", "\<\"colorProfile\"\>", 
+   ",", "\<\"iso\"\>", ",", "\<\"sharpness\"\>", ",", "\<\"exposure\"\>", 
+   ",", "\<\"mode\"\>", ",", "\<\"bootMode\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.702896535612142*^9, 3.702896592683227*^9}, {
+  3.7028969416761417`*^9, 3.7028969517253323`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"\<\"720p\"\>", ",", "\<\"60\"\>", ",", "\<\"wide\"\>", 
+    ",", "\<\"ntsc\"\>", ",", "\<\"12W\"\>", ",", "\<\"off\"\>", 
+    ",", "\<\"3/1\"\>", ",", "\<\"1\"\>", ",", "\<\"1\"\>", 
+    ",", "\<\"off\"\>", ",", "\<\"off\"\>", ",", "\<\"4\"\>", 
+    ",", "\<\"off\"\>", ",", "\<\"off\"\>", ",", "\<\"off\"\>", 
+    ",", "\<\"on\"\>", ",", "\<\"auto\"\>", ",", "\<\"gopro\"\>", 
+    ",", "\<\"6400\"\>", ",", "\<\"high\"\>", ",", "\<\"0\"\>", 
+    ",", "\<\"Video\"\>", ",", "\<\"Video\"\>"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.702896535612142*^9, 3.702896592683227*^9}, {
+  3.7028969416761417`*^9, 3.7028969517327843`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Flatten", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Thread", "[", 
+     RowBox[{"v", "\[Rule]", "#"}], "]"}], "&"}], "/@", "val"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.702896138171207*^9, 3.702896158538254*^9}, {
+  3.702896247505681*^9, 3.702896268040112*^9}, {3.7028963230130796`*^9, 
+  3.702896346021699*^9}, {3.7028964626869297`*^9, 3.702896465553835*^9}, {
+  3.70289650352829*^9, 3.702896505993217*^9}, {3.7028969592170143`*^9, 
+  3.702896993601384*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"videoResolution\"\>", "\[Rule]", "\<\"720p\"\>"}], ",", 
+   RowBox[{"\<\"fps\"\>", "\[Rule]", "\<\"60\"\>"}], ",", 
+   RowBox[{"\<\"fov\"\>", "\[Rule]", "\<\"wide\"\>"}], ",", 
+   RowBox[{"\<\"videoMode\"\>", "\[Rule]", "\<\"ntsc\"\>"}], ",", 
+   RowBox[{"\<\"photoResolution\"\>", "\[Rule]", "\<\"12W\"\>"}], ",", 
+   RowBox[{"\<\"loopVideo\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"burstRate\"\>", "\[Rule]", "\<\"3/1\"\>"}], ",", 
+   RowBox[{"\<\"timeLapse\"\>", "\[Rule]", "\<\"1\"\>"}], ",", 
+   RowBox[{"\<\"continuousShot\"\>", "\[Rule]", "\<\"1\"\>"}], ",", 
+   RowBox[{"\<\"photoInVideo\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"volume\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"led\"\>", "\[Rule]", "\<\"4\"\>"}], ",", 
+   RowBox[{"\<\"lowLight\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"spotMeter\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"autoPowerOff\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"protune\"\>", "\[Rule]", "\<\"on\"\>"}], ",", 
+   RowBox[{"\<\"whiteBalance\"\>", "\[Rule]", "\<\"auto\"\>"}], ",", 
+   RowBox[{"\<\"colorProfile\"\>", "\[Rule]", "\<\"gopro\"\>"}], ",", 
+   RowBox[{"\<\"iso\"\>", "\[Rule]", "\<\"6400\"\>"}], ",", 
+   RowBox[{"\<\"sharpness\"\>", "\[Rule]", "\<\"high\"\>"}], ",", 
+   RowBox[{"\<\"exposure\"\>", "\[Rule]", "\<\"0\"\>"}], ",", 
+   RowBox[{"\<\"mode\"\>", "\[Rule]", "\<\"Video\"\>"}], ",", 
+   RowBox[{"\<\"bootMode\"\>", "\[Rule]", "\<\"Video\"\>"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.7028962688305387`*^9, 3.7028962808411703`*^9}, {
+   3.702896323598851*^9, 3.702896346522512*^9}, 3.702896466200419*^9, 
+   3.702896506887899*^9, {3.702896945314124*^9, 3.7028969940554667`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"var", "=", 
+  RowBox[{"{", 
+   RowBox[{"a", ",", "b", ",", "c"}], "}"}]}], "\n", 
+ RowBox[{"values", "=", 
+  RowBox[{"{", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], "}"}]}]}], "Input",
+ CellChangeTimes->{{3.702896391230547*^9, 3.702896433154806*^9}, 
+   3.702896554524701*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"a", ",", "b", ",", "c"}], "}"}]], "Output",
+ CellChangeTimes->{{3.702896391954001*^9, 3.702896434099951*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.702896391954001*^9, 3.702896434104815*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Thread", "[", 
+    RowBox[{"var", "\[Rule]", "#"}], "]"}], "&"}], "/@", "values"}]], "Input",\
+
+ CellChangeTimes->{{3.702896402816772*^9, 3.702896402838842*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"a", "\[Rule]", "1"}], ",", 
+    RowBox[{"b", "\[Rule]", "2"}], ",", 
+    RowBox[{"c", "\[Rule]", "3"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.702896403476782*^9, 3.702896435195013*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringMatchQ", "[", 
+  RowBox[{"\"\</pas/asa/Lol.xls\>\"", ",", "\"\<*.xls\>\""}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.7028974325121307`*^9, 3.702897480600973*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.702897466403749*^9, 3.702897481064377*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<HERO3+\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetPassword", "[", "\"\<12345678\>\"", "]"}]}], "Input"],
+
+Cell[BoxData["\<\"Black\"\>"], "Output",
+ CellChangeTimes->{3.702897616900526*^9, 3.702897673593285*^9, 
+  3.702897723292631*^9, 3.702897774387097*^9, 3.702898007278336*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProSaveSettings", "[", 
+  RowBox[{
+   RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<pom\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7028976197725773`*^9, 3.702897638633205*^9}}],
+
+Cell[BoxData["\<\"/home/cukr/workspace/GoProController/GoProController/pom.\
+xls\"\>"], "Output",
+ CellChangeTimes->{3.702897649452602*^9, 3.7028976903108788`*^9, 
+  3.7028978111652317`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGet", "[", 
+  RowBox[{"goProGetVariables", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7028977971777363`*^9, 3.7028978301457787`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"videoResolution\"\>", "\[Rule]", "\<\"720p\"\>"}], ",", 
+   RowBox[{"\<\"fps\"\>", "\[Rule]", "\<\"60\"\>"}], ",", 
+   RowBox[{"\<\"fov\"\>", "\[Rule]", "\<\"wide\"\>"}], ",", 
+   RowBox[{"\<\"videoMode\"\>", "\[Rule]", "\<\"ntsc\"\>"}], ",", 
+   RowBox[{"\<\"photoResolution\"\>", "\[Rule]", "\<\"12W\"\>"}], ",", 
+   RowBox[{"\<\"loopVideo\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"burstRate\"\>", "\[Rule]", "\<\"3/1\"\>"}], ",", 
+   RowBox[{"\<\"timeLapse\"\>", "\[Rule]", "\<\"1\"\>"}], ",", 
+   RowBox[{"\<\"continuousShot\"\>", "\[Rule]", "\<\"1\"\>"}], ",", 
+   RowBox[{"\<\"photoInVideo\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"volume\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"led\"\>", "\[Rule]", "\<\"4\"\>"}], ",", 
+   RowBox[{"\<\"lowLight\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"spotMeter\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"autoPowerOff\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"protune\"\>", "\[Rule]", "\<\"on\"\>"}], ",", 
+   RowBox[{"\<\"whiteBalance\"\>", "\[Rule]", "\<\"auto\"\>"}], ",", 
+   RowBox[{"\<\"colorProfile\"\>", "\[Rule]", "\<\"gopro\"\>"}], ",", 
+   RowBox[{"\<\"iso\"\>", "\[Rule]", "\<\"6400\"\>"}], ",", 
+   RowBox[{"\<\"sharpness\"\>", "\[Rule]", "\<\"high\"\>"}], ",", 
+   RowBox[{"\<\"exposure\"\>", "\[Rule]", "\<\"0\"\>"}], ",", 
+   RowBox[{"\<\"mode\"\>", "\[Rule]", "\<\"Video\"\>"}], ",", 
+   RowBox[{"\<\"bootMode\"\>", "\[Rule]", "\<\"Video\"\>"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.702897813237426*^9, 3.70289784342179*^9, 
+  3.702897959755597*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"goProSet", "[", 
+  RowBox[{
+   RowBox[{"videoResolution", "\[Rule]", "\"\<1080p\>\""}], ",", 
+   RowBox[{"photoResolution", "\[Rule]", "\"\<7W\>\""}], ",", 
+   RowBox[{"volume", "\[Rule]", 
+    RowBox[{
+     RowBox[{"goProGetPossibleVolume", "[", "]"}], "\[LeftDoubleBracket]", 
+     "2", "\[RightDoubleBracket]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.702897777187921*^9, 3.7028977926308193`*^9}, {
+  3.702897848449994*^9, 3.702897878722207*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGet", "[", 
+  RowBox[{"goProGetVariables", "[", "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"videoResolution\"\>", "\[Rule]", "\<\"1080p\"\>"}], ",", 
+   RowBox[{"\<\"fps\"\>", "\[Rule]", "\<\"60\"\>"}], ",", 
+   RowBox[{"\<\"fov\"\>", "\[Rule]", "\<\"wide\"\>"}], ",", 
+   RowBox[{"\<\"videoMode\"\>", "\[Rule]", "\<\"ntsc\"\>"}], ",", 
+   RowBox[{"\<\"photoResolution\"\>", "\[Rule]", "\<\"7W\"\>"}], ",", 
+   RowBox[{"\<\"loopVideo\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"burstRate\"\>", "\[Rule]", "\<\"3/1\"\>"}], ",", 
+   RowBox[{"\<\"timeLapse\"\>", "\[Rule]", "\<\"1\"\>"}], ",", 
+   RowBox[{"\<\"continuousShot\"\>", "\[Rule]", "\<\"1\"\>"}], ",", 
+   RowBox[{"\<\"photoInVideo\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"volume\"\>", "\[Rule]", "\<\"70\"\>"}], ",", 
+   RowBox[{"\<\"led\"\>", "\[Rule]", "\<\"4\"\>"}], ",", 
+   RowBox[{"\<\"lowLight\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"spotMeter\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"autoPowerOff\"\>", "\[Rule]", "\<\"off\"\>"}], ",", 
+   RowBox[{"\<\"protune\"\>", "\[Rule]", "\<\"on\"\>"}], ",", 
+   RowBox[{"\<\"whiteBalance\"\>", "\[Rule]", "\<\"auto\"\>"}], ",", 
+   RowBox[{"\<\"colorProfile\"\>", "\[Rule]", "\<\"gopro\"\>"}], ",", 
+   RowBox[{"\<\"iso\"\>", "\[Rule]", "\<\"6400\"\>"}], ",", 
+   RowBox[{"\<\"sharpness\"\>", "\[Rule]", "\<\"high\"\>"}], ",", 
+   RowBox[{"\<\"exposure\"\>", "\[Rule]", "\<\"0\"\>"}], ",", 
+   RowBox[{"\<\"mode\"\>", "\[Rule]", "\<\"Video\"\>"}], ",", 
+   RowBox[{"\<\"bootMode\"\>", "\[Rule]", "\<\"Video\"\>"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.7028979732235317`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"goProLoadSettings", "[", 
+  "\"\</home/cukr/workspace/GoProController/GoProController/pom.xls\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7028976959718246`*^9, 3.702897702029726*^9}, {
+  3.702898167841013*^9, 3.7028981753886414`*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
@@ -26394,6 +27003,84 @@ Cell[CellGroupData[{
 Cell[994783, 24968, 216, 5, 34, "Input"],
 Cell[995002, 24975, 237, 6, 39, "Output"]
 }, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[995288, 24987, 128, 1, 65, "Section"],
+Cell[CellGroupData[{
+Cell[995441, 24992, 503, 9, 99, "Input"],
+Cell[995947, 25003, 207, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[996191, 25011, 244, 5, 32, "Input"],
+Cell[996438, 25018, 1710, 29, 80, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[998185, 25052, 427, 10, 55, "Input"],
+Cell[998615, 25064, 169, 2, 32, "Output"],
+Cell[998787, 25068, 509, 9, 34, "Output"]
+}, Open  ]],
+Cell[999311, 25080, 507, 12, 34, "Input"],
+Cell[999821, 25094, 181, 3, 32, "Input"],
+Cell[CellGroupData[{
+Cell[1000027, 25101, 608, 12, 34, "Input"],
+Cell[1000638, 25115, 382, 5, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1001057, 25125, 565, 11, 34, "Input"],
+Cell[1001625, 25138, 2737, 70, 80, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1004399, 25213, 192, 4, 32, "Input"],
+Cell[1004594, 25219, 1610, 27, 80, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1006241, 25251, 626, 14, 34, "Input"],
+Cell[1006870, 25267, 311, 4, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1007218, 25276, 636, 13, 34, "Input"],
+Cell[1007857, 25291, 1661, 28, 80, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1009555, 25324, 387, 10, 55, "Input"],
+Cell[1009945, 25336, 798, 13, 57, "Output"],
+Cell[1010746, 25351, 693, 12, 34, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1011476, 25368, 488, 11, 32, "Input"],
+Cell[1011967, 25381, 1784, 29, 80, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1013788, 25415, 322, 9, 57, "Input"],
+Cell[1014113, 25426, 149, 3, 34, "Output"],
+Cell[1014265, 25431, 173, 4, 34, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1014475, 25440, 208, 6, 32, "Input"],
+Cell[1014686, 25448, 266, 7, 34, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1014989, 25460, 193, 4, 34, "Input"],
+Cell[1015185, 25466, 97, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1015319, 25472, 338, 6, 99, "Input"],
+Cell[1015660, 25480, 173, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1015870, 25487, 215, 5, 32, "Input"],
+Cell[1016088, 25494, 190, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1016315, 25502, 170, 3, 32, "Input"],
+Cell[1016488, 25507, 1656, 28, 80, "Output"]
+}, Open  ]],
+Cell[1018159, 25538, 477, 10, 34, "Input"],
+Cell[CellGroupData[{
+Cell[1018661, 25552, 100, 2, 32, "Input"],
+Cell[1018764, 25556, 1611, 27, 80, "Output"]
+}, Open  ]],
+Cell[1020390, 25586, 262, 5, 32, "Input"]
 }, Open  ]]
 }, Open  ]]
 }

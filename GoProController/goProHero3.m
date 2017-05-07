@@ -286,7 +286,9 @@ goProGetPossibleBootMode::usage=
 
 (*saving settings to file*)
 goProSaveSettings::usage =
-    "goProSaveSettings[_String] saves settings to the file in parameter."
+    "goProSaveSettings[_String] saves settings to the file in parameter. The extension xls will be added automaticaly."
+goProLoadSettings::usage=
+    "goProLoadSettings[_String] load setting of camera from file with extension xls only!!"
 
 
 
@@ -361,7 +363,7 @@ goProSetCameraModel::usage=
 Begin["`Private`"]
 
 
-Print["camera: "<>camera]
+(*Print["camera: "<>camera]*)
 goProGetCamera[]:=camera
 
 model="";
@@ -429,7 +431,11 @@ goProGetStatus[unit_String, param_String] :=If[goProPassword=="",Message[goProSe
 
 (*Funkce pro inicializaci hesla*)
 goProSetPassword::timeOut="Camera not found."
-goProSetPassword[password_String] := (goProPassword = password;If[SameQ[PingTime["10.5.5.9"], $TimedOut], Message[goProSetPassword::timeOut], downloadSettings[];])
+goProSetPassword[password_String] := (goProPassword = password;If[SameQ[PingTime["10.5.5.9"], $TimedOut], Message[goProSetPassword::timeOut], 
+	goProTurnOn[];
+	PingTime["10.5.5.9"];
+	downloadSettings[];
+	])
 
 (*funkce pro zapnuti a vypnuti kamery*)
 goProTurnOn[] :=
@@ -1173,38 +1179,25 @@ getTimeInterval[] :=
     )
 
 
-(*download settings of camera and transform them to list*)
-settingsToList[] :=
-    {codeToMode[[ "0"<>ToString[goProGetStatus["camera", "cm"][[2]] ] ]],
-    codeToVideoRes[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "vv"][[2]], 16]], 1] ]],
-    codeToFov[[ "0" <> ToString[goProGetStatus["camera", "fv"][[2]]] ]],
-    codeToFPS[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "fs"][[2]], 16]], 1] ]],
-    codeToPhotoRes[["0" <> ToString[goProGetStatus["camera", "pr"][[2]] ] ]],
-    getTimeInterval[];
-    codeToBr[["0" <> ToString[goProGetStatus["camera", "bu"][[2]] ] ]],
-    codeToLo[["0" <> ToString[goProGetStatus["camera", "lo"][[2]] ] ]],
-    codeToCs[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "cs"][[2]], 16]], 1] ]],
-    codeToPn[["0" <> ToString[goProGetStatus["camera", "pn"][[2]] ] ]],
-    codeToBs[["0" <> ToString[goProGetStatus["camera", "bs"][[2]] ] ]],
-    codeToLb[["0" <> ToString[goProGetStatus["camera", "lb"][[2]] ] ]],
-    codeToLw[["0" <> ToString[goProGetStatus["camera", "lw"][[2]] ] ]],
-    codeToEx[["0" <> ToString[goProGetStatus["camera", "ex"][[2]] ] ]],
-    codeToAo[["0" <> ToString[goProGetStatus["camera", "ao"][[2]] ] ]];
-    codeToVm[["0" <> ToString[goProGetStatus["camera", "vm"][[2]] ] ]];
-    codeToPt[["0" <> ToString[goProGetStatus["camera", "pt"][[2]] ] ]],
-    codeToWb[["0" <> ToString[goProGetStatus["camera", "wb"][[2]] ] ]],
-    codeToCo[["0" <> ToString[goProGetStatus["camera", "co"][[2]] ] ]],
-    codeToGa[["0" <> ToString[goProGetStatus["camera", "ga"][[2]] ] ]],
-    codeToSp[["0" <> ToString[goProGetStatus["camera", "sp"][[2]] ] ]],
-    codeToEv[[ "0" <> StringTake[ToString[BaseForm[goProGetStatus["camera", "ev"][[2]], 16]], 1] ]]
 
-    }
 
 (*exports settings to name specified by parameter*)
-goProSaveSettings[file_String] :=
-    Export[file,settingsToList[]]
+toExpr[x_Rule] := goProSet[ToExpression[x[[1]]] -> x[[2]]]
+
+goProLoadSettings::wrong="Wrong format of file `1`, please use xls extension."
+goProSaveSettings[file_String] := (pom=goProGet[goProGetVariables[]];Export[file<>".xls", {pom[[All, 1]], pom[[All, 2]]}])
 
 
+
+goProLoadSettings[file_String] := (
+	If[StringMatchQ[file, "*.xls"],
+		p=Flatten[Import[file], 1];
+		var=p[[1]];
+		val={p[[2]]};
+		toExpr[#]&/@Flatten[Thread[var -> #] & /@ val];,
+		Message[goProLoadSettings::wrong,file]
+	]
+)
 (*downloading content*)
 
 

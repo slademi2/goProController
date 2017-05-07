@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     39008,       1061]
-NotebookOptionsPosition[     32767,        873]
-NotebookOutlinePosition[     35730,        939]
-CellTagsIndexPosition[     35687,        936]
+NotebookDataLength[     52563,       1417]
+NotebookOptionsPosition[     45345,       1193]
+NotebookOutlinePosition[     48306,       1259]
+CellTagsIndexPosition[     48263,       1256]
 WindowTitle->Setting parameters of goProCamera
 WindowFrame->Normal*)
 
@@ -56,7 +56,11 @@ HERO3+HERO4goProSetup\"\>":>Documentation`HelpLookup[
         StripOnInput->False], {"\<\"goProGet\"\>":>Documentation`HelpLookup[
        "paclet:GoProController/ref/goProGet"], "\<\"goProGetVariables\"\>":>
        Documentation`HelpLookup[
-       "paclet:GoProController/ref/goProGetVariables"], "\<\"goProSet\"\>":>
+       "paclet:GoProController/ref/goProGetVariables"], \
+"\<\"goProLoadSettings\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProLoadSettings"], \
+"\<\"goProSaveSettings\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProSaveSettings"], "\<\"goProSet\"\>":>
        Documentation`HelpLookup["paclet:GoProController/ref/goProSet"]},
        Appearance->None,
        MenuAppearance->Automatic,
@@ -103,7 +107,7 @@ tutorial/goProSetup.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$13595], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$15347], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "GoProController/tutorial/goProSetup", ".html"]], None}]}]},
@@ -240,6 +244,124 @@ stRef:documentID=xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A/> \
      "GrayLinkWithIcon",
      BaseStyle->{"TutorialJumpBoxLink"}], 
     TemplateBox[{
+     Cell["goProSaveSettings & goProLoadSettings"],
+      "paclet:GoProController/tutorial/goProSetup#1615826510",GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
+          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
+          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
+          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
+          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
+          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
+          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
+          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
+          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
+          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
+          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
+          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
+          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
+          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
+          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
+          128, 128, 0}}}], {{0, 8}, {8, 0}}, {0, 255}, ColorFunction -> 
+         RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8, 8}, PlotRange -> {{0, 8}, {0, 8}}, 
+       ImageSize -> {8, 9}],GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
+          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
+          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
+          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
+          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
+          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
+          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
+           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
+          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
+          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
+           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
+           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
+          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
+         0, 8}, {8, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "XMP" -> Association[{
+              "BasicSchema" -> 
+               Association[{
+                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
+               "MediaManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
+                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
+                  "InstanceID" -> 
+                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
+               "RightsManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
+               "PagedTextSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
+            "Comments" -> 
+            Association[{
+              "Software" -> "Adobe ImageReady", "XML:com.adobe.xmp" -> 
+               "<?xpacket begin=\:feff id=W5M0MpCehiHzreSzNTczkc9d?> \
+<x:xmpmeta xmlns:x=adobe:ns:meta/ x:xmptk=Adobe XMP Core 5.0-c060 61.134777, \
+2010/02/12-17:32:00> <rdf:RDF \
+xmlns:rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#> <rdf:Description \
+rdf:about= xmlns:xmp=http://ns.adobe.com/xap/1.0/ \
+xmlns:xmpMM=http://ns.adobe.com/xap/1.0/mm/ \
+xmlns:stRef=http://ns.adobe.com/xap/1.0/sType/ResourceRef# \
+xmp:CreatorTool=Adobe Photoshop CS5 Macintosh \
+xmpMM:InstanceID=xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A \
+xmpMM:DocumentID=xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A> <xmpMM:DerivedFrom \
+stRef:instanceID=xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A \
+stRef:documentID=xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A/> \
+</rdf:Description> </rdf:RDF> </x:xmpmeta> <?xpacket end=r?>"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8, 8}, PlotRange -> {{0, 8}, {0, 8}}, 
+       ImageSize -> {8, 9}]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}]},
+   {
+    TemplateBox[{
      Cell["goProSet"],"paclet:GoProController/tutorial/goProSetup#348669714",
       GraphicsBox[
        TagBox[
@@ -355,7 +477,7 @@ stRef:documentID=xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A/> \
        ImageSizeRaw -> {8, 8}, PlotRange -> {{0, 8}, {0, 8}}, 
        ImageSize -> {8, 9}]},
      "GrayLinkWithIcon",
-     BaseStyle->{"TutorialJumpBoxLink"}]}
+     BaseStyle->{"TutorialJumpBoxLink"}], ""}
   }]], "TutorialJumpBox"],
 
 Cell["\<\
@@ -400,6 +522,11 @@ Cell[TextData[{
 }], "Text",
  CellID->428166627],
 
+Cell["\<\
+The setting of camera can be saved to the file for later use.\
+\>", "Text",
+ CellID->606844132],
+
 Cell[BoxData[GridBox[{
    {
     RowBox[{
@@ -427,7 +554,21 @@ Cell[BoxData[GridBox[{
      ButtonBox["goProSet",
       BaseStyle->"Link",
       ButtonData->"paclet:GoProController/ref/goProSet"]
-    }], "TableText"]}
+    }], "TableText"]},
+   {
+    RowBox[{
+     ButtonBox["goProSaveSettings",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/goProSaveSettings"], "[", 
+     "file", "]"}], Cell[
+    "saves current setting of camera to the file", "TableText"]},
+   {
+    RowBox[{
+     ButtonBox["goProLoadSettings",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/goProLoadSettings"], "[", 
+     "path", "]"}], Cell[
+    "load setting of camera from the file", "TableText"]}
   }]], "DefinitionBox",
  CellID->2096742444],
 
@@ -822,6 +963,185 @@ Cell[BoxData[
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[29]=",
  CellID->212197440]
+}, Open  ]],
+
+Cell[" ", "Text",
+ Editable->False,
+ Selectable->False,
+ CellFrame->{{0, 0}, {0, 3}},
+ ShowCellBracket->False,
+ CellMargins->{{0, 0}, {1, 1}},
+ CellElementSpacings->{"CellMinHeight"->1},
+ CellFrameMargins->0,
+ CellFrameColor->RGBColor[0, 0, 1],
+ CellSize->{Inherited, 5},
+ CellID->1061194056]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["goProSaveSettings & goProLoadSettings", "Section",
+ CellID->1615826510],
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"goProSetCamera", "[", "\"\<HERO3+\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"goProSetPassword", "[", "\"\<12345678\>\"", "]"}], ";"}]}], "Input",\
+
+ CellLabel->"In[1]:=",
+ CellID->1630198016],
+
+Cell["\<\
+We will first look how the camera is set and save these settings to file.\
+\>", "TR",
+ CellID->2138587210],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"goProGet", "[", 
+   RowBox[{"{", 
+    RowBox[{"videoResolution", ",", "photoResolution"}], "}"}], "]"}], "//", 
+  "TableForm"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSaveSettings", "[", "\"\</tmp/goProSettings\>\"", 
+  "]"}]}], "Input",
+ CellLabel->"In[18]:=",
+ CellID->1485624514],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      RowBox[{"\<\"videoResolution\"\>", "\[Rule]", "\<\"720p\"\>"}]},
+     {
+      RowBox[{"\<\"photoResolution\"\>", "\[Rule]", "\<\"12W\"\>"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ ImageSize->{178, 33},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[18]//TableForm=",
+ CellID->1851617163],
+
+Cell[BoxData["\<\"/tmp/goProSettings.xls\"\>"], "Output",
+ ImageSize->{184, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[19]=",
+ CellID->1252387467]
+}, Open  ]],
+
+Cell["\<\
+Now we will change settings of camera and after that load settings from the \
+file.\
+\>", "TR",
+ CellID->296570128],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProSet", "[", 
+  RowBox[{
+   RowBox[{"videoResolution", "\[Rule]", "\"\<1080p\>\""}], ",", 
+   RowBox[{"photoResolution", "\[Rule]", "\"\<7W\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"goProGet", "[", 
+   RowBox[{"{", 
+    RowBox[{"videoResolution", ",", "photoResolution"}], "}"}], "]"}], "//", 
+  "TableForm"}]}], "Input",
+ CellLabel->"In[20]:=",
+ CellID->784953719],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      RowBox[{"\<\"videoResolution\"\>", "\[Rule]", "\<\"1080p\"\>"}]},
+     {
+      RowBox[{"\<\"photoResolution\"\>", "\[Rule]", "\<\"7W\"\>"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ ImageSize->{185, 33},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[21]//TableForm=",
+ CellID->4265104]
+}, Open  ]],
+
+Cell["Now we will restore the settings.", "TR",
+ CellID->1656744707],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProLoadSettings", "[", "\"\</tmp/goProSettings.xls\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"goProGet", "[", 
+   RowBox[{"{", 
+    RowBox[{"videoResolution", ",", "photoResolution"}], "}"}], "]"}], "//", 
+  "TableForm"}]}], "Input",
+ CellLabel->"In[22]:=",
+ CellID->1691246609],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      RowBox[{"\<\"videoResolution\"\>", "\[Rule]", "\<\"720p\"\>"}]},
+     {
+      RowBox[{"\<\"photoResolution\"\>", "\[Rule]", "\<\"12W\"\>"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ ImageSize->{178, 33},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[23]//TableForm=",
+ CellID->1584613228]
 }, Open  ]]
 }, Open  ]],
 
@@ -886,7 +1206,7 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2017, 5, 1, 22, 24, 4.086987}", 
+   "built" -> "{2017, 5, 8, 1, 1, 6.697880}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -902,7 +1222,7 @@ camera currently set. If it wasn't this way camera would be set to default \
 options with every usage of this function (except the options used in its \
 use). To get options for function goProSet and goProGet use goProGetVariables \
 - it returns list of those options.", "synonyms" -> {}, "tabletags" -> 
-    DocumentationBuild`Make`Private`tabletaggingrules$13490, "title" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$15215, "title" -> 
     "Setting parameters of goProCamera", "titlemodifier" -> "", "windowtitle" -> 
     "Setting parameters of goProCamera", "type" -> "Tutorial", "uri" -> 
     "GoProController/tutorial/goProSetup"}, "SearchTextTranslated" -> ""},
@@ -938,131 +1258,167 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[605, 21, 3936, 94, 52, "AnchorBarGrid",
+Cell[605, 21, 4162, 98, 52, "AnchorBarGrid",
  CellID->1],
 Cell[CellGroupData[{
-Cell[4566, 119, 70, 1, 52, "Title",
+Cell[4792, 123, 70, 1, 52, "Title",
  CellID->509267359],
-Cell[4639, 122, 13431, 236, 45, "TutorialJumpBox"],
-Cell[18073, 360, 275, 5, 72, "Text",
+Cell[4865, 126, 20159, 354, 66, "TutorialJumpBox"],
+Cell[25027, 482, 275, 5, 72, "Text",
  CellID->287586024],
-Cell[18351, 367, 674, 16, 94, "Text",
+Cell[25305, 489, 674, 16, 94, "Text",
  CellID->1758738144],
-Cell[19028, 385, 452, 15, 32, "Text",
+Cell[25982, 507, 452, 15, 32, "Text",
  CellID->428166627],
-Cell[19483, 402, 932, 29, 106, "DefinitionBox",
+Cell[26437, 524, 105, 3, 32, "Text",
+ CellID->606844132],
+Cell[26545, 529, 1413, 43, 152, "DefinitionBox",
  CellID->2096742444],
-Cell[20418, 433, 71, 1, 33, "Caption",
+Cell[27961, 574, 71, 1, 33, "Caption",
  CellID->1891092685],
-Cell[20492, 436, 292, 10, 10, "Text",
+Cell[28035, 577, 292, 10, 10, "Text",
  CellID->2111437422],
 Cell[CellGroupData[{
-Cell[20809, 450, 48, 1, 65, "Section",
+Cell[28352, 591, 48, 1, 65, "Section",
  CellID->1005194034],
-Cell[20860, 453, 65, 1, 33, "MathCaption",
+Cell[28403, 594, 65, 1, 70, "MathCaption",
  CellID->836781195],
 Cell[CellGroupData[{
-Cell[20950, 458, 314, 8, 66, "Input",
+Cell[28493, 599, 314, 8, 70, "Input",
  CellID->2125804311],
-Cell[21267, 468, 113, 2, 70, "Print",
+Cell[28810, 609, 113, 2, 70, "Print",
  CellID->1754727332]
 }, Open  ]],
-Cell[21395, 473, 283, 6, 70, "TR",
+Cell[28938, 614, 283, 6, 70, "TR",
  CellID->1299637229],
 Cell[CellGroupData[{
-Cell[21703, 483, 109, 3, 70, "Input",
+Cell[29246, 624, 109, 3, 70, "Input",
  CellID->1789116677],
-Cell[21815, 488, 612, 13, 96, "Output",
+Cell[29358, 629, 612, 13, 96, "Output",
  CellID->35410311]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22464, 506, 180, 6, 70, "Input",
+Cell[30007, 647, 180, 6, 70, "Input",
  CellID->1514483828],
-Cell[22647, 514, 2306, 67, 446, "Output",
+Cell[30190, 655, 2306, 67, 446, "Output",
  CellID->1391623414]
 }, Open  ]],
-Cell[24968, 584, 198, 5, 70, "TR",
+Cell[32511, 725, 198, 5, 70, "TR",
  CellID->1830638323],
-Cell[25169, 591, 142, 4, 70, "TR",
+Cell[32712, 732, 142, 4, 70, "TR",
  CellID->528588637],
 Cell[CellGroupData[{
-Cell[25336, 599, 189, 6, 70, "Input",
+Cell[32879, 740, 189, 6, 70, "Input",
  CellID->95221385],
-Cell[25528, 607, 334, 10, 39, "Output",
+Cell[33071, 748, 334, 10, 39, "Output",
  CellID->1126870240]
 }, Open  ]],
-Cell[25877, 620, 292, 10, 70, "Text",
+Cell[33420, 761, 292, 10, 70, "Text",
  CellID->1254440138]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[26206, 635, 47, 1, 70, "Section",
+Cell[33749, 776, 47, 1, 70, "Section",
  CellID->348669714],
-Cell[26256, 638, 337, 6, 70, "Text",
+Cell[33799, 779, 337, 6, 70, "Text",
  CellID->196024790],
-Cell[26596, 646, 68, 1, 70, "MathCaption",
+Cell[34139, 787, 68, 1, 70, "MathCaption",
  CellID->1315041730],
 Cell[CellGroupData[{
-Cell[26689, 651, 314, 8, 70, "Input",
+Cell[34232, 792, 314, 8, 70, "Input",
  CellID->1613696576],
-Cell[27006, 661, 113, 2, 70, "Print",
+Cell[34549, 802, 113, 2, 70, "Print",
  CellID->1426025477]
 }, Open  ]],
-Cell[27134, 666, 84, 1, 70, "TR",
+Cell[34677, 807, 84, 1, 70, "TR",
  CellID->560867154],
 Cell[CellGroupData[{
-Cell[27243, 671, 109, 3, 70, "Input",
+Cell[34786, 812, 109, 3, 70, "Input",
  CellID->943161208],
-Cell[27355, 676, 615, 13, 96, "Output",
+Cell[34898, 817, 615, 13, 96, "Output",
  CellID->1098673500]
 }, Open  ]],
-Cell[27985, 692, 92, 1, 70, "TR",
+Cell[35528, 833, 92, 1, 70, "TR",
  CellID->952296395],
 Cell[CellGroupData[{
-Cell[28102, 697, 212, 6, 70, "Input",
+Cell[35645, 838, 212, 6, 70, "Input",
  CellID->857075009],
-Cell[28317, 705, 164, 5, 37, "Output",
+Cell[35860, 846, 164, 5, 37, "Output",
  CellID->882906404]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28518, 715, 119, 3, 70, "Input",
+Cell[36061, 856, 119, 3, 70, "Input",
  CellID->149777288],
-Cell[28640, 720, 246, 8, 37, "Output",
+Cell[36183, 861, 246, 8, 37, "Output",
  CellID->129928237]
 }, Open  ]],
-Cell[28901, 731, 68, 1, 70, "TR",
+Cell[36444, 872, 68, 1, 70, "TR",
  CellID->376195340],
 Cell[CellGroupData[{
-Cell[28994, 736, 192, 4, 70, "Input",
+Cell[36537, 877, 192, 4, 70, "Input",
  CellID->1206488953],
-Cell[29189, 742, 267, 8, 39, "Output",
+Cell[36732, 883, 267, 8, 39, "Output",
  CellID->1004103899],
-Cell[29459, 752, 443, 10, 58, "Output",
+Cell[37002, 893, 443, 10, 58, "Output",
  CellID->573489133]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[29939, 767, 387, 12, 70, "Input",
+Cell[37482, 908, 387, 12, 70, "Input",
  CellID->701876139],
-Cell[30329, 781, 333, 10, 39, "Output",
+Cell[37872, 922, 333, 10, 39, "Output",
  CellID->1991717009]
 }, Open  ]],
-Cell[30677, 794, 66, 1, 70, "TR",
+Cell[38220, 935, 66, 1, 70, "TR",
  CellID->248243666],
 Cell[CellGroupData[{
-Cell[30768, 799, 398, 12, 70, "Input",
+Cell[38311, 940, 398, 12, 70, "Input",
  CellID->39231942],
-Cell[31169, 813, 334, 10, 39, "Output",
+Cell[38712, 954, 334, 10, 39, "Output",
  CellID->212197440]
+}, Open  ]],
+Cell[39061, 967, 292, 10, 70, "Text",
+ CellID->1061194056]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39390, 982, 77, 1, 70, "Section",
+ CellID->1615826510],
+Cell[39470, 985, 438, 12, 70, "Input",
+ CellID->1630198016],
+Cell[39911, 999, 116, 3, 70, "TR",
+ CellID->2138587210],
+Cell[CellGroupData[{
+Cell[40052, 1006, 319, 9, 70, "Input",
+ CellID->1485624514],
+Cell[40374, 1017, 833, 25, 68, "Output",
+ CellID->1851617163],
+Cell[41210, 1044, 190, 5, 37, "Output",
+ CellID->1252387467]
+}, Open  ]],
+Cell[41415, 1052, 125, 4, 70, "TR",
+ CellID->296570128],
+Cell[CellGroupData[{
+Cell[41565, 1060, 416, 12, 70, "Input",
+ CellID->784953719],
+Cell[41984, 1074, 830, 25, 68, "Output",
+ CellID->4265104]
+}, Open  ]],
+Cell[42829, 1102, 68, 1, 70, "TR",
+ CellID->1656744707],
+Cell[CellGroupData[{
+Cell[42922, 1107, 323, 9, 70, "Input",
+ CellID->1691246609],
+Cell[43248, 1118, 833, 25, 68, "Output",
+ CellID->1584613228]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[31552, 829, 287, 12, 70, "RelatedTutorialsSection",
+Cell[44130, 1149, 287, 12, 70, "RelatedTutorialsSection",
  CellID->415694126],
-Cell[31842, 843, 31, 0, 70, "SectionHeaderSpacer"],
-Cell[31876, 845, 837, 22, 70, "RelatedTutorials",
+Cell[44420, 1163, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[44454, 1165, 837, 22, 70, "RelatedTutorials",
  CellID->806871991]
 }, Open  ]]
 }, Open  ]],
-Cell[32740, 871, 23, 0, 70, "FooterCell"]
+Cell[45318, 1191, 23, 0, 70, "FooterCell"]
 }
 ]
 *)

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     24319,        686]
+NotebookDataLength[     24317,        686]
 NotebookOptionsPosition[     20971,        585]
-NotebookOutlinePosition[     23126,        642]
-CellTagsIndexPosition[     23041,        637]
+NotebookOutlinePosition[     23124,        642]
+CellTagsIndexPosition[     23039,        637]
 WindowTitle->goProDeleteLast
 WindowFrame->Normal*)
 
@@ -80,7 +80,7 @@ goProDeleteLast.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$4130], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$4219], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "GoProController/ref/goProDeleteLast", ".html"]], None}]}]},
@@ -140,7 +140,7 @@ Cell[TextData[{
 }], "PrimaryExamplesSection",
  WholeCellGroupOpener->True,
  CellTags->"PrimaryExamplesSection",
- CellID->917552862],
+ CellID->422670148],
 
 Cell[CellGroupData[{
 
@@ -150,7 +150,7 @@ Cell[TextData[{
  Cell["(1)", "ExampleCount"]
 }], "ExampleSection", "ExampleSection",
  WholeCellGroupOpener->True,
- CellID->195393746],
+ CellID->474556745],
 
 Cell[CellGroupData[{
 
@@ -578,7 +578,7 @@ Cell[BoxData[
    "paclet:GoProController/guide/GoProController"},
   "RefLink",
   BaseStyle->"MoreAbout"]], "MoreAbout",
- CellID->115314390]
+ CellID->194904878]
 }, Open  ]],
 
 Cell[" ", "FooterCell"]
@@ -599,7 +599,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2017, 5, 1, 22, 23, 35.442685}", 
+   "built" -> "{2017, 5, 8, 1, 0, 30.760643}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -631,12 +631,12 @@ CellTagsIndex->{
  "PrimaryExamplesSection"->{
   Cell[4452, 127, 387, 15, 33, "PrimaryExamplesSection",
    CellTags->"PrimaryExamplesSection",
-   CellID->917552862]}
+   CellID->422670148]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 22898, 630}
+ {"PrimaryExamplesSection", 22896, 630}
  }
 *)
 (*NotebookFileOutline
@@ -649,10 +649,10 @@ Cell[4003, 111, 424, 12, 84, "Usage",
 Cell[CellGroupData[{
 Cell[4452, 127, 387, 15, 33, "PrimaryExamplesSection",
  CellTags->"PrimaryExamplesSection",
- CellID->917552862],
+ CellID->422670148],
 Cell[CellGroupData[{
 Cell[4864, 146, 195, 6, 28, "ExampleSection",
- CellID->195393746],
+ CellID->474556745],
 Cell[CellGroupData[{
 Cell[5084, 156, 528, 13, 85, "Input",
  CellID->556374637],
@@ -685,7 +685,7 @@ Cell[20415, 558, 276, 12, 33, "MoreAboutSection",
  CellID->38303248],
 Cell[20694, 572, 31, 0, 70, "SectionHeaderSpacer"],
 Cell[20728, 574, 201, 6, 70, "MoreAbout",
- CellID->115314390]
+ CellID->194904878]
 }, Open  ]],
 Cell[20944, 583, 23, 0, 70, "FooterCell"]
 }

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    109332,       3089]
-NotebookOptionsPosition[     98022,       2715]
-NotebookOutlinePosition[     98360,       2730]
-CellTagsIndexPosition[     98317,       2727]
+NotebookDataLength[    109727,       3086]
+NotebookOptionsPosition[     98379,       2711]
+NotebookOutlinePosition[     98748,       2727]
+CellTagsIndexPosition[     98705,       2724]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -22,14 +22,16 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[BoxData[{
  RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProSetCamera", "[", "\"\<Hero3+Black\>\"", 
+ RowBox[{"goProSetCamera", "[", "\"\<HERO3+\>\"", 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProGetModel", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", 
+  "]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"goProInit", "[", "\"\<12345678\>\"", "]"}], ";"}]}], "Input",
+  RowBox[{"goProSetPassword", "[", "\"\<12345678\>\"", "]"}], ";"}]}], "Input",\
+
  CellChangeTimes->{{3.7014210280939417`*^9, 3.701421047326007*^9}, {
   3.701421159749873*^9, 3.7014211671526537`*^9}, {3.701421366822328*^9, 
-  3.701421370151347*^9}}],
+  3.701421370151347*^9}, {3.703154235699521*^9, 3.703154261305558*^9}}],
 
 Cell[BoxData["\<\"HERO3+Black\"\>"], "Output",
  CellChangeTimes->{
@@ -102,33 +104,34 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"goProGetPossibleModes", "[", "]"}], "\[LeftDoubleBracket]", "1", 
     "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<mode\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<mode\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"mode", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleModes", "[", "]"}], "\[LeftDoubleBracket]", "2", 
     "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<mode\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<mode\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"mode", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleModes", "[", "]"}], "\[LeftDoubleBracket]", "3", 
     "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<mode\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<mode\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"mode", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleModes", "[", "]"}], "\[LeftDoubleBracket]", "4", 
     "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<mode\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<mode\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"mode", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleModes", "[", "]"}], "\[LeftDoubleBracket]", "1", 
     "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<mode\>\"", "]"}]}], "Input",
+ RowBox[{"goProGet", "[", "\"\<mode\>\"", "]"}]}], "Input",
  CellChangeTimes->{{3.701422045417101*^9, 3.701422047155189*^9}, {
-  3.7014224994777317`*^9, 3.701422612707561*^9}}],
+  3.7014224994777317`*^9, 3.701422612707561*^9}, {3.7031542292607107`*^9, 
+  3.7031542292714777`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -186,79 +189,80 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"goProGetPossibleVideoRes", "[", "]"}], "\[LeftDoubleBracket]", 
     "1", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoResolution\>\"", 
+ RowBox[{"goProGet", "[", "\"\<videoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"videoResolution", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleVideoRes", "[", "]"}], "\[LeftDoubleBracket]", 
     "2", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoResolution\>\"", 
+ RowBox[{"goProGet", "[", "\"\<videoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"videoResolution", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleVideoRes", "[", "]"}], "\[LeftDoubleBracket]", 
     "3", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoResolution\>\"", 
+ RowBox[{"goProGet", "[", "\"\<videoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"videoResolution", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleVideoRes", "[", "]"}], "\[LeftDoubleBracket]", 
     "4", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoResolution\>\"", 
+ RowBox[{"goProGet", "[", "\"\<videoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"videoResolution", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleVideoRes", "[", "]"}], "\[LeftDoubleBracket]", 
     "5", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoResolution\>\"", 
+ RowBox[{"goProGet", "[", "\"\<videoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"videoResolution", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleVideoRes", "[", "]"}], "\[LeftDoubleBracket]", 
     "6", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoResolution\>\"", 
+ RowBox[{"goProGet", "[", "\"\<videoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"videoResolution", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleVideoRes", "[", "]"}], "\[LeftDoubleBracket]", 
     "7", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoResolution\>\"", 
+ RowBox[{"goProGet", "[", "\"\<videoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"videoResolution", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleVideoRes", "[", "]"}], "\[LeftDoubleBracket]", 
     "8", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoResolution\>\"", 
+ RowBox[{"goProGet", "[", "\"\<videoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"videoResolution", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleVideoRes", "[", "]"}], "\[LeftDoubleBracket]", 
     "9", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoResolution\>\"", 
+ RowBox[{"goProGet", "[", "\"\<videoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"videoResolution", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleVideoRes", "[", "]"}], "\[LeftDoubleBracket]", 
     "10", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoResolution\>\"", 
+ RowBox[{"goProGet", "[", "\"\<videoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"videoResolution", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleVideoRes", "[", "]"}], "\[LeftDoubleBracket]", 
     "11", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoResolution\>\"", 
+ RowBox[{"goProGet", "[", "\"\<videoResolution\>\"", 
   "]"}], "\[IndentingNewLine]"}], "Input",
- CellChangeTimes->{{3.701422682823812*^9, 3.701422739500793*^9}}],
+ CellChangeTimes->{{3.701422682823812*^9, 3.701422739500793*^9}, {
+  3.703154229310157*^9, 3.7031542293288603`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -350,10 +354,10 @@ Cell[BoxData[{
     RowBox[{
      RowBox[{"goProGetPossibleFOV", "[", "]"}], "\[LeftDoubleBracket]", "1", 
      "\[RightDoubleBracket]"}]}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoResolution\>\"", 
+ RowBox[{"goProGet", "[", "\"\<videoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<fps\>\"", "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<fov\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<fps\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<fov\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{
    RowBox[{"fps", "->", 
@@ -364,10 +368,10 @@ Cell[BoxData[{
     RowBox[{
      RowBox[{"goProGetPossibleFOV", "[", "]"}], "\[LeftDoubleBracket]", "2", 
      "\[RightDoubleBracket]"}]}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoResolution\>\"", 
+ RowBox[{"goProGet", "[", "\"\<videoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<fps\>\"", "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<fov\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<fps\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<fov\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{
    RowBox[{"fps", "->", 
@@ -378,10 +382,10 @@ Cell[BoxData[{
     RowBox[{
      RowBox[{"goProGetPossibleFOV", "[", "]"}], "\[LeftDoubleBracket]", "3", 
      "\[RightDoubleBracket]"}]}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoResolution\>\"", 
+ RowBox[{"goProGet", "[", "\"\<videoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<fps\>\"", "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<fov\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<fps\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<fov\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{
    RowBox[{"fps", "->", 
@@ -392,12 +396,13 @@ Cell[BoxData[{
     RowBox[{
      RowBox[{"goProGetPossibleFOV", "[", "]"}], "\[LeftDoubleBracket]", "1", 
      "\[RightDoubleBracket]"}]}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoResolution\>\"", 
+ RowBox[{"goProGet", "[", "\"\<videoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<fps\>\"", "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<fov\>\"", "]"}]}], "Input",
+ RowBox[{"goProGet", "[", "\"\<fps\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<fov\>\"", "]"}]}], "Input",
  CellChangeTimes->{{3.701422791486536*^9, 3.7014228992870092`*^9}, {
-  3.701422983228805*^9, 3.701423051461082*^9}}],
+  3.701422983228805*^9, 3.701423051461082*^9}, {3.703154229348876*^9, 
+  3.703154229365674*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -506,40 +511,32 @@ Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{"goProSet", "[", 
-  RowBox[{"photoResolution", "\[Rule]", 
-   RowBox[{
-    RowBox[{"goProGetPossiblePhotoRes", "[", "]"}], "\[LeftDoubleBracket]", 
-    "1", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<photoResolution\>\"", 
+  RowBox[{"photoResolution", "\[Rule]", "\"\<5M\>\""}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<photoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
-  RowBox[{"photoResolution", "\[Rule]", 
-   RowBox[{
-    RowBox[{"goProGetPossiblePhotoRes", "[", "]"}], "\[LeftDoubleBracket]", 
-    "2", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<photoResolution\>\"", 
+  RowBox[{"photoResolution", "\[Rule]", "\"\<7W\>\""}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<photoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
-  RowBox[{"photoResolution", "\[Rule]", 
-   RowBox[{
-    RowBox[{"goProGetPossiblePhotoRes", "[", "]"}], "\[LeftDoubleBracket]", 
-    "3", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<photoResolution\>\"", 
+  RowBox[{"photoResolution", "\[Rule]", "\"\<12W\>\""}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<photoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
-  RowBox[{"photoResolution", "\[Rule]", 
-   RowBox[{
-    RowBox[{"goProGetPossiblePhotoRes", "[", "]"}], "\[LeftDoubleBracket]", 
-    "4", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<photoResolution\>\"", 
+  RowBox[{"photoResolution", "\[Rule]", "\"\<7M\>\""}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<photoResolution\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
-  RowBox[{"photoResolution", "\[Rule]", 
-   RowBox[{
-    RowBox[{"goProGetPossiblePhotoRes", "[", "]"}], "\[LeftDoubleBracket]", 
-    "3", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<photoResolution\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.701423148172182*^9, 3.7014232150578003`*^9}}],
+  RowBox[{"photoResolution", "\[Rule]", "\"\<12W\>\""}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<photoResolution\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.701423148172182*^9, 3.7014232150578003`*^9}, {
+  3.7031542293738737`*^9, 3.703154229378496*^9}, {3.703154303518702*^9, 
+  3.703154339393196*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -600,50 +597,45 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"goProGetPossibleTimeLapse", "[", "]"}], "\[LeftDoubleBracket]", 
     "1", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<timeLapse\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<timeLapse\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"timeLapse", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleTimeLapse", "[", "]"}], "\[LeftDoubleBracket]", 
     "2", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<timeLapse\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<timeLapse\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"timeLapse", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleTimeLapse", "[", "]"}], "\[LeftDoubleBracket]", 
     "3", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<timeLapse\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<timeLapse\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"timeLapse", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleTimeLapse", "[", "]"}], "\[LeftDoubleBracket]", 
     "4", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<timeLapse\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<timeLapse\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"timeLapse", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleTimeLapse", "[", "]"}], "\[LeftDoubleBracket]", 
     "5", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<timeLapse\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<timeLapse\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"timeLapse", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleTimeLapse", "[", "]"}], "\[LeftDoubleBracket]", 
     "6", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<timeLapse\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<timeLapse\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"timeLapse", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleTimeLapse", "[", "]"}], "\[LeftDoubleBracket]", 
     "1", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<timeLapse\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.7014232823514767`*^9, 3.701423328810101*^9}}],
+ RowBox[{"goProGet", "[", "\"\<timeLapse\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.7014232823514767`*^9, 3.701423328810101*^9}, {
+  3.703154229385209*^9, 3.703154229392447*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -708,7 +700,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossiblePhotoInVideo", "[", "]"}], 
     "\[LeftDoubleBracket]", "5", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<photoInVideo\>\"", 
+ RowBox[{"goProGet", "[", "\"\<photoInVideo\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"photoInVideo", "\[Rule]", 
@@ -716,7 +708,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossiblePhotoInVideo", "[", "]"}], 
     "\[LeftDoubleBracket]", "4", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<photoInVideo\>\"", 
+ RowBox[{"goProGet", "[", "\"\<photoInVideo\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"photoInVideo", "\[Rule]", 
@@ -724,7 +716,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossiblePhotoInVideo", "[", "]"}], 
     "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<photoInVideo\>\"", 
+ RowBox[{"goProGet", "[", "\"\<photoInVideo\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"photoInVideo", "\[Rule]", 
@@ -732,7 +724,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossiblePhotoInVideo", "[", "]"}], 
     "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<photoInVideo\>\"", 
+ RowBox[{"goProGet", "[", "\"\<photoInVideo\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"photoInVideo", "\[Rule]", 
@@ -740,9 +732,10 @@ Cell[BoxData[{
     RowBox[{"goProGetPossiblePhotoInVideo", "[", "]"}], 
     "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<photoInVideo\>\"", "]"}]}], "Input",
+ RowBox[{"goProGet", "[", "\"\<photoInVideo\>\"", "]"}]}], "Input",
  CellChangeTimes->{{3.7014235066664248`*^9, 3.701423533909747*^9}, {
-  3.7014235774473352`*^9, 3.70142360954324*^9}}],
+  3.7014235774473352`*^9, 3.70142360954324*^9}, {3.703154229398254*^9, 
+  3.7031542294028053`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -801,20 +794,21 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"goProGetPossibleVolume", "[", "]"}], "\[LeftDoubleBracket]", "1",
      "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<volume\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<volume\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"volume", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleVolume", "[", "]"}], "\[LeftDoubleBracket]", "2",
      "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<volume\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<volume\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"volume", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleVolume", "[", "]"}], "\[LeftDoubleBracket]", "3",
      "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<volume\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.701423726029209*^9, 3.701423764562933*^9}}],
+ RowBox[{"goProGet", "[", "\"\<volume\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.701423726029209*^9, 3.701423764562933*^9}, {
+  3.703154229407379*^9, 3.703154229409547*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -860,7 +854,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleContinuousShot", "[", "]"}], 
     "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<continuousShot\>\"", 
+ RowBox[{"goProGet", "[", "\"\<continuousShot\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"continuousShot", "\[Rule]", 
@@ -868,7 +862,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleContinuousShot", "[", "]"}], 
     "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<continuousShot\>\"", 
+ RowBox[{"goProGet", "[", "\"\<continuousShot\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"continuousShot", "\[Rule]", 
@@ -876,7 +870,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleContinuousShot", "[", "]"}], 
     "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<continuousShot\>\"", 
+ RowBox[{"goProGet", "[", "\"\<continuousShot\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"continuousShot", "\[Rule]", 
@@ -884,7 +878,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleContinuousShot", "[", "]"}], 
     "\[LeftDoubleBracket]", "4", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<continuousShot\>\"", 
+ RowBox[{"goProGet", "[", "\"\<continuousShot\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"continuousShot", "\[Rule]", 
@@ -892,8 +886,9 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleContinuousShot", "[", "]"}], 
     "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<continuousShot\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.701423995100729*^9, 3.7014240375719852`*^9}}],
+ RowBox[{"goProGet", "[", "\"\<continuousShot\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.701423995100729*^9, 3.7014240375719852`*^9}, {
+  3.703154229414526*^9, 3.70315422942024*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -954,50 +949,45 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"goProGetPossibleBurstRate", "[", "]"}], "\[LeftDoubleBracket]", 
     "1", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<burstRate\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<burstRate\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"burstRate", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleBurstRate", "[", "]"}], "\[LeftDoubleBracket]", 
     "2", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<burstRate\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<burstRate\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"burstRate", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleBurstRate", "[", "]"}], "\[LeftDoubleBracket]", 
     "3", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<burstRate\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<burstRate\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"burstRate", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleBurstRate", "[", "]"}], "\[LeftDoubleBracket]", 
     "4", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<burstRate\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<burstRate\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"burstRate", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleBurstRate", "[", "]"}], "\[LeftDoubleBracket]", 
     "5", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<burstRate\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<burstRate\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"burstRate", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleBurstRate", "[", "]"}], "\[LeftDoubleBracket]", 
     "6", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<burstRate\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<burstRate\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"burstRate", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleBurstRate", "[", "]"}], "\[LeftDoubleBracket]", 
     "1", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<burstRate\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.7014240835789623`*^9, 3.701424119071464*^9}}],
+ RowBox[{"goProGet", "[", "\"\<burstRate\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.7014240835789623`*^9, 3.701424119071464*^9}, {
+  3.703154229426635*^9, 3.7031542294350157`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1062,43 +1052,39 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"goProGetPossibleVideoLoop", "[", "]"}], "\[LeftDoubleBracket]", 
     "1", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<loopVideo\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<loopVideo\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"loopVideo", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleVideoLoop", "[", "]"}], "\[LeftDoubleBracket]", 
     "2", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<loopVideo\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<loopVideo\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"loopVideo", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleVideoLoop", "[", "]"}], "\[LeftDoubleBracket]", 
     "3", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<loopVideo\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<loopVideo\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"loopVideo", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleVideoLoop", "[", "]"}], "\[LeftDoubleBracket]", 
     "4", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<loopVideo\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<loopVideo\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"loopVideo", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleVideoLoop", "[", "]"}], "\[LeftDoubleBracket]", 
     "5", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<loopVideo\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<loopVideo\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"loopVideo", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleVideoLoop", "[", "]"}], "\[LeftDoubleBracket]", 
     "1", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<loopVideo\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.7014241814555893`*^9, 3.701424213943502*^9}}],
+ RowBox[{"goProGet", "[", "\"\<loopVideo\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.7014241814555893`*^9, 3.701424213943502*^9}, {
+  3.703154229441464*^9, 3.703154229448552*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1143,12 +1129,12 @@ Cell[BoxData[{
  RowBox[{"goProSet", "[", 
   RowBox[{"protune", "\[Rule]", "\"\<on\>\""}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<protune\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<protune\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"protune", "\[Rule]", "\"\<off\>\""}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<protune\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.701424283615013*^9, 3.701424310867673*^9}}],
+ RowBox[{"goProGet", "[", "\"\<protune\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.701424283615013*^9, 3.701424310867673*^9}, {
+  3.70315422945277*^9, 3.703154229453763*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1193,7 +1179,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleWhiteBalance", "[", "]"}], 
     "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<whiteBalance\>\"", 
+ RowBox[{"goProGet", "[", "\"\<whiteBalance\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"whiteBalance", "->", 
@@ -1201,7 +1187,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleWhiteBalance", "[", "]"}], 
     "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<whiteBalance\>\"", 
+ RowBox[{"goProGet", "[", "\"\<whiteBalance\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"whiteBalance", "->", 
@@ -1209,7 +1195,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleWhiteBalance", "[", "]"}], 
     "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<whiteBalance\>\"", 
+ RowBox[{"goProGet", "[", "\"\<whiteBalance\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"whiteBalance", "->", 
@@ -1217,7 +1203,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleWhiteBalance", "[", "]"}], 
     "\[LeftDoubleBracket]", "4", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<whiteBalance\>\"", 
+ RowBox[{"goProGet", "[", "\"\<whiteBalance\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"whiteBalance", "->", 
@@ -1225,7 +1211,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleWhiteBalance", "[", "]"}], 
     "\[LeftDoubleBracket]", "5", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<whiteBalance\>\"", 
+ RowBox[{"goProGet", "[", "\"\<whiteBalance\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"whiteBalance", "->", 
@@ -1233,9 +1219,10 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleWhiteBalance", "[", "]"}], 
     "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<whiteBalance\>\"", 
+ RowBox[{"goProGet", "[", "\"\<whiteBalance\>\"", 
   "]"}], "\[IndentingNewLine]"}], "Input",
- CellChangeTimes->{{3.701424330772743*^9, 3.7014243864661922`*^9}}],
+ CellChangeTimes->{{3.701424330772743*^9, 3.7014243864661922`*^9}, {
+  3.703154229459074*^9, 3.7031542294645844`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1301,7 +1288,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleColorProfile", "[", "]"}], 
     "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<colorProfile\>\"", 
+ RowBox[{"goProGet", "[", "\"\<colorProfile\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"colorProfile", "->", 
@@ -1309,7 +1296,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleColorProfile", "[", "]"}], 
     "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<colorProfile\>\"", 
+ RowBox[{"goProGet", "[", "\"\<colorProfile\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"colorProfile", "->", 
@@ -1317,8 +1304,9 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleColorProfile", "[", "]"}], 
     "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<colorProfile\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.70142448331493*^9, 3.701424506965107*^9}}],
+ RowBox[{"goProGet", "[", "\"\<colorProfile\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.70142448331493*^9, 3.701424506965107*^9}, {
+  3.703154229469754*^9, 3.7031542294717617`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1369,26 +1357,27 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"goProGetPossibleISO", "[", "]"}], "\[LeftDoubleBracket]", "1", 
     "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<iso\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<iso\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"iso", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleISO", "[", "]"}], "\[LeftDoubleBracket]", "2", 
     "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<iso\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<iso\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"iso", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleISO", "[", "]"}], "\[LeftDoubleBracket]", "3", 
     "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<iso\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<iso\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"iso", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleISO", "[", "]"}], "\[LeftDoubleBracket]", "1", 
     "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<iso\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.701424681604478*^9, 3.7014247244275627`*^9}}],
+ RowBox[{"goProGet", "[", "\"\<iso\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.701424681604478*^9, 3.7014247244275627`*^9}, {
+  3.703154229476481*^9, 3.7031542294796553`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1438,29 +1427,27 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"goProGetPossibleSharpness", "[", "]"}], "\[LeftDoubleBracket]", 
     "1", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<sharpness\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<sharpness\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"sharpness", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleSharpness", "[", "]"}], "\[LeftDoubleBracket]", 
     "2", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<sharpness\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<sharpness\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"sharpness", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleSharpness", "[", "]"}], "\[LeftDoubleBracket]", 
     "3", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<sharpness\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<sharpness\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"sharpness", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleSharpness", "[", "]"}], "\[LeftDoubleBracket]", 
     "1", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<sharpness\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.701424874177986*^9, 3.701424909287718*^9}}],
+ RowBox[{"goProGet", "[", "\"\<sharpness\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.701424874177986*^9, 3.701424909287718*^9}, {
+  3.7031542294841146`*^9, 3.703154229487183*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1513,62 +1500,63 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"goProGetPossibleExposure", "[", "]"}], "\[LeftDoubleBracket]", 
     "1", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"exposure", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleExposure", "[", "]"}], "\[LeftDoubleBracket]", 
     "2", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"exposure", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleExposure", "[", "]"}], "\[LeftDoubleBracket]", 
     "3", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"exposure", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleExposure", "[", "]"}], "\[LeftDoubleBracket]", 
     "4", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"exposure", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleExposure", "[", "]"}], "\[LeftDoubleBracket]", 
     "5", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"exposure", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleExposure", "[", "]"}], "\[LeftDoubleBracket]", 
     "6", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"exposure", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleExposure", "[", "]"}], "\[LeftDoubleBracket]", 
     "7", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"exposure", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleExposure", "[", "]"}], "\[LeftDoubleBracket]", 
     "8", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"exposure", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleExposure", "[", "]"}], "\[LeftDoubleBracket]", 
     "9", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<exposure\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"exposure", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleExposure", "[", "]"}], "\[LeftDoubleBracket]", 
     "1", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<exposure\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.7014249391529818`*^9, 3.701424992416301*^9}}],
+ RowBox[{"goProGet", "[", "\"\<exposure\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.7014249391529818`*^9, 3.701424992416301*^9}, {
+  3.703154229493752*^9, 3.703154229505122*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1644,8 +1632,9 @@ Cell[CellGroupData[{
 Cell[BoxData[{
  RowBox[{"goProSet", "[", 
   RowBox[{"fps", "\[Rule]", "\"\<60\>\""}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<fps\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.7014251325874023`*^9, 3.70142515360074*^9}}],
+ RowBox[{"goProGet", "[", "\"\<fps\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.7014251325874023`*^9, 3.70142515360074*^9}, 
+   3.703154229509966*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1661,21 +1650,22 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"goProGetPossibleLowLight", "[", "]"}], "\[LeftDoubleBracket]", 
     "1", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<lowLight\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<lowLight\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"lowLight", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleLowLight", "[", "]"}], "\[LeftDoubleBracket]", 
     "2", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<lowLight\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<lowLight\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"lowLight", "\[Rule]", 
    RowBox[{
     RowBox[{"goProGetPossibleLowLight", "[", "]"}], "\[LeftDoubleBracket]", 
     "1", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<lowLight\>\"", 
+ RowBox[{"goProGet", "[", "\"\<lowLight\>\"", 
   "]"}], "\[IndentingNewLine]"}], "Input",
- CellChangeTimes->{{3.701425180100829*^9, 3.701425211903139*^9}}],
+ CellChangeTimes->{{3.701425180100829*^9, 3.701425211903139*^9}, {
+  3.7031542295132732`*^9, 3.703154229515141*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1720,20 +1710,21 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"goProGetPossibleLed", "[", "]"}], "\[LeftDoubleBracket]", "1", 
     "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<led\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<led\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"led", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleLed", "[", "]"}], "\[LeftDoubleBracket]", "2", 
     "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<led\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<led\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"led", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleLed", "[", "]"}], "\[LeftDoubleBracket]", "3", 
     "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<led\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.701425262278557*^9, 3.701425293020637*^9}}],
+ RowBox[{"goProGet", "[", "\"\<led\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.701425262278557*^9, 3.701425293020637*^9}, {
+  3.703154229518957*^9, 3.7031542295210342`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1775,13 +1766,13 @@ Cell[BoxData[{
  RowBox[{"goProSet", "[", 
   RowBox[{"spotMeter", "\[Rule]", "\"\<on\>\""}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<spotMeter\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<spotMeter\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"spotMeter", "\[Rule]", "\"\<off\>\""}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<spotMeter\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.70142533065479*^9, 3.70142536537533*^9}}],
+ RowBox[{"goProGet", "[", "\"\<spotMeter\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.70142533065479*^9, 3.70142536537533*^9}, {
+  3.703154229524469*^9, 3.7031542295253983`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1822,7 +1813,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleAutoPowerOff", "[", "]"}], 
     "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<autoPowerOff\>\"", 
+ RowBox[{"goProGet", "[", "\"\<autoPowerOff\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"autoPowerOff", "\[Rule]", 
@@ -1830,7 +1821,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleAutoPowerOff", "[", "]"}], 
     "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<autoPowerOff\>\"", 
+ RowBox[{"goProGet", "[", "\"\<autoPowerOff\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"autoPowerOff", "\[Rule]", 
@@ -1838,7 +1829,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleAutoPowerOff", "[", "]"}], 
     "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<autoPowerOff\>\"", 
+ RowBox[{"goProGet", "[", "\"\<autoPowerOff\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"autoPowerOff", "\[Rule]", 
@@ -1846,7 +1837,7 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleAutoPowerOff", "[", "]"}], 
     "\[LeftDoubleBracket]", "4", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<autoPowerOff\>\"", 
+ RowBox[{"goProGet", "[", "\"\<autoPowerOff\>\"", 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"autoPowerOff", "\[Rule]", 
@@ -1854,8 +1845,9 @@ Cell[BoxData[{
     RowBox[{"goProGetPossibleAutoPowerOff", "[", "]"}], 
     "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<autoPowerOff\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.70142540078062*^9, 3.701425439200889*^9}}],
+ RowBox[{"goProGet", "[", "\"\<autoPowerOff\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.70142540078062*^9, 3.701425439200889*^9}, {
+  3.703154229529643*^9, 3.7031542295340242`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1914,15 +1906,15 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"goProGetPossibleVideoMode", "[", "]"}], "\[LeftDoubleBracket]", 
     "2", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoMode\>\"", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<videoMode\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"goProSet", "[", 
   RowBox[{"videoMode", "->", 
    RowBox[{
     RowBox[{"goProGetPossibleVideoMode", "[", "]"}], "\[LeftDoubleBracket]", 
     "1", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<videoMode\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.701425521814671*^9, 3.701425554096328*^9}}],
+ RowBox[{"goProGet", "[", "\"\<videoMode\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.701425521814671*^9, 3.701425554096328*^9}, {
+  3.7031542295381813`*^9, 3.703154229539048*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1962,8 +1954,9 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"goProGetPossibleBootMode", "[", "]"}], "\[LeftDoubleBracket]", 
     "2", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<bootMode\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.701426093944565*^9, 3.7014261192907667`*^9}}],
+ RowBox[{"goProGet", "[", "\"\<bootMode\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.701426093944565*^9, 3.7014261192907667`*^9}, 
+   3.703154229542624*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1979,8 +1972,9 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"goProGetPossibleBootMode", "[", "]"}], "\[LeftDoubleBracket]", 
     "3", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<bootMode\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.701426142064101*^9, 3.7014261423936367`*^9}}],
+ RowBox[{"goProGet", "[", "\"\<bootMode\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.701426142064101*^9, 3.7014261423936367`*^9}, 
+   3.7031542295450287`*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1996,8 +1990,9 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"goProGetPossibleBootMode", "[", "]"}], "\[LeftDoubleBracket]", 
     "4", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<bootMode\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.701426146502963*^9, 3.701426146828711*^9}}],
+ RowBox[{"goProGet", "[", "\"\<bootMode\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.701426146502963*^9, 3.701426146828711*^9}, 
+   3.703154229547124*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -2014,8 +2009,9 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"goProGetPossibleBootMode", "[", "]"}], "\[LeftDoubleBracket]", 
     "1", "\[RightDoubleBracket]"}]}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"goProReport", "[", "\"\<bootMode\>\"", "]"}]}], "Input",
- CellChangeTimes->{{3.701426149538316*^9, 3.701426149849915*^9}}],
+ RowBox[{"goProGet", "[", "\"\<bootMode\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.701426149538316*^9, 3.701426149849915*^9}, 
+   3.703154229549324*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -2715,6 +2711,7 @@ Cell[BoxData[
 },
 WindowSize->{1598, 847},
 WindowMargins->{{1, Automatic}, {1, Automatic}},
+Magnification:>1.25 Inherited,
 FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
 StyleDefinitions->"Default.nb"
 ]
@@ -2730,364 +2727,364 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 496, 9, 100, "Input"],
-Cell[1079, 33, 326, 5, 32, "Output"]
+Cell[580, 22, 572, 11, 125, "Input"],
+Cell[1155, 35, 326, 5, 40, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1442, 43, 217, 3, 45, "Subsection"],
+Cell[1518, 45, 217, 3, 56, "Subsection"],
 Cell[CellGroupData[{
-Cell[1684, 50, 279, 4, 32, "Input"],
-Cell[1966, 56, 761, 12, 57, "Output"]
+Cell[1760, 52, 279, 4, 40, "Input"],
+Cell[2042, 58, 761, 12, 71, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2776, 74, 97, 1, 93, "Title"],
+Cell[2852, 76, 97, 1, 116, "Title"],
 Cell[CellGroupData[{
-Cell[2898, 79, 97, 1, 65, "Section"],
+Cell[2974, 81, 97, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[3020, 84, 137, 2, 32, "Input"],
-Cell[3160, 88, 239, 5, 34, "Output"]
+Cell[3096, 86, 137, 2, 40, "Input"],
+Cell[3236, 90, 239, 5, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3436, 98, 1533, 32, 231, "Input"],
-Cell[4972, 132, 170, 3, 32, "Output"],
-Cell[5145, 137, 170, 3, 32, "Output"],
-Cell[5318, 142, 170, 3, 32, "Output"],
-Cell[5491, 147, 174, 3, 32, "Output"],
-Cell[5668, 152, 170, 3, 32, "Output"]
+Cell[3512, 100, 1571, 33, 288, "Input"],
+Cell[5086, 135, 170, 3, 40, "Output"],
+Cell[5259, 140, 170, 3, 40, "Output"],
+Cell[5432, 145, 170, 3, 40, "Output"],
+Cell[5605, 150, 174, 3, 40, "Output"],
+Cell[5782, 155, 170, 3, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5887, 161, 103, 1, 65, "Section"],
+Cell[6001, 164, 103, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[6015, 166, 187, 3, 32, "Input"],
-Cell[6205, 171, 353, 6, 34, "Output"]
+Cell[6129, 169, 187, 3, 40, "Input"],
+Cell[6319, 174, 353, 6, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6595, 182, 3513, 78, 517, "Input"],
-Cell[10111, 262, 179, 4, 32, "Output"],
-Cell[10293, 268, 179, 4, 32, "Output"],
-Cell[10475, 274, 179, 4, 32, "Output"],
-Cell[10657, 280, 180, 4, 32, "Output"],
-Cell[10840, 286, 180, 4, 32, "Output"],
-Cell[11023, 292, 179, 4, 32, "Output"],
-Cell[11205, 298, 177, 4, 32, "Output"],
-Cell[11385, 304, 183, 4, 32, "Output"],
-Cell[11571, 310, 182, 4, 32, "Output"],
-Cell[11756, 316, 183, 4, 32, "Output"],
-Cell[11942, 322, 184, 4, 32, "Output"]
+Cell[6709, 185, 3531, 79, 646, "Input"],
+Cell[10243, 266, 179, 4, 40, "Output"],
+Cell[10425, 272, 179, 4, 40, "Output"],
+Cell[10607, 278, 179, 4, 40, "Output"],
+Cell[10789, 284, 180, 4, 40, "Output"],
+Cell[10972, 290, 180, 4, 40, "Output"],
+Cell[11155, 296, 179, 4, 40, "Output"],
+Cell[11337, 302, 177, 4, 40, "Output"],
+Cell[11517, 308, 183, 4, 40, "Output"],
+Cell[11703, 314, 182, 4, 40, "Output"],
+Cell[11888, 320, 183, 4, 40, "Output"],
+Cell[12074, 326, 184, 4, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12175, 332, 162, 2, 65, "Section"],
+Cell[12307, 336, 162, 2, 81, "Section"],
 Cell[CellGroupData[{
-Cell[12362, 338, 2828, 61, 389, "Input"],
-Cell[15193, 401, 254, 5, 34, "Output"],
-Cell[15450, 408, 236, 5, 32, "Output"],
-Cell[15689, 415, 219, 4, 32, "Output"],
-Cell[15911, 421, 221, 4, 32, "Output"],
-Cell[16135, 427, 236, 5, 32, "Output"],
-Cell[16374, 434, 221, 4, 32, "Output"],
-Cell[16598, 440, 225, 4, 32, "Output"],
-Cell[16826, 446, 237, 5, 32, "Output"],
-Cell[17066, 453, 219, 4, 32, "Output"],
-Cell[17288, 459, 223, 4, 32, "Output"],
-Cell[17514, 465, 237, 5, 32, "Output"],
-Cell[17754, 472, 221, 4, 32, "Output"],
-Cell[17978, 478, 221, 4, 32, "Output"]
+Cell[12494, 342, 2841, 62, 486, "Input"],
+Cell[15338, 406, 254, 5, 42, "Output"],
+Cell[15595, 413, 236, 5, 40, "Output"],
+Cell[15834, 420, 219, 4, 40, "Output"],
+Cell[16056, 426, 221, 4, 40, "Output"],
+Cell[16280, 432, 236, 5, 40, "Output"],
+Cell[16519, 439, 221, 4, 40, "Output"],
+Cell[16743, 445, 225, 4, 40, "Output"],
+Cell[16971, 451, 237, 5, 40, "Output"],
+Cell[17211, 458, 219, 4, 40, "Output"],
+Cell[17433, 464, 223, 4, 40, "Output"],
+Cell[17659, 470, 237, 5, 40, "Output"],
+Cell[17899, 477, 221, 4, 40, "Output"],
+Cell[18123, 483, 221, 4, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18248, 488, 102, 1, 65, "Section"],
+Cell[18393, 493, 102, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[18375, 493, 138, 2, 32, "Input"],
-Cell[18516, 497, 175, 4, 34, "Output"]
+Cell[18520, 498, 138, 2, 40, "Input"],
+Cell[18661, 502, 175, 4, 40, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18728, 506, 1646, 35, 231, "Input"],
-Cell[20377, 543, 178, 4, 32, "Output"],
-Cell[20558, 549, 179, 4, 32, "Output"],
-Cell[20740, 555, 180, 4, 32, "Output"],
-Cell[20923, 561, 181, 4, 32, "Output"],
-Cell[21107, 567, 180, 4, 32, "Output"]
+Cell[18873, 511, 1188, 27, 293, "Input"],
+Cell[20064, 540, 178, 4, 40, "Output"],
+Cell[20245, 546, 179, 4, 40, "Output"],
+Cell[20427, 552, 180, 4, 40, "Output"],
+Cell[20610, 558, 181, 4, 40, "Output"],
+Cell[20794, 564, 180, 4, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[21336, 577, 105, 1, 65, "Section"],
+Cell[21023, 574, 105, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[21466, 582, 141, 2, 32, "Input"],
-Cell[21610, 586, 216, 5, 34, "Output"]
+Cell[21153, 579, 141, 2, 40, "Input"],
+Cell[21297, 583, 216, 5, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[21863, 596, 2201, 49, 319, "Input"],
-Cell[24067, 647, 169, 3, 32, "Output"],
-Cell[24239, 652, 167, 3, 32, "Output"],
-Cell[24409, 657, 167, 3, 32, "Output"],
-Cell[24579, 662, 170, 3, 32, "Output"],
-Cell[24752, 667, 168, 3, 32, "Output"],
-Cell[24923, 672, 170, 3, 32, "Output"],
-Cell[25096, 677, 169, 3, 32, "Output"]
+Cell[21550, 593, 2211, 44, 398, "Input"],
+Cell[23764, 639, 169, 3, 40, "Output"],
+Cell[23936, 644, 167, 3, 40, "Output"],
+Cell[24106, 649, 167, 3, 40, "Output"],
+Cell[24276, 654, 170, 3, 40, "Output"],
+Cell[24449, 659, 168, 3, 40, "Output"],
+Cell[24620, 664, 170, 3, 40, "Output"],
+Cell[24793, 669, 169, 3, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25314, 686, 101, 1, 65, "Section"],
+Cell[25011, 678, 101, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[25440, 691, 76, 1, 32, "Input"],
-Cell[25519, 694, 194, 4, 34, "Output"]
+Cell[25137, 683, 76, 1, 40, "Input"],
+Cell[25216, 686, 194, 4, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25750, 703, 1701, 41, 231, "Input"],
-Cell[27454, 746, 153, 4, 32, "Output"],
-Cell[27610, 752, 153, 4, 32, "Output"],
-Cell[27766, 758, 150, 4, 32, "Output"],
-Cell[27919, 764, 148, 3, 32, "Output"],
-Cell[28070, 769, 152, 4, 32, "Output"]
+Cell[25447, 695, 1737, 42, 288, "Input"],
+Cell[27187, 739, 153, 4, 40, "Output"],
+Cell[27343, 745, 153, 4, 40, "Output"],
+Cell[27499, 751, 150, 4, 40, "Output"],
+Cell[27652, 757, 148, 3, 40, "Output"],
+Cell[27803, 762, 152, 4, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28271, 779, 91, 1, 65, "Section"],
+Cell[28004, 772, 91, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[28387, 784, 136, 2, 32, "Input"],
-Cell[28526, 788, 157, 4, 34, "Output"]
+Cell[28120, 777, 136, 2, 40, "Input"],
+Cell[28259, 781, 157, 4, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28720, 797, 946, 19, 143, "Input"],
-Cell[29669, 818, 170, 3, 32, "Output"],
-Cell[29842, 823, 167, 3, 32, "Output"],
-Cell[30012, 828, 170, 3, 32, "Output"]
+Cell[28453, 790, 986, 20, 178, "Input"],
+Cell[29442, 812, 170, 3, 40, "Output"],
+Cell[29615, 817, 167, 3, 40, "Output"],
+Cell[29785, 822, 170, 3, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[30231, 837, 100, 1, 65, "Section"],
+Cell[30004, 831, 100, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[30356, 842, 144, 2, 32, "Input"],
-Cell[30503, 846, 172, 4, 34, "Output"]
+Cell[30129, 836, 144, 2, 40, "Input"],
+Cell[30276, 840, 172, 4, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[30712, 855, 1681, 40, 231, "Input"],
-Cell[32396, 897, 152, 4, 32, "Output"],
-Cell[32551, 903, 152, 4, 32, "Output"],
-Cell[32706, 909, 154, 4, 32, "Output"],
-Cell[32863, 915, 154, 4, 32, "Output"],
-Cell[33020, 921, 152, 4, 32, "Output"]
+Cell[30485, 849, 1714, 41, 288, "Input"],
+Cell[32202, 892, 152, 4, 40, "Output"],
+Cell[32357, 898, 152, 4, 40, "Output"],
+Cell[32512, 904, 154, 4, 40, "Output"],
+Cell[32669, 910, 154, 4, 40, "Output"],
+Cell[32826, 916, 152, 4, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[33221, 931, 92, 1, 65, "Section"],
+Cell[33027, 926, 92, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[33338, 936, 139, 2, 32, "Input"],
-Cell[33480, 940, 227, 5, 34, "Output"]
+Cell[33144, 931, 139, 2, 40, "Input"],
+Cell[33286, 935, 227, 5, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[33744, 950, 2201, 49, 319, "Input"],
-Cell[35948, 1001, 173, 3, 32, "Output"],
-Cell[36124, 1006, 171, 3, 32, "Output"],
-Cell[36298, 1011, 172, 3, 32, "Output"],
-Cell[36473, 1016, 172, 3, 32, "Output"],
-Cell[36648, 1021, 172, 3, 32, "Output"],
-Cell[36823, 1026, 172, 3, 32, "Output"],
-Cell[36998, 1031, 171, 3, 32, "Output"]
+Cell[33550, 945, 2213, 44, 398, "Input"],
+Cell[35766, 991, 173, 3, 40, "Output"],
+Cell[35942, 996, 171, 3, 40, "Output"],
+Cell[36116, 1001, 172, 3, 40, "Output"],
+Cell[36291, 1006, 172, 3, 40, "Output"],
+Cell[36466, 1011, 172, 3, 40, "Output"],
+Cell[36641, 1016, 172, 3, 40, "Output"],
+Cell[36816, 1021, 171, 3, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[37218, 1040, 97, 1, 65, "Section"],
+Cell[37036, 1030, 97, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[37340, 1045, 138, 2, 32, "Input"],
-Cell[37481, 1049, 195, 4, 34, "Output"]
+Cell[37158, 1035, 138, 2, 40, "Input"],
+Cell[37299, 1039, 195, 4, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[37713, 1058, 1896, 42, 275, "Input"],
-Cell[39612, 1102, 147, 3, 32, "Output"],
-Cell[39762, 1107, 145, 3, 32, "Output"],
-Cell[39910, 1112, 148, 3, 32, "Output"],
-Cell[40061, 1117, 148, 3, 32, "Output"],
-Cell[40212, 1122, 147, 3, 32, "Output"],
-Cell[40362, 1127, 147, 3, 32, "Output"]
+Cell[37531, 1048, 1912, 38, 343, "Input"],
+Cell[39446, 1088, 147, 3, 40, "Output"],
+Cell[39596, 1093, 145, 3, 40, "Output"],
+Cell[39744, 1098, 148, 3, 40, "Output"],
+Cell[39895, 1103, 148, 3, 40, "Output"],
+Cell[40046, 1108, 147, 3, 40, "Output"],
+Cell[40196, 1113, 147, 3, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[40558, 1136, 94, 1, 65, "Section"],
+Cell[40392, 1122, 94, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[40677, 1141, 444, 9, 99, "Input"],
-Cell[41124, 1152, 146, 3, 32, "Output"],
-Cell[41273, 1157, 145, 3, 32, "Output"]
+Cell[40511, 1127, 483, 9, 123, "Input"],
+Cell[40997, 1138, 146, 3, 40, "Output"],
+Cell[41146, 1143, 145, 3, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[41467, 1166, 99, 1, 65, "Section"],
+Cell[41340, 1152, 99, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[41591, 1171, 144, 2, 32, "Input"],
-Cell[41738, 1175, 235, 5, 34, "Output"]
+Cell[41464, 1157, 144, 2, 40, "Input"],
+Cell[41611, 1161, 235, 5, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[42010, 1185, 2073, 52, 319, "Input"],
-Cell[44086, 1239, 177, 4, 32, "Output"],
-Cell[44266, 1245, 179, 4, 32, "Output"],
-Cell[44448, 1251, 181, 4, 32, "Output"],
-Cell[44632, 1257, 179, 4, 32, "Output"],
-Cell[44814, 1263, 180, 4, 32, "Output"],
-Cell[44997, 1269, 178, 4, 32, "Output"]
+Cell[41883, 1171, 2106, 53, 398, "Input"],
+Cell[43992, 1226, 177, 4, 40, "Output"],
+Cell[44172, 1232, 179, 4, 40, "Output"],
+Cell[44354, 1238, 181, 4, 40, "Output"],
+Cell[44538, 1244, 179, 4, 40, "Output"],
+Cell[44720, 1250, 180, 4, 40, "Output"],
+Cell[44903, 1256, 178, 4, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[45224, 1279, 101, 1, 65, "Section"],
+Cell[45130, 1266, 101, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[45350, 1284, 143, 2, 32, "Input"],
-Cell[45496, 1288, 138, 3, 34, "Output"]
+Cell[45256, 1271, 143, 2, 40, "Input"],
+Cell[45402, 1275, 138, 3, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[45671, 1296, 999, 24, 143, "Input"],
-Cell[46673, 1322, 204, 5, 32, "Output"],
-Cell[46880, 1329, 203, 5, 32, "Output"],
-Cell[47086, 1336, 204, 5, 32, "Output"]
+Cell[45577, 1283, 1041, 25, 178, "Input"],
+Cell[46621, 1310, 204, 5, 40, "Output"],
+Cell[46828, 1317, 203, 5, 40, "Output"],
+Cell[47034, 1324, 204, 5, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[47339, 1347, 90, 1, 65, "Section"],
+Cell[47287, 1335, 90, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[47454, 1352, 132, 2, 32, "Input"],
-Cell[47589, 1356, 162, 4, 34, "Output"]
+Cell[47402, 1340, 132, 2, 40, "Input"],
+Cell[47537, 1344, 162, 4, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[47788, 1365, 1205, 25, 187, "Input"],
-Cell[48996, 1392, 167, 3, 32, "Output"],
-Cell[49166, 1397, 168, 3, 32, "Output"],
-Cell[49337, 1402, 167, 3, 32, "Output"],
-Cell[49507, 1407, 168, 3, 32, "Output"]
+Cell[47736, 1353, 1244, 26, 233, "Input"],
+Cell[48983, 1381, 167, 3, 40, "Output"],
+Cell[49153, 1386, 168, 3, 40, "Output"],
+Cell[49324, 1391, 167, 3, 40, "Output"],
+Cell[49494, 1396, 168, 3, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[49724, 1416, 96, 1, 65, "Section"],
+Cell[49711, 1405, 96, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[49845, 1421, 138, 2, 32, "Input"],
-Cell[49986, 1425, 188, 4, 34, "Output"]
+Cell[49832, 1410, 138, 2, 40, "Input"],
+Cell[49973, 1414, 188, 4, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[50211, 1434, 1284, 28, 187, "Input"],
-Cell[51498, 1464, 148, 3, 32, "Output"],
-Cell[51649, 1469, 151, 4, 32, "Output"],
-Cell[51803, 1475, 147, 3, 32, "Output"],
-Cell[51953, 1480, 148, 3, 32, "Output"]
+Cell[50198, 1423, 1314, 26, 233, "Input"],
+Cell[51515, 1451, 148, 3, 40, "Output"],
+Cell[51666, 1456, 151, 4, 40, "Output"],
+Cell[51820, 1462, 147, 3, 40, "Output"],
+Cell[51970, 1467, 148, 3, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[52150, 1489, 95, 1, 65, "Section"],
+Cell[52167, 1476, 95, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[52270, 1494, 140, 2, 32, "Input"],
-Cell[52413, 1498, 292, 6, 34, "Output"]
+Cell[52287, 1481, 140, 2, 40, "Input"],
+Cell[52430, 1485, 292, 6, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[52742, 1509, 3009, 61, 451, "Input"],
-Cell[55754, 1572, 168, 3, 32, "Output"],
-Cell[55925, 1577, 171, 3, 32, "Output"],
-Cell[56099, 1582, 171, 3, 32, "Output"],
-Cell[56273, 1587, 171, 3, 32, "Output"],
-Cell[56447, 1592, 169, 3, 32, "Output"],
-Cell[56619, 1597, 169, 3, 32, "Output"],
-Cell[56791, 1602, 169, 3, 32, "Output"],
-Cell[56963, 1607, 171, 3, 32, "Output"],
-Cell[57137, 1612, 169, 3, 32, "Output"],
-Cell[57309, 1617, 165, 3, 32, "Output"]
+Cell[52759, 1496, 3028, 62, 563, "Input"],
+Cell[55790, 1560, 168, 3, 40, "Output"],
+Cell[55961, 1565, 171, 3, 40, "Output"],
+Cell[56135, 1570, 171, 3, 40, "Output"],
+Cell[56309, 1575, 171, 3, 40, "Output"],
+Cell[56483, 1580, 169, 3, 40, "Output"],
+Cell[56655, 1585, 169, 3, 40, "Output"],
+Cell[56827, 1590, 169, 3, 40, "Output"],
+Cell[56999, 1595, 171, 3, 40, "Output"],
+Cell[57173, 1600, 169, 3, 40, "Output"],
+Cell[57345, 1605, 165, 3, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[57523, 1626, 94, 1, 65, "Section"],
+Cell[57559, 1614, 94, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[57642, 1631, 140, 2, 32, "Input"],
-Cell[57785, 1635, 134, 3, 34, "Output"]
+Cell[57678, 1619, 140, 2, 40, "Input"],
+Cell[57821, 1623, 134, 3, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[57956, 1643, 245, 4, 55, "Input"],
-Cell[58204, 1649, 164, 3, 32, "Output"]
+Cell[57992, 1631, 268, 5, 68, "Input"],
+Cell[58263, 1638, 164, 3, 40, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[58405, 1657, 990, 20, 165, "Input"],
-Cell[59398, 1679, 146, 3, 32, "Output"],
-Cell[59547, 1684, 145, 3, 32, "Output"],
-Cell[59695, 1689, 148, 3, 32, "Output"]
+Cell[58464, 1646, 1032, 21, 206, "Input"],
+Cell[59499, 1669, 146, 3, 40, "Output"],
+Cell[59648, 1674, 145, 3, 40, "Output"],
+Cell[59796, 1679, 148, 3, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[59892, 1698, 92, 1, 65, "Section"],
+Cell[59993, 1688, 92, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[60009, 1703, 131, 2, 32, "Input"],
-Cell[60143, 1707, 154, 4, 34, "Output"]
+Cell[60110, 1693, 131, 2, 40, "Input"],
+Cell[60244, 1697, 154, 4, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[60334, 1716, 904, 19, 143, "Input"],
-Cell[61241, 1737, 140, 3, 32, "Output"],
-Cell[61384, 1742, 139, 3, 32, "Output"],
-Cell[61526, 1747, 138, 3, 32, "Output"]
+Cell[60435, 1706, 946, 20, 178, "Input"],
+Cell[61384, 1728, 140, 3, 40, "Output"],
+Cell[61527, 1733, 139, 3, 40, "Output"],
+Cell[61669, 1738, 138, 3, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[61713, 1756, 97, 1, 65, "Section"],
+Cell[61856, 1747, 97, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[61835, 1761, 141, 2, 32, "Input"],
-Cell[61979, 1765, 160, 3, 34, "Output"]
+Cell[61978, 1752, 141, 2, 40, "Input"],
+Cell[62122, 1756, 160, 3, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[62176, 1773, 453, 10, 99, "Input"],
-Cell[62632, 1785, 146, 3, 32, "Output"],
-Cell[62781, 1790, 147, 3, 32, "Output"]
+Cell[62319, 1764, 495, 10, 123, "Input"],
+Cell[62817, 1776, 146, 3, 40, "Output"],
+Cell[62966, 1781, 147, 3, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[62977, 1799, 101, 1, 65, "Section"],
+Cell[63162, 1790, 101, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[63103, 1804, 142, 2, 32, "Input"],
-Cell[63248, 1808, 180, 4, 34, "Output"]
+Cell[63288, 1795, 142, 2, 40, "Input"],
+Cell[63433, 1799, 180, 4, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[63465, 1817, 1648, 40, 231, "Input"],
-Cell[65116, 1859, 152, 4, 32, "Output"],
-Cell[65271, 1865, 153, 4, 32, "Output"],
-Cell[65427, 1871, 152, 4, 32, "Output"],
-Cell[65582, 1877, 154, 4, 32, "Output"],
-Cell[65739, 1883, 152, 4, 32, "Output"]
+Cell[63650, 1808, 1684, 41, 288, "Input"],
+Cell[65337, 1851, 152, 4, 40, "Output"],
+Cell[65492, 1857, 153, 4, 40, "Output"],
+Cell[65648, 1863, 152, 4, 40, "Output"],
+Cell[65803, 1869, 154, 4, 40, "Output"],
+Cell[65960, 1875, 152, 4, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[65940, 1893, 95, 1, 65, "Section"],
+Cell[66161, 1885, 95, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[66060, 1898, 139, 2, 32, "Input"],
-Cell[66202, 1902, 135, 3, 34, "Output"]
+Cell[66281, 1890, 139, 2, 40, "Input"],
+Cell[66423, 1894, 135, 3, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[66374, 1910, 664, 14, 99, "Input"],
-Cell[67041, 1926, 149, 3, 32, "Output"],
-Cell[67193, 1931, 148, 3, 32, "Output"]
+Cell[66595, 1902, 706, 14, 123, "Input"],
+Cell[67304, 1918, 149, 3, 40, "Output"],
+Cell[67456, 1923, 148, 3, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[67390, 1940, 94, 1, 65, "Section"],
+Cell[67653, 1932, 94, 1, 81, "Section"],
 Cell[CellGroupData[{
-Cell[67509, 1945, 138, 2, 32, "Input"],
-Cell[67650, 1949, 191, 4, 34, "Output"]
+Cell[67772, 1937, 138, 2, 40, "Input"],
+Cell[67913, 1941, 191, 4, 42, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[67878, 1958, 368, 7, 55, "Input"],
-Cell[68249, 1967, 148, 3, 32, "Output"]
+Cell[68141, 1950, 391, 8, 68, "Input"],
+Cell[68535, 1960, 148, 3, 40, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[68434, 1975, 368, 7, 55, "Input"],
-Cell[68805, 1984, 148, 3, 32, "Output"]
+Cell[68720, 1968, 393, 8, 68, "Input"],
+Cell[69116, 1978, 148, 3, 40, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[68990, 1992, 366, 7, 55, "Input"],
-Cell[69359, 2001, 176, 4, 32, "Output"]
+Cell[69301, 1986, 389, 8, 68, "Input"],
+Cell[69693, 1996, 176, 4, 40, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[69572, 2010, 366, 7, 55, "Input"],
-Cell[69941, 2019, 150, 3, 32, "Output"]
+Cell[69906, 2005, 389, 8, 68, "Input"],
+Cell[70298, 2015, 150, 3, 40, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[70128, 2027, 124, 2, 32, "Input"],
-Cell[70255, 2031, 13770, 335, 61, "Output"]
+Cell[70485, 2023, 124, 2, 40, "Input"],
+Cell[70612, 2027, 13770, 335, 76, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[84062, 2371, 125, 2, 32, "Input"],
-Cell[84190, 2375, 13792, 335, 94, "Output"]
+Cell[84419, 2367, 125, 2, 40, "Input"],
+Cell[84547, 2371, 13792, 335, 117, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]

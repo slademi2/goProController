@@ -544,6 +544,13 @@ goProGet::usage=
 	"goProGet[_String] returns value set to parameter given such ase {videoResolution->1080p}"
 	
 	
+(*saving settings to file*)
+goProSaveSettings::usage =
+    "goProSaveSettings[_String] saves settings to the file in parameter. The extension xls will be added automaticaly."
+goProLoadSettings::usage=
+    "goProLoadSettings[_String] load setting of camera from file with extension xls only!!"
+	
+	
 (* ::Section:: *)
 (* Private Definitions *)	
 
@@ -573,8 +580,8 @@ goProMakeCommand[mode_String,param1_String,param2_String]:= goProUrl <> mode <> 
 goProMakeCommand[mode_String,param_String] := goProUrl <> mode <> "/" <> param;
 
 (*spusteni prikazu exec pomoci HTTPRequest a URLRead*)
-execute[exec_String] :=(request = HTTPRequest[exec];
-     URLRead[request])
+execute[exec_String] :=exec(*(request = HTTPRequest[exec];
+     URLRead[request])*)
  
  
  
@@ -2056,6 +2063,23 @@ goProSet[OptionsPattern[]] :=(
 )
 
 
+(*exports settings to name specified by parameter*)
+toExpr[x_Rule] := goProSet[ToExpression[x[[1]]] -> x[[2]]]
+
+goProLoadSettings::wrong="Wrong format of file `1`, please use xls extension."
+goProSaveSettings[file_String] := (pom=goProGet[goProGetVariables[]];Export[file<>".xls", {pom[[All, 1]], pom[[All, 2]]}])
+
+
+
+goProLoadSettings[file_String] := (
+	If[StringMatchQ[file, "*.xls"],
+		p=Flatten[Import[file], 1];
+		var=p[[1]];
+		val={p[[2]]};
+		toExpr[#]&/@Flatten[Thread[var -> #] & /@ val];,
+		Message[goProLoadSettings::wrong,file]
+	]
+)
 
 
 

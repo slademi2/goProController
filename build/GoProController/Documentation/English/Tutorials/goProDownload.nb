@@ -10,8 +10,8 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    397971,       6968]
-NotebookOptionsPosition[    391237,       6762]
+NotebookDataLength[    397972,       6968]
+NotebookOptionsPosition[    391238,       6762]
 NotebookOutlinePosition[    394259,       6834]
 CellTagsIndexPosition[    394178,       6829]
 WindowTitle->Downloading and deleting files from GoPro camera
@@ -117,7 +117,7 @@ tutorial/goProDownload.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$13245], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$14970], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "GoProController/tutorial/goProDownload", ".html"]], None}]}]},
@@ -6430,7 +6430,7 @@ ABkpQF7eOCWxJC5IB20nMO5bYbV1XVZ4Zbr552KsRJPtf+2v/963Lzv7uWuX
  ImageRegion->{{0, 1}, {0, 1}},
  CellTags->"RasterizedOutput",
  CellLabel->"Out[4]=",
- CellID->396908059]
+ CellID->1163576483]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -6775,7 +6775,7 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2017, 5, 1, 22, 24, 0.986711}", 
+   "built" -> "{2017, 5, 8, 1, 1, 3.534899}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -6789,7 +6789,7 @@ know or let you set the URL from which data will be downloaded. The default \
 value is http://10.5.5.9:8080/DCIM/ The function goProGetFileList will return \
 list of files at the address which is set by goProSetURLBase or at default \
 URL (http://10.5.5.9:8080/DCIM/ ).", "synonyms" -> {}, "tabletags" -> 
-    DocumentationBuild`Make`Private`tabletaggingrules$13146, "title" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$14871, "title" -> 
     "Downloading and deleting files from GoPro camera", "titlemodifier" -> "",
      "windowtitle" -> "Downloading and deleting files from GoPro camera", 
     "type" -> "Tutorial", "uri" -> "GoProController/tutorial/goProDownload"}, 
@@ -6821,14 +6821,14 @@ StyleDefinitions->Notebook[{
 (*CellTagsOutline
 CellTagsIndex->{
  "RasterizedOutput"->{
-  Cell[11490, 345, 370800, 6087, 412, "Output",
+  Cell[11490, 345, 370801, 6087, 412, "Output",
    CellTags->"RasterizedOutput",
-   CellID->396908059]}
+   CellID->1163576483]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"RasterizedOutput", 394050, 6822}
+ {"RasterizedOutput", 394049, 6822}
  }
 *)
 (*NotebookFileOutline
@@ -6879,97 +6879,97 @@ Cell[11128, 329, 216, 6, 37, "Output",
 Cell[CellGroupData[{
 Cell[11381, 340, 106, 3, 28, "Input",
  CellID->1308078202],
-Cell[11490, 345, 370800, 6087, 412, "Output",
+Cell[11490, 345, 370801, 6087, 412, "Output",
  CellTags->"RasterizedOutput",
- CellID->396908059]
+ CellID->1163576483]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[382327, 6437, 129, 3, 70, "Input",
+Cell[382328, 6437, 129, 3, 70, "Input",
  CellID->885347940],
-Cell[382459, 6442, 390, 13, 70, "Output",
+Cell[382460, 6442, 390, 13, 70, "Output",
  CellID->142059951]
 }, Open  ]],
-Cell[382864, 6458, 80, 1, 70, "MathCaption",
+Cell[382865, 6458, 80, 1, 70, "MathCaption",
  CellID->2023016217],
 Cell[CellGroupData[{
-Cell[382969, 6463, 107, 3, 70, "Input",
+Cell[382970, 6463, 107, 3, 70, "Input",
  CellID->602627451],
-Cell[383079, 6468, 337, 9, 39, "Output",
+Cell[383080, 6468, 337, 9, 39, "Output",
  CellID->938747215]
 }, Open  ]],
-Cell[383431, 6480, 308, 10, 70, "TR",
+Cell[383432, 6480, 308, 10, 70, "TR",
  CellID->250445980],
 Cell[CellGroupData[{
-Cell[383764, 6494, 262, 7, 70, "Input",
+Cell[383765, 6494, 262, 7, 70, "Input",
  CellID->1024941801],
-Cell[384029, 6503, 245, 8, 70, "Output",
+Cell[384030, 6503, 245, 8, 70, "Output",
  CellID->52684714]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[384311, 6516, 287, 8, 70, "Input",
+Cell[384312, 6516, 287, 8, 70, "Input",
  CellID->1228961747],
-Cell[384601, 6526, 494, 16, 70, "Output",
+Cell[384602, 6526, 494, 16, 70, "Output",
  CellID->1978301705]
 }, Open  ]],
-Cell[385110, 6545, 69, 2, 70, "Input",
+Cell[385111, 6545, 69, 2, 70, "Input",
  CellID->468316274],
-Cell[385182, 6549, 293, 10, 70, "Text",
+Cell[385183, 6549, 293, 10, 70, "Text",
  CellID->141464162],
-Cell[385478, 6561, 69, 1, 70, "MathCaption",
+Cell[385479, 6561, 69, 1, 70, "MathCaption",
  CellID->1855662981],
-Cell[385550, 6564, 168, 4, 70, "TR",
+Cell[385551, 6564, 168, 4, 70, "TR",
  CellID->1028353054],
 Cell[CellGroupData[{
-Cell[385743, 6572, 109, 3, 70, "Input",
+Cell[385744, 6572, 109, 3, 70, "Input",
  CellID->1123505444],
-Cell[385855, 6577, 525, 12, 77, "Output",
+Cell[385856, 6577, 525, 12, 77, "Output",
  CellID->1330535942]
 }, Open  ]],
-Cell[386395, 6592, 136, 4, 70, "Input",
+Cell[386396, 6592, 136, 4, 70, "Input",
  CellID->932845230],
-Cell[386534, 6598, 122, 4, 70, "Input",
+Cell[386535, 6598, 122, 4, 70, "Input",
  CellID->172339951],
 Cell[CellGroupData[{
-Cell[386681, 6606, 108, 3, 70, "Input",
+Cell[386682, 6606, 108, 3, 70, "Input",
  CellID->178822230],
-Cell[386792, 6611, 617, 14, 77, "Output",
+Cell[386793, 6611, 617, 14, 77, "Output",
  CellID->41550271]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[387446, 6630, 192, 5, 70, "Input",
+Cell[387447, 6630, 192, 5, 70, "Input",
  CellID->357423700],
-Cell[387641, 6637, 525, 12, 77, "Output",
+Cell[387642, 6637, 525, 12, 77, "Output",
  CellID->1026984112]
 }, Open  ]],
-Cell[388181, 6652, 73, 1, 70, "TR",
+Cell[388182, 6652, 73, 1, 70, "TR",
  CellID->505954849],
 Cell[CellGroupData[{
-Cell[388279, 6657, 109, 3, 70, "Input",
+Cell[388280, 6657, 109, 3, 70, "Input",
  CellID->1629611563],
-Cell[388391, 6662, 525, 12, 77, "Output",
+Cell[388392, 6662, 525, 12, 77, "Output",
  CellID->1444702064]
 }, Open  ]],
-Cell[388931, 6677, 125, 4, 70, "Input",
+Cell[388932, 6677, 125, 4, 70, "Input",
  CellID->2064566488],
 Cell[CellGroupData[{
-Cell[389081, 6685, 109, 3, 70, "Input",
+Cell[389082, 6685, 109, 3, 70, "Input",
  CellID->1682296277],
-Cell[389193, 6690, 476, 11, 70, "Message",
+Cell[389194, 6690, 476, 11, 70, "Message",
  CellID->526180163],
-Cell[389672, 6703, 240, 6, 70, "Message",
+Cell[389673, 6703, 240, 6, 70, "Message",
  CellID->1935659874]
 }, Open  ]],
-Cell[389927, 6712, 70, 2, 70, "Input",
+Cell[389928, 6712, 70, 2, 70, "Input",
  CellID->387192694],
 Cell[CellGroupData[{
-Cell[390022, 6718, 287, 12, 70, "RelatedTutorialsSection",
+Cell[390023, 6718, 287, 12, 70, "RelatedTutorialsSection",
  CellID->415694126],
-Cell[390312, 6732, 31, 0, 70, "SectionHeaderSpacer"],
-Cell[390346, 6734, 837, 22, 70, "RelatedTutorials",
+Cell[390313, 6732, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[390347, 6734, 837, 22, 70, "RelatedTutorials",
  CellID->806871991]
 }, Open  ]]
 }, Open  ]],
-Cell[391210, 6760, 23, 0, 70, "FooterCell"]
+Cell[391211, 6760, 23, 0, 70, "FooterCell"]
 }
 ]
 *)
