@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     10524,        345]
-NotebookOptionsPosition[      7339,        250]
-NotebookOutlinePosition[      9490,        307]
-CellTagsIndexPosition[      9406,        302]
+NotebookDataLength[     13601,        446]
+NotebookOptionsPosition[     10143,        343]
+NotebookOutlinePosition[     12297,        400]
+CellTagsIndexPosition[     12212,        395]
 WindowTitle->goProGetFileURL
 WindowFrame->Normal*)
 
@@ -21,6 +21,27 @@ WindowFrame->Normal*)
 Notebook[{
 Cell[BoxData[GridBox[{
    {Cell["GO PRO CONTROLLER SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Tutorials",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Tutorials", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"Downloading and deleting files from GoProHERO2HERO3 & \
+HERO3+HERO4goProSetupgoProControl\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/tutorial/goProDownload"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"Tutorials"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
      Cell[BoxData[
       ActionMenuBox[
        FrameBox[
@@ -80,7 +101,7 @@ goProGetFileURL.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$6232], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$6256], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "GoProController/ref/goProGetFileURL", ".html"]], None}]}]},
@@ -90,10 +111,6 @@ goProGetFileURL.html"], StandardForm]], "Input", TextClipboardType ->
       LineSpacing->{1.4, 0}]
     }], "AnchorBar"]}
   }]], "AnchorBarGrid",
- GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
-     Scaled[0.65], {
-      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
-   "RowsIndexed" -> {}}},
  CellID->1],
 
 Cell[TextData[{
@@ -141,7 +158,7 @@ Cell[TextData[{
 }], "PrimaryExamplesSection",
  WholeCellGroupOpener->True,
  CellTags->"PrimaryExamplesSection",
- CellID->977762261],
+ CellID->624716464],
 
 Cell[CellGroupData[{
 
@@ -151,7 +168,7 @@ Cell[TextData[{
  Cell["(1)", "ExampleCount"]
 }], "ExampleSection", "ExampleSection",
  WholeCellGroupOpener->True,
- CellID->1782055566],
+ CellID->248734972],
 
 Cell[CellGroupData[{
 
@@ -230,6 +247,82 @@ Cell[TextData[{
      ImageSize->{6, 0}],
     CacheGraphics->False],
    Spacer[6]]]],
+ "Tutorials"
+}], "TutorialsSection",
+ WholeCellGroupOpener->True,
+ CellID->250839057],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[{
+ TemplateBox[{Cell[
+    TextData["Downloading and deleting files from GoPro"]],
+   "paclet:GoProController/tutorial/goProDownload"},
+  "RefLink",
+  BaseStyle->"Tutorials"], "\n", 
+ RowBox[{"\[LongDash]", " ", 
+  RowBox[{"Tutorial", " ", "for", " ", "GoPro", " ", 
+   RowBox[{"HERO2", ".", "\n"}]}]}], "\n", 
+ TemplateBox[{Cell[
+    TextData["HERO2"]],"paclet:GoProController/tutorial/HERO2"},
+  "RefLink",
+  BaseStyle->"Tutorials"], "\n", 
+ RowBox[{"  ", 
+  RowBox[{"\[LongDash]", " ", 
+   RowBox[{"Tutorial", " ", "for", " ", "GoPro", " ", 
+    RowBox[{"HERO2", ".", "\n"}]}]}]}], "\n", 
+ TemplateBox[{Cell[
+    TextData["HERO3 & HERO3+"]],"paclet:GoProController/tutorial/HERO3"},
+  "RefLink",
+  BaseStyle->"Tutorials"], "\n", 
+ RowBox[{" ", 
+  RowBox[{"\[LongDash]", "  ", 
+   RowBox[{
+    RowBox[{
+    "Tutorial", " ", "for", " ", "GoPro", " ", "HERO3", " ", "and", " ", 
+     "HERO3"}], "+", 
+    RowBox[{".", "\n"}]}]}]}], "\n", 
+ TemplateBox[{Cell[
+    TextData["HERO4"]],"paclet:GoProController/tutorial/HERO4"},
+  "RefLink",
+  BaseStyle->"Tutorials"], "\n", 
+ RowBox[{"  ", 
+  RowBox[{"\[LongDash]", " ", 
+   RowBox[{"Tutorial", " ", "for", " ", 
+    RowBox[{"GoProHero4", ".", "\n"}]}]}]}], "\n", 
+ TemplateBox[{Cell[
+    TextData["goProSetup"]],"paclet:GoProController/tutorial/goProSetup"},
+  "RefLink",
+  BaseStyle->"Tutorials"], "\n", 
+ RowBox[{" ", 
+  RowBox[{"\[LongDash]", " ", 
+   RowBox[{"setting", " ", "GoPro", " ", 
+    RowBox[{"camera", ".", "\n"}]}]}]}], "\n", 
+ TemplateBox[{Cell[
+    TextData["goProControl"]],"paclet:GoProController/tutorial/goProControl"},
+  
+  "RefLink",
+  BaseStyle->"Tutorials"], "\n", 
+ RowBox[{" ", 
+  RowBox[{"\[LongDash]", "  ", 
+   RowBox[{
+   "how", " ", "to", " ", "control", " ", "GoProCamera"}]}]}]}], "Tutorials",
+ CellID->341631938],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
  "Related Guides"
 }], "MoreAboutSection",
  WholeCellGroupOpener->True,
@@ -243,7 +336,7 @@ Cell[BoxData[
    "paclet:GoProController/guide/GoProController"},
   "RefLink",
   BaseStyle->"MoreAbout"]], "MoreAbout",
- CellID->1714855831]
+ CellID->451653842]
 }, Open  ]],
 
 Cell[" ", "FooterCell"]
@@ -264,7 +357,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2017, 5, 8, 1, 0, 36.770980}", 
+   "built" -> "{2017, 5, 14, 19, 18, 5.722839}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -294,59 +387,67 @@ StyleDefinitions->Notebook[{
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[4461, 128, 387, 15, 33, "PrimaryExamplesSection",
+  Cell[5081, 145, 387, 15, 33, "PrimaryExamplesSection",
    CellTags->"PrimaryExamplesSection",
-   CellID->977762261]}
+   CellID->624716464]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 9263, 295}
+ {"PrimaryExamplesSection", 12069, 388}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[587, 21, 3118, 75, 52, "AnchorBarGrid",
+Cell[587, 21, 3738, 92, 52, "AnchorBarGrid",
  CellID->1],
-Cell[3708, 98, 292, 11, 48, "ObjectNameGrid"],
-Cell[4003, 111, 433, 13, 84, "Usage",
+Cell[4328, 115, 292, 11, 48, "ObjectNameGrid"],
+Cell[4623, 128, 433, 13, 84, "Usage",
  CellID->982511436],
 Cell[CellGroupData[{
-Cell[4461, 128, 387, 15, 33, "PrimaryExamplesSection",
+Cell[5081, 145, 387, 15, 33, "PrimaryExamplesSection",
  CellTags->"PrimaryExamplesSection",
- CellID->977762261],
+ CellID->624716464],
 Cell[CellGroupData[{
-Cell[4873, 147, 196, 6, 28, "ExampleSection",
- CellID->1782055566],
+Cell[5493, 164, 195, 6, 28, "ExampleSection",
+ CellID->248734972],
 Cell[CellGroupData[{
-Cell[5094, 157, 529, 13, 85, "Input",
+Cell[5713, 174, 529, 13, 85, "Input",
  CellID->1763328308],
-Cell[5626, 172, 114, 2, 24, "Print",
+Cell[6245, 189, 114, 2, 24, "Print",
  CellID->290214532]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5777, 179, 108, 3, 28, "Input",
+Cell[6396, 196, 108, 3, 28, "Input",
  CellID->2116177079],
-Cell[5888, 184, 246, 8, 39, "Output",
+Cell[6507, 201, 246, 8, 39, "Output",
  CellID->1925616991]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6171, 197, 193, 6, 28, "Input",
+Cell[6790, 214, 193, 6, 28, "Input",
  CellID->1386838175],
-Cell[6367, 205, 320, 9, 57, "Output",
+Cell[6986, 222, 320, 9, 57, "Output",
  CellID->1295312578]
 }, Open  ]]
 }, Open  ]],
-Cell[6714, 218, 31, 0, 29, "SectionFooterSpacer"]
+Cell[7333, 235, 31, 0, 29, "SectionFooterSpacer"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6782, 223, 276, 12, 33, "MoreAboutSection",
- CellID->38303248],
-Cell[7061, 237, 31, 0, 14, "SectionHeaderSpacer"],
-Cell[7095, 239, 202, 6, 20, "MoreAbout",
- CellID->1714855831]
+Cell[7401, 240, 272, 12, 33, "TutorialsSection",
+ CellID->250839057],
+Cell[7676, 254, 31, 0, 14, "SectionHeaderSpacer"],
+Cell[7710, 256, 1806, 53, 281, "Tutorials",
+ CellID->341631938],
+Cell[9519, 311, 31, 0, 70, "SectionFooterSpacer"]
 }, Open  ]],
-Cell[7312, 248, 23, 0, 42, "FooterCell"]
+Cell[CellGroupData[{
+Cell[9587, 316, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[9866, 330, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[9900, 332, 201, 6, 70, "MoreAbout",
+ CellID->451653842]
+}, Open  ]],
+Cell[10116, 341, 23, 0, 70, "FooterCell"]
 }
 ]
 *)

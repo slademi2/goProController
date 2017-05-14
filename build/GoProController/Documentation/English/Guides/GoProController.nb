@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     21718,        627]
-NotebookOptionsPosition[     18310,        542]
-NotebookOutlinePosition[     20467,        588]
-CellTagsIndexPosition[     20424,        585]
+NotebookDataLength[     20834,        605]
+NotebookOptionsPosition[     17423,        520]
+NotebookOutlinePosition[     19583,        566]
+CellTagsIndexPosition[     19540,        563]
 WindowTitle->GoProController Package
 WindowFrame->Normal*)
 
@@ -95,32 +95,6 @@ Cell[BoxData[GridBox[{
       ActionMenuBox[
        FrameBox[
         InterpretationBox[Cell[TextData[{
-          "Tutorials",
-          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
-           StripOnInput->False]
-         }]],
-         TextCell[
-          Row[{"Tutorials", 
-            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
-        StripOnInput->
-         False], {"\<\"Downloading and deleting files from GoPro\"\>":>
-       Documentation`HelpLookup[
-       "paclet:GoProController/tutorial/goProDownload"], "\<\"HERO2\"\>":>
-       Documentation`HelpLookup[
-       "paclet:GoProController/tutorial/HERO2"], "\<\"HERO3 and HERO3+\"\>":>
-       Documentation`HelpLookup[
-       "paclet:GoProController/tutorial/HERO3"], "\<\"HERO4\"\>":>
-       Documentation`HelpLookup["paclet:GoProController/tutorial/HERO4"]},
-       Appearance->None,
-       MenuAppearance->Automatic,
-       MenuStyle->"GuideTutorial"]],
-      LineSpacing->{1.4, 0}],
-     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
-\[ThickSpace]",
-     Cell[BoxData[
-      ActionMenuBox[
-       FrameBox[
-        InterpretationBox[Cell[TextData[{
           "URL",
           StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
            StripOnInput->False]
@@ -158,7 +132,7 @@ GoProController.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2600], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2541], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "GoProController/guide/GoProController", ".html"]], None}]}]},
@@ -168,6 +142,10 @@ GoProController.html"], StandardForm]], "Input", TextClipboardType ->
       LineSpacing->{1.4, 0}]
     }], "AnchorBar"]}
   }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
  CellID->1],
 
 Cell[CellGroupData[{
@@ -554,7 +532,7 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2017, 5, 8, 1, 0, 26.494967}", 
+   "built" -> "{2017, 5, 14, 19, 17, 55.999563}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -568,7 +546,7 @@ which parameters can be set for each setting of camera. There are functions \
 which will help you to choose right parameters but they are not unmistakable. \
 This package was tested only on GoPro HERO 3+ Black edition and HERO4 Silver \
 edition so it may contain bugs for other cameras.", "synonyms" -> {}, 
-    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$2514, 
+    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$2459, 
     "title" -> "GoProController Package", "titlemodifier" -> "", 
     "windowtitle" -> "GoProController Package", "type" -> "Guide", "uri" -> 
     "GoProController/guide/GoProController"}, "SearchTextTranslated" -> ""},
@@ -587,48 +565,48 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[595, 21, 6820, 149, 70, "AnchorBarGrid",
+Cell[595, 21, 5933, 127, 70, "AnchorBarGrid",
  CellID->1],
 Cell[CellGroupData[{
-Cell[7440, 174, 65, 1, 70, "GuideTitle",
+Cell[6553, 152, 65, 1, 70, "GuideTitle",
  CellID->942062912],
-Cell[7508, 177, 646, 11, 70, "GuideAbstract",
+Cell[6621, 155, 646, 11, 70, "GuideAbstract",
  CellID->2001916300]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8191, 193, 385, 12, 70, "GuideFunctionsSection",
+Cell[7304, 171, 385, 12, 70, "GuideFunctionsSection",
  CellID->1866139230],
-Cell[8579, 207, 31, 0, 70, "SectionHeaderSpacer"],
-Cell[8613, 209, 398, 12, 70, "GuideText",
+Cell[7692, 185, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[7726, 187, 398, 12, 70, "GuideText",
  CellID->203374175],
-Cell[9014, 223, 2040, 63, 70, "GuideText",
+Cell[8127, 201, 2040, 63, 70, "GuideText",
  CellID->1463276848],
-Cell[11057, 288, 31, 0, 70, "SectionFooterSpacer"]
+Cell[10170, 266, 31, 0, 70, "SectionFooterSpacer"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11125, 293, 286, 11, 70, "GuideFunctionsSection",
+Cell[10238, 271, 286, 11, 70, "GuideFunctionsSection",
  CellID->845392231],
-Cell[11414, 306, 31, 0, 70, "SectionHeaderSpacer"],
-Cell[11448, 308, 2373, 72, 70, "GuideText",
+Cell[10527, 284, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[10561, 286, 2373, 72, 70, "GuideText",
  CellID->1914796280],
-Cell[13824, 382, 31, 0, 70, "SectionFooterSpacer"]
+Cell[12937, 360, 31, 0, 70, "SectionFooterSpacer"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[13892, 387, 317, 12, 70, "GuideFunctionsSection",
+Cell[13005, 365, 317, 12, 70, "GuideFunctionsSection",
  CellID->1931553461],
-Cell[14212, 401, 31, 0, 70, "SectionHeaderSpacer"],
-Cell[14246, 403, 2443, 75, 70, "GuideText",
+Cell[13325, 379, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[13359, 381, 2443, 75, 70, "GuideText",
  CellID->1152962598],
-Cell[16692, 480, 31, 0, 70, "SectionFooterSpacer"]
+Cell[15805, 458, 31, 0, 70, "SectionFooterSpacer"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16760, 485, 277, 11, 70, "GuideFunctionsSection",
+Cell[15873, 463, 277, 11, 70, "GuideFunctionsSection",
  CellID->1110246741],
-Cell[17040, 498, 31, 0, 70, "SectionHeaderSpacer"],
-Cell[17074, 500, 1194, 37, 70, "GuideText",
+Cell[16153, 476, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[16187, 478, 1194, 37, 70, "GuideText",
  CellID->1231741363]
 }, Open  ]],
-Cell[18283, 540, 23, 0, 70, "FooterCell"]
+Cell[17396, 518, 23, 0, 70, "FooterCell"]
 }
 ]
 *)

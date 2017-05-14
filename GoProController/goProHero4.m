@@ -1,5 +1,14 @@
 (* Wolfram Language Package *)
 
+
+(*In this file we use association arrays for converting parameters in string to code which fit into url controlling the camera.
+These arrays are named settingToCode, wheere "array" represents the name of setting of camera.
+
+Also we use variables "settingPhotoCode" which represents id of setting on camera (it is used in url which controls camera.)
+
+*)
+
+
 BeginPackage["GoProController`"]
 (* Exported symbols added here with SymbolName::usage *)  
 
@@ -561,6 +570,7 @@ model="";
 
 goProGetCamera[] := camera
 
+(*possible models of GoPro cameras generation HERO4*)
 modelPossible={"Black","Silver","Session"}
 goProGetPossibleCameraModel[]:=modelPossible
 
@@ -572,16 +582,14 @@ goProGetCameraModel[]:=model;
 
 goProUrl = "http://10.5.5.9/gp/gpControl/";
 
-(*function for putting together url for GoProCommand,
- mode={setting,command}
-*)
+(*function for putting together url for GoProCommand*)
 goProMakeCommand[mode_String,param1_String,param2_String]:= goProUrl <> mode <> "/" <> param1 <> "/" <> param2;
 
 goProMakeCommand[mode_String,param_String] := goProUrl <> mode <> "/" <> param;
 
-(*spusteni prikazu exec pomoci HTTPRequest a URLRead*)
-execute[exec_String] :=exec(*(request = HTTPRequest[exec];
-     URLRead[request])*)
+(*executing the HTTP request on url exec*)
+execute[exec_String] :=(request = HTTPRequest[exec];
+     URLRead[request])
  
  
  
@@ -591,16 +599,6 @@ execute[exec_String] :=exec(*(request = HTTPRequest[exec];
 
 (* ::Subsection:: *)
 (* Power *)
-(*
-macAddress=""
-goProSetMac[param_String]:=macAdress=param
-
-
-goProSetMac::mac="You have to set mac adress of camera first, use goProSetMac[_String]";
-*)
-
-
-
 goProTurnOff[]:=execute[goProMakeCommand["command","system","sleep"]]
     
  
@@ -611,8 +609,8 @@ goProTurnOff[]:=execute[goProMakeCommand["command","system","sleep"]]
 (* Modes *)
 
 bootModeCode="53"
-bootModeToCode=<|
-	"Video"->"0",
+
+bootModeToCode=<|"Video"->"0",
 	"Photo"->"1",
 	"MultiShot"->"2"
 |>
@@ -1515,6 +1513,8 @@ volumeSetting=""
 autoOffSetting=""
 ledSetting=""
 
+
+
 codeTovideoResolution=Association[videoResToCodeBlack[[#]] -> # & /@ Keys[videoResToCodeBlack]];
 codeToFPS=Association[fpsToCode[[#]] -> # & /@ Keys[fpsToCode]];
 codeToFOV=Association[fovToCode[[#]] -> # & /@ Keys[fovToCode]];
@@ -1943,7 +1943,11 @@ goProGetFileURL[name_String]:=If[URLRead[HTTPRequest[urlBase<>name]]["StatusCode
 
 (* ::Subsection:: *)
 (* goProSet *)
-
+(*function goProSet[] enables camera setting through options. The first thing to happen after usage of this function will be
+	execution function downloadSettings[] to update variables. After updating variables function goProSet will test new values
+	against values downloaed from camera and set only those parameters which are not the same. This precaution will prevent
+	us from overwhelming camera with useless http requests.
+ *)
 
 Setting
 Options[goProSet] = {

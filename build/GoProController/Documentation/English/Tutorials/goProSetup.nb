@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     52563,       1417]
+NotebookDataLength[     52567,       1417]
 NotebookOptionsPosition[     45345,       1193]
-NotebookOutlinePosition[     48306,       1259]
-CellTagsIndexPosition[     48263,       1256]
+NotebookOutlinePosition[     48310,       1259]
+CellTagsIndexPosition[     48267,       1256]
 WindowTitle->Setting parameters of goProCamera
 WindowFrame->Normal*)
 
@@ -107,7 +107,7 @@ tutorial/goProSetup.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$15347], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$15609], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "GoProController/tutorial/goProSetup", ".html"]], None}]}]},
@@ -1206,7 +1206,7 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2017, 5, 8, 1, 1, 6.697880}", 
+   "built" -> "{2017, 5, 14, 19, 18, 34.359634}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -1222,7 +1222,7 @@ camera currently set. If it wasn't this way camera would be set to default \
 options with every usage of this function (except the options used in its \
 use). To get options for function goProSet and goProGet use goProGetVariables \
 - it returns list of those options.", "synonyms" -> {}, "tabletags" -> 
-    DocumentationBuild`Make`Private`tabletaggingrules$15215, "title" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$15477, "title" -> 
     "Setting parameters of goProCamera", "titlemodifier" -> "", "windowtitle" -> 
     "Setting parameters of goProCamera", "type" -> "Tutorial", "uri" -> 
     "GoProController/tutorial/goProSetup"}, "SearchTextTranslated" -> ""},

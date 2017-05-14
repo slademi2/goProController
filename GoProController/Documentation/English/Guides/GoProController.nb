@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     18696,        567]
-NotebookOptionsPosition[     15626,        459]
-NotebookOutlinePosition[     16036,        475]
-CellTagsIndexPosition[     15993,        472]
+NotebookDataLength[     17120,        522]
+NotebookOptionsPosition[     14421,        426]
+NotebookOutlinePosition[     14837,        442]
+CellTagsIndexPosition[     14794,        439]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -349,14 +349,15 @@ camera.\n",
  "   \[LongDash] deletes all files on camera"
 }], "GuideText",
  CellChangeTimes->{{3.7020588521606894`*^9, 3.7020588875164948`*^9}, {
-  3.702062524571637*^9, 3.702062565123357*^9}, {3.7020953474847603`*^9, 
-  3.7020953878234787`*^9}, {3.7020960732770033`*^9, 3.702096126589806*^9}, {
-  3.7023623253945704`*^9, 3.702362387511078*^9}, {3.702653532284114*^9, 
-  3.7026535617241497`*^9}, {3.702653722139769*^9, 3.702653800421084*^9}, {
-  3.702654461735588*^9, 3.702654519005847*^9}, {3.702654558864912*^9, 
-  3.702654657337318*^9}, {3.702654831441658*^9, 3.702654831662717*^9}, {
-  3.7026549345181427`*^9, 3.702654934739842*^9}, {3.7026550686150637`*^9, 
-  3.702655068818214*^9}, {3.702655272836718*^9, 3.702655273535448*^9}},
+   3.702062524571637*^9, 3.702062565123357*^9}, {3.7020953474847603`*^9, 
+   3.7020953878234787`*^9}, {3.7020960732770033`*^9, 3.702096126589806*^9}, {
+   3.7023623253945704`*^9, 3.702362387511078*^9}, {3.702653532284114*^9, 
+   3.7026535617241497`*^9}, {3.702653722139769*^9, 3.702653800421084*^9}, {
+   3.702654461735588*^9, 3.702654519005847*^9}, {3.702654558864912*^9, 
+   3.702654657337318*^9}, {3.702654831441658*^9, 3.702654831662717*^9}, {
+   3.7026549345181427`*^9, 3.702654934739842*^9}, {3.7026550686150637`*^9, 
+   3.702655068818214*^9}, {3.702655272836718*^9, 3.702655273535448*^9}, 
+   3.703771028709058*^9},
  CellID->1152962598]
 }, Open  ]],
 
@@ -410,40 +411,6 @@ Cell[TextData[{
 
 Cell[CellGroupData[{
 
-Cell["Tutorials for controlling GoPro cameras.", "GuideTutorialsSection",
- CellChangeTimes->{{3.702647560691703*^9, 3.702647569680531*^9}},
- CellID->415694126],
-
-Cell[TextData[ButtonBox["Downloading and deleting files from GoPro",
- BaseStyle->"Link",
- ButtonData->
-  "paclet:GoProController/tutorial/goProDownload"]], "GuideTutorial",
- CellChangeTimes->{{3.702637292854104*^9, 3.7026373018441677`*^9}, {
-   3.7026374270763702`*^9, 3.702637436793983*^9}, {3.702647578681587*^9, 
-   3.702647582432376*^9}, 3.702656981579631*^9},
- CellID->806871991],
-
-Cell[TextData[ButtonBox["HERO2",
- BaseStyle->"Link",
- ButtonData->"paclet:GoProController/tutorial/HERO2"]], "GuideTutorial",
- CellChangeTimes->{{3.702657245209346*^9, 3.7026572591584177`*^9}},
- CellID->543054715],
-
-Cell[TextData[ButtonBox["HERO3 and HERO3+",
- BaseStyle->"Link",
- ButtonData->"paclet:GoProController/tutorial/HERO3"]], "GuideTutorial",
- CellChangeTimes->{{3.702656209703389*^9, 3.702656225394875*^9}},
- CellID->994496438],
-
-Cell[TextData[ButtonBox["HERO4",
- BaseStyle->"Link",
- ButtonData->"paclet:GoProController/tutorial/HERO4"]], "GuideTutorial",
- CellChangeTimes->{{3.702645705048967*^9, 3.702645716532336*^9}},
- CellID->1707249146]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
 Cell["More About", "GuideMoreAboutSection",
  CellID->23220180],
 
@@ -458,7 +425,7 @@ Cell["Related Links", "GuideRelatedLinksSection",
  CellID->415694148]
 },
 WindowSize->{799, 847},
-WindowMargins->{{3, Automatic}, {1, Automatic}},
+WindowMargins->{{Automatic, -240}, {-187, Automatic}},
 FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "GuidePageStyles.nb", 
   CharacterEncoding -> "UTF-8"]
@@ -538,36 +505,24 @@ Cell[6985, 230, 2065, 53, 214, "GuideText",
 Cell[CellGroupData[{
 Cell[9087, 288, 472, 9, 91, "GuideFunctionsSection",
  CellID->1931553461],
-Cell[9562, 299, 2463, 60, 264, "GuideText",
+Cell[9562, 299, 2497, 61, 264, "GuideText",
  CellID->1152962598]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12062, 364, 427, 6, 72, "GuideFunctionsSection",
+Cell[12096, 365, 427, 6, 72, "GuideFunctionsSection",
  CellID->1110246741],
-Cell[12492, 372, 1601, 35, 155, "GuideText",
+Cell[12526, 373, 1601, 35, 155, "GuideText",
  CellID->1231741363]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14130, 412, 159, 2, 74, "GuideTutorialsSection",
- CellID->415694126],
-Cell[14292, 416, 384, 7, 23, "GuideTutorial",
- CellID->806871991],
-Cell[14679, 425, 213, 4, 23, "GuideTutorial",
- CellID->543054715],
-Cell[14895, 431, 222, 4, 23, "GuideTutorial",
- CellID->994496438],
-Cell[15120, 437, 212, 4, 23, "GuideTutorial",
- CellID->1707249146]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[15369, 446, 62, 1, 74, "GuideMoreAboutSection",
+Cell[14164, 413, 62, 1, 74, "GuideMoreAboutSection",
  CellID->23220180],
-Cell[15434, 449, 51, 1, 23, "GuideMoreAbout",
+Cell[14229, 416, 51, 1, 23, "GuideMoreAbout",
  CellID->1567025153],
-Cell[15488, 452, 50, 1, 23, "GuideMoreAbout",
+Cell[14283, 419, 50, 1, 23, "GuideMoreAbout",
  CellID->252299663]
 }, Open  ]],
-Cell[15553, 456, 69, 1, 74, "GuideRelatedLinksSection",
+Cell[14348, 423, 69, 1, 74, "GuideRelatedLinksSection",
  CellID->415694148]
 }
 ]

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     10952,        453]
-NotebookOptionsPosition[      6635,        298]
-NotebookOutlinePosition[      7247,        322]
-CellTagsIndexPosition[      7169,        317]
+NotebookDataLength[     11963,        479]
+NotebookOptionsPosition[      7643,        324]
+NotebookOutlinePosition[      8255,        348]
+CellTagsIndexPosition[      8177,        343]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -151,7 +151,33 @@ Cell[CellGroupData[{
 Cell["Tutorials", "TutorialsSection",
  CellID->250839057],
 
-Cell["XXXX", "Tutorials",
+Cell[TextData[{
+ ButtonBox["Downloading and deleting files from GoPro",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/goProDownload"],
+ "\[LongDash] Tutorial for GoPro HERO2.\n",
+ ButtonBox["HERO2",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/HERO2"],
+ "  \[LongDash] Tutorial for GoPro HERO2.\n",
+ ButtonBox["HERO3 & HERO3+",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/HERO3"],
+ " \[LongDash]  Tutorial for GoPro HERO3 and HERO3+.\n",
+ ButtonBox["HERO4",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/HERO4"],
+ "  \[LongDash] Tutorial for GoProHero4.\n",
+ ButtonBox["goProSetup",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/goProSetup"],
+ " \[LongDash] setting GoPro camera.\n",
+ ButtonBox["goProControl",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/goProControl"],
+ " \[LongDash]  how to control GoProCamera"
+}], "Tutorials",
+ CellChangeTimes->{{3.703771001850437*^9, 3.70377100250257*^9}},
  CellID->341631938]
 }, Open  ]],
 
@@ -297,7 +323,7 @@ Cell[BoxData[
 }, Open  ]]
 },
 WindowSize->{700, 770},
-WindowMargins->{{5, Automatic}, {Automatic, 25}},
+WindowMargins->{{6, Automatic}, {Automatic, 50}},
 CellContext->"Global`",
 FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
@@ -309,14 +335,14 @@ StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb",
 (*CellTagsOutline
 CellTagsIndex->{
  "ExtendedExamples"->{
-  Cell[5115, 240, 100, 2, 56, "ExtendedExamplesSection",
+  Cell[6123, 266, 100, 2, 56, "ExtendedExamplesSection",
    CellTags->"ExtendedExamples",
    CellID->1854448968]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"ExtendedExamples", 7031, 310}
+ {"ExtendedExamples", 8039, 336}
  }
 *)
 (*NotebookFileOutline
@@ -385,74 +411,74 @@ Cell[3019, 144, 42, 1, 25, "Notes",
 Cell[CellGroupData[{
 Cell[3098, 150, 57, 1, 45, "TutorialsSection",
  CellID->250839057],
-Cell[3158, 153, 45, 1, 16, "Tutorials",
+Cell[3158, 153, 1053, 27, 81, "Tutorials",
  CellID->341631938]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3240, 159, 83, 1, 32, "RelatedDemonstrationsSection",
+Cell[4248, 185, 83, 1, 32, "RelatedDemonstrationsSection",
  CellID->1268215905],
-Cell[3326, 162, 58, 1, 16, "RelatedDemonstrations",
+Cell[4334, 188, 58, 1, 16, "RelatedDemonstrations",
  CellID->1129518860]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3421, 168, 65, 1, 32, "RelatedLinksSection",
+Cell[4429, 194, 65, 1, 32, "RelatedLinksSection",
  CellID->1584193535],
-Cell[3489, 171, 49, 1, 16, "RelatedLinks",
+Cell[4497, 197, 49, 1, 16, "RelatedLinks",
  CellID->1038487239]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3575, 177, 55, 1, 32, "SeeAlsoSection",
+Cell[4583, 203, 55, 1, 32, "SeeAlsoSection",
  CellID->1255426704],
-Cell[3633, 180, 43, 1, 16, "SeeAlso",
+Cell[4641, 206, 43, 1, 16, "SeeAlso",
  CellID->929782353]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3713, 186, 57, 1, 32, "MoreAboutSection",
+Cell[4721, 212, 57, 1, 32, "MoreAboutSection",
  CellID->38303248],
-Cell[3773, 189, 46, 1, 16, "MoreAbout",
+Cell[4781, 215, 46, 1, 16, "MoreAbout",
  CellID->1665078683]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3856, 195, 356, 11, 70, "PrimaryExamplesSection",
+Cell[4864, 221, 356, 11, 70, "PrimaryExamplesSection",
  CellID->880084151],
 Cell[CellGroupData[{
-Cell[4237, 210, 274, 5, 48, "Input",
+Cell[5245, 236, 274, 5, 48, "Input",
  CellID->265885731],
-Cell[4514, 217, 158, 3, 22, "Print",
+Cell[5522, 243, 158, 3, 22, "Print",
  CellID->1604846889]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4709, 225, 174, 4, 27, "Input",
+Cell[5717, 251, 174, 4, 27, "Input",
  CellID->1077510820],
-Cell[4886, 231, 180, 3, 26, "Output",
+Cell[5894, 257, 180, 3, 26, "Output",
  CellID->371903774]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5115, 240, 100, 2, 56, "ExtendedExamplesSection",
+Cell[6123, 266, 100, 2, 56, "ExtendedExamplesSection",
  CellTags->"ExtendedExamples",
  CellID->1854448968],
-Cell[5218, 244, 125, 3, 34, "ExampleSection",
+Cell[6226, 270, 125, 3, 34, "ExampleSection",
  CellID->1293636265],
-Cell[5346, 249, 148, 3, 22, "ExampleSection",
+Cell[6354, 275, 148, 3, 22, "ExampleSection",
  CellID->1020263627],
 Cell[CellGroupData[{
-Cell[5519, 256, 127, 3, 22, "ExampleSection",
+Cell[6527, 282, 127, 3, 22, "ExampleSection",
  CellID->2061341341],
-Cell[5649, 261, 130, 3, 70, "ExampleSubsection",
+Cell[6657, 287, 130, 3, 70, "ExampleSubsection",
  CellID->1757724783],
-Cell[5782, 266, 130, 3, 70, "ExampleSubsection",
+Cell[6790, 292, 130, 3, 70, "ExampleSubsection",
  CellID->1295379749]
 }, Closed]],
-Cell[5927, 272, 131, 3, 22, "ExampleSection",
+Cell[6935, 298, 131, 3, 22, "ExampleSection",
  CellID->258228157],
-Cell[6061, 277, 142, 3, 22, "ExampleSection",
+Cell[7069, 303, 142, 3, 22, "ExampleSection",
  CellID->2123667759],
-Cell[6206, 282, 135, 3, 22, "ExampleSection",
+Cell[7214, 308, 135, 3, 22, "ExampleSection",
  CellID->1305812373],
-Cell[6344, 287, 140, 3, 22, "ExampleSection",
+Cell[7352, 313, 140, 3, 22, "ExampleSection",
  CellID->1653164318],
-Cell[6487, 292, 132, 3, 22, "ExampleSection",
+Cell[7495, 318, 132, 3, 22, "ExampleSection",
  CellID->589267740]
 }, Open  ]]
 }

@@ -1,9 +1,15 @@
 (* Wolfram Language Package *)
 
+
+(*In this file we use association arrays for converting parameters in string to code which fit into url controlling the camera.
+These arrays are named settingToCode, wheere "array" represents the name of setting of camera.
+*)
+
 BeginPackage["GoProController`"]
 (* Exported symbols added here with SymbolName::usage *)
 
 
+(*In this part of source file the public functions will be declared*)
 
 (* ::Section:: *)
 (* Global Definitions *)
@@ -363,20 +369,25 @@ goProSetCameraModel::usage=
 Begin["`Private`"]
 
 
-(*Print["camera: "<>camera]*)
+
+(*Returns camera geneartion*)
 goProGetCamera[]:=camera
 
+(*variable representing camera model*)
 model="";
 
 
-
+(*constant for camera models for each generation*)
 modelHero3Plus={"Silver","Black"}
 modelHero3={"White","Silver","Black"}
 
-
+(*error messages for camera models*)
 goProSetCameraModel::model="First you have to specificate camera model! Call goProSetCameraModel[_String]";
 goProSetCameraModel::wrong="`1` - This parameter is not supported for camera model. See goProGetCameraModelPossible.";
 goProSetCameraModel::noNeed="You don't have to set camera model for `1`";
+
+(*function for setting camera model, it will also check if camera model is supported in chosen camera generation
+ *)
 goProSetCameraModel[param_String]:=Switch[camera,
 	"HERO3+",If[MemberQ[modelHero3Plus,param],model=param,
 		Message[goProSetCameraModel::wrong,param]
@@ -386,21 +397,24 @@ goProSetCameraModel[param_String]:=Switch[camera,
 	],
 	_,Message[goProSetCameraModel::noNeed,camera]	
 ]
+
+(*returns list of possible parameters for goProSetCameraModel *)
 goProGetPossibleCameraModel[]:=Switch[camera,
 	"HERO3+",modelHero3Plus,
 	"HERO3",modelHero3,
 	_,Message[goProSetCameraModel::noNeed,camera]
 ]
 goProGetModel[] := model
+
+(*variable representing password on GoPro wifi netrwork*)
 goProPassword="";
-
-
-
 (*adresa kamery na siti, kterou kamera vysila*)
+
+(*constant containing url on which camera is available*)
 goProUrl = "http://10.5.5.9/";
 
 
-(*Funkce pro slozeni url pro ovladani kamery, unit (bacpac||camera), command (prikat), parram (parametr prikazu)*)
+(*function which will compose url from parameters and variables*)
 goProMakeCommand[unit_String, command_String, parram_String] :=
     goProUrl <> unit <> "/" <> command <> "?t=" <> goProPassword <>
      "&p=%" <> parram
@@ -410,13 +424,17 @@ goProMakeCommand[unit_String, command_String, parram_String] :=
 
 
 
+(*these function will enable only printing the url which controls GoPro camera instead of executing the HTTP request. 
+	This function is mainly for debugging.
+*)
 textMode=0;
 goProTextModeOn[]:=(textMode=1;)
 goProTextModeOff[]:=(textMode=0;)
 
+
 goProSetPassword::goProPassword="First you have to set password for Wifi! Call goProSetPassword[_String]";
 
-(*spusteni prikazu exec pomoci HTTPRequest a URLRead*)
+(*executing HTTP request it is used for setting the camera or getting parameters set on camera *)
 execute[exec_String] :=(If[goProPassword=="",Message[goProSetPassword::goProPassword, goProPassword],
 	If[textMode==0,
 		request = HTTPRequest[exec];
@@ -425,11 +443,14 @@ execute[exec_String] :=(If[goProPassword=="",Message[goProSetPassword::goProPass
     ]
 ])
 
+(*this function returns value of setting of camera (param). The unit parameter is (camera or bacpac)*)
 goProGetStatus[unit_String, param_String] :=If[goProPassword=="",Message[goProSetPassword::goProPassword, goProPassword],
     URLExecute[HTTPRequest[goProUrl <> unit <> "/" <> param <> "?t=" <> goProPassword]]
 ]
 
-(*Funkce pro inicializaci hesla*)
+(*function for setting the password for camera WiFi network.
+This function will also try if you are connected to camera's wifi.
+*)
 goProSetPassword::timeOut="Camera not found."
 goProSetPassword[password_String] := (goProPassword = password;If[SameQ[PingTime["10.5.5.9"], $TimedOut], Message[goProSetPassword::timeOut], 
 	goProTurnOn[];
@@ -437,20 +458,20 @@ goProSetPassword[password_String] := (goProPassword = password;If[SameQ[PingTime
 	downloadSettings[];
 	])
 
-(*funkce pro zapnuti a vypnuti kamery*)
+(*Functions for turning on or off the camera*)
 goProTurnOn[] :=
     execute[goProMakeCommand["bacpac", "PW", "01"]]
 goProTurnOff[] :=
     execute[goProMakeCommand["bacpac", "PW", "00"]]
 
-(*funkce pro zapnuti a vypnuti spouste (mackani spouste na kamere)*)
+(*shutter*)
 goProShutter[] :=
     execute[goProMakeCommand["bacpac", "SH", "01"]]
 goProStop[] :=
     execute[goProMakeCommand["bacpac", "SH", "00"]]
 
 
-(*Camera Mods*)
+(*Camera Modes*)
 goProVideoMode[] :=
     execute[goProMakeCommand["camera", "CM", "00"]]
 goProPhotoMode[] :=
@@ -461,8 +482,8 @@ goProTimeLapseMode[] :=
     execute[goProMakeCommand["camera", "CM", "03"]]
 
 
-modesToCode=<|
-	"Video"->"00",
+(*association field for translating the string parameter to code needed for url*)
+modesToCode=<|"Video"->"00",
 	"Photo"->"01",
 	"Burst"->"02",
 	"TimeLapse"->"03"
@@ -471,18 +492,11 @@ modesToCode=<|
 goProGetPossibleModes[]:=Keys[modesToCode]
 goProMode[param_String]:=execute[goProMakeCommand["camera", "CM", modesToCode[[param]] ]]
 
-
-
-
+(*setting the mode which will be default at startup of camera*)
 goProSetBootMode[param_String]:=execute[goProMakeCommand["camera", "DM", modesToCode[[param]] ]]
 goProGetPossibleBootMode[]:=Keys[modesToCode]
 
 
-goProPlayHDMIMode[] :=
-    execute[goProMakeCommand["camera", "CM", "05"]](*not usable*)
-
-goProSettingsMode[] :=
-    execute[goProMakeCommand["camera", "CM", "07"]](*not usable*)
 
 
 (*Locate*)
@@ -515,6 +529,7 @@ photoResPossibleHERO2 = {
    "11W",
    "5W"
 };
+
 
 goProSet::param="Unsupported parameter `1`. Maybe you have set the wrong camera model."
 goProSetPhotoRes[param_String] :=Switch[camera,
@@ -1044,7 +1059,7 @@ goProSetVideoMode[param_String] :=
 
 
 
-(*time Setting*)
+(*the function for converting the paramerer containing date and time to hexadecimal and into needed form*)
 toHex[param_String] :=
     (final = "";
      td = param;
@@ -1061,7 +1076,7 @@ toHex[param_String] :=
      final = StringDrop [final, 1];
      final
     )
-
+    
 toFancyTime[param_List] :=
     "20"<>ToString[param[[1]]]<>"-"<>ToString[param[[2]]]<>"-"<>ToString[param[[3]]]<>" "<>ToString[param[[4]]]<>":"<>ToString[param[[5]]]<>":"<>ToString[param[[6]]]
 
@@ -1081,7 +1096,7 @@ goProGetTime[] :=
 
 
 (*Settings report*)
-(*next command switch keys and values in associative array*)
+(*next commands switch keys and values in associative array*)
 codeToPhotoRes = Association[photoResToCode[[#]] -> # & /@ Keys[photoResToCode]];
 codeToVideoRes = Association[videoResToCode[[#]] -> # & /@ Keys[videoResToCode]];
 codeToFPS = Association[fpsToCode[[#]] -> # & /@ Keys[fpsToCode]];
@@ -1116,7 +1131,7 @@ codeToMode = <|
 
 
 
-
+(*this function prinst the setting of camera*)
 goProGetSettingReport[] :=
     (Print["Time of camera: "<>goProGetTime[]];
      Print[ codeToMode[[ "0"<>ToString[goProGetStatus["camera", "cm"][[2]] ] ]] <> " mode" ];
@@ -1165,9 +1180,7 @@ goProGetSettingReport[] :=
 
 
 
-(*saving settings*)
 
-(* {mode,VideoRes,Fov,FPS, PhotoRes, Time-Lapse-Interval}  *)
 (*returns code of time interval which is set*)
 getTimeInterval[] :=
     (
@@ -1184,11 +1197,13 @@ getTimeInterval[] :=
 (*exports settings to name specified by parameter*)
 toExpr[x_Rule] := goProSet[ToExpression[x[[1]]] -> x[[2]]]
 
+
+(*functions for saving setting of camera to file and also loading	*)
 goProLoadSettings::wrong="Wrong format of file `1`, please use xls extension."
 goProSaveSettings[file_String] := (pom=goProGet[goProGetVariables[]];Export[file<>".xls", {pom[[All, 1]], pom[[All, 2]]}])
 
 
-
+(*loading settings from file to camera*)
 goProLoadSettings[file_String] := (
 	If[StringMatchQ[file, "*.xls"],
 		p=Flatten[Import[file], 1];
@@ -1209,8 +1224,6 @@ goProLoadSettings[file_String] := (
 (*function downloadSettings[] will download all possible settings from camera and save them to the
 	vareiables with suffix Def (Default), this function will be called before every usage of function goProSet[].
 *)
-
-
     modeDef=""
     videoResolutionDef=""
     fovDef=""
@@ -1305,7 +1318,7 @@ downloadSettings[]:=(
 
 
 
-
+(*setting up the options for function goProSet.. we set every option to variable with suffix "Def" which used in downloadSettings function*)
 Options[goProSet] = Switch[camera,"HERO3+",{
 	videoResolution -> videoResolutionDef,
 	fps -> fpsDef,
@@ -1371,7 +1384,7 @@ Options[goProSet] = Switch[camera,"HERO3+",{
 ]
 
 
-(*function goProSet[] enables camera setting through rules. The first thing to happen after usage of this function will be
+(*function goProSet[] enables camera setting through options. The first thing to happen after usage of this function will be
 	execution function downloadSettings[] to update variables. After updating variables function goProSet will test new values
 	against values downloaed from camera and set only those parameters which are not the same. This precaution will prevent
 	us from overwhelming camera with useless http requests.
@@ -1459,6 +1472,7 @@ goProSet[OptionsPattern[]] :=(If[goProPassword=="",Message[goProSetPassword::goP
 	]
     )
 
+(*returns associaton field containing actual settings of camera *)
 goProGetSettingReportAssociation[]:=(downloadSettings[];<|
 	"videoResolution" -> videoResolutionDef,
 	"mode"->modeDef,
@@ -1515,17 +1529,15 @@ vars={
 
 goProGet::missing="This parameter is not usable, try another.";
 
-(*spusteni prikazu exec pomoci HTTPRequest a URLRead*)
-(*If[MemberQ[vars,param],Message[goProGet::missing, missing]]*)
-
 
 SetAttributes[goProGet,HoldAll];
 
+(*function which returns parameters present on camera, it can be called with string or list (containing strings, variables or both)*)
 goProGet[param_]:= (If[SameQ[Head[Evaluate[param]],List]||SameQ[Head[Evaluate[param]],String],goProGet[Evaluate[param]],
 	If[MemberQ[vars,#],# -> goProGetSettingReportAssociation[][[#]],Message[goProGet::missing, missing]] &/@ {ToString[param]}])
 
 goProGet[list_List]:= If[MemberQ[vars,ToString[#]],ToString[#] -> goProGetSettingReportAssociation[][[ToString[#]]],
-	(Print["not member"];Message[goProGet::missing, missing])]&/@ list
+	(Message[goProGet::missing, missing])]&/@ list
 
 goProGet[param_String]:= (If[MemberQ[vars,#],# -> goProGetSettingReportAssociation[][[#]],Message[goProGet::missing, missing]] & /@ {param})
 
@@ -1621,6 +1633,7 @@ goProGetFileList[]:=(If[SameQ[Import[urlBase], $Failed],
  )
    
 
+(*setting up the variable urlBase which contains path to folder on camera from which we want to download files*)
 goProSetURLBase[param_String]:=urlBase=param;
 goProGetURLBase[]:=urlBase;
    

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    589588,      11907]
+NotebookDataLength[    589591,      11907]
 NotebookOptionsPosition[    576246,      11453]
-NotebookOutlinePosition[    579022,      11522]
-CellTagsIndexPosition[    578940,      11517]
+NotebookOutlinePosition[    579025,      11522]
+CellTagsIndexPosition[    578943,      11517]
 WindowTitle->HERO3 & HERO3+
 WindowFrame->Normal*)
 
@@ -81,7 +81,7 @@ tutorial/HERO3.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$17018], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$17270], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "GoProController/tutorial/HERO3", ".html"]], None}]}]},
@@ -10607,7 +10607,7 @@ pRfAPdNP0w6pBMi1FCBYfvP594f/B2EPwj8=
  ImageRegion->{{0, 1}, {0, 1}},
  CellTags->"RasterizedOutput",
  CellLabel->"Out[28]=",
- CellID->645168583]
+ CellID->841235501]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -11466,7 +11466,7 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2017, 5, 8, 1, 1, 13.383138}", 
+   "built" -> "{2017, 5, 14, 19, 18, 40.653486}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -11478,7 +11478,7 @@ model, it can be found on GoPro website. Before controlling camera you need \
 to set the package first. You have to do that because package need to know \
 which files have to be loaded and it is impossible to control goProCamera \
 without WiFi password. Package setup functions.", "synonyms" -> {}, 
-    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$16633, 
+    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$16885, 
     "title" -> "HERO3 & HERO3+", "titlemodifier" -> "", "windowtitle" -> 
     "HERO3 & HERO3+", "type" -> "Tutorial", "uri" -> 
     "GoProController/tutorial/HERO3"}, "SearchTextTranslated" -> ""},
@@ -11511,12 +11511,12 @@ CellTagsIndex->{
  "RasterizedOutput"->{
   Cell[180973, 4650, 363029, 5959, 407, "Output",
    CellTags->"RasterizedOutput",
-   CellID->645168583]}
+   CellID->841235501]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"RasterizedOutput", 578810, 11510}
+ {"RasterizedOutput", 578813, 11510}
  }
 *)
 (*NotebookFileOutline
@@ -11857,7 +11857,7 @@ Cell[180863, 4645, 107, 3, 28, "Input",
  CellID->1308078202],
 Cell[180973, 4650, 363029, 5959, 407, "Output",
  CellTags->"RasterizedOutput",
- CellID->645168583]
+ CellID->841235501]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[544039, 10614, 130, 3, 70, "Input",
