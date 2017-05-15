@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    397976,       6968]
+NotebookDataLength[    397975,       6968]
 NotebookOptionsPosition[    391238,       6762]
-NotebookOutlinePosition[    394263,       6834]
-CellTagsIndexPosition[    394182,       6829]
+NotebookOutlinePosition[    394262,       6834]
+CellTagsIndexPosition[    394181,       6829]
 WindowTitle->Downloading and deleting files from GoPro camera
 WindowFrame->Normal*)
 
@@ -117,7 +117,7 @@ tutorial/goProDownload.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$15232], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$15251], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "GoProController/tutorial/goProDownload", ".html"]], None}]}]},
@@ -6430,7 +6430,7 @@ ABkpQF7eOCWxJC5IB20nMO5bYbV1XVZ4Zbr552KsRJPtf+2v/963Lzv7uWuX
  ImageRegion->{{0, 1}, {0, 1}},
  CellTags->"RasterizedOutput",
  CellLabel->"Out[4]=",
- CellID->1652715890]
+ CellID->1155775600]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -6775,7 +6775,7 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2017, 5, 14, 19, 18, 31.385092}", 
+   "built" -> "{2017, 5, 15, 9, 23, 17.841665}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -6789,7 +6789,7 @@ know or let you set the URL from which data will be downloaded. The default \
 value is http://10.5.5.9:8080/DCIM/ The function goProGetFileList will return \
 list of files at the address which is set by goProSetURLBase or at default \
 URL (http://10.5.5.9:8080/DCIM/ ).", "synonyms" -> {}, "tabletags" -> 
-    DocumentationBuild`Make`Private`tabletaggingrules$15133, "title" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$15152, "title" -> 
     "Downloading and deleting files from GoPro camera", "titlemodifier" -> "",
      "windowtitle" -> "Downloading and deleting files from GoPro camera", 
     "type" -> "Tutorial", "uri" -> "GoProController/tutorial/goProDownload"}, 
@@ -6823,12 +6823,12 @@ CellTagsIndex->{
  "RasterizedOutput"->{
   Cell[11490, 345, 370801, 6087, 412, "Output",
    CellTags->"RasterizedOutput",
-   CellID->1652715890]}
+   CellID->1155775600]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"RasterizedOutput", 394053, 6822}
+ {"RasterizedOutput", 394052, 6822}
  }
 *)
 (*NotebookFileOutline
@@ -6881,7 +6881,7 @@ Cell[11381, 340, 106, 3, 28, "Input",
  CellID->1308078202],
 Cell[11490, 345, 370801, 6087, 412, "Output",
  CellTags->"RasterizedOutput",
- CellID->1652715890]
+ CellID->1155775600]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[382328, 6437, 129, 3, 70, "Input",

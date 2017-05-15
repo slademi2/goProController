@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     73456,       2007]
+NotebookDataLength[     73455,       2007]
 NotebookOptionsPosition[     64970,       1734]
-NotebookOutlinePosition[     67648,       1797]
-CellTagsIndexPosition[     67605,       1794]
+NotebookOutlinePosition[     67647,       1797]
+CellTagsIndexPosition[     67604,       1794]
 WindowTitle->Controlling GoPro camera
 WindowFrame->Normal*)
 
@@ -118,7 +118,7 @@ tutorial/goProControl.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$14693], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$14712], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "GoProController/tutorial/goProControl", ".html"]], None}]}]},
@@ -1747,7 +1747,7 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2017, 5, 14, 19, 18, 29.187184}", 
+   "built" -> "{2017, 5, 15, 9, 23, 15.923416}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -1760,7 +1760,7 @@ functions. The package setup is easy. The only thing you need to do is to set \
 the camera generation with function goProSetCamera and camera model with \
 goProSetCameraModel (not for HERO2). And set the WiFi password (not for \
 HERO4)", "synonyms" -> {}, "tabletags" -> 
-    DocumentationBuild`Make`Private`tabletaggingrules$14529, "title" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$14548, "title" -> 
     "Controlling GoPro camera", "titlemodifier" -> "", "windowtitle" -> 
     "Controlling GoPro camera", "type" -> "Tutorial", "uri" -> 
     "GoProController/tutorial/goProControl"}, "SearchTextTranslated" -> ""},

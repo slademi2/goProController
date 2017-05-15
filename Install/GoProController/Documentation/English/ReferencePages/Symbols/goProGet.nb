@@ -1,0 +1,593 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18260,        583]
+NotebookOptionsPosition[     14342,        469]
+NotebookOutlinePosition[     16686,        529]
+CellTagsIndexPosition[     16601,        524]
+WindowTitle->goProGet
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["GO PRO CONTROLLER SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Tutorials",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Tutorials", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"Downloading and deleting files from GoProHERO2HERO3 & \
+HERO3+HERO4goProSetupgoProControl\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/tutorial/goProDownload"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"Tutorials"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"GoProController\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/guide/GoProController"], "\<\"goProSet\"\>":>
+       Documentation`HelpLookup["paclet:GoProController/ref/goProSet"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"GoProController Package\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/guide/GoProController"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"GoProController/ref/goProGet\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["GoProController/ref/goProGet"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/GoProController/ref/\
+goProGet.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, 
+            Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$6800], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "GoProController/ref/goProGet", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["goProGet", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"goProGet", "[", "param_", "]"}]], "InlineFormula"],
+     " \[LineSeparator]returns List {",
+     Cell[BoxData["param"], "InlineFormula"],
+     " -> ",
+     Cell[BoxData["value"], "InlineFormula"],
+     "} where ",
+     Cell[BoxData["value"], "InlineFormula"],
+     " is setting of camera which name ",
+     Cell[BoxData["param"], "InlineFormula"],
+     " holds."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"goProGet", "[", 
+       RowBox[{"{", 
+        RowBox[{"param1_", ",", "param2_", ",", "..."}], "}"}], "]"}]], 
+      "InlineFormula"],
+     " \[LineSeparator]returns List {",
+     Cell[BoxData["param1"], "InlineFormula"],
+     " -> ",
+     Cell[BoxData["value1"], "InlineFormula"],
+     ", ",
+     Cell[BoxData["param2"], "InlineFormula"],
+     " -> ",
+     Cell[BoxData["value2"], "InlineFormula"],
+     ", ...} where ",
+     Cell[BoxData["value1"], "InlineFormula"],
+     " is setting of camera which name ",
+     Cell[BoxData["param1"], "InlineFormula"],
+     " holds.  Param can be String or name of variable from ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["goProGetVariables"]],
+        "paclet:GoProController/ref/goProGetVariables"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     ".  "
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1787928793],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->482108048],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<HERO3+\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"goProSetPassword", "[", "\"\<12345678\>\"", "]"}], ";"}]}], "Input",\
+
+ CellLabel->"In[1]:=",
+ CellID->161238264],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGetVariables", "[", "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->885400321],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "videoResolution", ",", "fps", ",", "fov", ",", "videoMode", ",", 
+   "photoResolution", ",", "loopVideo", ",", "burstRate", ",", "timeLapse", 
+   ",", "continuousShot", ",", "photoInVideo", ",", "volume", ",", "led", ",",
+    "lowLight", ",", "spotMeter", ",", "autoPowerOff", ",", "protune", ",", 
+   "whiteBalance", ",", "colorProfile", ",", "iso", ",", "sharpness", ",", 
+   "exposure", ",", "mode", ",", "bootMode"}], "}"}]], "Output",
+ ImageSize->{523, 75},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->1735971381]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"goProSet", "[", 
+  RowBox[{
+   RowBox[{"videoResolution", "\[Rule]", "\"\<1080p\>\""}], ",", 
+   RowBox[{"fps", "\[Rule]", "\"\<60\>\""}], ",", 
+   RowBox[{"fov", "\[Rule]", "\"\<wide\>\""}], ",", 
+   RowBox[{"photoResolution", "\[Rule]", "\"\<12W\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "videoResolution", ",", "fps", ",", "fov", ",", "photoResolution"}], "}"}],
+   "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "\"\<videoResolution\>\"", ",", "\"\<fps\>\"", ",", "fov", ",", 
+    "photoResolution"}], "}"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "videoResolution", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGet", "[", "\"\<videoResolution\>\"", "]"}]}], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1131952073],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"videoResolution\"\>", "\[Rule]", "\<\"1080p\"\>"}], ",", 
+   RowBox[{"\<\"fps\"\>", "\[Rule]", "\<\"60\"\>"}], ",", 
+   RowBox[{"\<\"fov\"\>", "\[Rule]", "\<\"wide\"\>"}], ",", 
+   RowBox[{"\<\"photoResolution\"\>", "\[Rule]", "\<\"12W\"\>"}]}], 
+  "}"}]], "Output",
+ ImageSize->{543, 18},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]=",
+ CellID->1611647630],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"videoResolution\"\>", "\[Rule]", "\<\"1080p\"\>"}], ",", 
+   RowBox[{"\<\"fps\"\>", "\[Rule]", "\<\"60\"\>"}], ",", 
+   RowBox[{"\<\"fov\"\>", "\[Rule]", "\<\"wide\"\>"}], ",", 
+   RowBox[{"\<\"photoResolution\"\>", "\[Rule]", "\<\"12W\"\>"}]}], 
+  "}"}]], "Output",
+ ImageSize->{543, 18},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]=",
+ CellID->1871037317],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"videoResolution\"\>", "\[Rule]", "\<\"1080p\"\>"}], 
+  "}"}]], "Output",
+ ImageSize->{201, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]=",
+ CellID->1706443393],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"videoResolution\"\>", "\[Rule]", "\<\"1080p\"\>"}], 
+  "}"}]], "Output",
+ ImageSize->{201, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]=",
+ CellID->1590245146]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["goProSet"]],"paclet:GoProController/ref/goProSet"},
+  "RefLink",
+  BaseStyle->{
+   "InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Tutorials"
+}], "TutorialsSection",
+ WholeCellGroupOpener->True,
+ CellID->250839057],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[{
+ TemplateBox[{Cell[
+    TextData["Downloading and deleting files from GoPro"]],
+   "paclet:GoProController/tutorial/goProDownload"},
+  "RefLink",
+  BaseStyle->"Tutorials"], "\n", 
+ RowBox[{"\[LongDash]", " ", 
+  RowBox[{"Tutorial", " ", "for", " ", "GoPro", " ", 
+   RowBox[{"HERO2", ".", "\n"}]}]}], "\n", 
+ TemplateBox[{Cell[
+    TextData["HERO2"]],"paclet:GoProController/tutorial/HERO2"},
+  "RefLink",
+  BaseStyle->"Tutorials"], "\n", 
+ RowBox[{"  ", 
+  RowBox[{"\[LongDash]", " ", 
+   RowBox[{"Tutorial", " ", "for", " ", "GoPro", " ", 
+    RowBox[{"HERO2", ".", "\n"}]}]}]}], "\n", 
+ TemplateBox[{Cell[
+    TextData["HERO3 & HERO3+"]],"paclet:GoProController/tutorial/HERO3"},
+  "RefLink",
+  BaseStyle->"Tutorials"], "\n", 
+ RowBox[{" ", 
+  RowBox[{"\[LongDash]", "  ", 
+   RowBox[{
+    RowBox[{
+    "Tutorial", " ", "for", " ", "GoPro", " ", "HERO3", " ", "and", " ", 
+     "HERO3"}], "+", 
+    RowBox[{".", "\n"}]}]}]}], "\n", 
+ TemplateBox[{Cell[
+    TextData["HERO4"]],"paclet:GoProController/tutorial/HERO4"},
+  "RefLink",
+  BaseStyle->"Tutorials"], "\n", 
+ RowBox[{"  ", 
+  RowBox[{"\[LongDash]", " ", 
+   RowBox[{"Tutorial", " ", "for", " ", 
+    RowBox[{"GoProHero4", ".", "\n"}]}]}]}], "\n", 
+ TemplateBox[{Cell[
+    TextData["goProSetup"]],"paclet:GoProController/tutorial/goProSetup"},
+  "RefLink",
+  BaseStyle->"Tutorials"], "\n", 
+ RowBox[{" ", 
+  RowBox[{"\[LongDash]", " ", 
+   RowBox[{"setting", " ", "GoPro", " ", 
+    RowBox[{"camera", ".", "\n"}]}]}]}], "\n", 
+ TemplateBox[{Cell[
+    TextData["goProControl"]],"paclet:GoProController/tutorial/goProControl"},
+  
+  "RefLink",
+  BaseStyle->"Tutorials"], "\n", 
+ RowBox[{" ", 
+  RowBox[{"\[LongDash]", "  ", 
+   RowBox[{
+   "how", " ", "to", " ", "control", " ", "GoProCamera"}]}]}]}], "Tutorials",
+ CellID->341631938],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["GoProController Package"]],
+   "paclet:GoProController/guide/GoProController"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->328816811]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"goProGet",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "GoProController Package", ButtonData -> 
+         "paclet:GoProController/guide/GoProController", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2017, 5, 15, 9, 22, 50.644850}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Go Pro Controller Symbol", "language" -> "en", "paclet" -> 
+    "GoProController", "status" -> "None", "summary" -> 
+    "goProGet[param_] returns List {param -> value} where value is setting of \
+camera which name param holds. goProGet[{param1_, param2_, ...}] returns List \
+{param1 -> value1, param2 -> value2, ...} where value1 is setting of camera \
+which name param1 holds. Param can be String or name of variable from \
+goProGetVariables. ", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "goProGet", "titlemodifier" -> "", "windowtitle" -> "goProGet", "type" -> 
+    "Symbol", "uri" -> "GoProController/ref/goProGet"}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Linux x86 (64-bit) (September 21, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6947, 199, 388, 15, 33, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1787928793]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 16457, 517}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[580, 21, 4503, 113, 52, "AnchorBarGrid",
+ CellID->1],
+Cell[5086, 136, 285, 11, 48, "ObjectNameGrid"],
+Cell[5374, 149, 1548, 46, 169, "Usage",
+ CellID->982511436],
+Cell[CellGroupData[{
+Cell[6947, 199, 388, 15, 33, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1787928793],
+Cell[CellGroupData[{
+Cell[7360, 218, 195, 6, 28, "ExampleSection",
+ CellID->482108048],
+Cell[7558, 226, 334, 10, 67, "Input",
+ CellID->161238264],
+Cell[CellGroupData[{
+Cell[7917, 240, 108, 3, 28, "Input",
+ CellID->885400321],
+Cell[8028, 245, 614, 13, 96, "Output",
+ CellID->1735971381]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8679, 263, 861, 21, 123, "Input",
+ CellID->1131952073],
+Cell[9543, 286, 454, 12, 39, "Output",
+ CellID->1611647630],
+Cell[10000, 300, 454, 12, 39, "Output",
+ CellID->1871037317],
+Cell[10457, 314, 248, 8, 37, "Output",
+ CellID->1706443393],
+Cell[10708, 324, 248, 8, 37, "Output",
+ CellID->1590245146]
+}, Open  ]]
+}, Open  ]],
+Cell[10983, 336, 31, 0, 70, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11051, 341, 270, 12, 70, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[11324, 355, 239, 6, 70, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11600, 366, 272, 12, 70, "TutorialsSection",
+ CellID->250839057],
+Cell[11875, 380, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[11909, 382, 1806, 53, 70, "Tutorials",
+ CellID->341631938],
+Cell[13718, 437, 31, 0, 70, "SectionFooterSpacer"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13786, 442, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[14065, 456, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[14099, 458, 201, 6, 70, "MoreAbout",
+ CellID->328816811]
+}, Open  ]],
+Cell[14315, 467, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

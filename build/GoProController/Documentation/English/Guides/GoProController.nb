@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     20834,        605]
+NotebookDataLength[     20833,        605]
 NotebookOptionsPosition[     17423,        520]
-NotebookOutlinePosition[     19583,        566]
-CellTagsIndexPosition[     19540,        563]
+NotebookOutlinePosition[     19582,        566]
+CellTagsIndexPosition[     19539,        563]
 WindowTitle->GoProController Package
 WindowFrame->Normal*)
 
@@ -132,7 +132,7 @@ GoProController.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2541], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2559], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "GoProController/guide/GoProController", ".html"]], None}]}]},
@@ -532,7 +532,7 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2017, 5, 14, 19, 17, 55.999563}", 
+   "built" -> "{2017, 5, 15, 9, 22, 38.405639}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -546,7 +546,7 @@ which parameters can be set for each setting of camera. There are functions \
 which will help you to choose right parameters but they are not unmistakable. \
 This package was tested only on GoPro HERO 3+ Black edition and HERO4 Silver \
 edition so it may contain bugs for other cameras.", "synonyms" -> {}, 
-    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$2459, 
+    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$2477, 
     "title" -> "GoProController Package", "titlemodifier" -> "", 
     "windowtitle" -> "GoProController Package", "type" -> "Guide", "uri" -> 
     "GoProController/guide/GoProController"}, "SearchTextTranslated" -> ""},

@@ -1,0 +1,2017 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     73455,       2007]
+NotebookOptionsPosition[     64970,       1734]
+NotebookOutlinePosition[     67647,       1797]
+CellTagsIndexPosition[     67604,       1794]
+WindowTitle->Controlling GoPro camera
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["GO PRO CONTROLLER TUTORIAL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Tutorials",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Tutorials", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"Downloading and deleting files from GoProHERO2HERO3 & \
+HERO3+HERO4goProSetup\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/tutorial/goProDownload"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"RelatedTutorialsSection"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Functions",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Functions", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"goProGetPossibleCamera\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/guide/GoProGetPossibleCamera"], \
+"\<\"goProGetPossibleCameraMode\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/guide/GoProGetPossibleCameraMode"], \
+"\<\"goProSetCamera\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/guide/GoProSetCamera"], \
+"\<\"goProSetCameraModel\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/guide/GoProSetCameraModel"], \
+"\<\"goProSetPassword\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/guide/GoProSetPassword"], \
+"\<\"goProShutter\"\>":>Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProShutter"], "\<\"goProStop\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProStop"], "\<\"goProTurnOff\"\>":>
+       Documentation`HelpLookup[
+       "paclet:GoProController/ref/goProTurnOff"], "\<\"goProTurnOn\"\>":>
+       Documentation`HelpLookup["paclet:GoProController/ref/goProTurnOn"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"TutorialFunction"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"GoProController/tutorial/goProControl\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["GoProController/tutorial/goProControl"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/GoProController/\
+tutorial/goProControl.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$14712], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "GoProController/tutorial/goProControl", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Controlling GoPro camera", "Title",
+ CellID->509267359],
+
+Cell[BoxData[GridBox[{
+   {
+    TemplateBox[{
+     Cell["Package setup"],
+      "paclet:GoProController/tutorial/goProControl#1147065604",GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
+          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
+          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
+          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
+          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
+          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
+          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
+          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
+          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
+          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
+          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
+          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
+          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
+          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
+          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
+          128, 128, 0}}}], {{0, 8}, {8, 0}}, {0, 255}, ColorFunction -> 
+         RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8, 8}, PlotRange -> {{0, 8}, {0, 8}}, 
+       ImageSize -> {8, 9}],GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
+          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
+          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
+          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
+          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
+          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
+          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
+           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
+          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
+          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
+           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
+           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
+          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
+         0, 8}, {8, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "XMP" -> Association[{
+              "BasicSchema" -> 
+               Association[{
+                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
+               "MediaManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
+                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
+                  "InstanceID" -> 
+                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
+               "RightsManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
+               "PagedTextSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
+            "Comments" -> 
+            Association[{
+              "Software" -> "Adobe ImageReady", "XML:com.adobe.xmp" -> 
+               "<?xpacket begin=\:feff id=W5M0MpCehiHzreSzNTczkc9d?> \
+<x:xmpmeta xmlns:x=adobe:ns:meta/ x:xmptk=Adobe XMP Core 5.0-c060 61.134777, \
+2010/02/12-17:32:00> <rdf:RDF \
+xmlns:rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#> <rdf:Description \
+rdf:about= xmlns:xmp=http://ns.adobe.com/xap/1.0/ \
+xmlns:xmpMM=http://ns.adobe.com/xap/1.0/mm/ \
+xmlns:stRef=http://ns.adobe.com/xap/1.0/sType/ResourceRef# \
+xmp:CreatorTool=Adobe Photoshop CS5 Macintosh \
+xmpMM:InstanceID=xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A \
+xmpMM:DocumentID=xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A> <xmpMM:DerivedFrom \
+stRef:instanceID=xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A \
+stRef:documentID=xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A/> \
+</rdf:Description> </rdf:RDF> </x:xmpmeta> <?xpacket end=r?>"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8, 8}, PlotRange -> {{0, 8}, {0, 8}}, 
+       ImageSize -> {8, 9}]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}], 
+    TemplateBox[{
+     Cell["Controlling the camera"],
+      "paclet:GoProController/tutorial/goProControl#869159500",GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
+          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
+          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
+          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
+          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
+          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
+          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
+          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
+          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
+          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
+          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
+          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
+          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
+          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
+          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
+          128, 128, 0}}}], {{0, 8}, {8, 0}}, {0, 255}, ColorFunction -> 
+         RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8, 8}, PlotRange -> {{0, 8}, {0, 8}}, 
+       ImageSize -> {8, 9}],GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
+          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
+          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
+          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
+          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
+          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
+          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
+           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
+          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
+          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
+           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
+           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
+          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
+         0, 8}, {8, 0}}, {0, 255}, ColorFunction -> RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "XMP" -> Association[{
+              "BasicSchema" -> 
+               Association[{
+                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
+               "MediaManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
+                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
+                  "InstanceID" -> 
+                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
+               "RightsManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
+               "PagedTextSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
+            "Comments" -> 
+            Association[{
+              "Software" -> "Adobe ImageReady", "XML:com.adobe.xmp" -> 
+               "<?xpacket begin=\:feff id=W5M0MpCehiHzreSzNTczkc9d?> \
+<x:xmpmeta xmlns:x=adobe:ns:meta/ x:xmptk=Adobe XMP Core 5.0-c060 61.134777, \
+2010/02/12-17:32:00> <rdf:RDF \
+xmlns:rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#> <rdf:Description \
+rdf:about= xmlns:xmp=http://ns.adobe.com/xap/1.0/ \
+xmlns:xmpMM=http://ns.adobe.com/xap/1.0/mm/ \
+xmlns:stRef=http://ns.adobe.com/xap/1.0/sType/ResourceRef# \
+xmp:CreatorTool=Adobe Photoshop CS5 Macintosh \
+xmpMM:InstanceID=xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A \
+xmpMM:DocumentID=xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A> <xmpMM:DerivedFrom \
+stRef:instanceID=xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A \
+stRef:documentID=xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A/> \
+</rdf:Description> </rdf:RDF> </x:xmpmeta> <?xpacket end=r?>"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8, 8}, PlotRange -> {{0, 8}, {0, 8}}, 
+       ImageSize -> {8, 9}]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}]}
+  }]], "TutorialJumpBox"],
+
+Cell[CellGroupData[{
+
+Cell["Package setup", "Section",
+ CellID->1147065604],
+
+Cell["\<\
+Before controlling camera you need to set the package first. You have to do \
+that because package need to know which files have to be loaded and it is \
+impossible to control goProCamera without WiFi password.\
+\>", "Text",
+ CellID->1127271971],
+
+Cell[BoxData[GridBox[{
+   {
+    RowBox[{
+     ButtonBox["goProSetCamera",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/guide/GoProSetCamera"], "[", 
+     "camera", "]"}], Cell["\<\
+Sets camera generation to parameter given. You can use goPoGetPossibleCamera \
+to see which cameras are supported by this package.\
+\>", "TableText"]},
+   {
+    RowBox[{
+     ButtonBox["goProGetPossibleCamera",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/guide/GoProGetPossibleCamera"], "[",
+      "]"}], Cell["returns possible cameras for this package", "TableText"]},
+   {
+    RowBox[{
+     ButtonBox["goProSetPassword",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/guide/GoProSetPassword"], " ", "[", 
+     "password_String", "]"}], Cell["\<\
+you need to call this function to set camera WiFi password. Without that \
+package can't control your camera. Not for HERO4.\
+\>", "TableText"]},
+   {
+    RowBox[{
+     ButtonBox["goProSetCameraModel",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/guide/GoProSetCameraModel"], "[", 
+     "model", "]"}], Cell["\<\
+Specificates camera model in generation (Black, White,..). The package needs \
+this information. Not for HERO2.\
+\>", "TableText"]},
+   {
+    RowBox[{
+     ButtonBox["goProGetPossibleCameraMode",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/guide/GoProGetPossibleCameraMode"], 
+     "[", "]"}], Cell[
+    "returns possible camera models within generation", "TableText"]}
+  }]], "DefinitionBox",
+ CellID->932885528],
+
+Cell["Package setup functions.", "Caption",
+ CellID->492680226],
+
+Cell["\<\
+The package setup is easy. The only thing you need to do is to set the camera \
+generation with function goProSetCamera and camera model with \
+goProSetCameraModel (not for HERO2). And set the WiFi password (not for HERO4)\
+\>", "Text",
+ CellID->1883310529],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGetPossibleCamera", "[", "]"}]}], "Input",
+ CellLabel->"In[40]:=",
+ CellID->101643925],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"HERO3+\"\>", ",", "\<\"HERO4\"\>", ",", "\<\"HERO2\"\>", 
+   ",", "\<\"HERO3\"\>"}], "}"}]], "Output",
+ ImageSize->{232, 18},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[41]=",
+ CellID->33191616]
+}, Open  ]],
+
+Cell["HERO2", "MathCaption",
+ CellID->1825449234],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<HERO2\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"goProSetPassword", "[", "\"\<12345678\>\"", "]"}], ";"}]}], "Input",\
+
+ CellLabel->"In[23]:=",
+ CellID->1864455583],
+
+Cell[BoxData["\<\"camera: HERO2\"\>"], "Print",
+ CellLabel->"During evaluation of In[23]:=",
+ CellID->1987967036]
+}, Open  ]],
+
+Cell["HERO3", "MathCaption",
+ CellID->553742647],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<HERO3\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGetPossibleCameraModel", "[", "]"}]}], "Input",
+ CellLabel->"In[42]:=",
+ CellID->323061464],
+
+Cell[BoxData["\<\"camera: HERO3\"\>"], "Print",
+ CellLabel->"During evaluation of In[42]:=",
+ CellID->2092201111],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"White\"\>", ",", "\<\"Silver\"\>", ",", "\<\"Black\"\>"}], 
+  "}"}]], "Output",
+ ImageSize->{179, 18},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[44]=",
+ CellID->1822184610]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"goProSetPassword", "[", "\"\<12345678\>\"", "]"}], ";"}]}], "Input",\
+
+ CellLabel->"In[45]:=",
+ CellID->586934264],
+
+Cell["HERO3+", "MathCaption",
+ CellID->978299796],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<HERO3+\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGetPossibleCameraModel", "[", "]"}]}], "Input",
+ CellLabel->"In[91]:=",
+ CellID->778540068],
+
+Cell[BoxData["\<\"camera: HERO3+\"\>"], "Print",
+ CellLabel->"During evaluation of In[91]:=",
+ CellID->1393867537],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Silver\"\>", ",", "\<\"Black\"\>"}], "}"}]], "Output",
+ ImageSize->{124, 18},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[93]=",
+ CellID->773061552]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"goProSetPassword", "[", "\"\<12345678\>\"", "]"}], ";"}]}], "Input",\
+
+ CellLabel->"In[63]:=",
+ CellID->1831256327],
+
+Cell["HERO4", "MathCaption",
+ CellID->2058356472],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<HERO4\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGetPossibleCameraModel", "[", "]"}]}], "Input",
+ CellLabel->"In[53]:=",
+ CellID->35917347],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Black\"\>", ",", "\<\"Silver\"\>", ",", "\<\"Session\"\>"}], 
+  "}"}]], "Output",
+ ImageSize->{194, 18},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[55]=",
+ CellID->1082236343]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}], ";"}]], "Input",\
+
+ CellLabel->"In[47]:=",
+ CellID->1626453968],
+
+Cell[CellGroupData[{
+
+Cell["goProSetPassword (HERO2, HERO3, HERO3+)", "Subsubsection",
+ CellID->1874869133],
+
+Cell["\<\
+If we don't set the password, we will receive an error message.\
+\>", "Text",
+ CellID->2125075711],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goProTurnOn", "[", "]"}], ";"}]], "Input",
+ CellLabel->"In[80]:=",
+ CellID->1930151669],
+
+Cell[BoxData[
+ TemplateBox[{
+  "goProSetPassword","goProPassword",
+   "\"First you have to set password for Wifi! Call goProSetPassword[_String]\
+\"",2,80,19,31796145666960588762,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[80]:=",
+ CellID->198403843]
+}, Open  ]],
+
+Cell["\<\
+The function goProSetPassword will also try if the camera is available on \
+network.\
+\>", "Text",
+ CellID->10783679],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goProSetPassword", "[", "\"\<12345678\>\"", "]"}], ";"}]], "Input",\
+
+ CellLabel->"In[70]:=",
+ CellID->2142648060],
+
+Cell[BoxData[
+ TemplateBox[{
+  "PingTime","ptimeout",
+   "\"No ping echo received from host \\!\\(\\*RowBox[{\\\"\\\\\\\"10.5.5.9\\\
+\\\\\"\\\"}]\\) within the specified timeout.\"",2,70,5,31796145666960588762,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[70]:=",
+ CellID->15468356],
+
+Cell[BoxData[
+ TemplateBox[{
+  "goProSetPassword","timeOut","\"Camera not found.\"",2,70,6,
+   31796145666960588762,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[70]:=",
+ CellID->1041483408]
+}, Open  ]],
+
+Cell["\<\
+After connecting to the WiFi of GoPro camera it will be alright.  \
+goProSetPassword will also turn on the camera and download camera settings.\
+\>", "Text",
+ CellID->1447763488],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goProSetPassword", "[", "\"\<12345678\>\"", "]"}], ";"}]], "Input",\
+
+ CellLabel->"In[95]:=",
+ CellID->1491575241]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Controlling the camera", "Section",
+ CellID->869159500],
+
+Cell["\<\
+The functions for controlling GoPro camera are nearly the same for every \
+GoPro camera. The biggest difference is that cameras HERO4 and newer can't be \
+turned on from Mathematica. Those cameras require wake on LAN.\
+\>", "Text",
+ CellID->933781132],
+
+Cell[BoxData[GridBox[{
+   {
+    RowBox[{
+     ButtonBox["goProTurnOn",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/goProTurnOn"], "[", "]"}], Cell[
+    "turns on camera (Only for HERO2, HERO3 and HERO3+)", "TableText"]},
+   {
+    RowBox[{
+     ButtonBox["goProTurnOff",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/goProTurnOff"], "[", "]"}], 
+    Cell["turns off camera", "TableText"]},
+   {
+    RowBox[{
+     ButtonBox["goProShutter",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/goProShutter"], "[", "]"}], 
+    Cell["starts recording or take a photo (depends on camera mode)", 
+     "TableText"]},
+   {
+    RowBox[{
+     ButtonBox["goProStop",
+      BaseStyle->"Link",
+      ButtonData->"paclet:GoProController/ref/goProStop"], "[", "]"}], Cell[
+    "stops recording", "TableText"]},
+   {
+    RowBox[{"goProMode", "[", "mode", "]"}], Cell[
+    "sets camera mode to parameter given", "TableText"]},
+   {
+    RowBox[{"goProGetPossibleModes", "[", "]"}], Cell[
+    "returns possible modes on camera", "TableText"]},
+   {
+    RowBox[{"goProVideoMode", "[", "]"}], Cell[
+    "switches camera to video mode", "TableText"]},
+   {
+    RowBox[{"goProPhotoMode", "[", "]"}], Cell[
+    "switches camera to photo mode", "TableText"]},
+   {
+    RowBox[{"goProBurstMode", "[", "]"}], Cell[
+    "switches camera to burst mode", "TableText"]},
+   {
+    RowBox[{"goProTimeLapseMode", "[", "]"}], Cell[
+    "switches camera to Time lapse mode", "TableText"]}
+  }]], "DefinitionBox",
+ CellID->1458783392],
+
+Cell["Controlling the camera.", "Caption",
+ CellID->521916346],
+
+Cell[TextData[{
+ "First thing to do is to turn on your camera (if possible). It is important \
+to turn on the camera before trying to control it, otherwise the functions \
+won't work properly. The tutorial will be shown for HERO3+ but it is the same \
+for every camera model.  The camera will be also turned on with function ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["goProSetPassword"]],
+    "paclet:GoProController/ref/goProSetPassword"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ "."
+}], "Text",
+ CellID->1964518487],
+
+Cell["turning on the camera", "MathCaption",
+ CellID->359514540],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<GoProController`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetCamera", "[", "\"\<HERO3+\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"goProSetCameraModel", "[", "\"\<Black\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"goProSetPassword", "[", "\"\<12345678\>\"", "]"}]}], "Input",
+ CellLabel->"In[96]:=",
+ CellID->888608608],
+
+Cell[BoxData["\<\"camera: HERO3+\"\>"], "Print",
+ CellLabel->"During evaluation of In[96]:=",
+ CellID->1853177222]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goProTurnOff", "[", "]"}], ";"}]], "Input",
+ CellLabel->"In[100]:=",
+ CellID->799893120],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProTurnOn", "[", "]"}]], "Input",
+ CellLabel->"In[102]:=",
+ CellID->1682145916],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["HTTPResponse",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False}, 
+    PanelBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1],
+               $CellContext`LineColor -> GrayLevel[1],
+               $CellContext`FrontFaceColor -> GrayLevel[1],
+               $CellContext`BackFaceColor -> GrayLevel[1],
+               $CellContext`GraphicsColor -> GrayLevel[1]], 
+              Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               $CellContext`LineColor -> RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               $CellContext`FrontFaceColor -> RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               $CellContext`BackFaceColor -> RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               $CellContext`GraphicsColor -> RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{CloudObject`Private`file$ = 
+             FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{0}], 
+                    Association[
+                    "Headers" -> {{"Allow", "GET "}, {
+                    "Accept-Ranges", "bytes"}, {
+                    "Cache-Control", "no-cache"}, {
+                    "Cache-Control", "no-store"}, {
+                    "Connection", "Keep-Alive"}, {
+                    "Server", "GoPro Web Server v1.0"}, {
+                    "Content-Type", "application/octet-stream"}, {
+                    "Content-Length", "1"}}, "StatusCode" -> 200, 
+                    "Cookies" -> {}], CharacterEncoding -> Automatic]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{0}], 
+                    Association[
+                    "Headers" -> {{"Allow", "GET "}, {
+                    "Accept-Ranges", "bytes"}, {
+                    "Cache-Control", "no-cache"}, {
+                    "Cache-Control", "no-store"}, {
+                    "Connection", "Keep-Alive"}, {
+                    "Server", "GoPro Web Server v1.0"}, {
+                    "Content-Type", "application/octet-stream"}, {
+                    "Content-Length", "1"}}, "StatusCode" -> 200, 
+                    "Cookies" -> {}], CharacterEncoding -> Automatic]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{0}], 
+                Association[
+                "Headers" -> {{"Allow", "GET "}, {"Accept-Ranges", "bytes"}, {
+                   "Cache-Control", "no-cache"}, {
+                   "Cache-Control", "no-store"}, {
+                   "Connection", "Keep-Alive"}, {
+                   "Server", "GoPro Web Server v1.0"}, {
+                   "Content-Type", "application/octet-stream"}, {
+                   "Content-Length", "1"}}, "StatusCode" -> 200, 
+                 "Cookies" -> {}], CharacterEncoding -> Automatic], 
+               "BodyBytes"]]; Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/octet-stream\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+      GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1],
+               $CellContext`LineColor -> GrayLevel[1],
+               $CellContext`FrontFaceColor -> GrayLevel[1],
+               $CellContext`BackFaceColor -> GrayLevel[1],
+               $CellContext`GraphicsColor -> GrayLevel[1]], 
+              Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               $CellContext`LineColor -> RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               $CellContext`FrontFaceColor -> RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               $CellContext`BackFaceColor -> RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               $CellContext`GraphicsColor -> RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{CloudObject`Private`file$ = 
+             FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{0}], 
+                    Association[
+                    "Headers" -> {{"Allow", "GET "}, {
+                    "Accept-Ranges", "bytes"}, {
+                    "Cache-Control", "no-cache"}, {
+                    "Cache-Control", "no-store"}, {
+                    "Connection", "Keep-Alive"}, {
+                    "Server", "GoPro Web Server v1.0"}, {
+                    "Content-Type", "application/octet-stream"}, {
+                    "Content-Length", "1"}}, "StatusCode" -> 200, 
+                    "Cookies" -> {}], CharacterEncoding -> Automatic]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{0}], 
+                    Association[
+                    "Headers" -> {{"Allow", "GET "}, {
+                    "Accept-Ranges", "bytes"}, {
+                    "Cache-Control", "no-cache"}, {
+                    "Cache-Control", "no-store"}, {
+                    "Connection", "Keep-Alive"}, {
+                    "Server", "GoPro Web Server v1.0"}, {
+                    "Content-Type", "application/octet-stream"}, {
+                    "Content-Length", "1"}}, "StatusCode" -> 200, 
+                    "Cookies" -> {}], CharacterEncoding -> Automatic]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{0}], 
+                Association[
+                "Headers" -> {{"Allow", "GET "}, {"Accept-Ranges", "bytes"}, {
+                   "Cache-Control", "no-cache"}, {
+                   "Cache-Control", "no-store"}, {
+                   "Connection", "Keep-Alive"}, {
+                   "Server", "GoPro Web Server v1.0"}, {
+                   "Content-Type", "application/octet-stream"}, {
+                   "Content-Length", "1"}}, "StatusCode" -> 200, 
+                 "Cookies" -> {}], CharacterEncoding -> Automatic], 
+               "BodyBytes"]]; Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/octet-stream\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open$$],
+      ImageSize->Automatic],
+     BaselinePosition->Baseline],
+    DynamicModuleValues:>{}], "]"}],
+  HTTPResponse[
+   ByteArray[{0}], 
+   Association[
+   "Headers" -> {{"Allow", "GET "}, {"Accept-Ranges", "bytes"}, {
+      "Cache-Control", "no-cache"}, {"Cache-Control", "no-store"}, {
+      "Connection", "Keep-Alive"}, {"Server", "GoPro Web Server v1.0"}, {
+      "Content-Type", "application/octet-stream"}, {"Content-Length", "1"}}, 
+    "StatusCode" -> 200, "Cookies" -> {}], CharacterEncoding -> Automatic],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ ImageSize->{406, 46},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[102]=",
+ CellID->54531807]
+}, Open  ]],
+
+Cell["Now we can start using the camera.", "Text",
+ CellID->2064468636],
+
+Cell["video mode", "MathCaption",
+ CellID->1461345356],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goProGetFileList", "[", "]"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+   "if", " ", "there", " ", "are", " ", "no", " ", "files", " ", "on", " ", 
+    "camera", " ", "the", " ", "message", " ", "will", " ", "popout"}], 
+   "*)"}]}]], "Input",
+ CellLabel->"In[104]:=",
+ CellID->1221517305],
+
+Cell[BoxData[
+ TemplateBox[{
+  "FetchURL","httperr",
+   "\"The request to URL \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"http://10.5.5.9:8080/DCIM/100GOPRO/\\\\\\\"\\\"}]\
+\\) was not successful. The server returned the HTTP status code \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"404 (\\\\\\\\\\\\\\\"Not \
+Found\\\\\\\\\\\\\\\")\\\\\\\"\\\"}]\\).\"",2,104,34,31796145666960588762,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[104]:=",
+ CellID->492352273],
+
+Cell[BoxData[
+ TemplateBox[{
+  "goProGetFileList","empty","\"No files on GoPro camera.\"",2,104,35,
+   31796145666960588762,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[104]:=",
+ CellID->555818969]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goProMode", "[", "\"\<Video\>\"", "]"}], ";"}]], "Input",
+ CellLabel->"In[106]:=",
+ CellID->917901893],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goProShutter", "[", "]"}], ";"}]], "Input",
+ CellLabel->"In[107]:=",
+ CellID->925523387],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goProStop", "[", "]"}], ";"}]], "Input",
+ CellLabel->"In[109]:=",
+ CellID->776630749],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGetFileList", "[", "]"}]], "Input",
+ CellLabel->"In[110]:=",
+ CellID->881838120],
+
+Cell[BoxData[
+ RowBox[{"{", "\<\"GOPR5130.MP4\"\>", "}"}]], "Output",
+ ImageSize->{118, 16},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[110]=",
+ CellID->49553901]
+}, Open  ]],
+
+Cell["Photo Mode", "MathCaption",
+ CellID->1728828580],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"goProMode", "[", "\"\<Photo\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGetFileList", "[", "]"}]}], "Input",
+ CellLabel->"In[115]:=",
+ CellID->1717686531],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"GOPR5130.MP4\"\>", ",", "\<\"GOPR5131.JPG\"\>"}], 
+  "}"}]], "Output",
+ ImageSize->{229, 18},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[116]=",
+ CellID->1207232750]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goProShutter", "[", "]"}], ";"}]], "Input",
+ CellLabel->"In[117]:=",
+ CellID->1184222115],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGetFileList", "[", "]"}]], "Input",
+ CellLabel->"In[118]:=",
+ CellID->1991127581],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"GOPR5130.MP4\"\>", ",", "\<\"GOPR5131.JPG\"\>", 
+   ",", "\<\"GOPR5132.JPG\"\>"}], "}"}]], "Output",
+ ImageSize->{340, 18},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[118]=",
+ CellID->666017755]
+}, Open  ]],
+
+Cell["Burst Mode", "MathCaption",
+ CellID->1731592384],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goProMode", "[", "\"\<Burst\>\"", "]"}], ";"}]], "Input",
+ CellLabel->"In[120]:=",
+ CellID->195503368],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGetFileList", "[", "]"}]], "Input",
+ CellLabel->"In[121]:=",
+ CellID->130790836],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"GOPR5130.MP4\"\>", ",", "\<\"GOPR5131.JPG\"\>", 
+   ",", "\<\"GOPR5132.JPG\"\>"}], "}"}]], "Output",
+ ImageSize->{340, 18},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[121]=",
+ CellID->683589261]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goProShutter", "[", "]"}], ";"}]], "Input",
+ CellLabel->"In[122]:=",
+ CellID->836854765],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGetFileList", "[", "]"}]], "Input",
+ CellLabel->"In[123]:=",
+ CellID->693477158],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"GOPR5130.MP4\"\>", ",", "\<\"GOPR5131.JPG\"\>", 
+   ",", "\<\"GOPR5132.JPG\"\>", ",", "\<\"G0015133.JPG\"\>", 
+   ",", "\<\"G0015134.JPG\"\>", ",", "\<\"G0015135.JPG\"\>"}], 
+  "}"}]], "Output",
+ ImageSize->{342, 37},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[123]=",
+ CellID->832483170]
+}, Open  ]],
+
+Cell["TimeLapse Mode", "MathCaption",
+ CellID->1424744100],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"goProMode", "[", "\"\<TimeLapse\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"goProGetFileList", "[", "]"}]}], "Input",
+ CellLabel->"In[126]:=",
+ CellID->983308975],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"GOPR5130.MP4\"\>", ",", "\<\"GOPR5131.JPG\"\>", 
+   ",", "\<\"GOPR5132.JPG\"\>", ",", "\<\"G0015133.JPG\"\>", 
+   ",", "\<\"G0015134.JPG\"\>", ",", "\<\"G0015135.JPG\"\>"}], 
+  "}"}]], "Output",
+ ImageSize->{342, 37},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[127]=",
+ CellID->78867059]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goProShutter", "[", "]"}], ";"}]], "Input",
+ CellLabel->"In[128]:=",
+ CellID->703823027],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"goProStop", "[", "]"}], ";"}]], "Input",
+ CellLabel->"In[129]:=",
+ CellID->465212027],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProGetFileList", "[", "]"}]], "Input",
+ CellLabel->"In[130]:=",
+ CellID->1474418717],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"GOPR5130.MP4\"\>", ",", "\<\"GOPR5131.JPG\"\>", 
+   ",", "\<\"GOPR5132.JPG\"\>", ",", "\<\"G0015133.JPG\"\>", 
+   ",", "\<\"G0015134.JPG\"\>", ",", "\<\"G0015135.JPG\"\>", 
+   ",", "\<\"G0025136.JPG\"\>", ",", "\<\"G0025137.JPG\"\>", 
+   ",", "\<\"G0025138.JPG\"\>", ",", "\<\"G0025139.JPG\"\>", 
+   ",", "\<\"G0025140.JPG\"\>"}], "}"}]], "Output",
+ ImageSize->{453, 56},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[130]=",
+ CellID->314924204]
+}, Open  ]],
+
+Cell["Power off", "MathCaption",
+ CellID->1130437674],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"goProTurnOff", "[", "]"}]], "Input",
+ CellLabel->"In[131]:=",
+ CellID->1761012975],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["HTTPResponse",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False}, 
+    PanelBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1],
+               $CellContext`LineColor -> GrayLevel[1],
+               $CellContext`FrontFaceColor -> GrayLevel[1],
+               $CellContext`BackFaceColor -> GrayLevel[1],
+               $CellContext`GraphicsColor -> GrayLevel[1]], 
+              Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               $CellContext`LineColor -> RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               $CellContext`FrontFaceColor -> RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               $CellContext`BackFaceColor -> RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               $CellContext`GraphicsColor -> RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{CloudObject`Private`file$ = 
+             FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{0}], 
+                    Association[
+                    "Headers" -> {{"Allow", "GET "}, {
+                    "Accept-Ranges", "bytes"}, {
+                    "Cache-Control", "no-cache"}, {
+                    "Cache-Control", "no-store"}, {
+                    "Connection", "Keep-Alive"}, {
+                    "Server", "GoPro Web Server v1.0"}, {
+                    "Content-Type", "application/octet-stream"}, {
+                    "Content-Length", "1"}}, "StatusCode" -> 200, 
+                    "Cookies" -> {}], CharacterEncoding -> Automatic]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{0}], 
+                    Association[
+                    "Headers" -> {{"Allow", "GET "}, {
+                    "Accept-Ranges", "bytes"}, {
+                    "Cache-Control", "no-cache"}, {
+                    "Cache-Control", "no-store"}, {
+                    "Connection", "Keep-Alive"}, {
+                    "Server", "GoPro Web Server v1.0"}, {
+                    "Content-Type", "application/octet-stream"}, {
+                    "Content-Length", "1"}}, "StatusCode" -> 200, 
+                    "Cookies" -> {}], CharacterEncoding -> Automatic]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{0}], 
+                Association[
+                "Headers" -> {{"Allow", "GET "}, {"Accept-Ranges", "bytes"}, {
+                   "Cache-Control", "no-cache"}, {
+                   "Cache-Control", "no-store"}, {
+                   "Connection", "Keep-Alive"}, {
+                   "Server", "GoPro Web Server v1.0"}, {
+                   "Content-Type", "application/octet-stream"}, {
+                   "Content-Length", "1"}}, "StatusCode" -> 200, 
+                 "Cookies" -> {}], CharacterEncoding -> Automatic], 
+               "BodyBytes"]]; Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/octet-stream\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+      GridBox[{
+        {
+         ButtonBox[
+          PaneSelectorBox[{False->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[2, 3], 0.6666666666666666], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->GrayLevel[1],
+               $CellContext`LineColor -> GrayLevel[1],
+               $CellContext`FrontFaceColor -> GrayLevel[1],
+               $CellContext`BackFaceColor -> GrayLevel[1],
+               $CellContext`GraphicsColor -> GrayLevel[1]], 
+              Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]], True->
+           GraphicsBox[
+            {RGBColor[0, 
+              NCache[
+               Rational[4, 9], 0.4444444444444444], 0], DiskBox[{0, 0}], 
+             InsetBox[
+              StyleBox["\<\"200\"\>",
+               StripOnInput->False,
+               FontSize->10,
+               FontWeight->Bold,
+               FontColor->RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               $CellContext`LineColor -> RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               $CellContext`FrontFaceColor -> RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               $CellContext`BackFaceColor -> RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]],
+               $CellContext`GraphicsColor -> RGBColor[
+                 Rational[2, 3], 
+                 Rational[2, 3], 
+                 Rational[2, 3]]], Scaled[{0.53, 0.48}]]},
+            Background->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, (3 CurrentValue["FontCapHeight"])/
+               AbsoluteCurrentValue[Magnification]}]]}, Dynamic[
+            CurrentValue["MouseOver"]],
+           FrameMargins->0,
+           ImageSize->Automatic],
+          Appearance->"Frameless",
+          
+          ButtonFunction:>
+           With[{CloudObject`Private`file$ = 
+             FileNameJoin[{$TemporaryDirectory, 
+                StringJoin["HTTPResponse", 
+                 IntegerString[
+                  Hash[
+                   HTTPResponse[
+                    ByteArray[{0}], 
+                    Association[
+                    "Headers" -> {{"Allow", "GET "}, {
+                    "Accept-Ranges", "bytes"}, {
+                    "Cache-Control", "no-cache"}, {
+                    "Cache-Control", "no-store"}, {
+                    "Connection", "Keep-Alive"}, {
+                    "Server", "GoPro Web Server v1.0"}, {
+                    "Content-Type", "application/octet-stream"}, {
+                    "Content-Length", "1"}}, "StatusCode" -> 200, 
+                    "Cookies" -> {}], CharacterEncoding -> Automatic]], 36, 
+                  13], ".", 
+                 First[
+                  StringCases[
+                   First[
+                    CloudObject`Private`toContentTypeWithEncoding[
+                    HTTPResponse[
+                    ByteArray[{0}], 
+                    Association[
+                    "Headers" -> {{"Allow", "GET "}, {
+                    "Accept-Ranges", "bytes"}, {
+                    "Cache-Control", "no-cache"}, {
+                    "Cache-Control", "no-store"}, {
+                    "Connection", "Keep-Alive"}, {
+                    "Server", "GoPro Web Server v1.0"}, {
+                    "Content-Type", "application/octet-stream"}, {
+                    "Content-Length", "1"}}, "StatusCode" -> 200, 
+                    "Cookies" -> {}], CharacterEncoding -> Automatic]]], {
+                   StringExpression[StartOfString, "text/plain"] :> "txt", 
+                    StringExpression[
+                    Repeated[
+                    Except["/"]], "/", 
+                    Pattern[CloudObject`Private`a, 
+                    Repeated[WordCharacter]], 
+                    BlankNullSequence[]] :> CloudObject`Private`a}], 
+                  "txt"]]}]}, BinaryWrite[CloudObject`Private`file$, 
+              CloudObject`Private`HTTPProperty[
+               HTTPResponse[
+                ByteArray[{0}], 
+                Association[
+                "Headers" -> {{"Allow", "GET "}, {"Accept-Ranges", "bytes"}, {
+                   "Cache-Control", "no-cache"}, {
+                   "Cache-Control", "no-store"}, {
+                   "Connection", "Keep-Alive"}, {
+                   "Server", "GoPro Web Server v1.0"}, {
+                   "Content-Type", "application/octet-stream"}, {
+                   "Content-Length", "1"}}, "StatusCode" -> 200, 
+                 "Cookies" -> {}], CharacterEncoding -> Automatic], 
+               "BodyBytes"]]; Close[CloudObject`Private`file$]; 
+            SystemOpen[CloudObject`Private`file$]],
+          Evaluator->Automatic,
+          Method->"Preemptive"], GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Status: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"OK\"\>",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Content type: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["\<\"application/octet-stream\"\>",
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open$$],
+      ImageSize->Automatic],
+     BaselinePosition->Baseline],
+    DynamicModuleValues:>{}], "]"}],
+  HTTPResponse[
+   ByteArray[{0}], 
+   Association[
+   "Headers" -> {{"Allow", "GET "}, {"Accept-Ranges", "bytes"}, {
+      "Cache-Control", "no-cache"}, {"Cache-Control", "no-store"}, {
+      "Connection", "Keep-Alive"}, {"Server", "GoPro Web Server v1.0"}, {
+      "Content-Type", "application/octet-stream"}, {"Content-Length", "1"}}, 
+    "StatusCode" -> 200, "Cookies" -> {}], CharacterEncoding -> Automatic],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ ImageSize->{406, 46},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[131]=",
+ CellID->369456011]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Tutorials"
+}], "RelatedTutorialsSection",
+ WholeCellGroupOpener->True,
+ CellID->415694126],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ ButtonBox["Downloading and deleting files from GoPro",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/goProDownload"],
+ "\[LongDash] Tutorial for GoPro HERO2.\n",
+ ButtonBox["HERO2",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/HERO2"],
+ "  \[LongDash] Tutorial for GoPro HERO2.\n",
+ ButtonBox["HERO3 & HERO3+",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/HERO3"],
+ " \[LongDash]  Tutorial for GoPro HERO3 and HERO3+.\n",
+ ButtonBox["HERO4",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/HERO4"],
+ "  \[LongDash] Tutorial for GoProHero4.\n",
+ ButtonBox["goProSetup",
+  BaseStyle->"Link",
+  ButtonData->"paclet:GoProController/tutorial/goProSetup"],
+ " \[LongDash] setting GoPro camera."
+}], "RelatedTutorials",
+ CellID->806871991]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Controlling GoPro camera",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "GoProController Package", ButtonData -> 
+         "paclet:GoProController/guide/GoProController", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2017, 5, 15, 9, 23, 15.923416}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Go Pro Controller Tutorial", "language" -> "en", "paclet" -> 
+    "GoProController", "status" -> "None", "summary" -> 
+    "Before controlling camera you need to set the package first. You have to \
+do that because package need to know which files have to be loaded and it is \
+impossible to control goProCamera without WiFi password. Package setup \
+functions. The package setup is easy. The only thing you need to do is to set \
+the camera generation with function goProSetCamera and camera model with \
+goProSetCameraModel (not for HERO2). And set the WiFi password (not for \
+HERO4)", "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$14548, "title" -> 
+    "Controlling GoPro camera", "titlemodifier" -> "", "windowtitle" -> 
+    "Controlling GoPro camera", "type" -> "Tutorial", "uri" -> 
+    "GoProController/tutorial/goProControl"}, "SearchTextTranslated" -> ""},
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> "11.0 for Linux x86 (64-bit) (September 21, 2016)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[596, 21, 4682, 109, 52, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5303, 134, 61, 1, 52, "Title",
+ CellID->509267359],
+Cell[5367, 137, 13454, 236, 45, "TutorialJumpBox"],
+Cell[CellGroupData[{
+Cell[18846, 377, 53, 1, 65, "Section",
+ CellID->1147065604],
+Cell[18902, 380, 255, 5, 72, "Text",
+ CellID->1127271971],
+Cell[19160, 387, 1565, 42, 240, "DefinitionBox",
+ CellID->932885528],
+Cell[20728, 431, 63, 1, 33, "Caption",
+ CellID->492680226],
+Cell[20794, 434, 267, 5, 72, "Text",
+ CellID->1883310529],
+Cell[CellGroupData[{
+Cell[21086, 443, 196, 4, 70, "Input",
+ CellID->101643925],
+Cell[21285, 449, 277, 8, 39, "Output",
+ CellID->33191616]
+}, Open  ]],
+Cell[21577, 460, 49, 1, 70, "MathCaption",
+ CellID->1825449234],
+Cell[CellGroupData[{
+Cell[21651, 465, 311, 7, 70, "Input",
+ CellID->1864455583],
+Cell[21965, 474, 113, 2, 70, "Print",
+ CellID->1987967036]
+}, Open  ]],
+Cell[22093, 479, 48, 1, 70, "MathCaption",
+ CellID->553742647],
+Cell[CellGroupData[{
+Cell[22166, 484, 281, 5, 70, "Input",
+ CellID->323061464],
+Cell[22450, 491, 113, 2, 70, "Print",
+ CellID->2092201111],
+Cell[22566, 495, 256, 8, 39, "Output",
+ CellID->1822184610]
+}, Open  ]],
+Cell[22837, 506, 256, 8, 70, "Input",
+ CellID->586934264],
+Cell[23096, 516, 49, 1, 70, "MathCaption",
+ CellID->978299796],
+Cell[CellGroupData[{
+Cell[23170, 521, 285, 6, 70, "Input",
+ CellID->778540068],
+Cell[23458, 529, 114, 2, 70, "Print",
+ CellID->1393867537],
+Cell[23575, 533, 230, 7, 39, "Output",
+ CellID->773061552]
+}, Open  ]],
+Cell[23820, 543, 257, 8, 70, "Input",
+ CellID->1831256327],
+Cell[24080, 553, 49, 1, 70, "MathCaption",
+ CellID->2058356472],
+Cell[CellGroupData[{
+Cell[24154, 558, 280, 5, 70, "Input",
+ CellID->35917347],
+Cell[24437, 565, 258, 8, 39, "Output",
+ CellID->1082236343]
+}, Open  ]],
+Cell[24710, 576, 149, 5, 70, "Input",
+ CellID->1626453968],
+Cell[CellGroupData[{
+Cell[24884, 585, 85, 1, 70, "Subsubsection",
+ CellID->1874869133],
+Cell[24972, 588, 108, 3, 70, "Text",
+ CellID->2125075711],
+Cell[CellGroupData[{
+Cell[25105, 595, 122, 4, 70, "Input",
+ CellID->1930151669],
+Cell[25230, 601, 294, 7, 70, "Message",
+ CellID->198403843]
+}, Open  ]],
+Cell[25539, 611, 127, 4, 70, "Text",
+ CellID->10783679],
+Cell[CellGroupData[{
+Cell[25691, 619, 149, 5, 70, "Input",
+ CellID->2142648060],
+Cell[25843, 626, 328, 8, 70, "Message",
+ CellID->15468356],
+Cell[26174, 636, 232, 6, 70, "Message",
+ CellID->1041483408]
+}, Open  ]],
+Cell[26421, 645, 188, 4, 70, "Text",
+ CellID->1447763488],
+Cell[26612, 651, 149, 5, 70, "Input",
+ CellID->1491575241]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26810, 662, 61, 1, 70, "Section",
+ CellID->869159500],
+Cell[26874, 665, 261, 5, 70, "Text",
+ CellID->933781132],
+Cell[27138, 672, 1568, 45, 70, "DefinitionBox",
+ CellID->1458783392],
+Cell[28709, 719, 62, 1, 70, "Caption",
+ CellID->521916346],
+Cell[28774, 722, 556, 13, 70, "Text",
+ CellID->1964518487],
+Cell[29333, 737, 64, 1, 70, "MathCaption",
+ CellID->359514540],
+Cell[CellGroupData[{
+Cell[29422, 742, 400, 9, 70, "Input",
+ CellID->888608608],
+Cell[29825, 753, 114, 2, 70, "Print",
+ CellID->1853177222]
+}, Open  ]],
+Cell[29954, 758, 123, 4, 70, "Input",
+ CellID->799893120],
+Cell[CellGroupData[{
+Cell[30102, 766, 105, 3, 70, "Input",
+ CellID->1682145916],
+Cell[30210, 771, 13681, 332, 70, "Output",
+ CellID->54531807]
+}, Open  ]],
+Cell[43906, 1106, 71, 1, 70, "Text",
+ CellID->2064468636],
+Cell[43980, 1109, 54, 1, 70, "MathCaption",
+ CellID->1461345356],
+Cell[CellGroupData[{
+Cell[44059, 1114, 319, 9, 70, "Input",
+ CellID->1221517305],
+Cell[44381, 1125, 477, 11, 70, "Message",
+ CellID->492352273],
+Cell[44861, 1138, 240, 6, 70, "Message",
+ CellID->555818969]
+}, Open  ]],
+Cell[45116, 1147, 137, 4, 70, "Input",
+ CellID->917901893],
+Cell[45256, 1153, 123, 4, 70, "Input",
+ CellID->925523387],
+Cell[45382, 1159, 120, 4, 70, "Input",
+ CellID->776630749],
+Cell[CellGroupData[{
+Cell[45527, 1167, 109, 3, 70, "Input",
+ CellID->881838120],
+Cell[45639, 1172, 201, 6, 37, "Output",
+ CellID->49553901]
+}, Open  ]],
+Cell[45855, 1181, 54, 1, 70, "MathCaption",
+ CellID->1728828580],
+Cell[CellGroupData[{
+Cell[45934, 1186, 208, 6, 70, "Input",
+ CellID->1717686531],
+Cell[46145, 1194, 248, 8, 39, "Output",
+ CellID->1207232750]
+}, Open  ]],
+Cell[46408, 1205, 124, 4, 70, "Input",
+ CellID->1184222115],
+Cell[CellGroupData[{
+Cell[46557, 1213, 110, 3, 70, "Input",
+ CellID->1991127581],
+Cell[46670, 1218, 277, 8, 39, "Output",
+ CellID->666017755]
+}, Open  ]],
+Cell[46962, 1229, 54, 1, 70, "MathCaption",
+ CellID->1731592384],
+Cell[47019, 1232, 137, 4, 70, "Input",
+ CellID->195503368],
+Cell[CellGroupData[{
+Cell[47181, 1240, 109, 3, 70, "Input",
+ CellID->130790836],
+Cell[47293, 1245, 277, 8, 39, "Output",
+ CellID->683589261]
+}, Open  ]],
+Cell[47585, 1256, 123, 4, 70, "Input",
+ CellID->836854765],
+Cell[CellGroupData[{
+Cell[47733, 1264, 109, 3, 70, "Input",
+ CellID->693477158],
+Cell[47845, 1269, 371, 10, 58, "Output",
+ CellID->832483170]
+}, Open  ]],
+Cell[48231, 1282, 58, 1, 70, "MathCaption",
+ CellID->1424744100],
+Cell[CellGroupData[{
+Cell[48314, 1287, 211, 6, 70, "Input",
+ CellID->983308975],
+Cell[48528, 1295, 370, 10, 58, "Output",
+ CellID->78867059]
+}, Open  ]],
+Cell[48913, 1308, 123, 4, 70, "Input",
+ CellID->703823027],
+Cell[49039, 1314, 120, 4, 70, "Input",
+ CellID->465212027],
+Cell[CellGroupData[{
+Cell[49184, 1322, 110, 3, 70, "Input",
+ CellID->1474418717],
+Cell[49297, 1327, 525, 12, 77, "Output",
+ CellID->314924204]
+}, Open  ]],
+Cell[49837, 1342, 53, 1, 70, "MathCaption",
+ CellID->1130437674],
+Cell[CellGroupData[{
+Cell[49915, 1347, 106, 3, 70, "Input",
+ CellID->1761012975],
+Cell[50024, 1352, 13682, 332, 70, "Output",
+ CellID->369456011]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[63755, 1690, 287, 12, 70, "RelatedTutorialsSection",
+ CellID->415694126],
+Cell[64045, 1704, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[64079, 1706, 837, 22, 70, "RelatedTutorials",
+ CellID->806871991]
+}, Open  ]]
+}, Open  ]],
+Cell[64943, 1732, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

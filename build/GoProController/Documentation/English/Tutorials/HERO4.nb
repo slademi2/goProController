@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    581735,      11636]
+NotebookDataLength[    581734,      11636]
 NotebookOptionsPosition[    570155,      11252]
-NotebookOutlinePosition[    573070,      11323]
-CellTagsIndexPosition[    572988,      11318]
+NotebookOutlinePosition[    573069,      11323]
+CellTagsIndexPosition[    572987,      11318]
 WindowTitle->HERO4
 WindowFrame->Normal*)
 
@@ -81,7 +81,7 @@ tutorial/HERO4.html"], StandardForm]], "Input", TextClipboardType ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$18219], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$18238], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "GoProController/tutorial/HERO4", ".html"]], None}]}]},
@@ -10406,7 +10406,7 @@ pRfAPdNP0w6pBMi1FCBYfvP594f/B2EPwj8=
  ImageRegion->{{0, 1}, {0, 1}},
  CellTags->"RasterizedOutput",
  CellLabel->"Out[28]=",
- CellID->1157990539]
+ CellID->2132914701]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -11265,7 +11265,7 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2017, 5, 14, 19, 18, 45.279870}", 
+   "built" -> "{2017, 5, 15, 9, 23, 32.472065}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "GoProController`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -11279,7 +11279,7 @@ requires wake on LAN. You will have to use other tools to turn on the camera. \
 Before controlling camera you need to set the package first. You have to do \
 that because package need to know which files have to be loaded and it is \
 impossible to control goProCamera without WiFi password.", "synonyms" -> {}, 
-    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$17790, 
+    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$17809, 
     "title" -> "HERO4", "titlemodifier" -> "", "windowtitle" -> "HERO4", 
     "type" -> "Tutorial", "uri" -> "GoProController/tutorial/HERO4"}, 
   "SearchTextTranslated" -> ""},
@@ -11312,12 +11312,12 @@ CellTagsIndex->{
  "RasterizedOutput"->{
   Cell[174877, 4449, 363030, 5959, 407, "Output",
    CellTags->"RasterizedOutput",
-   CellID->1157990539]}
+   CellID->2132914701]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"RasterizedOutput", 572857, 11311}
+ {"RasterizedOutput", 572856, 11311}
  }
 *)
 (*NotebookFileOutline
@@ -11586,7 +11586,7 @@ Cell[174767, 4444, 107, 3, 28, "Input",
  CellID->2034310121],
 Cell[174877, 4449, 363030, 5959, 407, "Output",
  CellTags->"RasterizedOutput",
- CellID->1157990539]
+ CellID->2132914701]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[537944, 10413, 131, 3, 70, "Input",
