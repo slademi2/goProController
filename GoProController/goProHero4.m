@@ -1365,7 +1365,7 @@ goProLocateStop[] :=execute[goProMakeCommand["command/system","locate?p=0"]]
 
 (* ::Subsection:: *)
 (* Delete *)
-goProDeleteLastFile[]:=execute[goProMakeCommand["command/storage/delete","last"]]
+goProDeleteLast[]:=execute[goProMakeCommand["command/storage/delete","last"]]
 goProDeleteAll[]:=execute[goProMakeCommand["command/storage/delete","all"]]
 
 
@@ -1894,17 +1894,14 @@ goProGetFileList::file="`1` - No such file on GoPro camera.";
 goProGetFileList::directory="`1` - No such directory exists.";
 
 
-goProGetFileList[]:=(If[SameQ[Import[urlBase], $Failed],
-	Message[goProGetFileList::empty,empty]
-	,
-	files = {};
-	files = Flatten[
-  		AppendTo[files, 
-   		StringReplace[ToString[#] & /@ DeleteCases[ReadList[StringToStream[StringTrim[StringDrop[Import[urlBase], 13]]]],
-   			 _Real][[All, 3]], Whitespace -> ""]]]
+goProGetFileList[]:=If[
+	SameQ[Import[urlBase], $Failed],
+	Message[goProGetFileList::empty,empty],
+	Select[
+		StringSplit[Import[urlBase], Whitespace],
+		StringMatchQ[#, RegularExpression["\\w+\..{3}"]]&
+	]
 ]
-
- )
       
 goProSetURLBase[param_String]:=urlBase=param;
 goProGetURLBase[]:=urlBase;
